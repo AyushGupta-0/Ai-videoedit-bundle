@@ -124,7 +124,20 @@ timeline registered at `window.__timelines["<id>"]`.
     dashboard was in. Open `localhost:4321` in a *new* tab.
 13. **Titles must not repeat the narration word-for-word.** Make them add information.
 14. **Port 3000 is taken** by an unrelated Next.js app on this machine. Dashboard uses **4321**.
-15. **git on this exFAT SSD**: macOS writes `._` AppleDouble files *inside* `.git`, which corrupt
+15. **This Mac has 16GB of RAM and SDXL does not fit in it resident.** Running
+    SDXL at 832x1216 with weights on the GPU wedged the machine badly enough to
+    need a power cycle, and left 8GB stuck in swap afterwards. Rules:
+    **never** `pipe.to("mps")` — use `enable_model_cpu_offload()`; cap at
+    768x1152; `pipe.vae.enable_slicing()/enable_tiling()` (diffusers >=0.42 moved
+    these off the pipe); and always launch via `Tools/publish/run_sdxl.sh`, which
+    refuses to start above 2GB swap and kills the run if swap grows 2.5GB.
+    **macOS only releases compressed memory on reboot** — after a wedge, reboot
+    before retrying. Spotlight also indexes this SSD; turning that off helps.
+16. **CLIP truncates prompts at 77 tokens and the warning is easy to miss.** A
+    first pass ran 161 tokens, so the entire style suffix was silently dropped
+    and the plates came out styleless. `gen_kids_art.py` now hard-fails via
+    `check_len()`. Keep character bibles terse.
+17. **git on this exFAT SSD**: macOS writes `._` AppleDouble files *inside* `.git`, which corrupt
     pack indexes and refs. Before and after any git write, run:
     `find .git -name '._*' -delete`. Repo: `github.com/AyushGupta-0/Ai-videoedit-bundle` (ssh).
 

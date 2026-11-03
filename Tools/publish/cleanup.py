@@ -46,22 +46,44 @@ def size_of(p: Path):
 
 
 def targets_for(slug):
-    """Everything heavy that belongs to one published video."""
-    out = []
+    """Only what belongs to THIS published video.
+
+    An earlier version swept every raw mp4 and every lightspeed-*/renders dir
+    regardless of slug, which would have taken the un-uploaded Hindi master with
+    it. Now a raw master or a render only goes if it is byte-for-byte the video
+    sitting in this slug's Exports folder — i.e. the copy that is now live on the
+    platforms, so the local one is redundant.
+    """
+    exports = []
     for platform in ("Instagram", "YouTube", "Facebook"):
         d = EXPORTS / platform
         if d.exists():
-            out += [p for p in d.rglob(slug) if p.is_dir()]
-    for proj in (ROOT / "Tools").glob("lightspeed-*"):
-        r = proj / "renders"
-        if r.exists():
-            out.append(r)
+            exports += [p for p in d.rglob(slug) if p.is_dir()]
+    if not exports:
+        sys.exit(f"no Exports folder named '{slug}' — check the slug with --list")
+
+    # fingerprint the uploaded video itself
+    uploaded = {p.stat().st_size for d in exports for p in d.glob("*.mp4")
+                if not p.name.startswith(".")}
+
+    out = list(exports)
+    pool = list(RAW.glob("*.mp4")) if RAW else []
+    for r in (ROOT / "Tools").glob("*/renders"):
+        pool += list(r.rglob("*.mp4"))
+    out += [p for p in pool
+            if not p.name.startswith(".") and p.stat().st_size in uploaded]
+
+    return [p for p in out if p.exists()]
+
+
+def build_scratch():
+    """Frame caches and render scratch — always regenerable from the composition."""
+    out = []
+    for proj in (ROOT / "Tools").glob("*"):
         hf = proj / ".hyperframes" / "artifacts"
         if hf.exists():
             out.append(hf)
-    if RAW:
-        out += [p for p in RAW.glob("*.mp4")]
-    return [p for p in out if p.exists()]
+    return out
 
 
 def show(paths, label):
@@ -76,6 +98,8 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--slug", help="video slug that has been uploaded")
     ap.add_argument("--caches", action="store_true", help="clear shared caches too")
+    ap.add_argument("--builds", action="store_true",
+                    help="clear .hyperframes frame scratch (regenerable, any project)")
     ap.add_argument("--list", action="store_true", help="show sizes, delete nothing")
     ap.add_argument("--dry-run", action="store_true")
     a = ap.parse_args()
@@ -94,8 +118,10 @@ def main():
         picked += targets_for(a.slug)
     if a.caches:
         picked += [p for p in SHARED_CACHES if p.exists()]
+    if a.builds:
+        picked += build_scratch()
     if not picked:
-        sys.exit("nothing selected — pass --slug and/or --caches, or use --list")
+        sys.exit("nothing selected — pass --slug / --caches / --builds, or use --list")
 
     picked = sorted(set(picked))
     total = show(picked, "WILL DELETE")

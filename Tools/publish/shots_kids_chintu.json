@@ -1,0 +1,96 @@
+{
+  "episode": "kids-ep01-chintu-trumpet",
+  "note": "15 plates for the 62s cut. {CHINTU} and {MIRA} are substituted verbatim by gen_kids_art.py \u2014 do not inline or paraphrase them, that is what keeps the faces stable across shots.",
+  "shots": [
+    {
+      "id": "s01",
+      "seed": "chintu",
+      "note": "open \u2014 sad alone",
+      "prompt": "full body {CHINTU} alone in a sunny jungle clearing, ears drooping, head down, sad"
+    },
+    {
+      "id": "s02",
+      "seed": "chintu",
+      "note": "close, sad face",
+      "prompt": "extreme close-up {CHINTU}, sad face, trunk curled to chest, one tear, bokeh jungle"
+    },
+    {
+      "id": "s03",
+      "seed": "world",
+      "note": "the big elephants trumpet",
+      "prompt": "wide shot, three big friendly cartoon elephants trumpeting, trunks raised, sound rings, blue sky"
+    },
+    {
+      "id": "s04",
+      "seed": "chintu",
+      "note": "puffed cheeks, straining",
+      "prompt": "{CHINTU} cheeks puffed huge, eyes squeezed shut, straining to blow, jungle clearing"
+    },
+    {
+      "id": "s05",
+      "seed": "mira",
+      "note": "Mira arrives",
+      "prompt": "full body {MIRA} running into a jungle clearing, one arm up, huge grin, mid-stride"
+    },
+    {
+      "id": "s06",
+      "seed": "mira",
+      "note": "Mira demonstrates the breath",
+      "prompt": "{MIRA} cheeks puffed round like a balloon, hands on cheeks, playful, jungle clearing"
+    },
+    {
+      "id": "s07",
+      "seed": "chintu",
+      "note": "INTERACTIVE \u2014 looks at camera",
+      "prompt": "close-up {CHINTU} looking at viewer, big hopeful eyes, head tilted, sunlit clearing"
+    },
+    {
+      "id": "s08",
+      "seed": "both",
+      "note": "Mira counts",
+      "prompt": "{MIRA} left holding up three fingers counting, {CHINTU} right watching her, clearing"
+    },
+    {
+      "id": "s09",
+      "seed": "both",
+      "note": "the funny failure",
+      "prompt": "{CHINTU} trunk flopped limp, embarrassed, {MIRA} beside him laughing, jungle clearing"
+    },
+    {
+      "id": "s10",
+      "seed": "mira",
+      "note": "Mira cheers him on",
+      "prompt": "full body {MIRA} both arms thrown wide, cheering, jumping, bright, jungle clearing"
+    },
+    {
+      "id": "s11",
+      "seed": "chintu",
+      "note": "the big inhale, anticipation",
+      "prompt": "{CHINTU} inhaling, body and cheeks inflated round, eyes wide, trunk coiling up"
+    },
+    {
+      "id": "s12",
+      "seed": "chintu",
+      "note": "PAYOFF \u2014 the trumpet",
+      "prompt": "hero low angle {CHINTU} trunk raised high trumpeting with joy, sound rings, birds, blue sky"
+    },
+    {
+      "id": "s13",
+      "seed": "both",
+      "note": "mangoes rain down",
+      "prompt": "{CHINTU} and {MIRA} looking straight up amazed, ripe mangoes falling around them, tree above"
+    },
+    {
+      "id": "s14",
+      "seed": "both",
+      "note": "the gift",
+      "prompt": "{CHINTU} offering a mango in his trunk to {MIRA}, she reaches for it, golden light"
+    },
+    {
+      "id": "s15",
+      "seed": "both",
+      "note": "close \u2014 friends, fireflies",
+      "prompt": "wide, {CHINTU} and {MIRA} sitting together on grass eating mango, sunset, fireflies"
+    }
+  ]
+}

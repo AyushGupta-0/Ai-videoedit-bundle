@@ -1,0 +1,26 @@
+{
+  "episode": "kids-ep01-chintu-trumpet",
+  "voices": {
+    "N": { "kokoro": "af_sarah", "speed": 0.98, "semitones": 0.0 },
+    "M": { "kokoro": "af_bella", "speed": 1.02, "semitones": 3.0 },
+    "C": { "kokoro": "af_heart", "speed": 0.88, "semitones": 8.0 }
+  },
+  "lines": [
+    { "id": "l01", "at": 0.20, "who": "N", "shot": "s01", "text": "Chintu the baby elephant had a big problem." },
+    { "id": "l02", "at": 3.60, "who": "N", "shot": "s02", "text": "He could not trumpet." },
+    { "id": "l03", "at": 6.80, "who": "N", "shot": "s03", "text": "Every elephant in the jungle went, paaa poooo!" },
+    { "id": "l04", "at": 11.20, "who": "N", "shot": "s04", "text": "But Chintu went..." },
+    { "id": "l05", "at": 14.80, "who": "C", "shot": "s04", "text": "pfft." },
+    { "id": "l06", "at": 16.60, "who": "N", "shot": "s05", "text": "Then his best friend Mira had an idea!" },
+    { "id": "l07", "at": 20.60, "who": "M", "shot": "s06", "text": "Take a big breath. Like a big round balloon!" },
+    { "id": "l08", "at": 24.80, "who": "N", "shot": "s07", "text": "Can you help him? Take a breath with Chintu!" },
+    { "id": "l09", "at": 28.80, "who": "M", "shot": "s08", "text": "Ready? One... two... three!" },
+    { "id": "l10", "at": 34.80, "who": "M", "shot": "s10", "text": "Oh no! Try again, Chintu. Breathe bigger!" },
+    { "id": "l11", "at": 38.60, "who": "M", "shot": "s11", "text": "One... two... THREE!" },
+    { "id": "l12", "at": 42.60, "who": "C", "shot": "s12", "text": "Paaaaa poooooo!" },
+    { "id": "l13", "at": 47.20, "who": "N", "shot": "s13", "text": "So loud, the mangoes fell right out of the tree!" },
+    { "id": "l14", "at": 51.20, "who": "N", "shot": "s14", "text": "Chintu caught one. And gave it to Mira." },
+    { "id": "l15", "at": 55.60, "who": "N", "shot": "s15", "text": "Because the best sound in the jungle..." },
+    { "id": "l16", "at": 58.80, "who": "N", "shot": "s15", "text": "is sharing it with a friend." }
+  ]
+}

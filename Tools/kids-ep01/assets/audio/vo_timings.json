@@ -1,0 +1,133 @@
+{
+  "duration": 62.61,
+  "lines": [
+    {
+      "id": "l01",
+      "who": "N",
+      "shot": "s01",
+      "text": "Chintu the baby elephant had a big problem.",
+      "start": 0.2,
+      "end": 3.625
+    },
+    {
+      "id": "l02",
+      "who": "N",
+      "shot": "s02",
+      "text": "He could not trumpet.",
+      "start": 3.685,
+      "end": 5.96
+    },
+    {
+      "id": "l03",
+      "who": "N",
+      "shot": "s03",
+      "text": "Every elephant in the jungle went, paaa poooo!",
+      "start": 6.8,
+      "end": 10.525
+    },
+    {
+      "id": "l04",
+      "who": "N",
+      "shot": "s04",
+      "text": "But Chintu went...",
+      "start": 11.2,
+      "end": 13.425
+    },
+    {
+      "id": "l05",
+      "who": "C",
+      "shot": "s04",
+      "text": "pfft.",
+      "start": 14.8,
+      "end": 15.75
+    },
+    {
+      "id": "l06",
+      "who": "N",
+      "shot": "s05",
+      "text": "Then his best friend Mira had an idea!",
+      "start": 16.6,
+      "end": 19.75
+    },
+    {
+      "id": "l07",
+      "who": "M",
+      "shot": "s06",
+      "text": "Take a big breath. Like a big round balloon!",
+      "start": 20.6,
+      "end": 23.9
+    },
+    {
+      "id": "l08",
+      "who": "N",
+      "shot": "s07",
+      "text": "Can you help him? Take a breath with Chintu!",
+      "start": 24.8,
+      "end": 28.075
+    },
+    {
+      "id": "l09",
+      "who": "M",
+      "shot": "s08",
+      "text": "Ready? One... two... three!",
+      "start": 28.8,
+      "end": 31.4
+    },
+    {
+      "id": "l10",
+      "who": "M",
+      "shot": "s10",
+      "text": "Oh no! Try again, Chintu. Breathe bigger!",
+      "start": 34.8,
+      "end": 38.25
+    },
+    {
+      "id": "l11",
+      "who": "M",
+      "shot": "s11",
+      "text": "One... two... THREE!",
+      "start": 38.6,
+      "end": 40.725
+    },
+    {
+      "id": "l12",
+      "who": "C",
+      "shot": "s12",
+      "text": "Paaaaa poooooo!",
+      "start": 42.6,
+      "end": 44.375
+    },
+    {
+      "id": "l13",
+      "who": "N",
+      "shot": "s13",
+      "text": "So loud, the mangoes fell right out of the tree!",
+      "start": 47.2,
+      "end": 50.775
+    },
+    {
+      "id": "l14",
+      "who": "N",
+      "shot": "s14",
+      "text": "Chintu caught one. And gave it to Mira.",
+      "start": 51.2,
+      "end": 54.65
+    },
+    {
+      "id": "l15",
+      "who": "N",
+      "shot": "s15",
+      "text": "Because the best sound in the jungle...",
+      "start": 55.6,
+      "end": 58.475
+    },
+    {
+      "id": "l16",
+      "who": "N",
+      "shot": "s15",
+      "text": "is sharing it with a friend.",
+      "start": 58.8,
+      "end": 61.35
+    }
+  ]
+}
