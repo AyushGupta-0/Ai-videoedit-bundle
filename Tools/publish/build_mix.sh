@@ -4,6 +4,13 @@
 #
 # Voice intelligibility is the priority. Two things protect it:
 #   1. sidechain ducking  — bed and SFX drop whenever the voice is present
+#
+# NOTE on alimiter: its `level` option defaults to TRUE, which auto-levels the
+# output up toward the limit — measured here, a -19.5 dB input came out at
+# -18.5 dB, i.e. the "limiter" made it louder. That is the opposite of a safety
+# limiter, so both calls below pass level=false. The final loudnorm was already
+# enforcing the true-peak ceiling, so this was not audibly broken; it was just
+# the wrong tool doing the wrong thing before the right one cleaned up.
 #   2. spectral carving   — the bed is kept BELOW the voice band and both the bed
 #                           and the SFX bus have a dip at 1.6-4 kHz, which is
 #                           where consonants live. Ducking alone is not enough;
@@ -76,7 +83,7 @@ build_sfx() {
   add sub_drop 50400 0.30
   fc+="${labels}amix=inputs=${idx}:normalize=0:duration=first[m];"
   # carve the consonant band out of the whole effects bus
-  fc+="[m]equalizer=f=2600:t=q:w=1.6:g=-5,equalizer=f=1600:t=q:w=1.8:g=-3,alimiter=limit=0.7[out]"
+  fc+="[m]equalizer=f=2600:t=q:w=1.6:g=-5,equalizer=f=1600:t=q:w=1.8:g=-3,alimiter=limit=0.7:level=false[out]"
   ffmpeg -y -v error "${args[@]}" -filter_complex "$fc" -map "[out]" -t "${D}" "$TMP/_sfx.wav"
 }
 build_sfx
@@ -95,7 +102,7 @@ acompressor=threshold=0.05:ratio=3.4:attack=8:release=180:makeup=2.2[vo];\
 [bed][sc1]sidechaincompress=threshold=0.022:ratio=9:attack=8:release=240:makeup=1[bed_d];\
 [sfx][sc2]sidechaincompress=threshold=0.030:ratio=5:attack=6:release=190:makeup=1[sfx_d];\
 [vo_out][bed_d][sfx_d]amix=inputs=3:normalize=0:duration=first[mixed];\
-[mixed]alimiter=limit=0.95,loudnorm=I=-14:TP=-1.2:LRA=11,\
+[mixed]alimiter=limit=0.95:level=false,loudnorm=I=-14:TP=-1.2:LRA=11,\
 aformat=sample_fmts=s16:sample_rates=48000:channel_layouts=stereo[out]" \
  -map "[out]" -t "${D}" "$OUT"
 

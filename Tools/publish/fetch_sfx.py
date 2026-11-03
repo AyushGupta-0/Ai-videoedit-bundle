@@ -1,0 +1,94 @@
+#!/usr/bin/env python3
+"""Fetch CC0 sound effects and music beds from Openverse.
+
+Openverse needs NO API KEY. It does need a User-Agent — a request without one
+returns HTTP 000 (connection refused), which I previously mis-read as "the API
+is gated now" and went off and synthesised a sine-wave music bed instead. It
+was never gated. Always send a UA.
+
+Everything returned here is filtered to `license=cc0`, i.e. public domain: safe
+for monetised video, no attribution required. We still record attribution in
+CREDITS.json as evidence of provenance if a claim is ever raised.
+
+    python3 fetch_sfx.py --out Tools/x/assets/sfx whoosh riser impact
+    python3 fetch_sfx.py --out Tools/x/assets/audio --bed "suspense ambient"
+"""
+import argparse
+import json
+import urllib.parse
+import urllib.request
+from pathlib import Path
+
+API = "https://api.openverse.org/v1/audio/"
+UA = ("Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 "
+      "(KHTML, like Gecko) Chrome/131.0 Safari/537.36")
+
+
+def get(url):
+    return urllib.request.urlopen(
+        urllib.request.Request(url, headers={"User-Agent": UA}), timeout=40)
+
+
+def search(q, n=12):
+    qs = urllib.parse.urlencode({"q": q, "license": "cc0", "page_size": n})
+    return json.loads(get(f"{API}?{qs}").read()).get("results", [])
+
+
+def pick(results, bed):
+    """Openverse's `category` field is null on almost every row, so split beds
+    from one-shots on duration instead: a bed has to be long enough to loop
+    under a whole episode."""
+    out = []
+    for r in results:
+        secs = (r.get("duration") or 0) / 1000
+        if bed and secs < 25:
+            continue
+        if not bed and not (0.2 <= secs <= 12):
+            continue
+        if r.get("license") != "cc0" or not r.get("url"):
+            continue
+        out.append((secs, r))
+    out.sort(key=lambda x: -x[0] if bed else x[0])
+    return out
+
+
+def main():
+    ap = argparse.ArgumentParser()
+    ap.add_argument("queries", nargs="*")
+    ap.add_argument("--out", required=True)
+    ap.add_argument("--bed", help="fetch one long bed for this query instead")
+    ap.add_argument("--each", type=int, default=1, help="files per query")
+    a = ap.parse_args()
+
+    outdir = Path(a.out); outdir.mkdir(parents=True, exist_ok=True)
+    credits_path = outdir / "CREDITS.json"
+    credits = json.loads(credits_path.read_text()) if credits_path.exists() else []
+
+    jobs = [(a.bed, True)] if a.bed else [(q, False) for q in a.queries]
+    if not jobs:
+        raise SystemExit("give some queries, or --bed <query>")
+
+    for q, is_bed in jobs:
+        hits = pick(search(q), is_bed)
+        if not hits:
+            print(f"  {q}: no CC0 match"); continue
+        for secs, r in hits[:a.each]:
+            # the -hq.mp3 preview is public; alt_files' WAV needs OAuth (401)
+            url = r["url"]
+            name = f"{'bed' if is_bed else q.replace(' ', '_')}_{r['id'][:8]}.mp3"
+            dst = outdir / name
+            dst.write_bytes(get(url).read())
+            credits.append({
+                "file": name, "query": q, "license": r.get("license"),
+                "title": r.get("title"), "source": r.get("foreign_landing_url"),
+                "url": url, "attribution": r.get("attribution"),
+                "duration_s": round(secs, 1),
+            })
+            print(f"  {name}  {secs:.1f}s  {r.get('title','')[:40]}")
+
+    credits_path.write_text(json.dumps(credits, indent=2))
+    print(f"\n{len(credits)} entries -> {credits_path}")
+
+
+if __name__ == "__main__":
+    main()

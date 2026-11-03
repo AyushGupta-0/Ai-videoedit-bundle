@@ -1,0 +1,32 @@
+[
+  {
+    "file": "door_knock_152ec777.mp3",
+    "query": "door knock",
+    "license": "cc0",
+    "title": "Door Knock - with urgency.wav",
+    "source": "https://freesound.org/people/FreqMan/sounds/144510",
+    "url": "https://cdn.freesound.org/previews/144/144510_92661-hq.mp3",
+    "attribution": "\"Door Knock - with urgency.wav\" by FreqMan is marked with CC0 1.0. To view the terms, visit https://creativecommons.org/publicdomain/zero/1.0/.",
+    "duration_s": 1.9
+  },
+  {
+    "file": "footsteps_concrete_b7758ff8.mp3",
+    "query": "footsteps concrete",
+    "license": "cc0",
+    "title": "concrete footstep 4",
+    "source": "https://freesound.org/people/Yoyodaman234/sounds/166506",
+    "url": "https://cdn.freesound.org/previews/166/166506_2792951-hq.mp3",
+    "attribution": "\"concrete footstep 4\" by Yoyodaman234 is marked with CC0 1.0. To view the terms, visit https://creativecommons.org/publicdomain/zero/1.0/.",
+    "duration_s": 0.4
+  },
+  {
+    "file": "car_door_34586de9.mp3",
+    "query": "car door",
+    "license": "cc0",
+    "title": "car door close.wav",
+    "source": "https://freesound.org/people/monotraum/sounds/208695",
+    "url": "https://cdn.freesound.org/previews/208/208695_1756543-hq.mp3",
+    "attribution": "\"car door close.wav\" by monotraum is marked with CC0 1.0. To view the terms, visit https://creativecommons.org/publicdomain/zero/1.0/.",
+    "duration_s": 0.6
+  }
+]

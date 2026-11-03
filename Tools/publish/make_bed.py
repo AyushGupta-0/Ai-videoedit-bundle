@@ -1,9 +1,13 @@
 #!/usr/bin/env python3
 """Synthesise a music-box + pad bed for the Anaya series.
 
-Openverse's API is gated now and nothing in the local library fits a warm kids
-story (the only bed we had is space-suspense). A music box is physically just a
-struck tine: a few inharmonic partials under a fast exponential decay. That is
+CORRECTION: I previously wrote here that "Openverse's API is gated now". It is
+not, and never was — my request returned HTTP 000 because I sent no User-Agent.
+Use Tools/publish/fetch_sfx.py for real CC0 audio. This synthesiser is still
+useful when you want a bed with an exact length and chord shape rather than
+whatever the library happens to have, but it is a choice now, not a fallback.
+
+A music box is physically just a struck tine: a few inharmonic partials under a fast exponential decay. That is
 cheap to synthesise and sounds like the real thing, which a sampled loop would
 not necessarily do better.
 
