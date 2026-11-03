@@ -1,27 +1,32 @@
 [
   {
-    "file": "assets/sfx/low_drone_75eb41cd.ogg",
-    "at": 47.3,
-    "gain": 0.5
-  },
-  {
-    "file": "assets/sfx/concrete_footstep_c89198f4.ogg",
-    "at": 56.1,
-    "gain": 0.6
-  },
-  {
-    "file": "assets/sfx/concrete_footstep_c89198f4.ogg",
-    "at": 56.9,
+    "file": "assets/sfx/door_creak_slow_49311174.ogg",
+    "at": 52.55,
     "gain": 0.55
   },
   {
     "file": "assets/sfx/concrete_footstep_c89198f4.ogg",
-    "at": 57.7,
+    "at": 60.35,
+    "gain": 0.6
+  },
+  {
+    "file": "assets/sfx/concrete_footstep_c89198f4.ogg",
+    "at": 61.15,
+    "gain": 0.55
+  },
+  {
+    "file": "assets/sfx/concrete_footstep_c89198f4.ogg",
+    "at": 61.95,
     "gain": 0.62
   },
   {
     "file": "assets/sfx/low_drone_75eb41cd.ogg",
-    "at": 71.5,
+    "at": 63.45,
     "gain": 0.45
+  },
+  {
+    "file": "assets/sfx/low_drone_75eb41cd.ogg",
+    "at": 75.95,
+    "gain": 0.62
   }
 ]

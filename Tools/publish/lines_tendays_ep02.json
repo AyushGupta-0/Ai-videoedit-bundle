@@ -21,7 +21,7 @@
       "id": "l02",
       "at": 1.72,
       "who": "N",
-      "shot": "park",
+      "shot": "hook",
       "text": "Last night, the car park kept you alive.",
       "cap": "LAST NIGHT, THE CAR PARK<br>KEPT YOU ALIVE."
     },
@@ -29,144 +29,165 @@
       "id": "l03",
       "at": 4.9,
       "who": "N",
-      "shot": "park",
+      "shot": "hook",
       "text": "Tonight, it costs you something.",
       "cap": "TONIGHT, IT <u>COSTS YOU</u> SOMETHING.",
-      "pause": 0.7
+      "pause": 0.75
     },
     {
       "id": "l04",
-      "at": 7.62,
+      "at": 7.67,
       "who": "N",
-      "shot": "ramp",
-      "text": "Day two. Level four. One ramp up, and concrete has no windows.",
-      "cap": "<b>DAY 2</b>. LEVEL FOUR.<br>ONE RAMP UP. <b>NO WINDOWS</b>."
-    },
-    {
-      "id": "l05",
-      "at": 12.33,
-      "who": "N",
-      "shot": "dash",
-      "text": "You coasted in with the engine off. No brakes. No lights.",
-      "cap": "YOU COASTED IN, ENGINE OFF.<br><b>NO BRAKES. NO LIGHTS.</b>",
+      "shot": "wide",
+      "text": "Day two. Level four. One ramp. No windows.",
+      "cap": "<b>DAY 2</b>. LEVEL FOUR.<br>ONE RAMP. <b>NO WINDOWS</b>.",
       "pause": 0.45
     },
     {
-      "id": "l06",
-      "at": 17.12,
-      "who": "N",
-      "shot": "radio",
-      "text": "Radio, same loop. Recovery in nine days. Stay above street level.",
-      "cap": "RECOVERY IN <b>NINE DAYS</b>.<br>STAY ABOVE STREET LEVEL.",
-      "pause": 0.4
-    },
-    {
-      "id": "l07",
-      "at": 21.85,
+      "id": "l05",
+      "at": 11.3,
       "who": "N",
       "shot": "rule1",
       "text": "Rule one. Park facing the ramp.",
-      "cap": "RULE 1. <b>PARK FACING THE RAMP</b>."
+      "cap": "RULE 1. <b>PARK FACING THE RAMP</b>.",
+      "pause": 0.35
+    },
+    {
+      "id": "l06",
+      "at": 14.05,
+      "who": "N",
+      "shot": "nose",
+      "text": "So you do. Nose to the ramp. Engine dead.",
+      "cap": "NOSE TO THE RAMP.<br><b>ENGINE DEAD</b>."
+    },
+    {
+      "id": "l07",
+      "at": 17.62,
+      "who": "N",
+      "shot": "plant",
+      "text": "No brakes. No lights. Nobody saw you come up.",
+      "cap": "NO BRAKES. NO LIGHTS.<br><b>NOBODY</b> SAW YOU COME UP.",
+      "pause": 0.55
     },
     {
       "id": "l08",
-      "at": 24.25,
+      "at": 21.73,
       "who": "N",
       "shot": "rule2",
-      "text": "Rule two. Sleep in the back seat. Never the driver's.",
-      "cap": "RULE 2. SLEEP IN THE BACK SEAT.<br><b>NEVER THE DRIVER'S</b>."
+      "text": "Rule two. Sleep in the back. Never the driver's seat.",
+      "cap": "RULE 2. SLEEP IN THE BACK.<br><b>NEVER THE DRIVER'S SEAT</b>.",
+      "pause": 0.35
     },
     {
       "id": "l09",
-      "at": 28.2,
+      "at": 26.02,
+      "who": "N",
+      "shot": "rear",
+      "text": "From the driver's seat, you can't see what's behind you.",
+      "cap": "FROM THE DRIVER'S SEAT,<br>YOU CAN'T SEE <u>BEHIND YOU</u>.",
+      "pause": 0.45
+    },
+    {
+      "id": "l10",
+      "at": 30.42,
+      "who": "N",
+      "shot": "radio",
+      "text": "Radio. Recovery in nine days. Stay above street level.",
+      "cap": "RECOVERY IN <b>NINE DAYS</b>.<br>STAY ABOVE STREET LEVEL.",
+      "pause": 0.45
+    },
+    {
+      "id": "l11",
+      "at": 34.43,
       "who": "N",
       "shot": "rule3",
       "text": "Rule three. Count the cars before dark.",
       "cap": "RULE 3. <u>COUNT THE CARS</u><br>BEFORE DARK.",
-      "pause": 0.7
-    },
-    {
-      "id": "l10",
-      "at": 31.69,
-      "who": "N",
-      "shot": "good",
-      "text": "Good news. Eleven cars. Yours is the twelfth.",
-      "cap": "<b>GOOD NEWS</b>. ELEVEN CARS.<br>YOURS IS THE <b>TWELFTH</b>."
-    },
-    {
-      "id": "l11",
-      "at": 34.87,
-      "who": "N",
-      "shot": "bad",
-      "text": "Bad news. The stairwell door has no lock. It only closes.",
-      "cap": "<u>BAD NEWS</u>. THE STAIRWELL DOOR<br>HAS NO LOCK. IT ONLY <b>CLOSES</b>.",
-      "pause": 0.6
+      "pause": 0.4
     },
     {
       "id": "l12",
-      "at": 39.8,
+      "at": 37.62,
       "who": "N",
-      "shot": "door",
-      "text": "Three forty A M. The door opens. And someone lets it close softly.",
-      "cap": "<b>3:40 AM</b>. THE DOOR OPENS.<br>AND SOMEONE LETS IT CLOSE SOFTLY."
+      "shot": "map",
+      "text": "Eleven cars. Yours is twelve.",
+      "cap": "ELEVEN CARS.<br>YOURS IS <b>TWELVE</b>.",
+      "pause": 0.55
     },
     {
       "id": "l13",
-      "at": 44.9,
+      "at": 40.2,
+      "who": "N",
+      "shot": "bad",
+      "text": "The stairwell door has no lock. It only closes.",
+      "cap": "STAIRWELL DOOR: <u>NO LOCK</u>.<br>IT ONLY <b>CLOSES</b>.",
+      "pause": 0.65
+    },
+    {
+      "id": "l14",
+      "at": 44.41,
+      "who": "N",
+      "shot": "door",
+      "text": "Three forty. It opens. And someone lets it close softly.",
+      "cap": "<b>3:40</b>. IT OPENS. AND SOMEONE<br>LETS IT CLOSE <u>SOFTLY</u>."
+    },
+    {
+      "id": "l15",
+      "at": 48.35,
       "who": "N",
       "shot": "door",
       "text": "Softly. So it wouldn't bang.",
       "cap": "SOFTLY. SO IT WOULDN'T <u>BANG</u>.",
-      "pause": 0.7
+      "pause": 0.8
     },
     {
-      "id": "l14",
-      "at": 47.62,
+      "id": "l16",
+      "at": 51.18,
       "who": "N",
       "shot": "steps",
       "text": "Footsteps. Not shuffling. Walking.",
       "cap": "FOOTSTEPS.<br>NOT SHUFFLING. <u>WALKING</u>.",
-      "pause": 0.55
-    },
-    {
-      "id": "l15",
-      "at": 49.81,
-      "who": "N",
-      "shot": "voice",
-      "text": "I know you're on four. I saw your brake lights come on.",
-      "cap": "“I KNOW YOU'RE ON FOUR.<br>I SAW YOUR BRAKE LIGHTS COME ON.”",
-      "pause": 0.7
-    },
-    {
-      "id": "l16",
-      "at": 55.23,
-      "who": "N",
-      "shot": "dash2",
-      "text": "You coasted in. You never touched the brakes.",
-      "cap": "YOU COASTED IN.<br>YOU <u>NEVER TOUCHED THE BRAKES</u>.",
-      "pause": 0.9
+      "pause": 0.6
     },
     {
       "id": "l17",
-      "at": 59.3,
+      "at": 53.42,
       "who": "N",
-      "shot": "count",
-      "text": "So you count the cars again.",
-      "cap": "SO YOU COUNT THE CARS AGAIN.",
-      "pause": 0.85
+      "shot": "voice",
+      "text": "I know you're on four. I saw your brake lights.",
+      "cap": "“I KNOW YOU'RE ON FOUR.<br>I SAW YOUR BRAKE LIGHTS.”",
+      "pause": 0.75
     },
     {
       "id": "l18",
-      "at": 62.56,
+      "at": 58.11,
+      "who": "N",
+      "shot": "recall",
+      "text": "You coasted in. Nobody saw you. And your brakes never touched.",
+      "cap": "NOBODY SAW YOU COME UP.<br>BRAKES: <u>NEVER TOUCHED</u>.",
+      "pause": 0.95
+    },
+    {
+      "id": "l19",
+      "at": 63.39,
+      "who": "N",
+      "shot": "count",
+      "text": "So you count.",
+      "cap": "SO YOU COUNT.",
+      "pause": 0.9
+    },
+    {
+      "id": "l20",
+      "at": 65.55,
       "who": "N",
       "shot": "count",
       "text": "Thirteen.",
       "cap": "<u>THIRTEEN</u>.",
-      "pause": 1.1
+      "pause": 1.15
     },
     {
-      "id": "l19",
-      "at": 64.15,
+      "id": "l21",
+      "at": 67.18,
       "who": "N",
       "shot": "end",
       "text": "Do you start the engine?",
