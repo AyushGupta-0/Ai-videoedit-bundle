@@ -54,4 +54,4 @@ trap 'kill $WD 2>/dev/null' EXIT
 
 echo "${FREE}% memory free · watchdog armed · plates -> $OUT"
 ~/Developer/tools-venv/sdxl/bin/python Tools/publish/gen_kids_art.py \
-  --shots Tools/publish/shots_kids_chintu.json --out "$OUT" "$@"
+  --shots "${SHOTS:-Tools/publish/shots_kids_chintu.json}" --out "$OUT" "$@"

@@ -24,17 +24,18 @@ ROOT = Path(__file__).resolve().parents[2]
 # Everything below is prompt text, reused verbatim. Edit with care: changing a
 # word changes the face in every shot at once, which is the point.
 
-CHINTU = ("chubby baby elephant calf, grey-blue skin, huge round dark eyes, "
-          "red collar, brass bell")
-MIRA = ("little Indian girl, black bob hair, yellow sun t-shirt, blue shorts")
-STYLE = "Pixar 3D animation still, glossy, warm cinematic light, vivid pastel"
-NEGATIVE = ("text, watermark, extra limbs, deformed, two trunks, photo, scary, "
-            "blurry, low quality, 2d cartoon, duplicate, adult")
+BOY = "a cute little Indian boy, messy black hair, green striped t-shirt"
+GIRL = "a cute little Indian girl, two small pigtails, pink dress"
+# kept for the parked elephant episode
+CHINTU = "chubby baby elephant calf, grey skin, huge round eyes, red collar"
+MIRA = "little Indian girl, black bob hair, yellow sun t-shirt, blue shorts"
+STYLE = "Pixar 3D animation still, glossy, warm cinematic light, shallow depth of field"
+NEGATIVE = ("text, watermark, extra limbs, deformed hands, duplicate, clone, twins, "
+            "photo, scary, blurry, low quality, 2d, adult, old")
 
-# CLIP hard-truncates at 77 tokens and says nothing useful about it. A first pass
-# here ran 161 tokens, so the entire STYLE suffix was silently thrown away and
-# the shots came out in no particular style at all. Everything above is kept
-# terse for that reason, and check_len() below fails loudly instead.
+SEEDS = {"chintu": 770041, "mira": 881502, "both": 990213, "world": 220817,
+         "boy": 414477, "girl": 626188}
+
 CLIP_LIMIT = 77
 
 
@@ -51,7 +52,6 @@ def check_len(pipe, prompts):
                  f"shorten the shot text or the character bible.")
 
 
-SEEDS = {"chintu": 770041, "mira": 881502, "both": 990213, "world": 220817}
 
 
 def pipeline(model, lora, arch):
@@ -122,7 +122,8 @@ def to_plate(img):
 
 def expand(shot):
     """Substitute the character bibles into the shot's prompt."""
-    body = shot["prompt"].replace("{CHINTU}", CHINTU).replace("{MIRA}", MIRA)
+    body = (shot["prompt"].replace("{CHINTU}", CHINTU).replace("{MIRA}", MIRA)
+            .replace("{BOY}", BOY).replace("{GIRL}", GIRL))
     return f"{body}, {STYLE}"
 
 

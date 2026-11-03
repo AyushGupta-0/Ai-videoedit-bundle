@@ -1,0 +1,16 @@
+{
+  "episode": "kids-ep01-he-never-shares",
+  "note": "Two human kids. disney-pixar-cartoon renders humans excellently — this is the cast it can actually do. Bibles are substituted verbatim; never paraphrase.",
+  "shots": [
+    {"id":"k01","seed":"both","note":"she reaches, he pulls away","prompt":"{BOY} pulling a red toy car away from {GIRL} who reaches for it, living room"},
+    {"id":"k02","seed":"boy","note":"he turns his back","prompt":"{BOY} sitting with his back turned, playing alone with a red toy car, living room floor"},
+    {"id":"k03","seed":"girl","note":"she sits alone, sad","prompt":"{GIRL} sitting alone on the floor looking down sadly, empty hands, living room"},
+    {"id":"k04","seed":"both","note":"he takes the bigger plate","prompt":"{BOY} taking a big plate of food at a table while {GIRL} watches with a small plate"},
+    {"id":"k05","seed":"girl","note":"TURN - school, she is scared","prompt":"{GIRL} standing alone in a school playground looking frightened, tall kids behind her"},
+    {"id":"k06","seed":"boy","note":"he runs in","prompt":"{BOY} running fast toward the camera with a determined protective face, school playground"},
+    {"id":"k07","seed":"both","note":"he shields her","prompt":"{BOY} standing in front of {GIRL} with both arms spread wide protecting her, playground"},
+    {"id":"k08","seed":"both","note":"walking home","prompt":"{BOY} and {GIRL} walking home together holding hands, warm afternoon street"},
+    {"id":"k09","seed":"both","note":"he gives her the car","prompt":"{BOY} holding out a red toy car to {GIRL}, offering it, warm golden light"},
+    {"id":"k10","seed":"both","note":"the hug","prompt":"{GIRL} hugging {BOY} tightly, both smiling happily, warm golden sunset light"}
+  ]
+}

@@ -158,7 +158,16 @@ timeline registered at `window.__timelines["<id>"]`.
       the subject dissolves. Subject first, CFG ~7.5.
     - "baby elephant in jungle" reliably pulls mother-and-calf compositions; a negative
       prompt does not suppress it.
-    Conclusion: animal characters at this quality bar need a paid API or a 32GB machine.
+    - *Two-character scenes*: SD1.5 cannot do them at all. A 10-shot sibling episode with a
+      human-only cast (the thing the Pixar checkpoint is *best* at) returned a single child
+      standing in a room for 9 of 10 shots — no second character, no specified emotion, no
+      specified setting. Only "two kids walking holding hands" landed.
+    Conclusion: SD1.5 locally is a **single-character portrait generator**. It cannot stage a
+    scene. Any episode whose beats are interactions or actions needs a paid model.
+    NOTE ON THE 2026-11 REFERENCE REELS: those are AI-generated *video* (Veo/Kling class),
+    not stills — real character animation and moving cameras. No local still-image pipeline
+    reaches that, however good the plates. Matching them means a paid text-to-video model
+    (~$0.30-0.75 per 5-8s clip, so roughly $2-4 for a 25s reel).
 17. **CLIP truncates prompts at 77 tokens and the warning is easy to miss.** A
     first pass ran 161 tokens, so the entire style suffix was silently dropped
     and the plates came out styleless. `gen_kids_art.py` now hard-fails via
