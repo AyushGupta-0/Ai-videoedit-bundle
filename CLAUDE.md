@@ -123,6 +123,9 @@ timeline registered at `window.__timelines["<id>"]`.
     dashboard was in. Open `localhost:4321` in a *new* tab.
 13. **Titles must not repeat the narration word-for-word.** Make them add information.
 14. **Port 3000 is taken** by an unrelated Next.js app on this machine. Dashboard uses **4321**.
+15. **git on this exFAT SSD**: macOS writes `._` AppleDouble files *inside* `.git`, which corrupt
+    pack indexes and refs. Before and after any git write, run:
+    `find .git -name '._*' -delete`. Repo: `github.com/AyushGupta-0/Ai-videoedit-bundle` (ssh).
 
 ---
 
