@@ -1,0 +1,195 @@
+{
+  "day": 7,
+  "dur": 91.5,
+  "clock0": "4:13 AM",
+  "recov": 4,
+  "m0": 253,
+  "m1": 280,
+  "ampm": "AM",
+  "q1": "DO YOU",
+  "q2": "OPEN IT?",
+  "btnA": "OPEN",
+  "btnB": "LEAVE",
+  "nexthook": "A SEA KING BURNS<br>600 KILOS OF FUEL AN HOUR.",
+  "extra_css": "",
+  "motion": "/* hook: the pool of torchlight breathes on the floor; \"sealed\" lands on the word */\ntl.to(\"#poolhe\", { attr: { rx: 232 }, duration: 1.4, yoyo: true, repeat: 5, ease: \"sine.inOut\" }, 2.7);\ntl.fromTo(\"#sealedb\", { opacity: 0, y: 12 }, { opacity: 1, y: 0, duration: 0.3, ease: \"power2.out\" }, 9.45);\n/* wide: you walk the length of the train, engine to lever */\ntl.fromTo(\"#walker\", { x: 0 }, { x: 920, duration: 4.3, ease: \"none\" }, 12.5);\n/* rule 1 obeyed: the beam sweeps the floor, never lifts; EMPTY on the word */\ntl.fromTo(\"#poolae\", { attr: { cx: 470 } }, { attr: { cx: 610 }, duration: 1.5, yoyo: true, repeat: 1, ease: \"sine.inOut\" }, 22.3);\ntl.fromTo(\"#empty1\", { scale: 1.8, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.3, ease: \"power3.out\" }, 24.9);\n/* the plant: the radio's instruction, on \"do not open\" */\ntl.fromTo(\"#noopen\", { opacity: 0, y: 12 }, { opacity: 1, y: 0, duration: 0.3, ease: \"power2.out\" }, 29.45);\n/* rule 2 obeyed: the count on the spoken numbers */\n[[38.40, \"12\"], [38.92, \"20\"], [39.42, \"26\"]].forEach(([t, v]) => tl.set(\"#cnum\", { textContent: v }, t));\ntl.fromTo(\"#empty2\", { scale: 1.8, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.3, ease: \"power3.out\" }, 40.2);\n/* the count: carriages 12-31 light as they are claimed, the counter climbing with them */\nfor (let n = 12; n <= 31; n++) {\n  const t = 42.3 + (n - 12) * 0.095;\n  tl.fromTo(`#c${n}`, { opacity: 0.25 }, { opacity: 1, duration: 0.12 }, t);\n  tl.set(\"#cn\", { textContent: String(n) }, t);\n}\n/* rule 3 obeyed: you reach for the lever, not the door */\ntl.fromTo(\"#noneed\", { opacity: 0, y: 12 }, { opacity: 1, y: 0, duration: 0.3, ease: \"power2.out\" }, 54.9);\n/* 4:31: the knocking. The door moves on each knock; the pattern writes itself in bars */\ntl.set(\"#knockword\", { textContent: \"\" }, 57.2);\ntl.to(\"#knockword\", { opacity: 1, duration: 0.9, scrambleText: { text: \"KNOCKING\", chars: \"upperCase\", speed: 0.7 } }, 59.7);\nconst KN = [63.50, 63.75, 64.00, 64.15, 64.30, 64.45, 64.77, 65.00, 65.23];\nKN.forEach((t, i) => {\n  tl.to(`#knocks .kb:nth-child(${i + 1})`, { opacity: 1, duration: 0.06 }, t);\n  tl.to(\"#door\", { x: i < 3 || i > 5 ? 7 : 4, duration: 0.05, yoyo: true, repeat: 1, ease: \"none\" }, t);\n});\ntl.to(\"#door\", { x: 5, duration: 0.05, yoyo: true, repeat: 5, ease: \"none\" }, 59.8);\n/* the recall: the same pattern, in the mirror, in amber; then the lights go out — a cut, not a fade */\ntl.to(\".mb\", { opacity: 1, duration: 0.08, stagger: 0.07, ease: \"none\" }, 67.45);\ntl.to(\"#mirrorlight\", { opacity: 0, duration: 0.18, ease: \"none\" }, 73.55);\ntl.fromTo(\"#lightsout\", { scale: 1.8, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.3, ease: \"power3.out\" }, 73.7);\n/* three days on foot, down the same line you took */\ntl.fromTo(\"#her\", { y: 0 }, { y: 700, duration: 4.8, ease: \"none\" }, 75.3);\ntl.fromTo(\"#following\", { scale: 1.8, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.3, ease: \"power3.out\" }, 77.2);\n/* the twist: the door, and what it was sealed against */\ntl.to(\"#door\", { x: 4, duration: 0.05, yoyo: true, repeat: 3, ease: \"none\" }, 81.2);\ntl.fromTo(\"#against\", { scale: 1.8, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.32, ease: \"power3.out\" }, 84.95);",
+  "lines": [
+    [
+      "YOU WENT TO <b>LOOK</b>.",
+      0.25,
+      2.0
+    ],
+    [
+      "<b>DAY 7</b>. 31 CARRIAGES TO<br>THE BRAKE. ONE TORCH.",
+      2.6,
+      7.9
+    ],
+    [
+      "AND THE LAST ONE IS SEALED.<br><u>FROM THE INSIDE</u>.",
+      7.96,
+      11.835
+    ],
+    [
+      "THE BRAKE RESETS <b>BY HAND</b>.<br>AT THE FAR END. ON FOOT.",
+      12.435,
+      16.435
+    ],
+    [
+      "RULE 1. TORCH AT THE FLOOR.<br>LEGS BEFORE <b>FACES</b>.",
+      16.935,
+      21.76
+    ],
+    [
+      "THE BEAM STAYS LOW.<br>CARRIAGE ONE. <u>EMPTY</u>.",
+      22.11,
+      26.085
+    ],
+    [
+      "RADIO: RECOVERY IN 4 DAYS.<br><b>DO NOT OPEN</b> SEALED DOORS.",
+      26.635,
+      31.91
+    ],
+    [
+      "RULE 2. ONE HAND<br>ALWAYS <b>EMPTY</b>.",
+      32.51,
+      35.935
+    ],
+    [
+      "TORCH LEFT. HAND FREE.<br>12. 20. 26. <u>EMPTY</u>.",
+      36.285,
+      41.385
+    ],
+    [
+      "31 CARRIAGES. 31 EMPTY.<br><b>EVERY ONE</b>, THIS TIME.",
+      41.935,
+      46.735
+    ],
+    [
+      "RULE 3. NEVER OPEN A DOOR<br>YOU CAN'T <u>CLOSE</u> AGAIN.",
+      47.335,
+      51.835
+    ],
+    [
+      "THE LEVER IS <b>OUTSIDE</b> 32.<br>YOU DON'T NEED THE DOOR.",
+      52.285,
+      56.585
+    ],
+    [
+      "<b>4:31 AM</b>. HAND ON THE LEVER.<br>THE KNOCKING STARTS.",
+      57.185,
+      61.335
+    ],
+    [
+      "NOT BANGING. <u>KNOCKING</u>.<br>3 LONG. 3 SHORT. 3 LONG.",
+      61.835,
+      66.01
+    ],
+    [
+      "YOU KNOW THAT PATTERN.<br>YOUR MIRROR. <b>DAY 4</b>.",
+      66.61,
+      70.01
+    ],
+    [
+      "THE CAR BEHIND YOU.<br>THEIR LIGHTS <u>WENT OUT</u>.",
+      70.56,
+      74.635
+    ],
+    [
+      "SHE'S WALKED <b>THREE DAYS</b>.<br>FOLLOWING <u>YOU</u>.",
+      75.235,
+      79.885
+    ],
+    [
+      "NOBODY SEALS A DOOR<br>AGAINST <u>NOTHING</u>.",
+      80.485,
+      86.035
+    ],
+    [
+      "",
+      87.035,
+      88.96
+    ]
+  ],
+  "panels": [
+    [
+      "recap",
+      0.0,
+      2.6
+    ],
+    [
+      "hook",
+      2.4,
+      12.44
+    ],
+    [
+      "wide",
+      12.24,
+      16.93
+    ],
+    [
+      "rule1",
+      16.73,
+      22.11
+    ],
+    [
+      "obey1",
+      21.91,
+      26.64
+    ],
+    [
+      "plant",
+      26.44,
+      32.510000000000005
+    ],
+    [
+      "rule2",
+      32.31,
+      36.28
+    ],
+    [
+      "obey2",
+      36.08,
+      41.93
+    ],
+    [
+      "count",
+      41.73,
+      47.330000000000005
+    ],
+    [
+      "rule3",
+      47.13,
+      52.28
+    ],
+    [
+      "obey3",
+      52.08,
+      57.18
+    ],
+    [
+      "knock",
+      56.98,
+      66.61
+    ],
+    [
+      "recall",
+      66.41,
+      75.23
+    ],
+    [
+      "walk",
+      75.03,
+      80.48
+    ],
+    [
+      "twist",
+      80.28,
+      87.03
+    ],
+    [
+      "end",
+      86.83,
+      91.5
+    ]
+  ]
+}

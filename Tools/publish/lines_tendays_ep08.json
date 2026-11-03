@@ -1,0 +1,181 @@
+{
+  "episode": "tendays-ep08-six-hundred-kilos",
+  "voices": {
+    "N": {
+      "kokoro": "am_michael",
+      "speed": 0.97,
+      "semitones": 0.0
+    }
+  },
+  "lines": [
+    {
+      "id": "l01",
+      "at": 0.25,
+      "who": "N",
+      "shot": "recap",
+      "text": "You opened it.",
+      "cap": "YOU <b>OPENED</b> IT.",
+      "pause": 0.6
+    },
+    {
+      "id": "l02",
+      "at": 2.1,
+      "who": "N",
+      "shot": "hook",
+      "text": "Day eight. Eight hours later, that door is the only reason you're two thousand feet up.",
+      "cap": "<b>DAY 8</b>. EIGHT HOURS LATER,<br>YOU'RE 2,000 FEET UP."
+    },
+    {
+      "id": "l03",
+      "at": 8.36,
+      "who": "N",
+      "shot": "hook",
+      "text": "And the woman behind it has a question you can't answer.",
+      "cap": "AND SHE HAS A QUESTION<br>YOU <u>CAN'T ANSWER</u>.",
+      "pause": 0.6
+    },
+    {
+      "id": "l04",
+      "at": 13.29,
+      "who": "N",
+      "shot": "who",
+      "text": "Her name is Priya. Coastguard radio. Nine years.",
+      "cap": "HER NAME IS <b>PRIYA</b>.<br>COASTGUARD RADIO. 9 YEARS.",
+      "pause": 0.5
+    },
+    {
+      "id": "l05",
+      "at": 16.97,
+      "who": "N",
+      "shot": "plant",
+      "text": "She found you by tracking your transmissions. That should have worried you more than it did.",
+      "cap": "SHE FOUND YOU BY TRACKING<br>YOUR <u>TRANSMISSIONS</u>.",
+      "pause": 0.6
+    },
+    {
+      "id": "l06",
+      "at": 23.82,
+      "who": "N",
+      "shot": "rule1",
+      "text": "Rule one. A Sea King burns six hundred kilos of fuel an hour.",
+      "cap": "RULE 1. A SEA KING BURNS<br><b>600 KILOS</b> AN HOUR.",
+      "pause": 0.35
+    },
+    {
+      "id": "l07",
+      "at": 29.27,
+      "who": "N",
+      "shot": "obey1",
+      "text": "The airfield's tanks are full. She can fly it. You fill it to the brim.",
+      "cap": "THE TANKS ARE FULL. SHE CAN FLY.<br>YOU FILL IT TO THE <u>BRIM</u>.",
+      "pause": 0.55
+    },
+    {
+      "id": "l08",
+      "at": 35.69,
+      "who": "N",
+      "shot": "rule2",
+      "text": "Rule two. Every kilo you load costs you range.",
+      "cap": "RULE 2. EVERY KILO<br>COSTS YOU <b>RANGE</b>.",
+      "pause": 0.35
+    },
+    {
+      "id": "l09",
+      "at": 39.6,
+      "who": "N",
+      "shot": "obey2",
+      "text": "Water, twenty kilos. Map, nothing. Radio, three. Food, sixty-one.",
+      "cap": "WATER 20. MAP 0.<br>RADIO 3. FOOD <u>61</u>.",
+      "pause": 0.55
+    },
+    {
+      "id": "l10",
+      "at": 43.71,
+      "who": "N",
+      "shot": "leave",
+      "text": "You leave the food. All sixty-one kilos. Food exists at the rig. Range doesn't.",
+      "cap": "YOU LEAVE THE FOOD. ALL OF IT.<br>FOOD IS AT THE RIG. <b>RANGE ISN'T</b>.",
+      "pause": 0.6
+    },
+    {
+      "id": "l11",
+      "at": 49.8,
+      "who": "N",
+      "shot": "rule3",
+      "text": "Rule three. Range is the only thing keeping you alive.",
+      "cap": "RULE 3. RANGE IS THE ONLY<br>THING KEEPING YOU <b>ALIVE</b>.",
+      "pause": 0.45
+    },
+    {
+      "id": "l12",
+      "at": 54.19,
+      "who": "N",
+      "shot": "obey3",
+      "text": "Rig Bravo. Four hundred miles of open water. No land between.",
+      "cap": "RIG BRAVO. <b>400 MILES</b><br>OF OPEN WATER.",
+      "pause": 0.6
+    },
+    {
+      "id": "l13",
+      "at": 59.12,
+      "who": "N",
+      "shot": "air",
+      "text": "Eleven forty. Two thousand feet over the sea, she finally says it.",
+      "cap": "<b>11:40 AM</b>. 2,000 FEET UP,<br>SHE FINALLY SAYS IT.",
+      "pause": 0.5
+    },
+    {
+      "id": "l14",
+      "at": 64.34,
+      "who": "N",
+      "shot": "air",
+      "text": "We've got fuel one way.",
+      "cap": "“WE'VE GOT FUEL <u>ONE WAY</u>.”",
+      "pause": 0.7
+    },
+    {
+      "id": "l15",
+      "at": 67.06,
+      "who": "N",
+      "shot": "ask",
+      "text": "Then she says the other thing. Who have you been talking to on that radio?",
+      "cap": "“WHO HAVE YOU BEEN<br>TALKING TO ON THAT <u>RADIO</u>?”",
+      "pause": 0.6
+    },
+    {
+      "id": "l16",
+      "at": 73.53,
+      "who": "N",
+      "shot": "recall",
+      "text": "You look at the crank handle. Day one. Day three. Day five. You only ever listened.",
+      "cap": "DAY 1. DAY 3. DAY 5.<br>YOU ONLY EVER <b>LISTENED</b>.",
+      "pause": 0.6
+    },
+    {
+      "id": "l17",
+      "at": 80.38,
+      "who": "N",
+      "shot": "twist",
+      "text": "You have never spoken into it.",
+      "cap": "YOU HAVE <u>NEVER</u><br>SPOKEN INTO IT.",
+      "pause": 0.7
+    },
+    {
+      "id": "l18",
+      "at": 83.49,
+      "who": "N",
+      "shot": "twist",
+      "text": "So what was she tracking?",
+      "cap": "SO WHAT WAS SHE <u>TRACKING</u>?",
+      "pause": 1.0
+    },
+    {
+      "id": "l19",
+      "at": 86.52,
+      "who": "N",
+      "shot": "end",
+      "text": "Do you tell her?",
+      "cap": ""
+    }
+  ]
+}

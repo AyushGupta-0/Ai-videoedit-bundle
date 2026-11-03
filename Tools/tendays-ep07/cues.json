@@ -1,0 +1,67 @@
+[
+  {
+    "file": "assets/sfx/low_drone_75eb41cd.ogg",
+    "at": 59.6,
+    "gain": 0.55
+  },
+  {
+    "file": "assets/sfx/knock.wav",
+    "at": 63.5,
+    "gain": 0.7
+  },
+  {
+    "file": "assets/sfx/knock.wav",
+    "at": 63.75,
+    "gain": 0.7
+  },
+  {
+    "file": "assets/sfx/knock.wav",
+    "at": 64.0,
+    "gain": 0.7
+  },
+  {
+    "file": "assets/sfx/knock.wav",
+    "at": 64.15,
+    "gain": 0.5
+  },
+  {
+    "file": "assets/sfx/knock.wav",
+    "at": 64.3,
+    "gain": 0.5
+  },
+  {
+    "file": "assets/sfx/knock.wav",
+    "at": 64.45,
+    "gain": 0.5
+  },
+  {
+    "file": "assets/sfx/knock.wav",
+    "at": 64.77,
+    "gain": 0.7
+  },
+  {
+    "file": "assets/sfx/knock.wav",
+    "at": 65.0,
+    "gain": 0.7
+  },
+  {
+    "file": "assets/sfx/knock.wav",
+    "at": 65.23,
+    "gain": 0.7
+  },
+  {
+    "file": "assets/sfx/low_drone_75eb41cd.ogg",
+    "at": 67.45,
+    "gain": 0.5
+  },
+  {
+    "file": "assets/sfx/low_drone_75eb41cd.ogg",
+    "at": 73.5,
+    "gain": 0.6
+  },
+  {
+    "file": "assets/sfx/low_drone_75eb41cd.ogg",
+    "at": 84.9,
+    "gain": 0.62
+  }
+]

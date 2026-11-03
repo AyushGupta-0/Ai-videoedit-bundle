@@ -21,8 +21,8 @@ EPISODES
   Day 3  The Lights           ready   2026-11-05   68.9s
   Day 4  The Car Behind You   ready   2026-11-06   73.3s
   Day 5  The Signal Box       script written, no video
-  Day 6  Twenty Miles An Hour script written, no video
-  Day 7  Carriage 32          script written, no video
+  Day 6  Twenty Miles An Hour ready   2026-11-08   90.6s
+  Day 7  Carriage 32          ready   2026-11-09   91.5s
   Day 8  Six Hundred Kilos    script written, no video
   Day 9  Rig Bravo            script written, no video
   Day 10 Minus Sixty          script written, no video

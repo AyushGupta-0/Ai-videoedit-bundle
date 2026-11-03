@@ -1,0 +1,1204 @@
+{
+  "duration": 95.745,
+  "lines": [
+    {
+      "id": "l01",
+      "who": "N",
+      "shot": "recap",
+      "text": "You opened it.",
+      "cap": "YOU <b>OPENED</b> IT.",
+      "start": 0.25,
+      "end": 2.1,
+      "words": [
+        {
+          "w": "You",
+          "s": 0.675,
+          "e": 0.9
+        },
+        {
+          "w": "opened",
+          "s": 0.9,
+          "e": 1.375
+        },
+        {
+          "w": "it",
+          "s": 1.375,
+          "e": 1.825
+        }
+      ]
+    },
+    {
+      "id": "l02",
+      "who": "N",
+      "shot": "hook",
+      "text": "Day eight. Eight hours later, that door is the only reason you're two thousand feet up.",
+      "cap": "<b>DAY 8</b>. EIGHT HOURS LATER,<br>YOU'RE 2,000 FEET UP.",
+      "start": 2.7,
+      "end": 8.75,
+      "words": [
+        {
+          "w": "Day",
+          "s": 3.1,
+          "e": 3.3
+        },
+        {
+          "w": "eight",
+          "s": 3.3,
+          "e": 3.7
+        },
+        {
+          "w": "Eight",
+          "s": 3.813,
+          "e": 4.063
+        },
+        {
+          "w": "hours",
+          "s": 4.063,
+          "e": 4.462
+        },
+        {
+          "w": "later",
+          "s": 4.462,
+          "e": 5.075
+        },
+        {
+          "w": "that",
+          "s": 5.175,
+          "e": 5.412
+        },
+        {
+          "w": "door",
+          "s": 5.412,
+          "e": 5.675
+        },
+        {
+          "w": "is",
+          "s": 5.675,
+          "e": 5.787
+        },
+        {
+          "w": "the",
+          "s": 5.787,
+          "e": 5.937
+        },
+        {
+          "w": "only",
+          "s": 5.937,
+          "e": 6.338
+        },
+        {
+          "w": "reason",
+          "s": 6.338,
+          "e": 6.75
+        },
+        {
+          "w": "you're",
+          "s": 6.75,
+          "e": 6.913
+        },
+        {
+          "w": "two",
+          "s": 6.913,
+          "e": 7.187
+        },
+        {
+          "w": "thousand",
+          "s": 7.187,
+          "e": 7.65
+        },
+        {
+          "w": "feet",
+          "s": 7.65,
+          "e": 7.925
+        },
+        {
+          "w": "up",
+          "s": 7.925,
+          "e": 8.475
+        }
+      ]
+    },
+    {
+      "id": "l03",
+      "who": "N",
+      "shot": "hook",
+      "text": "And the woman behind it has a question you can't answer.",
+      "cap": "AND SHE HAS A QUESTION<br>YOU <u>CAN'T ANSWER</u>.",
+      "start": 8.81,
+      "end": 13.035,
+      "words": [
+        {
+          "w": "And",
+          "s": 9.185,
+          "e": 9.297
+        },
+        {
+          "w": "the",
+          "s": 9.297,
+          "e": 9.398
+        },
+        {
+          "w": "woman",
+          "s": 9.398,
+          "e": 9.735
+        },
+        {
+          "w": "behind",
+          "s": 9.735,
+          "e": 10.21
+        },
+        {
+          "w": "it",
+          "s": 10.21,
+          "e": 10.598
+        },
+        {
+          "w": "has",
+          "s": 10.598,
+          "e": 10.798
+        },
+        {
+          "w": "a",
+          "s": 10.798,
+          "e": 10.897
+        },
+        {
+          "w": "question",
+          "s": 10.897,
+          "e": 11.435
+        },
+        {
+          "w": "you",
+          "s": 11.435,
+          "e": 11.598
+        },
+        {
+          "w": "can't",
+          "s": 11.598,
+          "e": 11.922
+        },
+        {
+          "w": "answer",
+          "s": 11.922,
+          "e": 12.76
+        }
+      ]
+    },
+    {
+      "id": "l04",
+      "who": "N",
+      "shot": "who",
+      "text": "Her name is Priya. Coastguard radio. Nine years.",
+      "cap": "HER NAME IS <b>PRIYA</b>.<br>COASTGUARD RADIO. 9 YEARS.",
+      "start": 13.635,
+      "end": 17.835,
+      "words": [
+        {
+          "w": "Her",
+          "s": 13.985,
+          "e": 14.11
+        },
+        {
+          "w": "name",
+          "s": 14.11,
+          "e": 14.385
+        },
+        {
+          "w": "is",
+          "s": 14.385,
+          "e": 14.547
+        },
+        {
+          "w": "Priya",
+          "s": 14.547,
+          "e": 14.985
+        },
+        {
+          "w": "Coastguard",
+          "s": 15.097,
+          "e": 15.685
+        },
+        {
+          "w": "radio",
+          "s": 15.685,
+          "e": 16.26
+        },
+        {
+          "w": "Nine",
+          "s": 16.372,
+          "e": 16.722
+        },
+        {
+          "w": "years",
+          "s": 16.722,
+          "e": 17.56
+        }
+      ]
+    },
+    {
+      "id": "l05",
+      "who": "N",
+      "shot": "plant",
+      "text": "She found you by tracking your transmissions. That should have worried you more than it did.",
+      "cap": "SHE FOUND YOU BY TRACKING<br>YOUR <u>TRANSMISSIONS</u>.",
+      "start": 18.335,
+      "end": 24.36,
+      "words": [
+        {
+          "w": "She",
+          "s": 18.735,
+          "e": 18.872
+        },
+        {
+          "w": "found",
+          "s": 18.872,
+          "e": 19.185
+        },
+        {
+          "w": "you",
+          "s": 19.185,
+          "e": 19.36
+        },
+        {
+          "w": "by",
+          "s": 19.36,
+          "e": 19.585
+        },
+        {
+          "w": "tracking",
+          "s": 19.585,
+          "e": 20.135
+        },
+        {
+          "w": "your",
+          "s": 20.135,
+          "e": 20.285
+        },
+        {
+          "w": "transmissions",
+          "s": 20.285,
+          "e": 21.56
+        },
+        {
+          "w": "That",
+          "s": 21.697,
+          "e": 21.96
+        },
+        {
+          "w": "should",
+          "s": 21.96,
+          "e": 22.098
+        },
+        {
+          "w": "have",
+          "s": 22.098,
+          "e": 22.248
+        },
+        {
+          "w": "worried",
+          "s": 22.248,
+          "e": 22.635
+        },
+        {
+          "w": "you",
+          "s": 22.635,
+          "e": 22.822
+        },
+        {
+          "w": "more",
+          "s": 22.822,
+          "e": 23.11
+        },
+        {
+          "w": "than",
+          "s": 23.11,
+          "e": 23.235
+        },
+        {
+          "w": "it",
+          "s": 23.235,
+          "e": 23.397
+        },
+        {
+          "w": "did",
+          "s": 23.397,
+          "e": 24.06
+        }
+      ]
+    },
+    {
+      "id": "l06",
+      "who": "N",
+      "shot": "rule1",
+      "text": "Rule one. A Sea King burns six hundred kilos of fuel an hour.",
+      "cap": "RULE 1. A SEA KING BURNS<br><b>600 KILOS</b> AN HOUR.",
+      "start": 24.96,
+      "end": 30.385,
+      "words": [
+        {
+          "w": "Rule",
+          "s": 25.41,
+          "e": 25.747
+        },
+        {
+          "w": "one",
+          "s": 25.747,
+          "e": 26.36
+        },
+        {
+          "w": "A",
+          "s": 26.522,
+          "e": 26.648
+        },
+        {
+          "w": "Sea",
+          "s": 26.648,
+          "e": 26.922
+        },
+        {
+          "w": "King",
+          "s": 26.922,
+          "e": 27.21
+        },
+        {
+          "w": "burns",
+          "s": 27.21,
+          "e": 27.547
+        },
+        {
+          "w": "six",
+          "s": 27.547,
+          "e": 27.772
+        },
+        {
+          "w": "hundred",
+          "s": 27.772,
+          "e": 28.123
+        },
+        {
+          "w": "kilos",
+          "s": 28.123,
+          "e": 28.598
+        },
+        {
+          "w": "of",
+          "s": 28.598,
+          "e": 28.735
+        },
+        {
+          "w": "fuel",
+          "s": 28.735,
+          "e": 29.185
+        },
+        {
+          "w": "an",
+          "s": 29.185,
+          "e": 29.335
+        },
+        {
+          "w": "hour",
+          "s": 29.335,
+          "e": 30.11
+        }
+      ]
+    },
+    {
+      "id": "l07",
+      "who": "N",
+      "shot": "obey1",
+      "text": "The airfield's tanks are full. She can fly it. You fill it to the brim.",
+      "cap": "THE TANKS ARE FULL. SHE CAN FLY.<br>YOU FILL IT TO THE <u>BRIM</u>.",
+      "start": 30.735,
+      "end": 35.985,
+      "words": [
+        {
+          "w": "The",
+          "s": 31.11,
+          "e": 31.247
+        },
+        {
+          "w": "airfield's",
+          "s": 31.247,
+          "e": 31.785
+        },
+        {
+          "w": "tanks",
+          "s": 31.785,
+          "e": 32.148
+        },
+        {
+          "w": "are",
+          "s": 32.148,
+          "e": 32.285
+        },
+        {
+          "w": "full",
+          "s": 32.285,
+          "e": 32.81
+        },
+        {
+          "w": "She",
+          "s": 32.923,
+          "e": 33.06
+        },
+        {
+          "w": "can",
+          "s": 33.06,
+          "e": 33.26
+        },
+        {
+          "w": "fly",
+          "s": 33.26,
+          "e": 33.635
+        },
+        {
+          "w": "it",
+          "s": 33.635,
+          "e": 34.01
+        },
+        {
+          "w": "You",
+          "s": 34.123,
+          "e": 34.31
+        },
+        {
+          "w": "fill",
+          "s": 34.31,
+          "e": 34.572
+        },
+        {
+          "w": "it",
+          "s": 34.572,
+          "e": 34.685
+        },
+        {
+          "w": "to",
+          "s": 34.685,
+          "e": 34.785
+        },
+        {
+          "w": "the",
+          "s": 34.785,
+          "e": 34.923
+        },
+        {
+          "w": "brim",
+          "s": 34.923,
+          "e": 35.71
+        }
+      ]
+    },
+    {
+      "id": "l08",
+      "who": "N",
+      "shot": "rule2",
+      "text": "Rule two. Every kilo you load costs you range.",
+      "cap": "RULE 2. EVERY KILO<br>COSTS YOU <b>RANGE</b>.",
+      "start": 36.535,
+      "end": 40.585,
+      "words": [
+        {
+          "w": "Rule",
+          "s": 36.96,
+          "e": 37.26
+        },
+        {
+          "w": "two",
+          "s": 37.26,
+          "e": 37.685
+        },
+        {
+          "w": "Every",
+          "s": 37.81,
+          "e": 38.122
+        },
+        {
+          "w": "kilo",
+          "s": 38.122,
+          "e": 38.485
+        },
+        {
+          "w": "you",
+          "s": 38.485,
+          "e": 38.61
+        },
+        {
+          "w": "load",
+          "s": 38.61,
+          "e": 38.935
+        },
+        {
+          "w": "costs",
+          "s": 38.935,
+          "e": 39.285
+        },
+        {
+          "w": "you",
+          "s": 39.285,
+          "e": 39.448
+        },
+        {
+          "w": "range",
+          "s": 39.448,
+          "e": 40.285
+        }
+      ]
+    },
+    {
+      "id": "l09",
+      "who": "N",
+      "shot": "obey2",
+      "text": "Water, twenty kilos. Map, nothing. Radio, three. Food, sixty-one.",
+      "cap": "WATER 20. MAP 0.<br>RADIO 3. FOOD <u>61</u>.",
+      "start": 40.935,
+      "end": 46.585,
+      "words": [
+        {
+          "w": "Water",
+          "s": 41.36,
+          "e": 41.66
+        },
+        {
+          "w": "twenty",
+          "s": 41.71,
+          "e": 42.01
+        },
+        {
+          "w": "kilos",
+          "s": 42.01,
+          "e": 42.86
+        },
+        {
+          "w": "Map",
+          "s": 42.973,
+          "e": 43.26
+        },
+        {
+          "w": "nothing",
+          "s": 43.31,
+          "e": 43.735
+        },
+        {
+          "w": "Radio",
+          "s": 43.81,
+          "e": 44.235
+        },
+        {
+          "w": "three",
+          "s": 44.297,
+          "e": 44.735
+        },
+        {
+          "w": "Food",
+          "s": 44.835,
+          "e": 45.235
+        },
+        {
+          "w": "sixty-one",
+          "s": 45.297,
+          "e": 46.31
+        }
+      ]
+    },
+    {
+      "id": "l10",
+      "who": "N",
+      "shot": "leave",
+      "text": "You leave the food. All sixty-one kilos. Food exists at the rig. Range doesn't.",
+      "cap": "YOU LEAVE THE FOOD. ALL OF IT.<br>FOOD IS AT THE RIG. <b>RANGE ISN'T</b>.",
+      "start": 47.135,
+      "end": 53.46,
+      "words": [
+        {
+          "w": "You",
+          "s": 47.535,
+          "e": 47.635
+        },
+        {
+          "w": "leave",
+          "s": 47.635,
+          "e": 47.897
+        },
+        {
+          "w": "the",
+          "s": 47.897,
+          "e": 48.035
+        },
+        {
+          "w": "food",
+          "s": 48.035,
+          "e": 48.485
+        },
+        {
+          "w": "All",
+          "s": 48.56,
+          "e": 48.772
+        },
+        {
+          "w": "sixty-one",
+          "s": 48.772,
+          "e": 49.372
+        },
+        {
+          "w": "kilos",
+          "s": 49.372,
+          "e": 50.185
+        },
+        {
+          "w": "Food",
+          "s": 50.323,
+          "e": 50.685
+        },
+        {
+          "w": "exists",
+          "s": 50.685,
+          "e": 51.135
+        },
+        {
+          "w": "at",
+          "s": 51.135,
+          "e": 51.235
+        },
+        {
+          "w": "the",
+          "s": 51.235,
+          "e": 51.372
+        },
+        {
+          "w": "rig",
+          "s": 51.372,
+          "e": 51.835
+        },
+        {
+          "w": "Range",
+          "s": 51.922,
+          "e": 52.422
+        },
+        {
+          "w": "doesn't",
+          "s": 52.422,
+          "e": 53.185
+        }
+      ]
+    },
+    {
+      "id": "l11",
+      "who": "N",
+      "shot": "rule3",
+      "text": "Rule three. Range is the only thing keeping you alive.",
+      "cap": "RULE 3. RANGE IS THE ONLY<br>THING KEEPING YOU <b>ALIVE</b>.",
+      "start": 54.06,
+      "end": 58.485,
+      "words": [
+        {
+          "w": "Rule",
+          "s": 54.485,
+          "e": 54.81
+        },
+        {
+          "w": "three",
+          "s": 54.81,
+          "e": 55.36
+        },
+        {
+          "w": "Range",
+          "s": 55.535,
+          "e": 55.96
+        },
+        {
+          "w": "is",
+          "s": 55.96,
+          "e": 56.098
+        },
+        {
+          "w": "the",
+          "s": 56.098,
+          "e": 56.223
+        },
+        {
+          "w": "only",
+          "s": 56.223,
+          "e": 56.547
+        },
+        {
+          "w": "thing",
+          "s": 56.547,
+          "e": 56.797
+        },
+        {
+          "w": "keeping",
+          "s": 56.797,
+          "e": 57.21
+        },
+        {
+          "w": "you",
+          "s": 57.21,
+          "e": 57.36
+        },
+        {
+          "w": "alive",
+          "s": 57.36,
+          "e": 58.21
+        }
+      ]
+    },
+    {
+      "id": "l12",
+      "who": "N",
+      "shot": "obey3",
+      "text": "Rig Bravo. Four hundred miles of open water. No land between.",
+      "cap": "RIG BRAVO. <b>400 MILES</b><br>OF OPEN WATER.",
+      "start": 58.935,
+      "end": 64.51,
+      "words": [
+        {
+          "w": "Rig",
+          "s": 59.36,
+          "e": 59.597
+        },
+        {
+          "w": "Bravo",
+          "s": 59.597,
+          "e": 60.21
+        },
+        {
+          "w": "Four",
+          "s": 60.36,
+          "e": 60.66
+        },
+        {
+          "w": "hundred",
+          "s": 60.66,
+          "e": 61.035
+        },
+        {
+          "w": "miles",
+          "s": 61.035,
+          "e": 61.473
+        },
+        {
+          "w": "of",
+          "s": 61.473,
+          "e": 61.598
+        },
+        {
+          "w": "open",
+          "s": 61.598,
+          "e": 61.973
+        },
+        {
+          "w": "water",
+          "s": 61.973,
+          "e": 62.585
+        },
+        {
+          "w": "No",
+          "s": 62.735,
+          "e": 63.01
+        },
+        {
+          "w": "land",
+          "s": 63.01,
+          "e": 63.323
+        },
+        {
+          "w": "between",
+          "s": 63.323,
+          "e": 64.235
+        }
+      ]
+    },
+    {
+      "id": "l13",
+      "who": "N",
+      "shot": "air",
+      "text": "Eleven forty. Two thousand feet over the sea, she finally says it.",
+      "cap": "<b>11:40 AM</b>. 2,000 FEET UP,<br>SHE FINALLY SAYS IT.",
+      "start": 65.11,
+      "end": 70.36,
+      "words": [
+        {
+          "w": "Eleven",
+          "s": 65.51,
+          "e": 65.935
+        },
+        {
+          "w": "forty",
+          "s": 65.935,
+          "e": 66.71
+        },
+        {
+          "w": "Two",
+          "s": 66.872,
+          "e": 67.148
+        },
+        {
+          "w": "thousand",
+          "s": 67.148,
+          "e": 67.66
+        },
+        {
+          "w": "feet",
+          "s": 67.66,
+          "e": 67.922
+        },
+        {
+          "w": "over",
+          "s": 67.922,
+          "e": 68.097
+        },
+        {
+          "w": "the",
+          "s": 68.097,
+          "e": 68.235
+        },
+        {
+          "w": "sea",
+          "s": 68.235,
+          "e": 68.585
+        },
+        {
+          "w": "she",
+          "s": 68.635,
+          "e": 68.81
+        },
+        {
+          "w": "finally",
+          "s": 68.81,
+          "e": 69.298
+        },
+        {
+          "w": "says",
+          "s": 69.298,
+          "e": 69.61
+        },
+        {
+          "w": "it",
+          "s": 69.61,
+          "e": 70.085
+        }
+      ]
+    },
+    {
+      "id": "l14",
+      "who": "N",
+      "shot": "air",
+      "text": "We've got fuel one way.",
+      "cap": "\u201cWE'VE GOT FUEL <u>ONE WAY</u>.\u201d",
+      "start": 70.86,
+      "end": 73.235,
+      "words": [
+        {
+          "w": "We've",
+          "s": 71.235,
+          "e": 71.385
+        },
+        {
+          "w": "got",
+          "s": 71.385,
+          "e": 71.635
+        },
+        {
+          "w": "fuel",
+          "s": 71.635,
+          "e": 72.023
+        },
+        {
+          "w": "one",
+          "s": 72.023,
+          "e": 72.285
+        },
+        {
+          "w": "way",
+          "s": 72.285,
+          "e": 72.935
+        }
+      ]
+    },
+    {
+      "id": "l15",
+      "who": "N",
+      "shot": "ask",
+      "text": "Then she says the other thing. Who have you been talking to on that radio?",
+      "cap": "\u201cWHO HAVE YOU BEEN<br>TALKING TO ON THAT <u>RADIO</u>?\u201d",
+      "start": 73.935,
+      "end": 79.01,
+      "words": [
+        {
+          "w": "Then",
+          "s": 74.335,
+          "e": 74.572
+        },
+        {
+          "w": "she",
+          "s": 74.572,
+          "e": 74.76
+        },
+        {
+          "w": "says",
+          "s": 74.76,
+          "e": 75.085
+        },
+        {
+          "w": "the",
+          "s": 75.085,
+          "e": 75.235
+        },
+        {
+          "w": "other",
+          "s": 75.235,
+          "e": 75.56
+        },
+        {
+          "w": "thing",
+          "s": 75.56,
+          "e": 76.185
+        },
+        {
+          "w": "Who",
+          "s": 76.31,
+          "e": 76.422
+        },
+        {
+          "w": "have",
+          "s": 76.422,
+          "e": 76.535
+        },
+        {
+          "w": "you",
+          "s": 76.535,
+          "e": 76.635
+        },
+        {
+          "w": "been",
+          "s": 76.635,
+          "e": 76.81
+        },
+        {
+          "w": "talking",
+          "s": 76.81,
+          "e": 77.235
+        },
+        {
+          "w": "to",
+          "s": 77.235,
+          "e": 77.435
+        },
+        {
+          "w": "on",
+          "s": 77.435,
+          "e": 77.61
+        },
+        {
+          "w": "that",
+          "s": 77.61,
+          "e": 77.86
+        },
+        {
+          "w": "radio",
+          "s": 77.86,
+          "e": 78.735
+        }
+      ]
+    },
+    {
+      "id": "l16",
+      "who": "N",
+      "shot": "recall",
+      "text": "You look at the crank handle. Day one. Day three. Day five. You only ever listened.",
+      "cap": "DAY 1. DAY 3. DAY 5.<br>YOU ONLY EVER <b>LISTENED</b>.",
+      "start": 79.61,
+      "end": 85.435,
+      "words": [
+        {
+          "w": "You",
+          "s": 79.985,
+          "e": 80.085
+        },
+        {
+          "w": "look",
+          "s": 80.085,
+          "e": 80.247
+        },
+        {
+          "w": "at",
+          "s": 80.247,
+          "e": 80.323
+        },
+        {
+          "w": "the",
+          "s": 80.323,
+          "e": 80.41
+        },
+        {
+          "w": "crank",
+          "s": 80.41,
+          "e": 80.71
+        },
+        {
+          "w": "handle",
+          "s": 80.71,
+          "e": 81.26
+        },
+        {
+          "w": "Day",
+          "s": 81.372,
+          "e": 81.635
+        },
+        {
+          "w": "one",
+          "s": 81.635,
+          "e": 81.935
+        },
+        {
+          "w": "Day",
+          "s": 82.023,
+          "e": 82.31
+        },
+        {
+          "w": "three",
+          "s": 82.31,
+          "e": 82.735
+        },
+        {
+          "w": "Day",
+          "s": 82.847,
+          "e": 83.135
+        },
+        {
+          "w": "five",
+          "s": 83.135,
+          "e": 83.61
+        },
+        {
+          "w": "You",
+          "s": 83.66,
+          "e": 83.785
+        },
+        {
+          "w": "only",
+          "s": 83.785,
+          "e": 84.085
+        },
+        {
+          "w": "ever",
+          "s": 84.085,
+          "e": 84.36
+        },
+        {
+          "w": "listened",
+          "s": 84.36,
+          "e": 85.16
+        }
+      ]
+    },
+    {
+      "id": "l17",
+      "who": "N",
+      "shot": "twist",
+      "text": "You have never spoken into it.",
+      "cap": "YOU HAVE <u>NEVER</u><br>SPOKEN INTO IT.",
+      "start": 86.035,
+      "end": 88.735,
+      "words": [
+        {
+          "w": "You",
+          "s": 86.435,
+          "e": 86.522
+        },
+        {
+          "w": "have",
+          "s": 86.522,
+          "e": 86.723
+        },
+        {
+          "w": "never",
+          "s": 86.723,
+          "e": 87.097
+        },
+        {
+          "w": "spoken",
+          "s": 87.097,
+          "e": 87.61
+        },
+        {
+          "w": "into",
+          "s": 87.61,
+          "e": 87.997
+        },
+        {
+          "w": "it",
+          "s": 87.997,
+          "e": 88.46
+        }
+      ]
+    },
+    {
+      "id": "l18",
+      "who": "N",
+      "shot": "twist",
+      "text": "So what was she tracking?",
+      "cap": "SO WHAT WAS SHE <u>TRACKING</u>?",
+      "start": 89.435,
+      "end": 91.635,
+      "words": [
+        {
+          "w": "So",
+          "s": 89.835,
+          "e": 90.01
+        },
+        {
+          "w": "what",
+          "s": 90.01,
+          "e": 90.148
+        },
+        {
+          "w": "was",
+          "s": 90.148,
+          "e": 90.285
+        },
+        {
+          "w": "she",
+          "s": 90.285,
+          "e": 90.447
+        },
+        {
+          "w": "tracking",
+          "s": 90.447,
+          "e": 91.36
+        }
+      ]
+    },
+    {
+      "id": "l19",
+      "who": "N",
+      "shot": "end",
+      "text": "Do you tell her?",
+      "cap": "",
+      "start": 92.635,
+      "end": 94.485,
+      "words": [
+        {
+          "w": "Do",
+          "s": 92.985,
+          "e": 93.135
+        },
+        {
+          "w": "you",
+          "s": 93.135,
+          "e": 93.31
+        },
+        {
+          "w": "tell",
+          "s": 93.31,
+          "e": 93.635
+        },
+        {
+          "w": "her",
+          "s": 93.635,
+          "e": 94.185
+        }
+      ]
+    }
+  ]
+}
