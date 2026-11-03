@@ -198,7 +198,17 @@ timeline registered at `window.__timelines["<id>"]`.
     had ~61 zero-duration points, 29 of them the minute-by-minute clock), and
     the frame-presets do say "never tl.call()". The compositions now use
     `tl.set()` for that reason, not to fix broken output.
-20. **git on this exFAT SSD**: macOS writes `._` AppleDouble files *inside* `.git`, which corrupt
+20. **Never set a repo-local `user.email`.** The global identity
+    (`ayush5555.ag@gmail.com`) is the owner's real GitHub address. A repo-local override
+    pointed at the Claude session address instead, and because GitHub attributes commits by
+    *email* and not name, 31 commits rendered with a grey avatar, linked to no account, and
+    earned the owner no contribution credit — while still reading "Ayush Gupta", which is
+    exactly why it went unnoticed. `.git/config` has no user section now. Leave it that way.
+21. **More than one Claude session works in this folder.** Check `git log origin/main` and
+    `git status` before committing: stage your own files by name, never `git add -A`
+    blindly, and never rewrite history or force-push without confirming the other session
+    is stopped.
+22. **git on this exFAT SSD**: macOS writes `._` AppleDouble files *inside* `.git`, which corrupt
     pack indexes and refs. Before and after any git write, run:
     `find .git -name '._*' -delete`. Repo: `github.com/AyushGupta-0/Ai-videoedit-bundle` (ssh).
 
