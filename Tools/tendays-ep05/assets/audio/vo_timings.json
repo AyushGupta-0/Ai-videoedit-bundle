@@ -1,0 +1,1115 @@
+{
+  "duration": 92.205,
+  "lines": [
+    {
+      "id": "l01",
+      "who": "N",
+      "shot": "recap",
+      "text": "You drove on. Their lights never came back.",
+      "cap": "YOU DROVE ON. THEIR LIGHTS<br>NEVER CAME <u>BACK</u>.",
+      "start": 0.25,
+      "end": 3.825,
+      "words": [
+        {
+          "w": "You",
+          "s": 0.65,
+          "e": 0.812
+        },
+        {
+          "w": "drove",
+          "s": 0.812,
+          "e": 1.2
+        },
+        {
+          "w": "on",
+          "s": 1.2,
+          "e": 1.675
+        },
+        {
+          "w": "Their",
+          "s": 1.775,
+          "e": 1.975
+        },
+        {
+          "w": "lights",
+          "s": 1.975,
+          "e": 2.325
+        },
+        {
+          "w": "never",
+          "s": 2.325,
+          "e": 2.6
+        },
+        {
+          "w": "came",
+          "s": 2.6,
+          "e": 2.875
+        },
+        {
+          "w": "back",
+          "s": 2.875,
+          "e": 3.525
+        }
+      ]
+    },
+    {
+      "id": "l02",
+      "who": "N",
+      "shot": "hook",
+      "text": "Day five. Your car has eleven miles left.",
+      "cap": "<b>DAY 5</b>. YOUR CAR HAS<br>ELEVEN MILES LEFT.",
+      "start": 4.425,
+      "end": 8.375,
+      "words": [
+        {
+          "w": "Day",
+          "s": 4.85,
+          "e": 5.125
+        },
+        {
+          "w": "five",
+          "s": 5.125,
+          "e": 5.75
+        },
+        {
+          "w": "Your",
+          "s": 5.85,
+          "e": 6.025
+        },
+        {
+          "w": "car",
+          "s": 6.025,
+          "e": 6.325
+        },
+        {
+          "w": "has",
+          "s": 6.325,
+          "e": 6.525
+        },
+        {
+          "w": "eleven",
+          "s": 6.525,
+          "e": 6.95
+        },
+        {
+          "w": "miles",
+          "s": 6.95,
+          "e": 7.363
+        },
+        {
+          "w": "left",
+          "s": 7.363,
+          "e": 8.1
+        }
+      ]
+    },
+    {
+      "id": "l03",
+      "who": "N",
+      "shot": "hook",
+      "text": "And the road is about to cost you the car.",
+      "cap": "AND THE ROAD IS ABOUT TO<br><u>COST YOU THE CAR</u>.",
+      "start": 8.435,
+      "end": 11.76,
+      "words": [
+        {
+          "w": "And",
+          "s": 8.81,
+          "e": 8.947
+        },
+        {
+          "w": "the",
+          "s": 8.947,
+          "e": 9.072
+        },
+        {
+          "w": "road",
+          "s": 9.072,
+          "e": 9.51
+        },
+        {
+          "w": "is",
+          "s": 9.51,
+          "e": 9.635
+        },
+        {
+          "w": "about",
+          "s": 9.635,
+          "e": 9.935
+        },
+        {
+          "w": "to",
+          "s": 9.935,
+          "e": 10.06
+        },
+        {
+          "w": "cost",
+          "s": 10.06,
+          "e": 10.41
+        },
+        {
+          "w": "you",
+          "s": 10.41,
+          "e": 10.547
+        },
+        {
+          "w": "the",
+          "s": 10.547,
+          "e": 10.672
+        },
+        {
+          "w": "car",
+          "s": 10.672,
+          "e": 11.485
+        }
+      ]
+    },
+    {
+      "id": "l04",
+      "who": "N",
+      "shot": "bridge",
+      "text": "Every road south ends here. A six-mile queue, for one bridge.",
+      "cap": "EVERY ROAD SOUTH ENDS HERE.<br>SIX MILES OF QUEUE. <b>ONE BRIDGE</b>.",
+      "start": 12.51,
+      "end": 17.385,
+      "words": [
+        {
+          "w": "Every",
+          "s": 12.885,
+          "e": 13.185
+        },
+        {
+          "w": "road",
+          "s": 13.185,
+          "e": 13.51
+        },
+        {
+          "w": "south",
+          "s": 13.51,
+          "e": 13.81
+        },
+        {
+          "w": "ends",
+          "s": 13.81,
+          "e": 14.085
+        },
+        {
+          "w": "here",
+          "s": 14.085,
+          "e": 14.585
+        },
+        {
+          "w": "A",
+          "s": 14.747,
+          "e": 14.885
+        },
+        {
+          "w": "six-mile",
+          "s": 14.885,
+          "e": 15.485
+        },
+        {
+          "w": "queue",
+          "s": 15.485,
+          "e": 15.86
+        },
+        {
+          "w": "for",
+          "s": 15.91,
+          "e": 16.06
+        },
+        {
+          "w": "one",
+          "s": 16.06,
+          "e": 16.285
+        },
+        {
+          "w": "bridge",
+          "s": 16.285,
+          "e": 17.085
+        }
+      ]
+    },
+    {
+      "id": "l05",
+      "who": "N",
+      "shot": "rule1",
+      "text": "Rule one. Walk the sleepers, never the ballast. Stone is loud.",
+      "cap": "RULE 1. WALK THE SLEEPERS.<br>STONE IS <b>LOUD</b>.",
+      "start": 17.885,
+      "end": 22.885,
+      "words": [
+        {
+          "w": "Rule",
+          "s": 18.335,
+          "e": 18.66
+        },
+        {
+          "w": "one",
+          "s": 18.66,
+          "e": 18.96
+        },
+        {
+          "w": "Walk",
+          "s": 19.048,
+          "e": 19.335
+        },
+        {
+          "w": "the",
+          "s": 19.335,
+          "e": 19.472
+        },
+        {
+          "w": "sleepers",
+          "s": 19.472,
+          "e": 19.96
+        },
+        {
+          "w": "never",
+          "s": 20.01,
+          "e": 20.247
+        },
+        {
+          "w": "the",
+          "s": 20.247,
+          "e": 20.335
+        },
+        {
+          "w": "ballast",
+          "s": 20.335,
+          "e": 21.06
+        },
+        {
+          "w": "Stone",
+          "s": 21.21,
+          "e": 21.66
+        },
+        {
+          "w": "is",
+          "s": 21.66,
+          "e": 21.823
+        },
+        {
+          "w": "loud",
+          "s": 21.823,
+          "e": 22.61
+        }
+      ]
+    },
+    {
+      "id": "l06",
+      "who": "N",
+      "shot": "obey1",
+      "text": "So you leave the car on your terms. And you take the railway.",
+      "cap": "YOU LEAVE THE CAR ON YOUR TERMS.<br>AND TAKE THE <b>RAILWAY</b>.",
+      "start": 23.235,
+      "end": 27.735,
+      "words": [
+        {
+          "w": "So",
+          "s": 23.635,
+          "e": 23.76
+        },
+        {
+          "w": "you",
+          "s": 23.76,
+          "e": 23.91
+        },
+        {
+          "w": "leave",
+          "s": 23.91,
+          "e": 24.198
+        },
+        {
+          "w": "the",
+          "s": 24.198,
+          "e": 24.322
+        },
+        {
+          "w": "car",
+          "s": 24.322,
+          "e": 24.648
+        },
+        {
+          "w": "on",
+          "s": 24.648,
+          "e": 24.773
+        },
+        {
+          "w": "your",
+          "s": 24.773,
+          "e": 24.923
+        },
+        {
+          "w": "terms",
+          "s": 24.923,
+          "e": 25.66
+        },
+        {
+          "w": "And",
+          "s": 25.76,
+          "e": 25.91
+        },
+        {
+          "w": "you",
+          "s": 25.91,
+          "e": 26.035
+        },
+        {
+          "w": "take",
+          "s": 26.035,
+          "e": 26.285
+        },
+        {
+          "w": "the",
+          "s": 26.285,
+          "e": 26.423
+        },
+        {
+          "w": "railway",
+          "s": 26.423,
+          "e": 27.435
+        }
+      ]
+    },
+    {
+      "id": "l07",
+      "who": "N",
+      "shot": "plant",
+      "text": "Radio. Recovery in six days. All rail staff evacuated on day one.",
+      "cap": "RECOVERY IN <b>SIX DAYS</b>.<br><b>ALL RAIL STAFF EVACUATED DAY ONE</b>.",
+      "start": 28.285,
+      "end": 34.51,
+      "words": [
+        {
+          "w": "Radio",
+          "s": 28.71,
+          "e": 29.335
+        },
+        {
+          "w": "Recovery",
+          "s": 29.46,
+          "e": 29.985
+        },
+        {
+          "w": "in",
+          "s": 29.985,
+          "e": 30.148
+        },
+        {
+          "w": "six",
+          "s": 30.148,
+          "e": 30.435
+        },
+        {
+          "w": "days",
+          "s": 30.435,
+          "e": 31.185
+        },
+        {
+          "w": "All",
+          "s": 31.347,
+          "e": 31.622
+        },
+        {
+          "w": "rail",
+          "s": 31.622,
+          "e": 31.948
+        },
+        {
+          "w": "staff",
+          "s": 31.948,
+          "e": 32.36
+        },
+        {
+          "w": "evacuated",
+          "s": 32.36,
+          "e": 33.072
+        },
+        {
+          "w": "on",
+          "s": 33.072,
+          "e": 33.26
+        },
+        {
+          "w": "day",
+          "s": 33.26,
+          "e": 33.548
+        },
+        {
+          "w": "one",
+          "s": 33.548,
+          "e": 34.235
+        }
+      ]
+    },
+    {
+      "id": "l08",
+      "who": "N",
+      "shot": "rule2",
+      "text": "Rule two. Count bridges, not miles.",
+      "cap": "RULE 2. COUNT <b>BRIDGES</b>.<br>NOT MILES.",
+      "start": 35.11,
+      "end": 38.41,
+      "words": [
+        {
+          "w": "Rule",
+          "s": 35.535,
+          "e": 35.835
+        },
+        {
+          "w": "two",
+          "s": 35.835,
+          "e": 36.21
+        },
+        {
+          "w": "Count",
+          "s": 36.348,
+          "e": 36.648
+        },
+        {
+          "w": "bridges",
+          "s": 36.648,
+          "e": 37.035
+        },
+        {
+          "w": "not",
+          "s": 37.072,
+          "e": 37.285
+        },
+        {
+          "w": "miles",
+          "s": 37.285,
+          "e": 38.135
+        }
+      ]
+    },
+    {
+      "id": "l09",
+      "who": "N",
+      "shot": "obey2",
+      "text": "Eleven miles. Four bridges. A freight yard.",
+      "cap": "ELEVEN MILES. FOUR BRIDGES.<br>A <b>FREIGHT YARD</b>.",
+      "start": 38.76,
+      "end": 42.46,
+      "words": [
+        {
+          "w": "Eleven",
+          "s": 39.16,
+          "e": 39.56
+        },
+        {
+          "w": "miles",
+          "s": 39.56,
+          "e": 40.085
+        },
+        {
+          "w": "Four",
+          "s": 40.173,
+          "e": 40.46
+        },
+        {
+          "w": "bridges",
+          "s": 40.46,
+          "e": 40.91
+        },
+        {
+          "w": "A",
+          "s": 40.96,
+          "e": 41.072
+        },
+        {
+          "w": "freight",
+          "s": 41.072,
+          "e": 41.41
+        },
+        {
+          "w": "yard",
+          "s": 41.41,
+          "e": 42.16
+        }
+      ]
+    },
+    {
+      "id": "l10",
+      "who": "N",
+      "shot": "good",
+      "text": "A locomotive. Idling. Nobody in the cab.",
+      "cap": "A LOCOMOTIVE. IDLING.<br><b>NOBODY</b> IN THE CAB.",
+      "start": 42.96,
+      "end": 46.76,
+      "words": [
+        {
+          "w": "A",
+          "s": 43.36,
+          "e": 43.435
+        },
+        {
+          "w": "locomotive",
+          "s": 43.435,
+          "e": 44.26
+        },
+        {
+          "w": "Idling",
+          "s": 44.373,
+          "e": 44.91
+        },
+        {
+          "w": "Nobody",
+          "s": 44.998,
+          "e": 45.522
+        },
+        {
+          "w": "in",
+          "s": 45.522,
+          "e": 45.598
+        },
+        {
+          "w": "the",
+          "s": 45.598,
+          "e": 45.697
+        },
+        {
+          "w": "cab",
+          "s": 45.697,
+          "e": 46.46
+        }
+      ]
+    },
+    {
+      "id": "l11",
+      "who": "N",
+      "shot": "rule3",
+      "text": "Rule three. Never shelter anywhere with one door.",
+      "cap": "RULE 3. NEVER SHELTER<br>ANYWHERE WITH <u>ONE DOOR</u>.",
+      "start": 47.36,
+      "end": 51.435,
+      "words": [
+        {
+          "w": "Rule",
+          "s": 47.785,
+          "e": 48.11
+        },
+        {
+          "w": "three",
+          "s": 48.11,
+          "e": 48.635
+        },
+        {
+          "w": "Never",
+          "s": 48.773,
+          "e": 49.122
+        },
+        {
+          "w": "shelter",
+          "s": 49.122,
+          "e": 49.56
+        },
+        {
+          "w": "anywhere",
+          "s": 49.56,
+          "e": 50.035
+        },
+        {
+          "w": "with",
+          "s": 50.035,
+          "e": 50.21
+        },
+        {
+          "w": "one",
+          "s": 50.21,
+          "e": 50.46
+        },
+        {
+          "w": "door",
+          "s": 50.46,
+          "e": 51.16
+        }
+      ]
+    },
+    {
+      "id": "l12",
+      "who": "N",
+      "shot": "bad",
+      "text": "Between you and the train: a signal box. One room. One door.",
+      "cap": "BETWEEN YOU AND THE TRAIN:<br>A SIGNAL BOX. <u>ONE DOOR</u>.",
+      "start": 51.885,
+      "end": 56.76,
+      "words": [
+        {
+          "w": "Between",
+          "s": 52.235,
+          "e": 52.61
+        },
+        {
+          "w": "you",
+          "s": 52.61,
+          "e": 52.76
+        },
+        {
+          "w": "and",
+          "s": 52.76,
+          "e": 52.873
+        },
+        {
+          "w": "the",
+          "s": 52.873,
+          "e": 52.972
+        },
+        {
+          "w": "train",
+          "s": 52.972,
+          "e": 53.46
+        },
+        {
+          "w": "a",
+          "s": 53.535,
+          "e": 53.647
+        },
+        {
+          "w": "signal",
+          "s": 53.647,
+          "e": 54.035
+        },
+        {
+          "w": "box",
+          "s": 54.035,
+          "e": 54.585
+        },
+        {
+          "w": "One",
+          "s": 54.697,
+          "e": 54.997
+        },
+        {
+          "w": "room",
+          "s": 54.997,
+          "e": 55.41
+        },
+        {
+          "w": "One",
+          "s": 55.472,
+          "e": 55.785
+        },
+        {
+          "w": "door",
+          "s": 55.785,
+          "e": 56.485
+        }
+      ]
+    },
+    {
+      "id": "l13",
+      "who": "N",
+      "shot": "inside",
+      "text": "Four fifty-five. You go in for the yard keys.",
+      "cap": "<b>4:55 AM</b>. YOU GO IN<br>FOR THE YARD KEYS.",
+      "start": 57.41,
+      "end": 61.31,
+      "words": [
+        {
+          "w": "Four",
+          "s": 57.835,
+          "e": 58.098
+        },
+        {
+          "w": "fifty-five",
+          "s": 58.098,
+          "e": 59.035
+        },
+        {
+          "w": "You",
+          "s": 59.172,
+          "e": 59.31
+        },
+        {
+          "w": "go",
+          "s": 59.31,
+          "e": 59.497
+        },
+        {
+          "w": "in",
+          "s": 59.497,
+          "e": 59.685
+        },
+        {
+          "w": "for",
+          "s": 59.685,
+          "e": 59.798
+        },
+        {
+          "w": "the",
+          "s": 59.798,
+          "e": 59.885
+        },
+        {
+          "w": "yard",
+          "s": 59.885,
+          "e": 60.235
+        },
+        {
+          "w": "keys",
+          "s": 60.235,
+          "e": 61.035
+        }
+      ]
+    },
+    {
+      "id": "l14",
+      "who": "N",
+      "shot": "creak",
+      "text": "The staircase creaks. Behind you.",
+      "cap": "THE STAIRCASE CREAKS.<br><u>BEHIND YOU</u>.",
+      "start": 61.81,
+      "end": 64.785,
+      "words": [
+        {
+          "w": "The",
+          "s": 62.16,
+          "e": 62.26
+        },
+        {
+          "w": "staircase",
+          "s": 62.26,
+          "e": 62.86
+        },
+        {
+          "w": "creaks",
+          "s": 62.86,
+          "e": 63.385
+        },
+        {
+          "w": "Behind",
+          "s": 63.485,
+          "e": 63.96
+        },
+        {
+          "w": "you",
+          "s": 63.96,
+          "e": 64.46
+        }
+      ]
+    },
+    {
+      "id": "l15",
+      "who": "N",
+      "shot": "voice",
+      "text": "Driver? That you? I've held this train nine days, mate. Come down.",
+      "cap": "\u201cDRIVER? THAT YOU? I'VE HELD<br>THIS TRAIN NINE DAYS. COME DOWN.\u201d",
+      "start": 65.485,
+      "end": 70.585,
+      "words": [
+        {
+          "w": "Driver",
+          "s": 65.885,
+          "e": 66.31
+        },
+        {
+          "w": "That",
+          "s": 66.36,
+          "e": 66.648
+        },
+        {
+          "w": "you",
+          "s": 66.648,
+          "e": 67.085
+        },
+        {
+          "w": "I've",
+          "s": 67.335,
+          "e": 67.51
+        },
+        {
+          "w": "held",
+          "s": 67.51,
+          "e": 67.748
+        },
+        {
+          "w": "this",
+          "s": 67.748,
+          "e": 67.91
+        },
+        {
+          "w": "train",
+          "s": 67.91,
+          "e": 68.26
+        },
+        {
+          "w": "nine",
+          "s": 68.26,
+          "e": 68.56
+        },
+        {
+          "w": "days",
+          "s": 68.56,
+          "e": 68.91
+        },
+        {
+          "w": "mate",
+          "s": 68.96,
+          "e": 69.235
+        },
+        {
+          "w": "Come",
+          "s": 69.285,
+          "e": 69.535
+        },
+        {
+          "w": "down",
+          "s": 69.535,
+          "e": 70.31
+        }
+      ]
+    },
+    {
+      "id": "l16",
+      "who": "N",
+      "shot": "recall",
+      "text": "All rail staff evacuated on day one. The radio said so.",
+      "cap": "ALL RAIL STAFF EVACUATED<br>ON DAY ONE. THE RADIO SAID SO.",
+      "start": 71.335,
+      "end": 76.385,
+      "words": [
+        {
+          "w": "All",
+          "s": 71.735,
+          "e": 71.96
+        },
+        {
+          "w": "rail",
+          "s": 71.96,
+          "e": 72.235
+        },
+        {
+          "w": "staff",
+          "s": 72.235,
+          "e": 72.635
+        },
+        {
+          "w": "evacuated",
+          "s": 72.635,
+          "e": 73.348
+        },
+        {
+          "w": "on",
+          "s": 73.348,
+          "e": 73.535
+        },
+        {
+          "w": "day",
+          "s": 73.535,
+          "e": 73.822
+        },
+        {
+          "w": "one",
+          "s": 73.822,
+          "e": 74.41
+        },
+        {
+          "w": "The",
+          "s": 74.547,
+          "e": 74.685
+        },
+        {
+          "w": "radio",
+          "s": 74.685,
+          "e": 75.172
+        },
+        {
+          "w": "said",
+          "s": 75.172,
+          "e": 75.447
+        },
+        {
+          "w": "so",
+          "s": 75.447,
+          "e": 76.085
+        }
+      ]
+    },
+    {
+      "id": "l17",
+      "who": "N",
+      "shot": "recall",
+      "text": "There is no driver.",
+      "cap": "THERE IS <u>NO DRIVER</u>.",
+      "start": 76.835,
+      "end": 78.91,
+      "words": [
+        {
+          "w": "There",
+          "s": 77.21,
+          "e": 77.335
+        },
+        {
+          "w": "is",
+          "s": 77.335,
+          "e": 77.497
+        },
+        {
+          "w": "no",
+          "s": 77.497,
+          "e": 77.798
+        },
+        {
+          "w": "driver",
+          "s": 77.798,
+          "e": 78.61
+        }
+      ]
+    },
+    {
+      "id": "l18",
+      "who": "N",
+      "shot": "loop",
+      "text": "Then the loop plays past where it ever has. The second half isn't a rescue.",
+      "cap": "THEN THE LOOP PLAYS PAST<br>WHERE IT EVER HAS.",
+      "start": 79.86,
+      "end": 85.585,
+      "words": [
+        {
+          "w": "Then",
+          "s": 80.26,
+          "e": 80.435
+        },
+        {
+          "w": "the",
+          "s": 80.435,
+          "e": 80.573
+        },
+        {
+          "w": "loop",
+          "s": 80.573,
+          "e": 80.835
+        },
+        {
+          "w": "plays",
+          "s": 80.835,
+          "e": 81.298
+        },
+        {
+          "w": "past",
+          "s": 81.298,
+          "e": 81.76
+        },
+        {
+          "w": "where",
+          "s": 81.76,
+          "e": 81.922
+        },
+        {
+          "w": "it",
+          "s": 81.922,
+          "e": 82.01
+        },
+        {
+          "w": "ever",
+          "s": 82.01,
+          "e": 82.31
+        },
+        {
+          "w": "has",
+          "s": 82.31,
+          "e": 83.06
+        },
+        {
+          "w": "The",
+          "s": 83.222,
+          "e": 83.373
+        },
+        {
+          "w": "second",
+          "s": 83.373,
+          "e": 83.71
+        },
+        {
+          "w": "half",
+          "s": 83.71,
+          "e": 84.085
+        },
+        {
+          "w": "isn't",
+          "s": 84.085,
+          "e": 84.323
+        },
+        {
+          "w": "a",
+          "s": 84.323,
+          "e": 84.41
+        },
+        {
+          "w": "rescue",
+          "s": 84.41,
+          "e": 85.285
+        }
+      ]
+    },
+    {
+      "id": "l19",
+      "who": "N",
+      "shot": "loop",
+      "text": "It's a warning.",
+      "cap": "IT'S A <u>WARNING</u>.",
+      "start": 85.645,
+      "end": 87.47,
+      "words": [
+        {
+          "w": "It's",
+          "s": 85.995,
+          "e": 86.22
+        },
+        {
+          "w": "a",
+          "s": 86.22,
+          "e": 86.345
+        },
+        {
+          "w": "warning",
+          "s": 86.345,
+          "e": 87.195
+        }
+      ]
+    },
+    {
+      "id": "l20",
+      "who": "N",
+      "shot": "end",
+      "text": "Do you go down the stairs?",
+      "cap": "",
+      "start": 88.62,
+      "end": 90.945,
+      "words": [
+        {
+          "w": "Do",
+          "s": 88.97,
+          "e": 89.07
+        },
+        {
+          "w": "you",
+          "s": 89.07,
+          "e": 89.22
+        },
+        {
+          "w": "go",
+          "s": 89.22,
+          "e": 89.42
+        },
+        {
+          "w": "down",
+          "s": 89.42,
+          "e": 89.658
+        },
+        {
+          "w": "the",
+          "s": 89.658,
+          "e": 89.757
+        },
+        {
+          "w": "stairs",
+          "s": 89.757,
+          "e": 90.645
+        }
+      ]
+    }
+  ]
+}

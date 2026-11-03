@@ -1,9 +1,9 @@
 YOUTUBE SHORT
   [ ] Cover: upload cover.png as the thumbnail
       If YouTube doesn't offer a custom thumbnail, it auto-picks a frame. Leave it.
-  [ ] Title from title.txt (48/100 chars)
+  [ ] Title from title.txt (44/100 chars)
   [ ] Tags from tags.txt
   [ ] #Shorts present
   [ ] Audience: not made for kids
   [ ] Language set — enables the Hindi audio track later
-  FILE 1080x1920 · 73.3s · 6.3MB
+  FILE 1080x1920 · 89.3s · 10.0MB

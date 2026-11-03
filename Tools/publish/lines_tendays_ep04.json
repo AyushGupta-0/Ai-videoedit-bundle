@@ -1,5 +1,5 @@
 {
-  "episode": "tendays-ep04",
+  "episode": "tendays-ep04-the-car-behind-you",
   "voices": {
     "N": {
       "kokoro": "am_michael",
@@ -13,160 +13,174 @@
       "at": 0.25,
       "who": "N",
       "shot": "recap",
-      "text": "You went out the back.",
-      "cap": "YOU WENT OUT THE <b>BACK</b>.",
-      "pause": 0.65
-    },
-    {
-      "id": "l02",
-      "at": 2.92,
-      "who": "N",
-      "shot": "road",
-      "text": "On day four you meet another survivor.",
-      "cap": "ON DAY 4 YOU MEET<br>ANOTHER <b>SURVIVOR</b>."
-    },
-    {
-      "id": "l03",
-      "at": 5.72,
-      "who": "N",
-      "shot": "road",
-      "text": "More dangerous than meeting the dead.",
-      "cap": "MORE DANGEROUS THAN<br>MEETING THE <u>DEAD</u>.",
+      "text": "You left through the back. With the water.",
+      "cap": "YOU LEFT THROUGH THE BACK.<br>WITH THE <b>WATER</b>.",
       "pause": 0.6
     },
     {
-      "id": "l04",
-      "at": 8.72,
+      "id": "l02",
+      "at": 4.03,
       "who": "N",
-      "shot": "follow",
-      "text": "Headlights. Four hundred metres back. For sixty miles.",
-      "cap": "HEADLIGHTS. <b>400 METRES</b> BACK.<br>FOR SIXTY MILES."
+      "shot": "hook",
+      "text": "On day four, you meet another survivor.",
+      "cap": "ON <b>DAY 4</b>, YOU MEET<br>ANOTHER SURVIVOR."
+    },
+    {
+      "id": "l03",
+      "at": 6.82,
+      "who": "N",
+      "shot": "hook",
+      "text": "And it costs you more than the dead ever did.",
+      "cap": "AND IT <u>COSTS YOU</u> MORE<br>THAN THE DEAD EVER DID.",
+      "pause": 0.75
+    },
+    {
+      "id": "l04",
+      "at": 11.52,
+      "who": "N",
+      "shot": "road",
+      "text": "An empty A road, one in the morning. Fifty miles an hour.",
+      "cap": "AN EMPTY A-ROAD, 1 AM.<br><b>FIFTY</b> MILES AN HOUR.",
+      "pause": 0.45
     },
     {
       "id": "l05",
-      "at": 11.9,
+      "at": 16.68,
       "who": "N",
-      "shot": "follow",
-      "text": "You slow down. They slow down.",
-      "cap": "YOU SLOW DOWN.<br><u>THEY SLOW DOWN</u>.",
-      "pause": 0.55
+      "shot": "plant",
+      "text": "Ninety miles of fuel. No weapon. And nobody knows you're alive.",
+      "cap": "<b>NOBODY</b> KNOWS<br>YOU'RE ALIVE.",
+      "pause": 0.6
     },
     {
       "id": "l06",
-      "at": 14.86,
+      "at": 21.61,
       "who": "N",
-      "shot": "radio",
-      "text": "Recovery in seven days. Do not convoy.",
-      "cap": "RECOVERY IN <b>SEVEN DAYS</b>.<br>DO NOT CONVOY.",
-      "pause": 0.4
+      "shot": "rule1",
+      "text": "Rule one. Never drive to where you sleep. Circle first.",
+      "cap": "RULE 1. NEVER DRIVE TO<br>WHERE YOU <b>SLEEP</b>.",
+      "pause": 0.35
     },
     {
       "id": "l07",
-      "at": 18.05,
+      "at": 25.91,
       "who": "N",
-      "shot": "rule1",
-      "text": "Rule one. Never drive straight to where you sleep.",
-      "cap": "RULE 1. NEVER DRIVE STRAIGHT<br>TO WHERE YOU <b>SLEEP</b>."
-    },
-    {
-      "id": "l08",
-      "at": 21.61,
-      "who": "N",
-      "shot": "rule2",
-      "text": "Rule two. Never let a stranger see your fuel.",
-      "cap": "RULE 2. NEVER LET A STRANGER<br>SEE YOUR <b>FUEL</b>."
-    },
-    {
-      "id": "l09",
-      "at": 25.17,
-      "who": "N",
-      "shot": "rule3",
-      "text": "Rule three. Do not stop on open road.",
-      "cap": "RULE 3. <u>DO NOT STOP<br>ON OPEN ROAD</u>.",
-      "pause": 0.65
-    },
-    {
-      "id": "l10",
-      "at": 29.0,
-      "who": "N",
-      "shot": "good",
-      "text": "Good news. Ninety miles of fuel.",
-      "cap": "<b>GOOD NEWS</b>. 90 MILES OF FUEL."
-    },
-    {
-      "id": "l11",
-      "at": 31.41,
-      "who": "N",
-      "shot": "bad",
-      "text": "Bad news. Every road south ends at one bridge.",
-      "cap": "<u>BAD NEWS</u>. EVERY ROAD SOUTH<br>ENDS AT <b>ONE BRIDGE</b>.",
+      "shot": "obey1",
+      "text": "So you take the long way. Twice.",
+      "cap": "SO YOU TAKE THE LONG WAY.<br><b>TWICE</b>.",
       "pause": 0.55
     },
     {
-      "id": "l12",
-      "at": 35.52,
+      "id": "l08",
+      "at": 29.25,
       "who": "N",
-      "shot": "junction",
-      "text": "One seventeen. You kill your lights and turn off.",
-      "cap": "<b>1:17 AM</b>. YOU KILL YOUR LIGHTS<br>AND TURN OFF.",
-      "pause": 0.65
+      "shot": "mirror",
+      "text": "Headlights. Four hundred metres back. For sixty miles.",
+      "cap": "HEADLIGHTS. <b>400 M</b> BACK.<br>FOR SIXTY MILES.",
+      "pause": 0.55
+    },
+    {
+      "id": "l09",
+      "at": 32.98,
+      "who": "N",
+      "shot": "rule2",
+      "text": "Rule two. Never let a stranger see your fuel.",
+      "cap": "RULE 2. NEVER LET THEM<br>SEE YOUR <b>FUEL</b>.",
+      "pause": 0.35
+    },
+    {
+      "id": "l10",
+      "at": 36.89,
+      "who": "N",
+      "shot": "obey2",
+      "text": "You slow down. They slow down. You speed up. So do they.",
+      "cap": "YOU SLOW. THEY SLOW.<br>YOU SPEED UP. <u>SO DO THEY</u>.",
+      "pause": 0.6
+    },
+    {
+      "id": "l11",
+      "at": 42.2,
+      "who": "N",
+      "shot": "radio",
+      "text": "Radio. Recovery in seven days. Do not convoy with unverified vehicles.",
+      "cap": "RECOVERY IN <b>SEVEN DAYS</b>.<br>DO NOT CONVOY.",
+      "pause": 0.45
+    },
+    {
+      "id": "l12",
+      "at": 46.98,
+      "who": "N",
+      "shot": "rule3",
+      "text": "Rule three. Do not stop on open road.",
+      "cap": "RULE 3. DO NOT STOP<br>ON <u>OPEN ROAD</u>.",
+      "pause": 0.5
     },
     {
       "id": "l13",
-      "at": 39.73,
+      "at": 50.66,
       "who": "N",
-      "shot": "sos",
-      "text": "Behind you, they stop. And they flash their headlights.",
-      "cap": "BEHIND YOU, THEY <b>STOP</b>.<br>AND FLASH THEIR HEADLIGHTS."
+      "shot": "obey3",
+      "text": "One seventeen. You kill your lights, and take a junction without indicating.",
+      "cap": "<b>1:17 AM</b>. LIGHTS OFF.<br>A JUNCTION, NO INDICATOR.",
+      "pause": 0.55
     },
     {
       "id": "l14",
-      "at": 43.29,
+      "at": 55.93,
+      "who": "N",
+      "shot": "flash",
+      "text": "Behind you, they stop. And they flash their headlights.",
+      "cap": "BEHIND YOU, THEY STOP.<br>AND THEY <b>FLASH</b>.",
+      "pause": 0.5
+    },
+    {
+      "id": "l15",
+      "at": 59.99,
       "who": "N",
       "shot": "sos",
       "text": "Three long. Three short. Three long.",
       "cap": "THREE LONG. THREE SHORT.<br>THREE LONG.",
-      "pause": 0.75
-    },
-    {
-      "id": "l15",
-      "at": 46.45,
-      "who": "N",
-      "shot": "sos",
-      "text": "That's not a threat. That's S O S.",
-      "cap": "THAT'S NOT A THREAT.<br>THAT'S <u>S.O.S.</u>",
-      "pause": 0.85
+      "pause": 0.6
     },
     {
       "id": "l16",
-      "at": 50.48,
+      "at": 63.0,
       "who": "N",
-      "shot": "drive",
-      "text": "And you keep driving.",
-      "cap": "AND YOU <u>KEEP DRIVING</u>.",
+      "shot": "sos2",
+      "text": "That isn't a threat. That's S O S.",
+      "cap": "THAT ISN'T A THREAT.<br>THAT'S <u>S.O.S.</u>",
       "pause": 0.8
     },
     {
       "id": "l17",
-      "at": 52.92,
+      "at": 66.97,
       "who": "N",
-      "shot": "out",
-      "text": "Thirty seconds later their lights go out.",
-      "cap": "THIRTY SECONDS LATER<br>THEIR LIGHTS GO <u>OUT</u>.",
-      "pause": 0.65
+      "shot": "drive",
+      "text": "You keep driving.",
+      "cap": "YOU KEEP <u>DRIVING</u>.",
+      "pause": 0.9
     },
     {
       "id": "l18",
-      "at": 56.36,
+      "at": 69.13,
       "who": "N",
       "shot": "out",
-      "text": "And they don't come back on.",
-      "cap": "AND THEY DON'T <u>COME BACK ON</u>.",
-      "pause": 1.05
+      "text": "In the mirror, their lights don't fade. They go out.",
+      "cap": "IN THE MIRROR, THEIR LIGHTS<br>DON'T FADE. THEY GO <u>OUT</u>.",
+      "pause": 0.55
     },
     {
       "id": "l19",
-      "at": 59.82,
+      "at": 73.62,
+      "who": "N",
+      "shot": "out2",
+      "text": "And they don't come back on.",
+      "cap": "AND THEY DON'T COME BACK ON.",
+      "pause": 1.15
+    },
+    {
+      "id": "l20",
+      "at": 77.18,
       "who": "N",
       "shot": "end",
       "text": "Did you just leave someone to die?",

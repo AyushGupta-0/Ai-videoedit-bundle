@@ -1,176 +1,1095 @@
 {
-  "duration": 72.515,
+  "duration": 88.875,
   "lines": [
     {
       "id": "l01",
       "who": "N",
       "shot": "recap",
-      "text": "You went out the back.",
-      "cap": "YOU WENT OUT THE <b>BACK</b>.",
+      "text": "You left through the back. With the water.",
+      "cap": "YOU LEFT THROUGH THE BACK.<br>WITH THE <b>WATER</b>.",
       "start": 0.25,
-      "end": 2.225
+      "end": 3.425,
+      "words": [
+        {
+          "w": "You",
+          "s": 0.65,
+          "e": 0.775
+        },
+        {
+          "w": "left",
+          "s": 0.775,
+          "e": 1.05
+        },
+        {
+          "w": "through",
+          "s": 1.05,
+          "e": 1.25
+        },
+        {
+          "w": "the",
+          "s": 1.25,
+          "e": 1.375
+        },
+        {
+          "w": "back",
+          "s": 1.375,
+          "e": 1.9
+        },
+        {
+          "w": "With",
+          "s": 2.0,
+          "e": 2.2
+        },
+        {
+          "w": "the",
+          "s": 2.2,
+          "e": 2.337
+        },
+        {
+          "w": "water",
+          "s": 2.337,
+          "e": 3.125
+        }
+      ]
     },
     {
       "id": "l02",
       "who": "N",
-      "shot": "road",
-      "text": "On day four you meet another survivor.",
-      "cap": "ON DAY 4 YOU MEET<br>ANOTHER <b>SURVIVOR</b>.",
-      "start": 2.92,
-      "end": 6.195
+      "shot": "hook",
+      "text": "On day four, you meet another survivor.",
+      "cap": "ON <b>DAY 4</b>, YOU MEET<br>ANOTHER SURVIVOR.",
+      "start": 4.03,
+      "end": 7.455,
+      "words": [
+        {
+          "w": "On",
+          "s": 4.405,
+          "e": 4.605
+        },
+        {
+          "w": "day",
+          "s": 4.605,
+          "e": 4.88
+        },
+        {
+          "w": "four",
+          "s": 4.88,
+          "e": 5.355
+        },
+        {
+          "w": "you",
+          "s": 5.455,
+          "e": 5.605
+        },
+        {
+          "w": "meet",
+          "s": 5.605,
+          "e": 5.805
+        },
+        {
+          "w": "another",
+          "s": 5.805,
+          "e": 6.218
+        },
+        {
+          "w": "survivor",
+          "s": 6.218,
+          "e": 7.155
+        }
+      ]
     },
     {
       "id": "l03",
       "who": "N",
-      "shot": "road",
-      "text": "More dangerous than meeting the dead.",
-      "cap": "MORE DANGEROUS THAN<br>MEETING THE <u>DEAD</u>.",
-      "start": 6.255,
-      "end": 9.205
+      "shot": "hook",
+      "text": "And it costs you more than the dead ever did.",
+      "cap": "AND IT <u>COSTS YOU</u> MORE<br>THAN THE DEAD EVER DID.",
+      "start": 7.515,
+      "end": 11.065,
+      "words": [
+        {
+          "w": "And",
+          "s": 7.89,
+          "e": 8.027
+        },
+        {
+          "w": "it",
+          "s": 8.027,
+          "e": 8.128
+        },
+        {
+          "w": "costs",
+          "s": 8.128,
+          "e": 8.602
+        },
+        {
+          "w": "you",
+          "s": 8.602,
+          "e": 8.965
+        },
+        {
+          "w": "more",
+          "s": 8.965,
+          "e": 9.215
+        },
+        {
+          "w": "than",
+          "s": 9.215,
+          "e": 9.327
+        },
+        {
+          "w": "the",
+          "s": 9.327,
+          "e": 9.453
+        },
+        {
+          "w": "dead",
+          "s": 9.453,
+          "e": 9.752
+        },
+        {
+          "w": "ever",
+          "s": 9.752,
+          "e": 10.077
+        },
+        {
+          "w": "did",
+          "s": 10.077,
+          "e": 10.765
+        }
+      ]
     },
     {
       "id": "l04",
       "who": "N",
-      "shot": "follow",
-      "text": "Headlights. Four hundred metres back. For sixty miles.",
-      "cap": "HEADLIGHTS. <b>400 METRES</b> BACK.<br>FOR SIXTY MILES.",
-      "start": 9.805,
-      "end": 14.28
+      "shot": "road",
+      "text": "An empty A road, one in the morning. Fifty miles an hour.",
+      "cap": "AN EMPTY A-ROAD, 1 AM.<br><b>FIFTY</b> MILES AN HOUR.",
+      "start": 11.815,
+      "end": 16.515,
+      "words": [
+        {
+          "w": "An",
+          "s": 12.19,
+          "e": 12.327
+        },
+        {
+          "w": "empty",
+          "s": 12.327,
+          "e": 12.715
+        },
+        {
+          "w": "A",
+          "s": 12.715,
+          "e": 12.827
+        },
+        {
+          "w": "road",
+          "s": 12.827,
+          "e": 13.29
+        },
+        {
+          "w": "one",
+          "s": 13.365,
+          "e": 13.553
+        },
+        {
+          "w": "in",
+          "s": 13.553,
+          "e": 13.627
+        },
+        {
+          "w": "the",
+          "s": 13.627,
+          "e": 13.715
+        },
+        {
+          "w": "morning",
+          "s": 13.715,
+          "e": 14.34
+        },
+        {
+          "w": "Fifty",
+          "s": 14.49,
+          "e": 14.915
+        },
+        {
+          "w": "miles",
+          "s": 14.915,
+          "e": 15.353
+        },
+        {
+          "w": "an",
+          "s": 15.353,
+          "e": 15.49
+        },
+        {
+          "w": "hour",
+          "s": 15.49,
+          "e": 16.24
+        }
+      ]
     },
     {
       "id": "l05",
       "who": "N",
-      "shot": "follow",
-      "text": "You slow down. They slow down.",
-      "cap": "YOU SLOW DOWN.<br><u>THEY SLOW DOWN</u>.",
-      "start": 14.34,
-      "end": 17.065
+      "shot": "plant",
+      "text": "Ninety miles of fuel. No weapon. And nobody knows you're alive.",
+      "cap": "NINETY MILES OF FUEL. NO WEAPON.<br><b>NOBODY</b> KNOWS YOU'RE ALIVE.",
+      "start": 16.965,
+      "end": 22.065,
+      "words": [
+        {
+          "w": "Ninety",
+          "s": 17.39,
+          "e": 17.74
+        },
+        {
+          "w": "miles",
+          "s": 17.74,
+          "e": 18.102
+        },
+        {
+          "w": "of",
+          "s": 18.102,
+          "e": 18.227
+        },
+        {
+          "w": "fuel",
+          "s": 18.227,
+          "e": 18.79
+        },
+        {
+          "w": "No",
+          "s": 18.903,
+          "e": 19.153
+        },
+        {
+          "w": "weapon",
+          "s": 19.153,
+          "e": 19.765
+        },
+        {
+          "w": "And",
+          "s": 19.865,
+          "e": 20.04
+        },
+        {
+          "w": "nobody",
+          "s": 20.04,
+          "e": 20.427
+        },
+        {
+          "w": "knows",
+          "s": 20.427,
+          "e": 20.765
+        },
+        {
+          "w": "you're",
+          "s": 20.765,
+          "e": 20.915
+        },
+        {
+          "w": "alive",
+          "s": 20.915,
+          "e": 21.79
+        }
+      ]
     },
     {
       "id": "l06",
       "who": "N",
-      "shot": "radio",
-      "text": "Recovery in seven days. Do not convoy.",
-      "cap": "RECOVERY IN <b>SEVEN DAYS</b>.<br>DO NOT CONVOY.",
-      "start": 17.615,
-      "end": 21.39
+      "shot": "rule1",
+      "text": "Rule one. Never drive to where you sleep. Circle first.",
+      "cap": "RULE 1. NEVER DRIVE TO<br>WHERE YOU SLEEP. <b>CIRCLE FIRST</b>.",
+      "start": 22.665,
+      "end": 27.09,
+      "words": [
+        {
+          "w": "Rule",
+          "s": 23.09,
+          "e": 23.415
+        },
+        {
+          "w": "one",
+          "s": 23.415,
+          "e": 23.69
+        },
+        {
+          "w": "Never",
+          "s": 23.74,
+          "e": 24.04
+        },
+        {
+          "w": "drive",
+          "s": 24.04,
+          "e": 24.44
+        },
+        {
+          "w": "to",
+          "s": 24.44,
+          "e": 24.54
+        },
+        {
+          "w": "where",
+          "s": 24.54,
+          "e": 24.69
+        },
+        {
+          "w": "you",
+          "s": 24.69,
+          "e": 24.865
+        },
+        {
+          "w": "sleep",
+          "s": 24.865,
+          "e": 25.465
+        },
+        {
+          "w": "Circle",
+          "s": 25.615,
+          "e": 26.04
+        },
+        {
+          "w": "first",
+          "s": 26.04,
+          "e": 26.815
+        }
+      ]
     },
     {
       "id": "l07",
       "who": "N",
-      "shot": "rule1",
-      "text": "Rule one. Never drive straight to where you sleep.",
-      "cap": "RULE 1. NEVER DRIVE STRAIGHT<br>TO WHERE YOU <b>SLEEP</b>.",
-      "start": 21.79,
-      "end": 25.59
+      "shot": "obey1",
+      "text": "So you take the long way. Twice.",
+      "cap": "SO YOU TAKE THE LONG WAY.<br><b>TWICE</b>.",
+      "start": 27.44,
+      "end": 30.465,
+      "words": [
+        {
+          "w": "So",
+          "s": 27.84,
+          "e": 27.965
+        },
+        {
+          "w": "you",
+          "s": 27.965,
+          "e": 28.115
+        },
+        {
+          "w": "take",
+          "s": 28.115,
+          "e": 28.365
+        },
+        {
+          "w": "the",
+          "s": 28.365,
+          "e": 28.49
+        },
+        {
+          "w": "long",
+          "s": 28.49,
+          "e": 28.815
+        },
+        {
+          "w": "way",
+          "s": 28.815,
+          "e": 29.215
+        },
+        {
+          "w": "Twice",
+          "s": 29.353,
+          "e": 30.19
+        }
+      ]
     },
     {
       "id": "l08",
       "who": "N",
-      "shot": "rule2",
-      "text": "Rule two. Never let a stranger see your fuel.",
-      "cap": "RULE 2. NEVER LET A STRANGER<br>SEE YOUR <b>FUEL</b>.",
-      "start": 25.65,
-      "end": 29.45
+      "shot": "mirror",
+      "text": "Headlights. Four hundred metres back. For sixty miles.",
+      "cap": "HEADLIGHTS. <b>400 METRES</b> BACK.<br>FOR SIXTY MILES.",
+      "start": 31.015,
+      "end": 35.49,
+      "words": [
+        {
+          "w": "Headlights",
+          "s": 31.415,
+          "e": 31.94
+        },
+        {
+          "w": "Four",
+          "s": 32.003,
+          "e": 32.265
+        },
+        {
+          "w": "hundred",
+          "s": 32.265,
+          "e": 32.615
+        },
+        {
+          "w": "metres",
+          "s": 32.615,
+          "e": 32.99
+        },
+        {
+          "w": "back",
+          "s": 32.99,
+          "e": 33.615
+        },
+        {
+          "w": "For",
+          "s": 33.74,
+          "e": 33.928
+        },
+        {
+          "w": "sixty",
+          "s": 33.928,
+          "e": 34.34
+        },
+        {
+          "w": "miles",
+          "s": 34.34,
+          "e": 35.215
+        }
+      ]
     },
     {
       "id": "l09",
       "who": "N",
-      "shot": "rule3",
-      "text": "Rule three. Do not stop on open road.",
-      "cap": "RULE 3. <u>DO NOT STOP<br>ON OPEN ROAD</u>.",
-      "start": 29.51,
-      "end": 33.06
+      "shot": "rule2",
+      "text": "Rule two. Never let a stranger see your fuel.",
+      "cap": "RULE 2. NEVER LET A STRANGER<br>SEE YOUR <b>FUEL</b>.",
+      "start": 36.04,
+      "end": 39.84,
+      "words": [
+        {
+          "w": "Rule",
+          "s": 36.465,
+          "e": 36.815
+        },
+        {
+          "w": "two",
+          "s": 36.815,
+          "e": 37.265
+        },
+        {
+          "w": "Never",
+          "s": 37.403,
+          "e": 37.677
+        },
+        {
+          "w": "let",
+          "s": 37.677,
+          "e": 37.802
+        },
+        {
+          "w": "a",
+          "s": 37.802,
+          "e": 37.865
+        },
+        {
+          "w": "stranger",
+          "s": 37.865,
+          "e": 38.365
+        },
+        {
+          "w": "see",
+          "s": 38.365,
+          "e": 38.565
+        },
+        {
+          "w": "your",
+          "s": 38.565,
+          "e": 38.74
+        },
+        {
+          "w": "fuel",
+          "s": 38.74,
+          "e": 39.565
+        }
+      ]
     },
     {
       "id": "l10",
       "who": "N",
-      "shot": "good",
-      "text": "Good news. Ninety miles of fuel.",
-      "cap": "<b>GOOD NEWS</b>. 90 MILES OF FUEL.",
-      "start": 33.71,
-      "end": 36.885
+      "shot": "obey2",
+      "text": "You slow down. They slow down. You speed up. So do they.",
+      "cap": "YOU SLOW. THEY SLOW.<br>YOU SPEED UP. <u>SO DO THEY</u>.",
+      "start": 40.19,
+      "end": 44.515,
+      "words": [
+        {
+          "w": "You",
+          "s": 40.565,
+          "e": 40.702
+        },
+        {
+          "w": "slow",
+          "s": 40.702,
+          "e": 40.99
+        },
+        {
+          "w": "down",
+          "s": 40.99,
+          "e": 41.365
+        },
+        {
+          "w": "They",
+          "s": 41.402,
+          "e": 41.553
+        },
+        {
+          "w": "slow",
+          "s": 41.553,
+          "e": 41.865
+        },
+        {
+          "w": "down",
+          "s": 41.865,
+          "e": 42.19
+        },
+        {
+          "w": "You",
+          "s": 42.228,
+          "e": 42.353
+        },
+        {
+          "w": "speed",
+          "s": 42.353,
+          "e": 42.69
+        },
+        {
+          "w": "up",
+          "s": 42.69,
+          "e": 43.065
+        },
+        {
+          "w": "So",
+          "s": 43.19,
+          "e": 43.415
+        },
+        {
+          "w": "do",
+          "s": 43.415,
+          "e": 43.64
+        },
+        {
+          "w": "they",
+          "s": 43.64,
+          "e": 44.14
+        }
+      ]
     },
     {
       "id": "l11",
       "who": "N",
-      "shot": "bad",
-      "text": "Bad news. Every road south ends at one bridge.",
-      "cap": "<u>BAD NEWS</u>. EVERY ROAD SOUTH<br>ENDS AT <b>ONE BRIDGE</b>.",
-      "start": 36.945,
-      "end": 41.195
+      "shot": "radio",
+      "text": "Radio. Recovery in seven days. Do not convoy with unverified vehicles.",
+      "cap": "RECOVERY IN <b>SEVEN DAYS</b>.<br>DO NOT CONVOY.",
+      "start": 45.115,
+      "end": 51.39,
+      "words": [
+        {
+          "w": "Radio",
+          "s": 45.54,
+          "e": 46.14
+        },
+        {
+          "w": "Recovery",
+          "s": 46.265,
+          "e": 46.815
+        },
+        {
+          "w": "in",
+          "s": 46.815,
+          "e": 46.978
+        },
+        {
+          "w": "seven",
+          "s": 46.978,
+          "e": 47.34
+        },
+        {
+          "w": "days",
+          "s": 47.34,
+          "e": 48.09
+        },
+        {
+          "w": "Do",
+          "s": 48.215,
+          "e": 48.327
+        },
+        {
+          "w": "not",
+          "s": 48.327,
+          "e": 48.577
+        },
+        {
+          "w": "convoy",
+          "s": 48.577,
+          "e": 49.115
+        },
+        {
+          "w": "with",
+          "s": 49.115,
+          "e": 49.303
+        },
+        {
+          "w": "unverified",
+          "s": 49.303,
+          "e": 50.165
+        },
+        {
+          "w": "vehicles",
+          "s": 50.165,
+          "e": 51.115
+        }
+      ]
     },
     {
       "id": "l12",
       "who": "N",
-      "shot": "junction",
-      "text": "One seventeen. You kill your lights and turn off.",
-      "cap": "<b>1:17 AM</b>. YOU KILL YOUR LIGHTS<br>AND TURN OFF.",
-      "start": 41.745,
-      "end": 45.795
+      "shot": "rule3",
+      "text": "Rule three. Do not stop on open road.",
+      "cap": "RULE 3. DO NOT STOP<br>ON <u>OPEN ROAD</u>.",
+      "start": 51.84,
+      "end": 55.39,
+      "words": [
+        {
+          "w": "Rule",
+          "s": 52.265,
+          "e": 52.59
+        },
+        {
+          "w": "three",
+          "s": 52.59,
+          "e": 53.065
+        },
+        {
+          "w": "Do",
+          "s": 53.165,
+          "e": 53.278
+        },
+        {
+          "w": "not",
+          "s": 53.278,
+          "e": 53.515
+        },
+        {
+          "w": "stop",
+          "s": 53.515,
+          "e": 53.802
+        },
+        {
+          "w": "on",
+          "s": 53.802,
+          "e": 54.003
+        },
+        {
+          "w": "open",
+          "s": 54.003,
+          "e": 54.39
+        },
+        {
+          "w": "road",
+          "s": 54.39,
+          "e": 55.115
+        }
+      ]
     },
     {
       "id": "l13",
       "who": "N",
-      "shot": "sos",
-      "text": "Behind you, they stop. And they flash their headlights.",
-      "cap": "BEHIND YOU, THEY <b>STOP</b>.<br>AND FLASH THEIR HEADLIGHTS.",
-      "start": 46.445,
-      "end": 50.37
+      "shot": "obey3",
+      "text": "One seventeen. You kill your lights, and take a junction without indicating.",
+      "cap": "<b>1:17 AM</b>. LIGHTS OFF.<br>A JUNCTION, NO INDICATOR.",
+      "start": 55.89,
+      "end": 61.59,
+      "words": [
+        {
+          "w": "One",
+          "s": 56.315,
+          "e": 56.628
+        },
+        {
+          "w": "seventeen",
+          "s": 56.628,
+          "e": 57.74
+        },
+        {
+          "w": "You",
+          "s": 57.903,
+          "e": 58.078
+        },
+        {
+          "w": "kill",
+          "s": 58.078,
+          "e": 58.34
+        },
+        {
+          "w": "your",
+          "s": 58.34,
+          "e": 58.528
+        },
+        {
+          "w": "lights",
+          "s": 58.528,
+          "e": 58.99
+        },
+        {
+          "w": "and",
+          "s": 59.028,
+          "e": 59.14
+        },
+        {
+          "w": "take",
+          "s": 59.14,
+          "e": 59.352
+        },
+        {
+          "w": "a",
+          "s": 59.352,
+          "e": 59.452
+        },
+        {
+          "w": "junction",
+          "s": 59.452,
+          "e": 59.94
+        },
+        {
+          "w": "without",
+          "s": 59.94,
+          "e": 60.29
+        },
+        {
+          "w": "indicating",
+          "s": 60.29,
+          "e": 61.315
+        }
+      ]
     },
     {
       "id": "l14",
       "who": "N",
-      "shot": "sos",
-      "text": "Three long. Three short. Three long.",
-      "cap": "THREE LONG. THREE SHORT.<br>THREE LONG.",
-      "start": 50.43,
-      "end": 53.38
+      "shot": "flash",
+      "text": "Behind you, they stop. And they flash their headlights.",
+      "cap": "BEHIND YOU, THEY STOP.<br>AND THEY <b>FLASH</b>.",
+      "start": 62.14,
+      "end": 66.065,
+      "words": [
+        {
+          "w": "Behind",
+          "s": 62.49,
+          "e": 62.915
+        },
+        {
+          "w": "you",
+          "s": 62.915,
+          "e": 63.04
+        },
+        {
+          "w": "they",
+          "s": 63.078,
+          "e": 63.227
+        },
+        {
+          "w": "stop",
+          "s": 63.227,
+          "e": 63.865
+        },
+        {
+          "w": "And",
+          "s": 63.965,
+          "e": 64.102
+        },
+        {
+          "w": "they",
+          "s": 64.102,
+          "e": 64.265
+        },
+        {
+          "w": "flash",
+          "s": 64.265,
+          "e": 64.69
+        },
+        {
+          "w": "their",
+          "s": 64.69,
+          "e": 64.89
+        },
+        {
+          "w": "headlights",
+          "s": 64.89,
+          "e": 65.79
+        }
+      ]
     },
     {
       "id": "l15",
       "who": "N",
       "shot": "sos",
-      "text": "That's not a threat. That's S O S.",
-      "cap": "THAT'S NOT A THREAT.<br>THAT'S <u>S.O.S.</u>",
-      "start": 54.13,
-      "end": 57.28
+      "text": "Three long. Three short. Three long.",
+      "cap": "THREE LONG. THREE SHORT.<br>THREE LONG.",
+      "start": 66.565,
+      "end": 69.515,
+      "words": [
+        {
+          "w": "Three",
+          "s": 66.965,
+          "e": 67.19
+        },
+        {
+          "w": "long",
+          "s": 67.19,
+          "e": 67.565
+        },
+        {
+          "w": "Three",
+          "s": 67.627,
+          "e": 67.877
+        },
+        {
+          "w": "short",
+          "s": 67.877,
+          "e": 68.19
+        },
+        {
+          "w": "Three",
+          "s": 68.277,
+          "e": 68.54
+        },
+        {
+          "w": "long",
+          "s": 68.54,
+          "e": 69.24
+        }
+      ]
     },
     {
       "id": "l16",
       "who": "N",
-      "shot": "drive",
-      "text": "And you keep driving.",
-      "cap": "AND YOU <u>KEEP DRIVING</u>.",
-      "start": 58.13,
-      "end": 60.18
+      "shot": "sos2",
+      "text": "That isn't a threat. That's S O S.",
+      "cap": "THAT ISN'T A THREAT.<br>THAT'S <u>S.O.S.</u>",
+      "start": 70.115,
+      "end": 73.34,
+      "words": [
+        {
+          "w": "That",
+          "s": 70.49,
+          "e": 70.677
+        },
+        {
+          "w": "isn't",
+          "s": 70.677,
+          "e": 70.902
+        },
+        {
+          "w": "a",
+          "s": 70.902,
+          "e": 71.015
+        },
+        {
+          "w": "threat",
+          "s": 71.015,
+          "e": 71.565
+        },
+        {
+          "w": "That's",
+          "s": 71.665,
+          "e": 71.927
+        },
+        {
+          "w": "S",
+          "s": 71.927,
+          "e": 72.177
+        },
+        {
+          "w": "O",
+          "s": 72.177,
+          "e": 72.427
+        },
+        {
+          "w": "S.",
+          "s": 72.427,
+          "e": 73.015
+        }
+      ]
     },
     {
       "id": "l17",
       "who": "N",
-      "shot": "out",
-      "text": "Thirty seconds later their lights go out.",
-      "cap": "THIRTY SECONDS LATER<br>THEIR LIGHTS GO <u>OUT</u>.",
-      "start": 60.98,
-      "end": 64.38
+      "shot": "drive",
+      "text": "You keep driving.",
+      "cap": "YOU KEEP <u>DRIVING</u>.",
+      "start": 74.14,
+      "end": 76.065,
+      "words": [
+        {
+          "w": "You",
+          "s": 74.54,
+          "e": 74.665
+        },
+        {
+          "w": "keep",
+          "s": 74.665,
+          "e": 74.927
+        },
+        {
+          "w": "driving",
+          "s": 74.927,
+          "e": 75.79
+        }
+      ]
     },
     {
       "id": "l18",
       "who": "N",
       "shot": "out",
-      "text": "And they don't come back on.",
-      "cap": "AND THEY DON'T <u>COME BACK ON</u>.",
-      "start": 65.03,
-      "end": 67.48
+      "text": "In the mirror, their lights don't fade. They go out.",
+      "cap": "IN THE MIRROR, THEIR LIGHTS<br>DON'T FADE. THEY GO <u>OUT</u>.",
+      "start": 76.965,
+      "end": 80.74,
+      "words": [
+        {
+          "w": "In",
+          "s": 77.365,
+          "e": 77.452
+        },
+        {
+          "w": "the",
+          "s": 77.452,
+          "e": 77.54
+        },
+        {
+          "w": "mirror",
+          "s": 77.54,
+          "e": 77.89
+        },
+        {
+          "w": "their",
+          "s": 77.928,
+          "e": 78.09
+        },
+        {
+          "w": "lights",
+          "s": 78.09,
+          "e": 78.44
+        },
+        {
+          "w": "don't",
+          "s": 78.44,
+          "e": 78.727
+        },
+        {
+          "w": "fade",
+          "s": 78.727,
+          "e": 79.34
+        },
+        {
+          "w": "They",
+          "s": 79.465,
+          "e": 79.615
+        },
+        {
+          "w": "go",
+          "s": 79.615,
+          "e": 79.84
+        },
+        {
+          "w": "out",
+          "s": 79.84,
+          "e": 80.465
+        }
+      ]
     },
     {
       "id": "l19",
       "who": "N",
+      "shot": "out2",
+      "text": "And they don't come back on.",
+      "cap": "AND THEY DON'T COME BACK ON.",
+      "start": 81.29,
+      "end": 83.74,
+      "words": [
+        {
+          "w": "And",
+          "s": 81.64,
+          "e": 81.777
+        },
+        {
+          "w": "they",
+          "s": 81.777,
+          "e": 81.952
+        },
+        {
+          "w": "don't",
+          "s": 81.952,
+          "e": 82.265
+        },
+        {
+          "w": "come",
+          "s": 82.265,
+          "e": 82.515
+        },
+        {
+          "w": "back",
+          "s": 82.515,
+          "e": 82.84
+        },
+        {
+          "w": "on",
+          "s": 82.84,
+          "e": 83.465
+        }
+      ]
+    },
+    {
+      "id": "l20",
+      "who": "N",
       "shot": "end",
       "text": "Did you just leave someone to die?",
       "cap": "",
-      "start": 68.53,
-      "end": 71.255
+      "start": 84.89,
+      "end": 87.615,
+      "words": [
+        {
+          "w": "Did",
+          "s": 85.24,
+          "e": 85.365
+        },
+        {
+          "w": "you",
+          "s": 85.365,
+          "e": 85.515
+        },
+        {
+          "w": "just",
+          "s": 85.515,
+          "e": 85.815
+        },
+        {
+          "w": "leave",
+          "s": 85.815,
+          "e": 86.178
+        },
+        {
+          "w": "someone",
+          "s": 86.178,
+          "e": 86.49
+        },
+        {
+          "w": "to",
+          "s": 86.49,
+          "e": 86.615
+        },
+        {
+          "w": "die",
+          "s": 86.615,
+          "e": 87.315
+        }
+      ]
     }
   ]
 }

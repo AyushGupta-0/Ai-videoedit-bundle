@@ -164,7 +164,7 @@ const clockEl = document.getElementById("clock");
 for (let m = S0; m <= S1; m++){{
   const at = ((m - S0) / Math.max(1, S1 - S0)) * (DUR - 4.0);
   tl.set(clockEl, {{ textContent:
-    `${{Math.floor(m / 60)}}:${{String(m % 60).padStart(2, "0")}} ${{AMPM}}` }}, at);
+    `${{((Math.floor(m / 60) + 11) % 12) + 1}}:${{String(m % 60).padStart(2, "0")}} ${{AMPM}}` }}, at);
 }}
 
 const LINES = {lines};

@@ -1,0 +1,205 @@
+{
+  "day": 5,
+  "dur": 93.4,
+  "clock0": "4:31 AM",
+  "recov": 6,
+  "m0": 271,
+  "m1": 308,
+  "ampm": "AM",
+  "q1": "DO YOU GO DOWN",
+  "q2": "THE STAIRS?",
+  "btnA": "DOWN",
+  "btnB": "STAY",
+  "nexthook": "THE TRAIN MOVES.<br>NOTHING BOARDS IT ABOVE 20.",
+  "extra_css": "",
+  "motion": "/* hook: push on you; the fuel readout pulses on \"eleven miles\" */\ntl.fromTo(\"#hookfig\", { scale: 1.0, transformOrigin: \"50% 60%\" }, { scale: 1.07, duration: 7.4, ease: \"none\" }, 4.3);\ntl.fromTo(\"#fuel11\", { scale: 1 }, { scale: 1.12, duration: 0.3, yoyo: true, repeat: 1 }, 7.0);\n/* the map: every road draws into one bridge, then the queue backs up it */\n[\"#r1\",\"#r2\",\"#r3\",\"#r4\",\"#r5\"].forEach((id, i) => tl.fromTo(id, { drawSVG: \"0% 0%\" }, { drawSVG: \"0% 100%\", duration: 0.9, ease: \"power1.inOut\" }, 12.6 + i * 0.25));\ntl.fromTo(\"#queue\", { drawSVG: \"0% 0%\" }, { drawSVG: \"0% 100%\", duration: 1.6, ease: \"power1.out\" }, 14.7);\n/* rule 1 obeyed: the line ahead drifts under you */\ntl.fromTo(\"#rail\", { scale: 1.0, transformOrigin: \"50% 55%\" }, { scale: 1.08, duration: 4.5, ease: \"none\" }, 23.2);\n/* the plant */\ntl.fromTo(\"#radiobox\", { scale: 0.98 }, { scale: 1.04, duration: 6.2, ease: \"none\" }, 28.2);\ntl.fromTo(\"#staffbadge\", { opacity: 0, y: 12 }, { opacity: 1, y: 0, duration: 0.3, ease: \"power2.out\" }, 31.6);\n/* rule 2 obeyed: bridges counted, one by one */\n[39.5, 39.8, 40.1, 40.4].forEach((t, i) => {\n  tl.set(\"#brcount\", { textContent: String(i + 1) }, t);\n  tl.to(`#br${i}`, { opacity: 1, duration: 0.2 }, t);\n});\n/* good news: the cab window breathes */\ntl.to(\"#cabwin\", { boxShadow: \"0 0 70px rgba(240,169,60,.6)\", duration: 1.2, yoyo: true, repeat: 3, ease: \"sine.inOut\" }, 43.0);\n/* bad news: one door */\ntl.fromTo(\"#onedoor\", { scale: 1 }, { scale: 1.1, duration: 0.3, yoyo: true, repeat: 1 }, 55.6);\n/* inside: the key board, found */\ntl.fromTo(\"#keyboard\", { boxShadow: \"0 0 0 0 rgba(240,169,60,0)\" }, { boxShadow: \"0 0 30px 6px rgba(240,169,60,.4)\", duration: 0.8 }, 59.8);\n/* the creak: light comes UP the stairs behind you */\ntl.fromTo(\"#stairlight\", { height: 0 }, { height: 220, duration: 1.8, ease: \"power2.out\" }, 62.0);\n/* the voice */\ntl.set(\"#drv\", { textContent: \"\" }, 65.4);\ntl.to(\"#drv\", { duration: 1.0, scrambleText: { text: \"DRIVER?\", chars: \"upperCase\", speed: 0.7 } }, 65.6);\n/* the recall */\ntl.fromTo(\"#nodriver\", { scale: 1.8, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.32, ease: \"power3.out\" }, 77.0);\n/* THE REVERSAL: the loop plays past where it ever has */\ntl.to(\"#heremark\", { opacity: 0.3, duration: 0.5, yoyo: true, repeat: 3 }, 80.0);\ntl.to(\".wb\", { opacity: 1, duration: 0.12, stagger: 0.09, ease: \"none\" }, 81.6);\ntl.fromTo(\"#warnword\", { opacity: 0, scale: 1.4 }, { opacity: 1, scale: 1, duration: 0.35, ease: \"power3.out\" }, 85.8);",
+  "lines": [
+    [
+      "YOU DROVE ON. THEIR LIGHTS<br>NEVER CAME <u>BACK</u>.",
+      0.25,
+      3.825
+    ],
+    [
+      "<b>DAY 5</b>. YOUR CAR HAS<br>ELEVEN MILES LEFT.",
+      4.425,
+      8.375
+    ],
+    [
+      "AND THE ROAD IS ABOUT TO<br><u>COST YOU THE CAR</u>.",
+      8.435,
+      11.76
+    ],
+    [
+      "ROADS SOUTH END HERE.<br>SIX MILES. <b>ONE BRIDGE</b>.",
+      12.51,
+      17.385
+    ],
+    [
+      "RULE 1. WALK THE SLEEPERS.<br>STONE IS <b>LOUD</b>.",
+      17.885,
+      22.885
+    ],
+    [
+      "YOU LEAVE ON YOUR TERMS.<br>AND TAKE THE <b>RAILWAY</b>.",
+      23.235,
+      27.735
+    ],
+    [
+      "RECOVERY IN <b>SIX DAYS</b>.<br><b>RAIL STAFF: GONE DAY 1</b>.",
+      28.285,
+      34.51
+    ],
+    [
+      "RULE 2. COUNT <b>BRIDGES</b>.<br>NOT MILES.",
+      35.11,
+      38.41
+    ],
+    [
+      "ELEVEN MILES. FOUR BRIDGES.<br>A <b>FREIGHT YARD</b>.",
+      38.76,
+      42.46
+    ],
+    [
+      "A LOCOMOTIVE. IDLING.<br><b>NOBODY</b> IN THE CAB.",
+      42.96,
+      46.76
+    ],
+    [
+      "RULE 3. NEVER SHELTER<br>ANYWHERE WITH <u>ONE DOOR</u>.",
+      47.36,
+      51.435
+    ],
+    [
+      "BETWEEN YOU AND THE TRAIN:<br>A SIGNAL BOX. <u>ONE DOOR</u>.",
+      51.885,
+      56.76
+    ],
+    [
+      "<b>4:55 AM</b>. YOU GO IN<br>FOR THE YARD KEYS.",
+      57.41,
+      61.31
+    ],
+    [
+      "THE STAIRCASE CREAKS.<br><u>BEHIND YOU</u>.",
+      61.81,
+      64.785
+    ],
+    [
+      "“DRIVER? THAT YOU?<br>COME <u>DOWN</u>.”",
+      65.485,
+      70.585
+    ],
+    [
+      "RAIL STAFF: GONE DAY 1.<br>THE RADIO <u>SAID SO</u>.",
+      71.335,
+      76.385
+    ],
+    [
+      "THERE IS <u>NO DRIVER</u>.",
+      76.835,
+      78.91
+    ],
+    [
+      "THEN THE LOOP PLAYS PAST<br>WHERE IT EVER HAS.",
+      79.86,
+      85.585
+    ],
+    [
+      "IT'S A <u>WARNING</u>.",
+      85.645,
+      87.47
+    ],
+    [
+      "",
+      88.62,
+      90.945
+    ]
+  ],
+  "panels": [
+    [
+      "recap",
+      0.0,
+      4.42
+    ],
+    [
+      "hook",
+      4.22,
+      12.51
+    ],
+    [
+      "bridge",
+      12.31,
+      17.89
+    ],
+    [
+      "rule1",
+      17.69,
+      23.24
+    ],
+    [
+      "obey1",
+      23.04,
+      28.29
+    ],
+    [
+      "plant",
+      28.09,
+      35.11
+    ],
+    [
+      "rule2",
+      34.91,
+      38.760000000000005
+    ],
+    [
+      "obey2",
+      38.56,
+      42.96
+    ],
+    [
+      "good",
+      42.76,
+      47.36
+    ],
+    [
+      "rule3",
+      47.16,
+      51.88
+    ],
+    [
+      "bad",
+      51.68,
+      57.410000000000004
+    ],
+    [
+      "inside",
+      57.21,
+      61.81
+    ],
+    [
+      "creak",
+      61.61,
+      65.48
+    ],
+    [
+      "voice",
+      65.28,
+      71.33
+    ],
+    [
+      "recall",
+      71.13,
+      79.86
+    ],
+    [
+      "loop",
+      79.66,
+      88.62
+    ],
+    [
+      "end",
+      88.42,
+      93.4
+    ]
+  ]
+}
