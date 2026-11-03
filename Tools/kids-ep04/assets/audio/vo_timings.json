@@ -1,0 +1,131 @@
+{
+  "duration": 52.71,
+  "lines": [
+    {
+      "id": "l01",
+      "who": "N",
+      "shot": "g01",
+      "text": "Seven days. Anaya went back to the shop before the sun was high.",
+      "cap": "",
+      "start": 0.3,
+      "end": 5.375
+    },
+    {
+      "id": "l02",
+      "who": "N",
+      "shot": "g01",
+      "text": "The other buyer was coming at six o'clock.",
+      "cap": "",
+      "start": 5.435,
+      "end": 8.935
+    },
+    {
+      "id": "l03",
+      "who": "N",
+      "shot": "g02",
+      "text": "So she decided she would be there first.",
+      "cap": "",
+      "start": 9.0,
+      "end": 12.175
+    },
+    {
+      "id": "l04",
+      "who": "N",
+      "shot": "g03",
+      "text": "She sat on the step while the lane got hot and quiet.",
+      "cap": "",
+      "start": 12.4,
+      "end": 16.4
+    },
+    {
+      "id": "l05",
+      "who": "N",
+      "shot": "g04",
+      "text": "She turned her last coin over and over.",
+      "cap": "",
+      "start": 17.4,
+      "end": 20.675
+    },
+    {
+      "id": "l06",
+      "who": "N",
+      "shot": "g05",
+      "text": "The shadows got longer.",
+      "cap": "",
+      "start": 21.0,
+      "end": 23.575
+    },
+    {
+      "id": "l07",
+      "who": "N",
+      "shot": "g06",
+      "text": "Twice she stood up because she heard someone coming. Twice it was nobody.",
+      "cap": "",
+      "start": 23.635,
+      "end": 28.96
+    },
+    {
+      "id": "l08",
+      "who": "N",
+      "shot": "g07",
+      "text": "The shop lights came on.",
+      "cap": "",
+      "start": 30.0,
+      "end": 32.55
+    },
+    {
+      "id": "l09",
+      "who": "N",
+      "shot": "g08",
+      "text": "Ten to six. Five to six.",
+      "cap": "",
+      "start": 32.61,
+      "end": 35.71
+    },
+    {
+      "id": "l10",
+      "who": "N",
+      "shot": "g09",
+      "text": "Six o'clock.",
+      "cap": "",
+      "start": 36.0,
+      "end": 38.05
+    },
+    {
+      "id": "l11",
+      "who": "N",
+      "shot": "g09",
+      "text": "And nobody came.",
+      "cap": "",
+      "start": 38.2,
+      "end": 40.4
+    },
+    {
+      "id": "l12",
+      "who": "N",
+      "shot": "g09",
+      "text": "She had waited eight hours, and she had won.",
+      "cap": "",
+      "start": 40.8,
+      "end": 44.2
+    },
+    {
+      "id": "l13",
+      "who": "N",
+      "shot": "g10",
+      "text": "Then she heard footsteps behind her.",
+      "cap": "",
+      "start": 45.4,
+      "end": 48.475
+    },
+    {
+      "id": "l14",
+      "who": "N",
+      "shot": "g10",
+      "text": "Somebody was walking up the lane.",
+      "cap": "",
+      "start": 48.6,
+      "end": 51.45
+    }
+  ]
+}

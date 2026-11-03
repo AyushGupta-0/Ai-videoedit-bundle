@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <title>Six O'Clock</title>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+<style>
+  html,body { margin:0; background:#000; }
+  #root { position:relative; width:1080px; height:1920px; overflow:hidden;
+          background:#000; font-family:"Avenir Next","Helvetica Neue",sans-serif; }
+  .plate { position:absolute; inset:0; opacity:0; will-change:opacity; }
+  .plate img { position:absolute; left:50%; top:50%; width:1080px; height:1920px;
+               margin:-960px 0 0 -540px; object-fit:cover; will-change:transform; }
+  #grade { position:absolute; inset:0; pointer-events:none;
+           background:
+             radial-gradient(118% 80% at 50% 42%, rgba(0,0,0,0) 48%, rgba(10,6,2,.62) 100%),
+             linear-gradient(180deg, rgba(255,176,92,.10) 0%, rgba(0,0,0,0) 34%,
+                             rgba(0,0,0,0) 62%, rgba(24,10,2,.40) 100%); }
+  /* A text-shadow alone is not enough: on a bright plate the caption washed out
+     (EP03 shot f03). This scrim sits behind the caption band only, is invisible
+     over dark plates, and guarantees contrast over light ones. */
+  #capscrim { position:absolute; left:0; right:0; top:120px; height:330px;
+              pointer-events:none;
+              background:linear-gradient(180deg, rgba(8,5,2,0) 0%, rgba(8,5,2,.46) 26%,
+                                         rgba(8,5,2,.46) 74%, rgba(8,5,2,0) 100%); }
+  #capwrap { position:absolute; left:84px; right:84px; top:196px; text-align:center; }
+  #cap { display:inline-block; color:#fff; font-size:52px; line-height:1.3;
+         font-weight:600; letter-spacing:.2px; opacity:0;
+         text-shadow:0 3px 18px rgba(0,0,0,.85), 0 1px 3px rgba(0,0,0,.9); }
+  #progress { position:absolute; left:0; bottom:0; height:5px; width:0;
+              background:linear-gradient(90deg,#ffb45c,#ffe3b0); opacity:.85; }
+</style>
+  </head>
+  <body>
+<div id="root" data-composition-id="ep04" data-start="0" data-duration="53.11"
+     data-width="1080" data-height="1920" data-track-kind="graphics">
+  <div id="plates" class="clip" data-start="0" data-duration="53.11" data-track-index="0"></div>
+  <div id="grade"  class="clip" data-start="0" data-duration="53.11" data-track-index="1"
+       data-layout-ignore></div>
+  <div id="capscrim" class="clip" data-start="0" data-duration="53.11" data-track-index="2"
+       data-layout-ignore></div>
+  <div id="capwrap" class="clip" data-start="0" data-duration="53.11" data-track-index="3"
+       data-track-kind="captions"><span id="cap"></span></div>
+  <div id="progress" class="clip" data-start="0" data-duration="53.11" data-track-index="4"
+       data-layout-ignore></div>
+</div>
+
+<audio id="vo" src="assets/audio/mix.wav" data-start="0" data-volume="1"></audio>
+
+<script>
+  const DUR = 53.11;
+  const tl = gsap.timeline({ paused: true });
+  tl.fromTo("#progress", { width: 0 }, { width: 1080, duration: DUR, ease: "none" }, 0);
+
+  const SHOTS = [
+    { img:"g01", in:0.0, out:8.99, from:[1.05,-28,24], to:[1.32,32,-28] },
+    { img:"g02", in:8.8, out:12.39, from:[1.36,30,-26], to:[1.05,-26,22] },
+    { img:"g03", in:12.2, out:17.39, from:[1.05,28,-24], to:[1.4000000000000001,-32,28] },
+    { img:"g04", in:17.2, out:20.99, from:[1.32,-30,26], to:[1.05,26,-22] },
+    { img:"g05", in:20.8, out:23.63, from:[1.05,-28,24], to:[1.36,32,-28] },
+    { img:"g06", in:23.44, out:29.99, from:[1.4000000000000001,30,-26], to:[1.05,-26,22] },
+    { img:"g07", in:29.8, out:32.6, from:[1.05,28,-24], to:[1.32,-32,28] },
+    { img:"g08", in:32.41, out:35.99, from:[1.36,-30,26], to:[1.05,26,-22] },
+    { img:"g09", in:35.8, out:45.39, from:[1.05,-28,24], to:[1.4000000000000001,32,-28] },
+    { img:"g10", in:45.2, out:53.11, from:[1.32,30,-26], to:[1.05,-26,22] }
+  ];
+
+  const platesEl = document.getElementById("plates");
+  SHOTS.forEach((s, i) => {
+    const d = document.createElement("div");
+    d.className = "plate"; d.id = `plate${i}`;
+    const im = document.createElement("img");
+    im.src = `assets/shots/${s.img}.png`;
+    d.appendChild(im); platesEl.appendChild(d);
+    const FADE = 0.55;
+    tl.to(d, { opacity: 1, duration: FADE }, s.in);
+    if (s.out < DUR) tl.to(d, { opacity: 0, duration: FADE }, s.out - FADE);
+    tl.fromTo(im,
+      { scale: s.from[0], x: s.from[1], y: s.from[2] },
+      { scale: s.to[0], x: s.to[1], y: s.to[2], duration: s.out - s.in, ease: "none" },
+      s.in);
+  });
+
+  const LINES = [
+    ["Seven days. Anaya went back to the shop before the sun was high.", 0.3, 5.375],
+    ["The other buyer was coming at six o'clock.", 5.435, 8.935],
+    ["So she decided she would be there first.", 9.0, 12.175],
+    ["She sat on the step while the lane got hot and quiet.", 12.4, 16.4],
+    ["She turned her last coin over and over.", 17.4, 20.675],
+    ["The shadows got longer.", 21.0, 23.575],
+    ["Twice she stood up because she heard someone coming. Twice it was nobody.", 23.635, 28.96],
+    ["The shop lights came on.", 30.0, 32.55],
+    ["Ten to six. Five to six.", 32.61, 35.71],
+    ["Six o'clock.", 36.0, 38.05],
+    ["And nobody came.", 38.2, 40.4],
+    ["She had waited eight hours, and she had won.", 40.8, 44.2],
+    ["Then she heard footsteps behind her.", 45.4, 48.475],
+    ["Somebody was walking up the lane.", 48.6, 51.45]
+  ];
+  const capEl = document.getElementById("cap");
+  LINES.forEach(([text, a, b], i) => {
+    tl.call(() => { capEl.textContent = text; }, null, a);
+    tl.fromTo(capEl, { opacity: 0, y: 16 },
+              { opacity: 1, y: 0, duration: 0.34, ease: "power2.out" }, a);
+    const next = LINES[i + 1] ? LINES[i + 1][1] : DUR;
+    tl.to(capEl, { opacity: 0, duration: 0.26 }, Math.min(b, next - 0.30));
+  });
+
+  window.__timelines = window.__timelines || {};
+  window.__timelines["ep04"] = tl;
+</script>
+  </body>
+</html>
