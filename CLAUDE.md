@@ -217,7 +217,34 @@ timeline registered at `window.__timelines["<id>"]`.
     across 19 lines. So: never assume a re-run reproduces the file, but a re-run never
     invalidates a composition synced to the previous timings. Also: **macOS has no `timeout`
     binary** — a command wrapped in it silently never runs. Use the watchdog pattern instead.
-23. **git on this exFAT SSD**: macOS writes `._` AppleDouble files *inside* `.git`, which corrupt
+23. **whisper `-ml 1` word times are not alignment — they are token-count interpolation.**
+    Measured median error **3.7 s** on a 14 s clip; the last word of a 78 s file landed at
+    87.8 s. The whole whisper+difflib caption pass was built on this. `-dtw` fixes the overrun
+    (150 ms late bias) but is **silently disabled unless you also pass `-nfa`** — flash-attn
+    is on by default and the only sign is a log line and `t_dtw = -1` everywhere.
+24. **Kokoro already emits exact word timestamps.** `KPipeline.Result.tokens[i].start_ts/end_ts`
+    for English — exact by construction, the aligner is inside the synthesiser; verified within
+    5–40 ms of acoustic onsets. Phrase-final `end_ts` includes the trailing pause, so end each
+    word at the next word's start and clamp the last. Hindi tokens carry no times upstream
+    (`join_timestamps` is gated to `'ab'`); split `output.pred_dur` on the phoneme spaces
+    (600 samples/frame @ 24 kHz). `build_kids_vo.py` writes these as `words:[{w,s,e}]`.
+25. **Image generation: FLUX.2 klein 4B via mflux is the SD1.5 replacement.** GenEval two-object
+    0.92 vs SD1.5's 0.38; position 0.67 vs 0.04 — the exact staging failure in §16. Apache-2.0
+    for DiT, Qwen3-4B encoder and VAE. Measured on a 16 GB M4: ~85 s/image at 1 MP with
+    `--low-ram`, peak 7.7–9.9 GB. Start with `--model-path Runpod/FLUX.2-klein-4B-mflux-4bit`
+    (4.6 GB; nothing bf16 ever loads). Never `--small-text-encoder` — the 4B LLM encoder IS
+    what fixes staging. **Reboot before the first run.** Keep `HF_HOME` on the internal disk for
+    this one. Runner-up Z-Image-Turbo: same adherence, 50% heavier, 2× slower.
+26. **TTS licences that look open and are not** (weights, not code): F5-TTS base, OpenAudio
+    S1-mini, Fish S2 Pro / Drama 3, OmniVoice, Breeze TTS 2, Voxtral TTS, Spark-TTS, rumik-oss,
+    MMS-TTS-hin, Phonon 40M variants, Higgs TTS 3, XTTS-v2. Piper's `lessac` voice and everything
+    fine-tuned from it are research-only. Clean and <4 GB on Mac: Kokoro (Apache), Chatterbox
+    family (MIT, has a Hindi pack; use the MLX 4-bit builds — PyTorch on a 16 GB M2 swapped to
+    20 GB), Qwen3-TTS (Apache; CustomVoice needs `--voice`, only 1.7B has `instruct`),
+    Ming-3.0-tts-0.5B (MIT, #4 open leaderboard), VoxCPM2 (Apache, Hindi), Pocket TTS
+    (CC-BY-4.0), Supertonic 3 (OpenRAIL-M). Kokoro is #10 on that board; swap only on a
+    measured A/B.
+27. **git on this exFAT SSD**: macOS writes `._` AppleDouble files *inside* `.git`, which corrupt
     pack indexes and refs. Before and after any git write, run:
     `find .git -name '._*' -delete`. Repo: `github.com/AyushGupta-0/Ai-videoedit-bundle` (ssh).
 
