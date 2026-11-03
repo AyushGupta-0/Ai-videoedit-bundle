@@ -73,27 +73,27 @@
 </style>
   </head>
   <body>
-<div id="root" data-composition-id="td1" data-start="0" data-duration="95.4"
+<div id="root" data-composition-id="td1" data-start="0" data-duration="75.4"
      data-width="1080" data-height="1920" data-track-kind="graphics">
 
-  <div id="panels" class="clip" data-start="0" data-duration="95.4" data-track-index="0"></div>
+  <div id="panels" class="clip" data-start="0" data-duration="75.4" data-track-index="0"></div>
 
-  <div id="hud" class="clip" data-start="0" data-duration="95.4" data-track-index="1" data-layout-ignore>
+  <div id="hud" class="clip" data-start="0" data-duration="75.4" data-track-index="1" data-layout-ignore>
     <div id="daytag"><i></i>DAY 1 / 10</div>
     <div id="clock">11:12 PM</div>
     <div id="recov">RECOVERY IN 10 DAYS</div>
   </div>
-  <div id="mark" class="clip" data-start="0" data-duration="95.4" data-track-index="2"
+  <div id="mark" class="clip" data-start="0" data-duration="75.4" data-track-index="2"
        data-layout-ignore>1min.thinker</div>
 
-  <div id="capwrap" class="clip" data-start="0" data-duration="95.4" data-track-index="3"
+  <div id="capwrap" class="clip" data-start="0" data-duration="75.4" data-track-index="3"
        data-track-kind="captions"><span id="cap"></span></div>
 </div>
 
 <audio id="vo" src="assets/audio/vo.wav" data-start="0" data-volume="1"></audio>
 
 <script>
-const DUR = 95.4;
+const DUR = 75.4;
 const tl = gsap.timeline({ paused: true });
 const S = document.getElementById("panels");
 const mk = (id, html) => {
@@ -304,6 +304,18 @@ mk("radio2", `<div style="position:absolute;inset:0;background:#070c16;"></div>
   </div>
   <div class="vign"></div>`);
 
+mk("name", `<div style="position:absolute;inset:0;background:#0a0509;"></div>
+  <div class="rulecard" style="background:none;">
+    <div class="rulebadge" style="background:#7a1414;">RULE #3</div>
+    <div class="ruletext" style="opacity:.42;">IF SOMEONE USES<br>YOUR NAME,<br>DO NOT ANSWER</div>
+  </div>
+  <!-- stamped across the rule it just violated -->
+  <div id="broken" style="position:absolute;left:50%;top:1245px;transform:translateX(-50%) rotate(-7deg);
+       border:7px solid var(--red);color:var(--red);font-size:86px;font-weight:800;
+       letter-spacing:7px;padding:14px 46px;border-radius:8px;opacity:0;">BROKEN</div>
+  <div style="position:absolute;inset:0;
+       background:radial-gradient(80% 50% at 50% 50%,rgba(190,20,20,.20),rgba(0,0,0,0) 70%);"></div>`);
+
 mk("end", `<div style="position:absolute;inset:0;
        background:radial-gradient(90% 60% at 50% 46%,#2a0b0b 0%,#07090f 72%);"></div>
   <div style="position:absolute;left:0;right:0;top:720px;text-align:center;">
@@ -316,24 +328,29 @@ mk("end", `<div style="position:absolute;inset:0;
     <div style="background:var(--red-dk);color:#fff;font-size:38px;font-weight:800;
          padding:20px 52px;border-radius:10px;letter-spacing:2px;">STAY</div>
   </div>
-  <div style="position:absolute;left:0;right:0;top:1180px;text-align:center;color:#7d879b;
-       font-size:30px;letter-spacing:3px;">FOLLOW FOR DAY 2</div>`);
+  <div style="position:absolute;left:0;right:0;top:1190px;text-align:center;">
+    <div style="color:#7d879b;font-size:26px;letter-spacing:4px;">DAY 2</div>
+    <div style="color:#fff;font-size:44px;font-weight:800;letter-spacing:.5px;margin-top:10px;">
+      YOU NEVER TOLD IT<br>YOUR NAME.</div>
+    <div style="color:var(--amber);font-size:27px;letter-spacing:3px;margin-top:22px;">FOLLOW FOR DAY 2</div>
+  </div>`);
 
 /* ============================ TIMELINE ============================ */
 /* Panel windows come from the measured VO timings, never estimates. */
 const SH = [
-  ["jam",    0.00, 13.60],
-  ["radio", 13.40, 26.30],
-  ["rule1", 26.10, 32.95],
-  ["rule2", 32.75, 36.90],
-  ["rule3", 36.70, 42.45],
-  ["good",  42.25, 51.70],
-  ["bad",   51.50, 58.00],
-  ["torch", 57.80, 69.40],
-  ["tap",   69.20, 72.80],
-  ["voice", 72.60, 81.80],
-  ["radio2",81.60, 90.95],
-  ["end",   90.75, DUR],
+  ["jam",    0.00,  8.40],
+  ["radio",  8.20, 18.10],
+  ["rule1", 17.90, 24.30],
+  ["rule2", 24.10, 28.30],
+  ["rule3", 28.10, 33.80],
+  ["good",  33.60, 39.30],
+  ["bad",   39.10, 44.90],
+  ["torch", 44.70, 53.00],
+  ["tap",   52.80, 56.50],
+  ["voice", 56.30, 61.00],
+  ["radio2",60.80, 67.80],
+  ["name",  67.60, 71.10],
+  ["end",   70.90, DUR],
 ];
 const FADE = 0.30;                      // hard-ish cuts: this genre does not dissolve
 SH.forEach(([id, a, b]) => {
@@ -343,26 +360,29 @@ SH.forEach(([id, a, b]) => {
 });
 
 /* slow drift on the two wide plates so they are never static */
-tl.fromTo("#jamcars", { scale: 1.00, y: 0 }, { scale: 1.12, y: -30, duration: 13.6, ease: "none" }, 0);
-tl.fromTo("#radiobox", { scale: 0.97 }, { scale: 1.05, duration: 12.9, ease: "none" }, 13.4);
+tl.fromTo("#jamcars", { scale: 1.00, y: 0 }, { scale: 1.10, y: -26, duration: 8.4, ease: "none" }, 0);
+tl.fromTo("#radiobox", { scale: 0.97 }, { scale: 1.05, duration: 9.9, ease: "none" }, 8.2);
 
 /* the torch walks down the line of cars and stops at yours */
-tl.fromTo(["#beam", "#torchdot"], { x: 0 }, { x: 430, duration: 8.4, ease: "power1.inOut" }, 58.0);
-tl.to(["#beam", "#torchdot"], { x: 448, duration: 2.6, ease: "power2.out" }, 66.4);
+tl.fromTo(["#beam", "#torchdot"], { x: 0 }, { x: 430, duration: 5.2, ease: "power1.inOut" }, 45.0);
+tl.to(["#beam", "#torchdot"], { x: 448, duration: 2.0, ease: "power2.out" }, 50.2);
 
 /* two knocks, on the beat of the line */
-[69.9, 70.9].forEach((t, i) => {
+[53.7, 54.7].forEach((t, i) => {
   const r = `#ring${i + 1}`;
   tl.fromTo(r, { scale: 0.35, opacity: 0.95 },
                { scale: 2.3, opacity: 0, duration: 0.85, ease: "power2.out" }, t);
 });
 
 /* the lie, glowing as it is spoken */
-tl.fromTo("#halo", { opacity: 0.25 }, { opacity: 0.75, duration: 4.0, ease: "sine.inOut" }, 73.2);
-tl.fromTo("#warn", { opacity: 0.25 }, { opacity: 1, duration: 0.5 }, 82.0);
+tl.fromTo("#halo", { opacity: 0.25 }, { opacity: 0.78, duration: 3.4, ease: "sine.inOut" }, 56.8);
+tl.fromTo("#warn", { opacity: 0.25 }, { opacity: 1, duration: 0.5 }, 61.3);
+
+tl.fromTo("#broken", { scale: 1.9, opacity: 0 },
+          { scale: 1, opacity: 1, duration: 0.34, ease: "power3.out" }, 68.5);
 
 /* ---- HUD clock: 11:12 PM -> 11:52 PM, stepping, never smooth ---- */
-const START_MIN = 11 * 60 + 12, END_MIN = 11 * 60 + 52;
+const START_MIN = 11 * 60 + 20, END_MIN = 11 * 60 + 52;
 const clockEl = document.getElementById("clock");
 for (let m = START_MIN; m <= END_MIN; m++){
   const at = ((m - START_MIN) / (END_MIN - START_MIN)) * (DUR - 4.0);
@@ -372,28 +392,23 @@ for (let m = START_MIN; m <= END_MIN; m++){
 
 /* ---- captions: white caps, one amber word, from the real timings ---- */
 const LINES = [
-  ["IMAGINE YOU'RE SITTING IN FOUR LANES OF TRAFFIC<br>THAT HAVEN'T MOVED IN <b>FORTY MINUTES</b>.", 0.30, 6.47],
-  ["NOBODY'S HORN IS WORKING.",                                   6.54,  9.09],
-  ["THAT'S THE FIRST THING YOU NOTICE.<br>NOBODY IS <b>HONKING</b>.", 9.14, 13.17],
-  ["THEN THE RADIO STATION STOPS <b>MID-SENTENCE</b>.",           13.72, 17.09],
-  ["EMERGENCY BROADCAST. ONE LOOP.",                              17.16, 20.38],
-  ["STAY IN YOUR VEHICLE.<br>RECOVERY IN <b>TEN DAYS</b>.",       20.44, 26.02],
-  ["RULE 1. <b>ENGINE OFF</b>.",                                26.46, 28.89],
-  ["AN IDLING CAR IS AUDIBLE AT <b>200 METRES</b>.",              28.95, 32.88],
-  ["RULE 2. HAZARDS OFF.<br>LIGHT IS AN <b>ADDRESS</b>.",       32.94, 36.84],
-  ["RULE 3. IF SOMEONE USES YOUR NAME,<br><u>DO NOT ANSWER</u>.", 36.90, 41.84],
-  ["<b>GOOD NEWS</b>. HALF A TANK, A BOTTLE OF WATER,",           42.55, 46.15],
-  ["AND A HAND-CRANK RADIO YOUR FATHER<br>LEFT IN THE BOOT IN 2009.", 46.20, 51.63],
-  ["<u>BAD NEWS</u>. YOUR WINDOW HAS BEEN STUCK<br><b>TWO INCHES</b> OPEN SINCE AUGUST.", 51.69, 57.52],
-  ["<b>11:52 PM</b>. A TORCH BEAM STARTS MOVING<br>DOWN THE LINE OF CARS.", 58.06, 64.06],
-  ["WINDOW. BY <b>WINDOW</b>.",                                   64.12, 66.35],
-  ["IT STOPS AT <u>YOURS</u>.",                                   66.41, 68.61],
-  ["SOMEONE TAPS THE GLASS. <b>TWICE</b>.",                       69.46, 72.33],
-  ["“IT'S MARCUS, PARAMEDIC.<br>I'M WITH THE RESPONSE UNIT.”", 72.83, 77.33],
-  ["“YOU'RE <b>BLEEDING</b>. LET ME IN.”",              77.39, 80.87],
-  ["ALL RESPONSE UNITS WERE WITHDRAWN<br><u>SIX HOURS AGO</u>.",  81.87, 87.80],
-  ["AND YOU'RE <u>NOT BLEEDING</u>.",                             87.86, 89.93],
-  ["",                                                            91.03, 93.20],
+  ["<b>DAY 1</b>. FOUR LANES OF TRAFFIC<br>THAT HAVEN'T MOVED IN FORTY MINUTES.", 0.25,  5.55],
+  ["AND NOBODY IS <b>HONKING</b>.",                                   5.61,  7.99],
+  ["THEN THE RADIO CUTS OUT <b>MID-SENTENCE</b>.",                    8.59, 11.66],
+  ["EMERGENCY BROADCAST. ONE LOOP.<br>RECOVERY IN <b>TEN DAYS</b>.", 11.72, 17.80],
+  ["RULE 1. <b>ENGINE OFF</b>.<br>AUDIBLE AT 200 METRES.",           18.25, 24.25],
+  ["RULE 2. HAZARDS OFF.<br>LIGHT IS AN <b>ADDRESS</b>.",            24.30, 28.20],
+  ["RULE 3. IF SOMEONE USES YOUR NAME,<br><u>DO NOT ANSWER</u>.",    28.27, 33.22],
+  ["<b>GOOD NEWS</b>. HALF A TANK, WATER,<br>AND A HAND-CRANK RADIO.", 33.91, 39.24],
+  ["<u>BAD NEWS</u>. YOUR WINDOW IS STUCK<br><b>TWO INCHES</b> OPEN.", 39.30, 44.52],
+  ["<b>11:52</b>. A TORCH MOVES DOWN<br>THE LINE OF CARS.",          45.08, 50.12],
+  ["IT STOPS AT <u>YOURS</u>.",                                      50.19, 52.38],
+  ["SOMEONE TAPS THE GLASS. <b>TWICE</b>.",                          53.23, 56.11],
+  ["“IT'S MARCUS. PARAMEDIC.<br>YOU'RE BLEEDING, LET ME IN.”",       56.66, 60.59],
+  ["ALL RESPONSE UNITS WITHDREW<br><u>SIX HOURS AGO</u>.",           61.19, 64.83],
+  ["AND YOU'RE <u>NOT BLEEDING</u>.",                                64.89, 66.97],
+  ["THEN IT SAYS <u>YOUR NAME</u>.",                                 68.02, 70.19],
+  ["",                                                               71.30, 73.47],
 ];
 const capEl = document.getElementById("cap");
 LINES.forEach(([html, a, b], i) => {

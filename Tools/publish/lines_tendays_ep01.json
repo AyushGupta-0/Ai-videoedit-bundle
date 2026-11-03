@@ -1,174 +1,23 @@
 {
   "episode": "tendays-ep01-traffic-jam",
-  "voices": {
-    "N": {
-      "kokoro": "am_michael",
-      "speed": 0.97,
-      "semitones": 0.0
-    }
-  },
+  "voices": { "N": { "kokoro": "am_michael", "speed": 0.97, "semitones": 0.0 } },
   "lines": [
-    {
-      "id": "l01",
-      "at": 0.3,
-      "who": "N",
-      "shot": "jam",
-      "text": "Imagine you're sitting in four lanes of traffic that haven't moved in forty minutes."
-    },
-    {
-      "id": "l02",
-      "at": 5.6,
-      "who": "N",
-      "shot": "jam",
-      "text": "Nobody's horn is working."
-    },
-    {
-      "id": "l03",
-      "at": 7.6,
-      "who": "N",
-      "shot": "jam",
-      "text": "That's the first thing you notice. Nobody is honking.",
-      "pause": 0.55
-    },
-    {
-      "id": "l04",
-      "at": 11.4,
-      "who": "N",
-      "shot": "radio",
-      "text": "Then the radio station stops mid sentence."
-    },
-    {
-      "id": "l05",
-      "at": 15.2,
-      "who": "N",
-      "shot": "radio",
-      "text": "Emergency broadcast. One loop."
-    },
-    {
-      "id": "l06",
-      "at": 18.0,
-      "who": "N",
-      "shot": "radio",
-      "text": "Stay in your vehicle. Do not walk the carriageway. Recovery in ten days.",
-      "pause": 0.45
-    },
-    {
-      "id": "l07",
-      "at": 23.6,
-      "who": "N",
-      "shot": "rule1",
-      "text": "Rule one. Engine off."
-    },
-    {
-      "id": "l08",
-      "at": 26.2,
-      "who": "N",
-      "shot": "rule1",
-      "text": "An idling car is audible at two hundred metres."
-    },
-    {
-      "id": "l09",
-      "at": 29.8,
-      "who": "N",
-      "shot": "rule2",
-      "text": "Rule two. Hazards off. Light is an address."
-    },
-    {
-      "id": "l10",
-      "at": 33.8,
-      "who": "N",
-      "shot": "rule3",
-      "text": "Rule three. If someone outside uses your name, do not answer.",
-      "pause": 0.7
-    },
-    {
-      "id": "l11",
-      "at": 39.0,
-      "who": "N",
-      "shot": "good",
-      "text": "Good news. Half a tank, a bottle of water,"
-    },
-    {
-      "id": "l12",
-      "at": 42.4,
-      "who": "N",
-      "shot": "good",
-      "text": "and a hand crank radio your father left in the boot in two thousand nine."
-    },
-    {
-      "id": "l13",
-      "at": 47.6,
-      "who": "N",
-      "shot": "bad",
-      "text": "Bad news. Your driver's window has been stuck two inches open since August.",
-      "pause": 0.55
-    },
-    {
-      "id": "l14",
-      "at": 53.4,
-      "who": "N",
-      "shot": "torch",
-      "text": "Eleven fifty two P M. A torch beam starts moving down the line of cars."
-    },
-    {
-      "id": "l15",
-      "at": 58.8,
-      "who": "N",
-      "shot": "torch",
-      "text": "Window. By window."
-    },
-    {
-      "id": "l16",
-      "at": 61.6,
-      "who": "N",
-      "shot": "torch",
-      "text": "It stops at yours.",
-      "pause": 0.85
-    },
-    {
-      "id": "l17",
-      "at": 64.6,
-      "who": "N",
-      "shot": "tap",
-      "text": "Someone taps the glass. Twice.",
-      "pause": 0.5
-    },
-    {
-      "id": "l18",
-      "at": 68.4,
-      "who": "N",
-      "shot": "voice",
-      "text": "Hey. It's Marcus, paramedic, I'm with the response unit."
-    },
-    {
-      "id": "l19",
-      "at": 72.6,
-      "who": "N",
-      "shot": "voice",
-      "text": "You're bleeding. Let me in and I'll patch you up.",
-      "pause": 1.0
-    },
-    {
-      "id": "l20",
-      "at": 77.0,
-      "who": "N",
-      "shot": "radio2",
-      "text": "Emergency broadcast. All response units were withdrawn six hours ago."
-    },
-    {
-      "id": "l21",
-      "at": 82.6,
-      "who": "N",
-      "shot": "radio2",
-      "text": "And you're not bleeding.",
-      "pause": 1.1
-    },
-    {
-      "id": "l22",
-      "at": 85.6,
-      "who": "N",
-      "shot": "end",
-      "text": "Do you open the door?"
-    }
+    {"id":"l01","at":0.25,"who":"N","shot":"jam","text":"Day one. Four lanes of traffic that haven't moved in forty minutes."},
+    {"id":"l02","at":4.20,"who":"N","shot":"jam","text":"And nobody is honking.","pause":0.60},
+    {"id":"l03","at":6.60,"who":"N","shot":"radio","text":"Then the radio cuts out mid sentence."},
+    {"id":"l04","at":9.60,"who":"N","shot":"radio","text":"Emergency broadcast, one loop. Stay in your vehicle. Recovery in ten days.","pause":0.45},
+    {"id":"l05","at":15.40,"who":"N","shot":"rule1","text":"Rule one. Engine off. An idling car is audible at two hundred metres."},
+    {"id":"l06","at":20.60,"who":"N","shot":"rule2","text":"Rule two. Hazards off. Light is an address."},
+    {"id":"l07","at":24.40,"who":"N","shot":"rule3","text":"Rule three. If someone outside uses your name, do not answer.","pause":0.70},
+    {"id":"l08","at":29.80,"who":"N","shot":"good","text":"Good news. Half a tank, a bottle of water, and a hand crank radio."},
+    {"id":"l09","at":34.80,"who":"N","shot":"bad","text":"Bad news. Your window has been stuck two inches open since August.","pause":0.55},
+    {"id":"l10","at":40.40,"who":"N","shot":"torch","text":"Eleven fifty two. A torch starts moving down the line of cars."},
+    {"id":"l11","at":45.20,"who":"N","shot":"torch","text":"It stops at yours.","pause":0.85},
+    {"id":"l12","at":47.80,"who":"N","shot":"tap","text":"Someone taps the glass. Twice.","pause":0.55},
+    {"id":"l13","at":51.20,"who":"N","shot":"voice","text":"It's Marcus. Paramedic. You're bleeding, let me in.","pause":0.60},
+    {"id":"l14","at":56.00,"who":"N","shot":"radio2","text":"All response units withdrew six hours ago."},
+    {"id":"l15","at":59.60,"who":"N","shot":"radio2","text":"And you're not bleeding.","pause":1.05},
+    {"id":"l16","at":62.80,"who":"N","shot":"name","text":"Then it says your name.","pause":1.10},
+    {"id":"l17","at":66.20,"who":"N","shot":"end","text":"Do you open the door?"}
   ]
 }
