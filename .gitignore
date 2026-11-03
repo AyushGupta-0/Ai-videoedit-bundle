@@ -67,3 +67,6 @@ Tools/lightspeed-hi/assets/sfx/
 # ---- debug/scratch ----
 **/check_frames/
 *.bak
+
+# ---- brand identity assets ARE tracked ----
+!Brand Kit/identity/*.png
