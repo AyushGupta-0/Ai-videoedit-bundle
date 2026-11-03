@@ -1,0 +1,1125 @@
+{
+  "duration": 93.02,
+  "lines": [
+    {
+      "id": "l01",
+      "who": "N",
+      "shot": "recap",
+      "text": "You burned it.",
+      "cap": "YOU <b>BURNED</b> IT.",
+      "start": 0.25,
+      "end": 2.025,
+      "words": [
+        {
+          "w": "You",
+          "s": 0.65,
+          "e": 0.85
+        },
+        {
+          "w": "burned",
+          "s": 0.85,
+          "e": 1.3
+        },
+        {
+          "w": "it",
+          "s": 1.3,
+          "e": 1.75
+        }
+      ]
+    },
+    {
+      "id": "l02",
+      "who": "N",
+      "shot": "hook",
+      "text": "Day ten. Antarctica. And you are, genuinely, the safest person alive.",
+      "cap": "<b>DAY 10</b>. ANTARCTICA.<br>THE SAFEST PERSON ALIVE.",
+      "start": 2.625,
+      "end": 8.375,
+      "words": [
+        {
+          "w": "Day",
+          "s": 3.05,
+          "e": 3.287
+        },
+        {
+          "w": "ten",
+          "s": 3.287,
+          "e": 3.65
+        },
+        {
+          "w": "Antarctica",
+          "s": 3.738,
+          "e": 4.75
+        },
+        {
+          "w": "And",
+          "s": 4.9,
+          "e": 5.05
+        },
+        {
+          "w": "you",
+          "s": 5.05,
+          "e": 5.212
+        },
+        {
+          "w": "are",
+          "s": 5.212,
+          "e": 5.35
+        },
+        {
+          "w": "genuinely",
+          "s": 5.413,
+          "e": 6.05
+        },
+        {
+          "w": "the",
+          "s": 6.087,
+          "e": 6.225
+        },
+        {
+          "w": "safest",
+          "s": 6.225,
+          "e": 6.825
+        },
+        {
+          "w": "person",
+          "s": 6.825,
+          "e": 7.25
+        },
+        {
+          "w": "alive",
+          "s": 7.25,
+          "e": 8.1
+        }
+      ]
+    },
+    {
+      "id": "l03",
+      "who": "N",
+      "shot": "hook",
+      "text": "For about four more hours.",
+      "cap": "FOR ABOUT<br><u>FOUR MORE HOURS</u>.",
+      "start": 8.435,
+      "end": 10.81,
+      "words": [
+        {
+          "w": "For",
+          "s": 8.81,
+          "e": 8.922
+        },
+        {
+          "w": "about",
+          "s": 8.922,
+          "e": 9.197
+        },
+        {
+          "w": "four",
+          "s": 9.197,
+          "e": 9.485
+        },
+        {
+          "w": "more",
+          "s": 9.485,
+          "e": 9.723
+        },
+        {
+          "w": "hours",
+          "s": 9.723,
+          "e": 10.535
+        }
+      ]
+    },
+    {
+      "id": "l04",
+      "who": "N",
+      "shot": "wide",
+      "text": "Minus sixty outside. They freeze solid in under two minutes.",
+      "cap": "<b>\u221260\u00b0</b>. THEY FREEZE SOLID<br>IN UNDER <u>TWO MINUTES</u>.",
+      "start": 11.31,
+      "end": 16.06,
+      "words": [
+        {
+          "w": "Minus",
+          "s": 11.735,
+          "e": 12.072
+        },
+        {
+          "w": "sixty",
+          "s": 12.072,
+          "e": 12.46
+        },
+        {
+          "w": "outside",
+          "s": 12.46,
+          "e": 13.36
+        },
+        {
+          "w": "They",
+          "s": 13.485,
+          "e": 13.672
+        },
+        {
+          "w": "freeze",
+          "s": 13.672,
+          "e": 14.035
+        },
+        {
+          "w": "solid",
+          "s": 14.035,
+          "e": 14.51
+        },
+        {
+          "w": "in",
+          "s": 14.51,
+          "e": 14.598
+        },
+        {
+          "w": "under",
+          "s": 14.598,
+          "e": 14.823
+        },
+        {
+          "w": "two",
+          "s": 14.823,
+          "e": 15.035
+        },
+        {
+          "w": "minutes",
+          "s": 15.035,
+          "e": 15.785
+        }
+      ]
+    },
+    {
+      "id": "l05",
+      "who": "N",
+      "shot": "rule1",
+      "text": "Rule one. Shelter.",
+      "cap": "RULE 1. <b>SHELTER</b>.",
+      "start": 16.56,
+      "end": 18.735,
+      "words": [
+        {
+          "w": "Rule",
+          "s": 16.985,
+          "e": 17.26
+        },
+        {
+          "w": "one",
+          "s": 17.26,
+          "e": 17.535
+        },
+        {
+          "w": "Shelter",
+          "s": 17.598,
+          "e": 18.435
+        }
+      ]
+    },
+    {
+      "id": "l06",
+      "who": "N",
+      "shot": "obey1",
+      "text": "Built for forty. Sealed against a hundred-mile wind. Check.",
+      "cap": "BUILT FOR FORTY. SEALED<br>AGAINST A <b>100-MILE WIND</b>.",
+      "start": 19.035,
+      "end": 23.835,
+      "words": [
+        {
+          "w": "Built",
+          "s": 19.435,
+          "e": 19.71
+        },
+        {
+          "w": "for",
+          "s": 19.71,
+          "e": 19.885
+        },
+        {
+          "w": "forty",
+          "s": 19.885,
+          "e": 20.485
+        },
+        {
+          "w": "Sealed",
+          "s": 20.635,
+          "e": 20.997
+        },
+        {
+          "w": "against",
+          "s": 20.997,
+          "e": 21.323
+        },
+        {
+          "w": "a",
+          "s": 21.323,
+          "e": 21.385
+        },
+        {
+          "w": "hundred-mile",
+          "s": 21.385,
+          "e": 22.048
+        },
+        {
+          "w": "wind",
+          "s": 22.048,
+          "e": 22.66
+        },
+        {
+          "w": "Check",
+          "s": 22.847,
+          "e": 23.535
+        }
+      ]
+    },
+    {
+      "id": "l07",
+      "who": "N",
+      "shot": "rule2",
+      "text": "Rule two. Food.",
+      "cap": "RULE 2. <b>FOOD</b>.",
+      "start": 24.285,
+      "end": 26.41,
+      "words": [
+        {
+          "w": "Rule",
+          "s": 24.71,
+          "e": 24.998
+        },
+        {
+          "w": "two",
+          "s": 24.998,
+          "e": 25.285
+        },
+        {
+          "w": "Food",
+          "s": 25.36,
+          "e": 26.11
+        }
+      ]
+    },
+    {
+      "id": "l08",
+      "who": "N",
+      "shot": "obey2",
+      "text": "A year of frozen stores. Ten thousand gallons of fuel. Water, lying on the ground. Check.",
+      "cap": "A YEAR OF STORES.<br>10,000 GALLONS OF <b>FUEL</b>.",
+      "start": 26.71,
+      "end": 33.76,
+      "words": [
+        {
+          "w": "A",
+          "s": 27.11,
+          "e": 27.197
+        },
+        {
+          "w": "year",
+          "s": 27.197,
+          "e": 27.472
+        },
+        {
+          "w": "of",
+          "s": 27.472,
+          "e": 27.597
+        },
+        {
+          "w": "frozen",
+          "s": 27.597,
+          "e": 28.123
+        },
+        {
+          "w": "stores",
+          "s": 28.123,
+          "e": 28.91
+        },
+        {
+          "w": "Ten",
+          "s": 29.022,
+          "e": 29.285
+        },
+        {
+          "w": "thousand",
+          "s": 29.285,
+          "e": 29.723
+        },
+        {
+          "w": "gallons",
+          "s": 29.723,
+          "e": 30.148
+        },
+        {
+          "w": "of",
+          "s": 30.148,
+          "e": 30.285
+        },
+        {
+          "w": "fuel",
+          "s": 30.285,
+          "e": 30.985
+        },
+        {
+          "w": "Water",
+          "s": 31.135,
+          "e": 31.535
+        },
+        {
+          "w": "lying",
+          "s": 31.598,
+          "e": 31.947
+        },
+        {
+          "w": "on",
+          "s": 31.947,
+          "e": 32.048
+        },
+        {
+          "w": "the",
+          "s": 32.048,
+          "e": 32.135
+        },
+        {
+          "w": "ground",
+          "s": 32.135,
+          "e": 32.66
+        },
+        {
+          "w": "Check",
+          "s": 32.785,
+          "e": 33.46
+        }
+      ]
+    },
+    {
+      "id": "l09",
+      "who": "N",
+      "shot": "rule3",
+      "text": "Rule three. Cold.",
+      "cap": "RULE 3. <b>COLD</b>.",
+      "start": 34.21,
+      "end": 36.41,
+      "words": [
+        {
+          "w": "Rule",
+          "s": 34.635,
+          "e": 34.898
+        },
+        {
+          "w": "three",
+          "s": 34.898,
+          "e": 35.235
+        },
+        {
+          "w": "Cold",
+          "s": 35.323,
+          "e": 36.11
+        }
+      ]
+    },
+    {
+      "id": "l10",
+      "who": "N",
+      "shot": "obey3",
+      "text": "You switch off the runway lights. Nothing finds you from the air. Check.",
+      "cap": "LIGHTS <b>OFF</b>. NOTHING FINDS<br>YOU FROM THE AIR.",
+      "start": 36.71,
+      "end": 41.76,
+      "words": [
+        {
+          "w": "You",
+          "s": 37.085,
+          "e": 37.222
+        },
+        {
+          "w": "switch",
+          "s": 37.222,
+          "e": 37.535
+        },
+        {
+          "w": "off",
+          "s": 37.535,
+          "e": 37.76
+        },
+        {
+          "w": "the",
+          "s": 37.76,
+          "e": 37.885
+        },
+        {
+          "w": "runway",
+          "s": 37.885,
+          "e": 38.285
+        },
+        {
+          "w": "lights",
+          "s": 38.285,
+          "e": 38.91
+        },
+        {
+          "w": "Nothing",
+          "s": 39.022,
+          "e": 39.398
+        },
+        {
+          "w": "finds",
+          "s": 39.398,
+          "e": 39.723
+        },
+        {
+          "w": "you",
+          "s": 39.723,
+          "e": 39.81
+        },
+        {
+          "w": "from",
+          "s": 39.81,
+          "e": 39.947
+        },
+        {
+          "w": "the",
+          "s": 39.947,
+          "e": 40.098
+        },
+        {
+          "w": "air",
+          "s": 40.098,
+          "e": 40.66
+        },
+        {
+          "w": "Check",
+          "s": 40.81,
+          "e": 41.46
+        }
+      ]
+    },
+    {
+      "id": "l11",
+      "who": "N",
+      "shot": "paper",
+      "text": "On paper, you have thought of everything.",
+      "cap": "ON PAPER, YOU HAVE<br>THOUGHT OF <b>EVERYTHING</b>.",
+      "start": 42.31,
+      "end": 45.485,
+      "words": [
+        {
+          "w": "On",
+          "s": 42.685,
+          "e": 42.898
+        },
+        {
+          "w": "paper",
+          "s": 42.898,
+          "e": 43.485
+        },
+        {
+          "w": "you",
+          "s": 43.56,
+          "e": 43.673
+        },
+        {
+          "w": "have",
+          "s": 43.673,
+          "e": 43.872
+        },
+        {
+          "w": "thought",
+          "s": 43.872,
+          "e": 44.122
+        },
+        {
+          "w": "of",
+          "s": 44.122,
+          "e": 44.248
+        },
+        {
+          "w": "everything",
+          "s": 44.248,
+          "e": 45.21
+        }
+      ]
+    },
+    {
+      "id": "l12",
+      "who": "N",
+      "shot": "turn",
+      "text": "Then Priya picks up your radio. And turns it over.",
+      "cap": "PRIYA PICKS UP YOUR RADIO.<br>AND <u>TURNS IT OVER</u>.",
+      "start": 45.985,
+      "end": 50.035,
+      "words": [
+        {
+          "w": "Then",
+          "s": 46.36,
+          "e": 46.598
+        },
+        {
+          "w": "Priya",
+          "s": 46.598,
+          "e": 46.96
+        },
+        {
+          "w": "picks",
+          "s": 46.96,
+          "e": 47.223
+        },
+        {
+          "w": "up",
+          "s": 47.223,
+          "e": 47.398
+        },
+        {
+          "w": "your",
+          "s": 47.398,
+          "e": 47.535
+        },
+        {
+          "w": "radio",
+          "s": 47.535,
+          "e": 48.235
+        },
+        {
+          "w": "And",
+          "s": 48.36,
+          "e": 48.51
+        },
+        {
+          "w": "turns",
+          "s": 48.51,
+          "e": 48.873
+        },
+        {
+          "w": "it",
+          "s": 48.873,
+          "e": 48.96
+        },
+        {
+          "w": "over",
+          "s": 48.96,
+          "e": 49.735
+        }
+      ]
+    },
+    {
+      "id": "l13",
+      "who": "N",
+      "shot": "turn",
+      "text": "And asks why a receiver has an aerial.",
+      "cap": "\u201cWHY DOES A RECEIVER<br>HAVE AN <u>AERIAL</u>?\u201d",
+      "start": 50.585,
+      "end": 53.785,
+      "words": [
+        {
+          "w": "And",
+          "s": 50.96,
+          "e": 51.122
+        },
+        {
+          "w": "asks",
+          "s": 51.122,
+          "e": 51.485
+        },
+        {
+          "w": "why",
+          "s": 51.485,
+          "e": 51.698
+        },
+        {
+          "w": "a",
+          "s": 51.698,
+          "e": 51.76
+        },
+        {
+          "w": "receiver",
+          "s": 51.76,
+          "e": 52.335
+        },
+        {
+          "w": "has",
+          "s": 52.335,
+          "e": 52.547
+        },
+        {
+          "w": "an",
+          "s": 52.547,
+          "e": 52.672
+        },
+        {
+          "w": "aerial",
+          "s": 52.672,
+          "e": 53.51
+        }
+      ]
+    },
+    {
+      "id": "l14",
+      "who": "N",
+      "shot": "twoway",
+      "text": "It's a two-way set. Every time you cranked it to listen\u2014",
+      "cap": "IT'S A <b>TWO-WAY</b> SET.<br>EVERY TIME YOU CRANKED IT\u2014",
+      "start": 54.485,
+      "end": 58.735,
+      "words": [
+        {
+          "w": "It's",
+          "s": 54.835,
+          "e": 55.022
+        },
+        {
+          "w": "a",
+          "s": 55.022,
+          "e": 55.122
+        },
+        {
+          "w": "two-way",
+          "s": 55.122,
+          "e": 55.635
+        },
+        {
+          "w": "set",
+          "s": 55.635,
+          "e": 56.185
+        },
+        {
+          "w": "Every",
+          "s": 56.322,
+          "e": 56.66
+        },
+        {
+          "w": "time",
+          "s": 56.66,
+          "e": 56.985
+        },
+        {
+          "w": "you",
+          "s": 56.985,
+          "e": 57.148
+        },
+        {
+          "w": "cranked",
+          "s": 57.148,
+          "e": 57.472
+        },
+        {
+          "w": "it",
+          "s": 57.472,
+          "e": 57.56
+        },
+        {
+          "w": "to",
+          "s": 57.56,
+          "e": 57.685
+        },
+        {
+          "w": "listen",
+          "s": 57.685,
+          "e": 58.46
+        }
+      ]
+    },
+    {
+      "id": "l15",
+      "who": "N",
+      "shot": "recall",
+      "text": "Day one, the traffic. Day three, the service station. Day five, the signal box\u2014",
+      "cap": "DAY 1. DAY 3. DAY 5.<br>EVERY TIME YOU <u>LISTENED</u>\u2014",
+      "start": 59.035,
+      "end": 65.41,
+      "words": [
+        {
+          "w": "Day",
+          "s": 59.46,
+          "e": 59.697
+        },
+        {
+          "w": "one",
+          "s": 59.697,
+          "e": 59.935
+        },
+        {
+          "w": "the",
+          "s": 59.973,
+          "e": 60.06
+        },
+        {
+          "w": "traffic",
+          "s": 60.06,
+          "e": 60.785
+        },
+        {
+          "w": "Day",
+          "s": 60.922,
+          "e": 61.21
+        },
+        {
+          "w": "three",
+          "s": 61.21,
+          "e": 61.535
+        },
+        {
+          "w": "the",
+          "s": 61.573,
+          "e": 61.698
+        },
+        {
+          "w": "service",
+          "s": 61.698,
+          "e": 62.085
+        },
+        {
+          "w": "station",
+          "s": 62.085,
+          "e": 62.885
+        },
+        {
+          "w": "Day",
+          "s": 63.022,
+          "e": 63.31
+        },
+        {
+          "w": "five",
+          "s": 63.31,
+          "e": 63.785
+        },
+        {
+          "w": "the",
+          "s": 63.822,
+          "e": 63.947
+        },
+        {
+          "w": "signal",
+          "s": 63.947,
+          "e": 64.36
+        },
+        {
+          "w": "box",
+          "s": 64.36,
+          "e": 65.135
+        }
+      ]
+    },
+    {
+      "id": "l16",
+      "who": "N",
+      "shot": "recall",
+      "text": "You were transmitting.",
+      "cap": "YOU WERE <u>TRANSMITTING</u>.",
+      "start": 65.71,
+      "end": 67.86,
+      "words": [
+        {
+          "w": "You",
+          "s": 66.11,
+          "e": 66.222
+        },
+        {
+          "w": "were",
+          "s": 66.222,
+          "e": 66.372
+        },
+        {
+          "w": "transmitting",
+          "s": 66.372,
+          "e": 67.585
+        }
+      ]
+    },
+    {
+      "id": "l17",
+      "who": "N",
+      "shot": "twist",
+      "text": "The loop was never a broadcast. It was someone answering you.",
+      "cap": "NEVER A BROADCAST.<br>SOMEONE <u>ANSWERING YOU</u>.",
+      "start": 68.46,
+      "end": 73.16,
+      "words": [
+        {
+          "w": "The",
+          "s": 68.835,
+          "e": 68.972
+        },
+        {
+          "w": "loop",
+          "s": 68.972,
+          "e": 69.285
+        },
+        {
+          "w": "was",
+          "s": 69.285,
+          "e": 69.498
+        },
+        {
+          "w": "never",
+          "s": 69.498,
+          "e": 69.772
+        },
+        {
+          "w": "a",
+          "s": 69.772,
+          "e": 69.86
+        },
+        {
+          "w": "broadcast",
+          "s": 69.86,
+          "e": 70.885
+        },
+        {
+          "w": "It",
+          "s": 71.01,
+          "e": 71.148
+        },
+        {
+          "w": "was",
+          "s": 71.148,
+          "e": 71.297
+        },
+        {
+          "w": "someone",
+          "s": 71.297,
+          "e": 71.71
+        },
+        {
+          "w": "answering",
+          "s": 71.71,
+          "e": 72.297
+        },
+        {
+          "w": "you",
+          "s": 72.297,
+          "e": 72.86
+        }
+      ]
+    },
+    {
+      "id": "l18",
+      "who": "N",
+      "shot": "twist",
+      "text": "For ten days, you've told something exactly where you are. Four hours ago, you told it where you'll be all winter.",
+      "cap": "FOR TEN DAYS, YOU TOLD IT<br>EXACTLY <b>WHERE YOU ARE</b>.",
+      "start": 73.86,
+      "end": 81.71,
+      "words": [
+        {
+          "w": "For",
+          "s": 74.21,
+          "e": 74.347
+        },
+        {
+          "w": "ten",
+          "s": 74.347,
+          "e": 74.66
+        },
+        {
+          "w": "days",
+          "s": 74.66,
+          "e": 75.185
+        },
+        {
+          "w": "you've",
+          "s": 75.26,
+          "e": 75.46
+        },
+        {
+          "w": "told",
+          "s": 75.46,
+          "e": 75.735
+        },
+        {
+          "w": "something",
+          "s": 75.735,
+          "e": 76.085
+        },
+        {
+          "w": "exactly",
+          "s": 76.085,
+          "e": 76.685
+        },
+        {
+          "w": "where",
+          "s": 76.685,
+          "e": 76.922
+        },
+        {
+          "w": "you",
+          "s": 76.922,
+          "e": 77.135
+        },
+        {
+          "w": "are",
+          "s": 77.135,
+          "e": 77.785
+        },
+        {
+          "w": "Four",
+          "s": 77.935,
+          "e": 78.248
+        },
+        {
+          "w": "hours",
+          "s": 78.248,
+          "e": 78.66
+        },
+        {
+          "w": "ago",
+          "s": 78.66,
+          "e": 79.11
+        },
+        {
+          "w": "you",
+          "s": 79.21,
+          "e": 79.373
+        },
+        {
+          "w": "told",
+          "s": 79.373,
+          "e": 79.685
+        },
+        {
+          "w": "it",
+          "s": 79.685,
+          "e": 79.835
+        },
+        {
+          "w": "where",
+          "s": 79.835,
+          "e": 80.01
+        },
+        {
+          "w": "you'll",
+          "s": 80.01,
+          "e": 80.185
+        },
+        {
+          "w": "be",
+          "s": 80.185,
+          "e": 80.347
+        },
+        {
+          "w": "all",
+          "s": 80.347,
+          "e": 80.623
+        },
+        {
+          "w": "winter",
+          "s": 80.623,
+          "e": 81.435
+        }
+      ]
+    },
+    {
+      "id": "l19",
+      "who": "N",
+      "shot": "lights",
+      "text": "Outside, the runway lights come back on. By themselves.",
+      "cap": "THE LIGHTS COME BACK ON.<br><u>BY THEMSELVES</u>.",
+      "start": 82.41,
+      "end": 86.935,
+      "words": [
+        {
+          "w": "Outside",
+          "s": 82.81,
+          "e": 83.385
+        },
+        {
+          "w": "the",
+          "s": 83.422,
+          "e": 83.51
+        },
+        {
+          "w": "runway",
+          "s": 83.51,
+          "e": 83.91
+        },
+        {
+          "w": "lights",
+          "s": 83.91,
+          "e": 84.235
+        },
+        {
+          "w": "come",
+          "s": 84.235,
+          "e": 84.41
+        },
+        {
+          "w": "back",
+          "s": 84.41,
+          "e": 84.71
+        },
+        {
+          "w": "on",
+          "s": 84.71,
+          "e": 85.21
+        },
+        {
+          "w": "By",
+          "s": 85.348,
+          "e": 85.56
+        },
+        {
+          "w": "themselves",
+          "s": 85.56,
+          "e": 86.66
+        }
+      ]
+    },
+    {
+      "id": "l20",
+      "who": "N",
+      "shot": "end",
+      "text": "You were never following the signal. It was following you.",
+      "cap": "",
+      "start": 87.635,
+      "end": 91.76,
+      "words": [
+        {
+          "w": "You",
+          "s": 88.035,
+          "e": 88.135
+        },
+        {
+          "w": "were",
+          "s": 88.135,
+          "e": 88.297
+        },
+        {
+          "w": "never",
+          "s": 88.297,
+          "e": 88.673
+        },
+        {
+          "w": "following",
+          "s": 88.673,
+          "e": 89.147
+        },
+        {
+          "w": "the",
+          "s": 89.147,
+          "e": 89.285
+        },
+        {
+          "w": "signal",
+          "s": 89.285,
+          "e": 89.935
+        },
+        {
+          "w": "It",
+          "s": 90.06,
+          "e": 90.197
+        },
+        {
+          "w": "was",
+          "s": 90.197,
+          "e": 90.372
+        },
+        {
+          "w": "following",
+          "s": 90.372,
+          "e": 90.923
+        },
+        {
+          "w": "you",
+          "s": 90.923,
+          "e": 91.46
+        }
+      ]
+    }
+  ]
+}

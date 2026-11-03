@@ -1,0 +1,202 @@
+{
+  "day": 10,
+  "dur": 94.2,
+  "clock0": "8:41 PM",
+  "recov": 1,
+  "m0": 521,
+  "m1": 548,
+  "ampm": "PM",
+  "q1": "IT WAS",
+  "q2": "FOLLOWING YOU.",
+  "btnA": "SEASON 2",
+  "btnB": "FROM DAY 1",
+  "nextlabel": "TEN DAYS · SEASON 2",
+  "nexthook": "WHO WAS<br>ON THE RADIO?",
+  "followlabel": "FOLLOW FOR SEASON 2",
+  "extra_css": "",
+  "motion": "/* recap: the log burns */\ntl.fromTo(\"#fl1\", { scaleY: 0.92, transformOrigin: \"50% 100%\" }, { scaleY: 1.08, duration: 0.22, yoyo: true, repeat: 11, ease: \"sine.inOut\" }, 0.25);\ntl.fromTo(\"#fl2\", { scaleY: 1.06, transformOrigin: \"50% 100%\" }, { scaleY: 0.9, duration: 0.17, yoyo: true, repeat: 15, ease: \"sine.inOut\" }, 0.25);\n/* hook: wind across the plain; the two badges on their words */\ntl.fromTo(\"#windh\", { x: 0 }, { x: -1000, duration: 8.8, ease: \"none\" }, 2.6);\ntl.fromTo(\"#safest\", { opacity: 0, y: 12 }, { opacity: 1, y: 0, duration: 0.3, ease: \"power2.out\" }, 6.2);\ntl.fromTo(\"#fourh\", { opacity: 0, y: 12 }, { opacity: 1, y: 0, duration: 0.3, ease: \"power2.out\" }, 9.15);\n/* wide: mercury drops; the two minutes run out; frost takes the figure */\ntl.fromTo(\"#merc\", { height: 120 }, { height: 26, duration: 1.0, ease: \"power2.inOut\" }, 11.7);\n[\"2:00\", \"1:30\", \"1:00\", \"0:30\", \"0:10\", \"0:00\"].forEach((t, i) => tl.set(\"#frz\", { textContent: t }, 14.8 + i * 0.24));\ntl.fromTo(\"#frost\", { opacity: 0 }, { opacity: 0.85, duration: 1.4, ease: \"power1.in\" }, 14.8);\ntl.fromTo(\"#solid\", { scale: 1.8, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.3, ease: \"power3.out\" }, 16.1);\n/* rule 1 obeyed: the wind hits, the station holds; the tick */\ntl.fromTo(\"#winda\", { x: 0 }, { x: -1500, duration: 5.3, ease: \"none\" }, 19.0);\ntl.fromTo(\"#ck1\", { opacity: 0, y: 12 }, { opacity: 1, y: 0, duration: 0.3, ease: \"power2.out\" }, 22.8);\n/* rule 2 obeyed: stores, fuel, water; the tick */\n[[27.1, \"#st1\"], [29.0, \"#st2\"], [31.1, \"#st3\"]].forEach(([t, id]) => tl.fromTo(id, { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.3, ease: \"power2.out\" }, t));\ntl.fromTo(\"#ck2\", { opacity: 0, y: 12 }, { opacity: 1, y: 0, duration: 0.3, ease: \"power2.out\" }, 32.75);\n/* rule 3 obeyed: the runway goes dark on \"off\" -- a cut; the tick */\ntl.to(\".rlo\", { opacity: 0.08, duration: 0.14, ease: \"none\" }, 37.5);\ntl.fromTo(\"#ck3\", { opacity: 0, y: 12 }, { opacity: 1, y: 0, duration: 0.3, ease: \"power2.out\" }, 40.8);\n/* on paper */\ntl.fromTo(\"#everything\", { scale: 1.8, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.3, ease: \"power3.out\" }, 44.2);\n/* she turns it over: the front folds away, the back folds in; the aerial draws on the word */\ntl.set(\"#rback\", { scaleX: 0 }, 46.0);\ntl.to(\"#rfront\", { scaleX: 0, duration: 0.24, ease: \"power2.in\" }, 48.5);\ntl.to(\"#rback\", { scaleX: 1, duration: 0.24, ease: \"power2.out\" }, 48.74);\ntl.fromTo(\"#aer\", { drawSVG: \"0% 0%\" }, { drawSVG: \"0% 100%\", duration: 0.6, ease: \"power2.out\" }, 52.6);\ntl.fromTo(\"#aerlbl\", { opacity: 0, y: 12 }, { opacity: 1, y: 0, duration: 0.3, ease: \"power2.out\" }, 52.9);\n/* two-way */\ntl.fromTo(\"#twostamp\", { scale: 1.8, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.3, ease: \"power3.out\" }, 55.1);\ntl.fromTo(\"#rback2_sw\", { boxShadow: \"0 0 18px rgba(255,107,107,.5)\" }, { boxShadow: \"0 0 44px rgba(255,107,107,1)\", duration: 0.35, yoyo: true, repeat: 5 }, 57.1);\ntl.fromTo(\"#worn\", { opacity: 0, y: 12 }, { opacity: 1, y: 0, duration: 0.3, ease: \"power2.out\" }, 57.2);\n/* the recall: three nights, three transmissions */\n[[59.45, \"#n1\"], [60.9, \"#n3\"], [63.0, \"#n5\"]].forEach(([t, id]) => tl.fromTo(id, { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.3, ease: \"power2.out\" }, t));\ntl.fromTo(\".txdot\", { opacity: 0.35 }, { opacity: 1, duration: 0.3, yoyo: true, repeat: 25, ease: \"sine.inOut\" }, 59.5);\ntl.fromTo(\"#txstamp\", { scale: 1.8, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.32, ease: \"power3.out\" }, 66.3);\n/* the twist: your signal, then the answer; then the bearings close on where you'll be all winter */\ntl.to(\".wy\", { opacity: 0.9, duration: 0.1, stagger: 0.022, ease: \"none\" }, 68.95);\ntl.to(\".wt\", { opacity: 0.9, duration: 0.1, stagger: 0.022, ease: \"none\" }, 71.28);\ntl.fromTo(\"#answer\", { scale: 1.8, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.32, ease: \"power3.out\" }, 71.7);\n[\"#w1\", \"#w2\", \"#w3\", \"#w4\"].forEach((id, i) => tl.fromTo(id, { drawSVG: \"0% 0%\" }, { drawSVG: \"0% 100%\", duration: 0.6, ease: \"power2.in\" }, 76.05 + i * 0.15));\ntl.fromTo(\"#winter\", { opacity: 0, y: 12 }, { opacity: 1, y: 0, duration: 0.3, ease: \"power2.out\" }, 79.95);\n/* the runway lights come back on, from the far end, by themselves */\ntl.fromTo(\".rll\", { opacity: 0.08 }, { opacity: 1, duration: 0.12, stagger: { each: 0.08, from: \"end\" }, ease: \"none\" }, 84.2);\ntl.fromTo(\"#bythem\", { scale: 1.8, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.32, ease: \"power3.out\" }, 85.5);",
+  "lines": [
+    [
+      "YOU <b>BURNED</b> IT.",
+      0.25,
+      2.025
+    ],
+    [
+      "<b>DAY 10</b>. ANTARCTICA.<br>THE SAFEST PERSON ALIVE.",
+      2.625,
+      8.375
+    ],
+    [
+      "FOR ABOUT<br><u>FOUR MORE HOURS</u>.",
+      8.435,
+      10.81
+    ],
+    [
+      "<b>−60°</b>. THEY FREEZE SOLID<br>IN UNDER <u>TWO MINUTES</u>.",
+      11.31,
+      16.06
+    ],
+    [
+      "RULE 1. <b>SHELTER</b>.",
+      16.56,
+      18.735
+    ],
+    [
+      "BUILT FOR FORTY. SEALED<br>AGAINST A <b>100-MILE WIND</b>.",
+      19.035,
+      23.835
+    ],
+    [
+      "RULE 2. <b>FOOD</b>.",
+      24.285,
+      26.41
+    ],
+    [
+      "A YEAR OF STORES.<br>10,000 GALLONS OF <b>FUEL</b>.",
+      26.71,
+      33.76
+    ],
+    [
+      "RULE 3. <b>COLD</b>.",
+      34.21,
+      36.41
+    ],
+    [
+      "LIGHTS <b>OFF</b>. NOTHING FINDS<br>YOU FROM THE AIR.",
+      36.71,
+      41.76
+    ],
+    [
+      "ON PAPER, YOU HAVE<br>THOUGHT OF <b>EVERYTHING</b>.",
+      42.31,
+      45.485
+    ],
+    [
+      "PRIYA PICKS UP YOUR RADIO.<br>AND <u>TURNS IT OVER</u>.",
+      45.985,
+      50.035
+    ],
+    [
+      "“WHY DOES A RECEIVER<br>HAVE AN <u>AERIAL</u>?”",
+      50.585,
+      53.785
+    ],
+    [
+      "IT'S A <b>TWO-WAY</b> SET.<br>EVERY TIME YOU CRANKED IT—",
+      54.485,
+      58.735
+    ],
+    [
+      "DAY 1. DAY 3. DAY 5.<br>EVERY TIME YOU <u>LISTENED</u>—",
+      59.035,
+      65.41
+    ],
+    [
+      "YOU WERE <u>TRANSMITTING</u>.",
+      65.71,
+      67.86
+    ],
+    [
+      "NEVER A BROADCAST.<br>SOMEONE <u>ANSWERING YOU</u>.",
+      68.46,
+      73.16
+    ],
+    [
+      "FOR TEN DAYS, YOU TOLD IT<br>EXACTLY <b>WHERE YOU ARE</b>.",
+      73.86,
+      81.71
+    ],
+    [
+      "THE LIGHTS COME BACK ON.<br><u>BY THEMSELVES</u>.",
+      82.41,
+      86.935
+    ],
+    [
+      "",
+      87.635,
+      91.76
+    ]
+  ],
+  "panels": [
+    [
+      "recap",
+      0.0,
+      2.62
+    ],
+    [
+      "hook",
+      2.42,
+      11.309999999999999
+    ],
+    [
+      "wide",
+      11.11,
+      16.56
+    ],
+    [
+      "rule1",
+      16.36,
+      19.04
+    ],
+    [
+      "obey1",
+      18.84,
+      24.29
+    ],
+    [
+      "rule2",
+      24.09,
+      26.71
+    ],
+    [
+      "obey2",
+      26.51,
+      34.21
+    ],
+    [
+      "rule3",
+      34.01,
+      36.71
+    ],
+    [
+      "obey3",
+      36.51,
+      42.31
+    ],
+    [
+      "paper",
+      42.11,
+      45.980000000000004
+    ],
+    [
+      "turn",
+      45.78,
+      54.480000000000004
+    ],
+    [
+      "twoway",
+      54.28,
+      59.03
+    ],
+    [
+      "recall",
+      58.83,
+      68.46000000000001
+    ],
+    [
+      "twist",
+      68.26,
+      82.41
+    ],
+    [
+      "lights",
+      82.21,
+      87.64
+    ],
+    [
+      "end",
+      87.44,
+      94.2
+    ]
+  ]
+}

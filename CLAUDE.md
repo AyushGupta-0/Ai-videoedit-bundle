@@ -260,6 +260,13 @@ timeline registered at `window.__timelines["<id>"]`.
 28. **git on this exFAT SSD**: macOS writes `._` AppleDouble files *inside* `.git`, which corrupt
     pack indexes and refs. Before and after any git write, run:
     `find .git -name '._*' -delete`. Repo: `github.com/AyushGupta-0/Ai-videoedit-bundle` (ssh).
+29. **GSAP drops an SVG `<g>`'s own `transform` attribute when you tween it.** Day 8's
+    helicopter was `<g id="h1" transform="translate(560,760) scale(.78)">` with a `y` bob
+    tweened on `#h1`; GSAP rebuilt the transform from its own cache and the translate/scale
+    were gone — the aircraft rendered at 1:1 at the origin, off-screen, and both review
+    passes showed an empty sky. Put the id on an **outer** `<g>` with no attribute and keep
+    the translate/scale on an inner one (`#walker` / `#her` in Day 7 already did this).
+    Same rule for `attr:{cy}` on circles vs `y` on groups: tween what has no transform.
 
 ---
 

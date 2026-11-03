@@ -1,0 +1,427 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <title>Ten Days — Day 10</title>
+    <!-- vendored: no network fetch during render. The plugin set has been free
+         for commercial use since GSAP 3.13; copied in from Tools/_shared/gsap -->
+    <script src="assets/gsap/gsap.min.js"></script>
+    <script src="assets/gsap/ScrambleTextPlugin.min.js"></script>
+    <script src="assets/gsap/SplitText.min.js"></script>
+    <script src="assets/gsap/DrawSVGPlugin.min.js"></script>
+    <script src="assets/gsap/CustomEase.min.js"></script>
+<style>
+  :root{
+    --night:#0b1220; --night2:#131d30; --road:#161d2b;
+    --amber:#f0a93c; --amber-lt:#ffd38a; --warm:#ffb64d;
+    --red:#ff4242; --red-dk:#c22b2b;
+    --ink:#060a12; --white:#ffffff; --grey:#8b97ab;
+  }
+  html,body{margin:0;background:#000;}
+  #root{position:relative;width:1080px;height:1920px;overflow:hidden;background:var(--night);
+        font-family:"Avenir Next","Helvetica Neue",Arial,sans-serif;}
+  .panel{position:absolute;inset:0;opacity:0;will-change:opacity;}
+  #hud{position:absolute;left:46px;top:44px;z-index:40;}
+  #daytag{display:flex;align-items:center;gap:9px;font-size:23px;font-weight:700;
+          letter-spacing:2.4px;color:var(--red);}
+  #daytag i{width:11px;height:11px;border-radius:50%;background:var(--red);display:block;}
+  #clock{font-size:54px;font-weight:700;color:var(--white);letter-spacing:1px;margin-top:2px;
+         font-variant-numeric:tabular-nums;}
+  #recov{font-size:20px;font-weight:600;letter-spacing:2.6px;color:var(--grey);margin-top:1px;}
+  #mark{position:absolute;right:46px;top:52px;z-index:40;font-size:18px;
+        letter-spacing:1.6px;color:#55617a;}
+  /* Captions sit above y=1500. Anything a panel draws below that collides with a
+     two-line caption, which is a hard lint error — keep panel text above it. */
+  #capwrap{position:absolute;left:70px;right:70px;bottom:230px;text-align:center;z-index:38;}
+  #cap{display:inline-block;color:var(--white);font-size:58px;line-height:1.26;font-weight:700;
+       letter-spacing:.4px;opacity:0;
+       text-shadow:0 4px 22px rgba(0,0,0,.95),0 2px 4px rgba(0,0,0,.9);}
+  #cap b{color:var(--amber);font-weight:700;}
+  #cap u{color:var(--red);text-decoration:none;}
+  .vign{position:absolute;inset:0;pointer-events:none;
+        background:radial-gradient(125% 85% at 50% 45%,rgba(0,0,0,0) 42%,rgba(0,0,0,.82) 100%);}
+  .sky{position:absolute;inset:0;
+       background:linear-gradient(180deg,#0a1020 0%,#16233a 46%,#0c1322 100%);}
+  .rulecard{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;
+            justify-content:center;gap:34px;
+            background:linear-gradient(180deg,rgba(6,10,18,.90),rgba(6,10,18,.96));}
+  .rulebadge{background:var(--red);color:#fff;font-size:26px;font-weight:800;letter-spacing:3.4px;
+             padding:11px 26px;border-radius:5px;}
+  .ruletext{color:#fff;font-size:92px;font-weight:800;letter-spacing:1px;text-align:center;
+            line-height:1.1;max-width:880px;}
+  .rulesub{color:var(--grey);font-size:34px;font-weight:600;max-width:800px;text-align:center;
+           line-height:1.35;}
+  .news{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:830px;
+        border:3px solid var(--amber);border-radius:12px;background:rgba(8,13,22,.93);
+        padding:36px 40px;}
+  .news.bad{border-color:var(--red);}
+  .news h4{margin:0 0 22px;color:var(--amber);font-size:30px;letter-spacing:3.4px;font-weight:800;}
+  .news.bad h4{color:var(--red);}
+  .news .row{display:flex;justify-content:space-between;align-items:center;color:#fff;
+             font-size:40px;font-weight:600;padding:15px 0;
+             border-bottom:1px solid rgba(255,255,255,.10);}
+  .news .row:last-child{border-bottom:0;}
+  .news .row span:last-child{color:var(--amber);font-weight:800;}
+  .news.bad .row span:last-child{color:var(--red);}
+  .stamp{position:absolute;left:50%;transform:translateX(-50%) rotate(-7deg);border:7px solid var(--red);
+         color:var(--red);font-size:80px;font-weight:800;letter-spacing:6px;padding:13px 42px;
+         border-radius:8px;}
+  .badge{display:inline-block;border:4px solid var(--amber);color:var(--amber);font-size:38px;
+         font-weight:800;letter-spacing:4px;padding:14px 32px;border-radius:8px;
+         background:rgba(8,12,20,.85);}
+  .badge.red{border-color:var(--red);color:var(--red);}
+
+</style>
+  </head>
+  <body>
+<div id="root" data-composition-id="td10" data-start="0" data-duration="94.2"
+     data-width="1080" data-height="1920" data-track-kind="graphics">
+  <div id="panels" class="clip" data-start="0" data-duration="94.2" data-track-index="0"></div>
+  <div id="hud" class="clip" data-start="0" data-duration="94.2" data-track-index="1" data-layout-ignore>
+    <div id="daytag"><i></i>DAY 10 / 10</div>
+    <div id="clock">8:41 PM</div>
+    <div id="recov">RECOVERY IN 1 DAY</div>
+  </div>
+  <div id="mark" class="clip" data-start="0" data-duration="94.2" data-track-index="2"
+       data-layout-ignore>1min.thinker</div>
+  <div id="capwrap" class="clip" data-start="0" data-duration="94.2" data-track-index="3"
+       data-track-kind="captions"><span id="cap"></span></div>
+</div>
+
+<audio id="vo" src="assets/audio/vo.wav" data-start="0" data-volume="1"></audio>
+
+<script>
+gsap.registerPlugin(ScrambleTextPlugin, SplitText, DrawSVGPlugin, CustomEase);
+const DUR = 94.2;
+const tl = gsap.timeline({ paused: true });
+const S = document.getElementById("panels");
+const mk = (id, html) => { const d=document.createElement("div");
+  d.className="panel"; d.id=id; d.innerHTML=html; S.appendChild(d); return d; };
+const rule = (n, text, sub) => `<div class="rulecard">
+    <div class="rulebadge">RULE #${n}</div><div class="ruletext">${text}</div>
+    ${sub ? `<div class="rulesub">${sub}</div>` : ""}</div>`;
+
+/* Ten Days — Day 10: minus sixty.
+ *
+ * The finale. Three rules, three ticks, on paper everything is thought of.
+ * Then the radio is turned over: a receiver with an aerial. Every night you
+ * cranked it to listen — Day 1, Day 3, Day 5 — you were transmitting. The
+ * loop was someone answering you. The runway lights you switched off come
+ * back on by themselves. Every episode's radio beat was this plant.
+ *
+ * Deterministic throughout — no unseeded randomness anywhere.
+ */
+
+function figure(pose, x, y, s = 1, tone = "#1c2538", hood = "#2a3650") {
+  const skin = "#d9b08c", pack = "#3a4a6a";
+  let body;
+  if (pose === "seat") {
+    body = `<rect x="-70" y="-10" width="140" height="150" rx="34" fill="${hood}"/>
+      <rect x="-50" y="60" width="60" height="110" rx="22" fill="${tone}"/>
+      <circle cx="-8" cy="-50" r="52" fill="${hood}"/><circle cx="4" cy="-44" r="34" fill="${skin}"/>
+      <rect x="-26" y="-56" width="56" height="26" rx="12" fill="${hood}"/>`;
+  } else if (pose === "crouch") {
+    body = `<rect x="-90" y="20" width="180" height="120" rx="48" fill="${hood}"/>
+      <rect x="-100" y="-30" width="70" height="90" rx="26" fill="${pack}"/>
+      <circle cx="30" cy="-30" r="50" fill="${hood}"/><circle cx="40" cy="-24" r="32" fill="${skin}"/>
+      <rect x="6" y="-40" width="60" height="24" rx="12" fill="${hood}"/>`;
+  } else if (pose === "back") {
+    body = `<rect x="-62" y="-30" width="124" height="200" rx="40" fill="${hood}"/>
+      <rect x="-40" y="-10" width="80" height="120" rx="24" fill="${pack}"/>
+      <rect x="-44" y="160" width="34" height="110" rx="14" fill="${tone}"/>
+      <rect x="10" y="160" width="34" height="100" rx="14" fill="${tone}"/>
+      <circle cx="0" cy="-80" r="52" fill="${hood}"/>`;
+  } else { // peer
+    body = `<rect x="-64" y="-20" width="128" height="200" rx="40" fill="${hood}"/>
+      <rect x="-104" y="-6" width="60" height="120" rx="24" fill="${pack}"/>
+      <circle cx="14" cy="-68" r="54" fill="${hood}"/><circle cx="22" cy="-62" r="36" fill="${skin}"/>
+      <rect x="-14" y="-78" width="64" height="26" rx="13" fill="${hood}"/>`;
+  }
+  return `<g transform="translate(${x},${y}) scale(${s})">${body}</g>`;
+}
+const HER = "#5a3a2e";
+
+/* the plain: a black sky, a faint aurora, ice from the horizon down, wind streaking across */
+function ice(k) {
+  let wind = "";
+  for (let i = 0; i < 16; i++) wind += `<div style="position:absolute;left:${(i * 233) % 2000}px;top:${560 + (i * 61) % 560}px;width:${160 + (i * 47) % 300}px;height:3px;border-radius:2px;background:#dfe8f3;opacity:${0.12 + ((i * 3) % 4) * 0.09};"></div>`;
+  return `<div style="position:absolute;inset:0;background:linear-gradient(180deg,#04060f 0%,#0b1630 50%,#0e2a3a 55%,#8fa6c9 58%,#5c6f94 74%,#1c2538 100%);"></div>
+  <div style="position:absolute;left:0;right:0;top:380px;height:700px;background:radial-gradient(60% 50% at 50% 100%,rgba(93,242,176,.16),transparent);"></div>
+  <div style="position:absolute;inset:0;overflow:hidden;"><div id="wind${k}" style="position:absolute;left:-700px;top:0;width:2700px;height:1920px;">${wind}</div></div>`;
+}
+
+/* the station: a long module on stilts, windows lit or not, a mast */
+function station(k, lit = true) {
+  return `<div style="position:absolute;left:240px;top:880px;width:600px;height:220px;border-radius:14px;background:#2a3650;border:6px solid #3a4967;"></div>
+  ${[300, 420, 540, 660, 780].map((x) => `<div class="stwin${k}" style="position:absolute;left:${x}px;top:930px;width:60px;height:50px;border-radius:5px;background:${lit ? "#f0d08a" : "#0b111b"};${lit ? "box-shadow:0 0 18px #f0d08a;" : ""}"></div>`).join("")}
+  ${[300, 520, 740].map((x) => `<div style="position:absolute;left:${x}px;top:1100px;width:30px;height:90px;background:#3a4967;"></div>`).join("")}
+  <div style="position:absolute;left:800px;top:700px;width:10px;height:190px;background:#3a4967;"></div>
+  <div style="position:absolute;left:780px;top:680px;width:50px;height:24px;border-radius:12px;background:#3a4967;"></div>`;
+}
+
+/* the runway, in perspective, lights along both edges; the station small at its end */
+function runway(k, lit) {
+  let h = `<div style="position:absolute;inset:0;background:linear-gradient(180deg,#04060f 0%,#0b1630 52%,#0e2a3a 55%,#3b4a6b 58%,#2a3650 80%,#141b28 100%);"></div>
+  <div style="position:absolute;left:470px;top:1000px;width:140px;height:56px;border-radius:6px;background:#2a3650;border:4px solid #3a4967;"></div>
+  <svg width="1080" height="1920" style="position:absolute;inset:0;">
+    <path d="M140,1500 L500,1070" stroke="#4a5a7c" stroke-width="4" fill="none"/>
+    <path d="M940,1500 L580,1070" stroke="#4a5a7c" stroke-width="4" fill="none"/>`;
+  for (let i = 0; i < 9; i++) {
+    const t = i / 8, y = 1500 - t * 420, xl = 140 + t * 360, xr = 940 - t * 360, r = 13 - t * 8;
+    h += `<circle class="rl${k}" cx="${xl}" cy="${y}" r="${r}" fill="#f0a93c" style="opacity:${lit ? 1 : 0.08}"/><circle class="rl${k}" cx="${xr}" cy="${y}" r="${r}" fill="#f0a93c" style="opacity:${lit ? 1 : 0.08}"/>`;
+  }
+  return h + `</svg>`;
+}
+
+/* a check tile */
+function tile(id, text, top = 1300) {
+  return `<div id="${id}" style="position:absolute;left:50%;transform:translateX(-50%);top:${top}px;padding:18px 44px;border-radius:14px;border:4px solid #5df2b0;color:#5df2b0;font-size:38px;font-weight:800;letter-spacing:6px;opacity:0;white-space:nowrap;">${text} ✓</div>`;
+}
+
+/* the radio, front; and its back, which nobody looked at */
+function radioFront(id) {
+  return `<div id="${id}" style="position:absolute;left:250px;top:620px;width:580px;height:290px;border-radius:16px;
+       background:linear-gradient(180deg,#222d41,#161e2e);border:4px solid #33425e;box-shadow:0 26px 70px rgba(0,0,0,.6);">
+    <div style="position:absolute;left:32px;top:30px;width:350px;height:108px;border-radius:8px;background:#0b2a21;border:3px solid #1d5742;display:flex;align-items:center;justify-content:center;">
+      <span style="color:#5df2b0;font-size:56px;font-weight:800;letter-spacing:5px;text-shadow:0 0 26px rgba(93,242,176,.8);">CH 09</span></div>
+    <div style="position:absolute;right:34px;top:42px;width:86px;height:86px;border-radius:50%;background:#2b374f;border:4px solid #44557a;"></div>
+    <div style="position:absolute;right:-26px;top:150px;width:26px;height:74px;border-radius:5px;background:#44557a;"></div>
+    <div style="position:absolute;left:32px;bottom:28px;right:32px;height:56px;display:flex;gap:11px;">
+      ${Array.from({ length: 10 }, () => `<div style="flex:1;border-radius:5px;background:#2b374f;"></div>`).join("")}</div>
+  </div>`;
+}
+function radioBack(id, big = false) {
+  const sc = big ? "scale(1.35)" : "scale(1)";
+  return `<div id="${id}" style="position:absolute;left:250px;top:620px;width:580px;height:290px;border-radius:16px;transform:${sc};transform-origin:50% 50%;
+       background:linear-gradient(180deg,#1a2234,#111826);border:4px solid #33425e;box-shadow:0 26px 70px rgba(0,0,0,.6);">
+    ${[[20, 20], [540, 20], [20, 250], [540, 250]].map(([x, y]) => `<div style="position:absolute;left:${x}px;top:${y}px;width:16px;height:16px;border-radius:50%;background:#3a4967;"></div>`).join("")}
+    <div style="position:absolute;left:60px;top:50px;color:#55617a;font-size:18px;letter-spacing:4px;">FIELD SET · MK II</div>
+    <!-- the aerial socket, and the switch -->
+    <div id="${id}_sock" style="position:absolute;left:440px;top:46px;width:60px;height:60px;border-radius:50%;background:#0b111b;border:4px solid #4a5a7c;"></div>
+    <div style="position:absolute;left:60px;top:120px;width:300px;height:90px;border-radius:12px;background:#0b111b;border:3px solid #3a4967;"></div>
+    <div style="position:absolute;left:84px;top:150px;color:#55617a;font-size:22px;letter-spacing:5px;">RX</div>
+    <div style="position:absolute;left:280px;top:150px;color:var(--red);font-size:22px;letter-spacing:5px;font-weight:800;">TX</div>
+    <div id="${id}_sw" style="position:absolute;left:230px;top:132px;width:70px;height:66px;border-radius:10px;background:#b8352c;border:3px solid #ff6b6b;box-shadow:0 0 18px rgba(255,107,107,.5);"></div>
+    <div style="position:absolute;left:60px;top:230px;color:#55617a;font-size:18px;letter-spacing:4px;">TRANSMIT / RECEIVE</div>
+  </div>`;
+}
+
+/* ============================ PANELS ============================ */
+
+mk("recap", `<div style="position:absolute;inset:0;background:#06090f;"></div>
+  <div style="position:absolute;left:0;right:0;top:0;height:1500px;background:linear-gradient(180deg,#0a0f18,#1a1208);"></div>
+  <div style="position:absolute;left:340px;top:980px;width:400px;height:360px;border-radius:10px 10px 30px 30px;background:#1b2435;border:6px solid #3a4967;"></div>
+  <svg width="1080" height="1920" style="position:absolute;inset:0;">
+    <path id="fl1" d="M440,980 C430,880 500,860 490,780 C560,840 600,760 590,700 C650,800 700,820 660,980 Z" fill="#f0a93c" opacity=".9"/>
+    <path id="fl2" d="M470,980 C470,900 520,880 520,820 C570,870 600,840 600,790 C640,880 640,930 620,980 Z" fill="#ff6b6b" opacity=".9"/>
+    <rect x="490" y="900" width="120" height="70" rx="6" fill="#3a2e1e" transform="rotate(-12 550 935)"/>
+  </svg>
+  <div style="position:absolute;left:0;right:0;top:1360px;bottom:0;background:linear-gradient(180deg,#1a1208,#0a0f17);"></div>
+  <div class="badge red" style="position:absolute;left:50%;transform:translateX(-50%);top:560px;font-size:30px;">THE LOG · BURNED</div>
+  <div class="vign"></div>`);
+
+mk("hook", `${ice("h")}
+  ${station("h")}
+  <div id="safest" class="badge" style="position:absolute;left:50%;transform:translateX(-50%);top:460px;font-size:30px;opacity:0;">THE SAFEST PERSON ALIVE</div>
+  <div id="fourh" class="badge red" style="position:absolute;left:50%;transform:translateX(-50%);top:1300px;font-size:30px;opacity:0;">FOR FOUR MORE HOURS</div>
+  <div class="vign"></div>`);
+
+mk("wide", `<div style="position:absolute;inset:0;background:#06090f;"></div>
+  <!-- the thermometer, the two-minute clock, and what the cold does -->
+  <div style="position:absolute;left:170px;top:480px;width:80px;height:860px;border-radius:40px;background:#0b111b;border:6px solid #3a4967;overflow:hidden;">
+    <div id="merc" style="position:absolute;left:14px;right:14px;bottom:14px;height:120px;border-radius:26px;background:#5aa9ff;"></div></div>
+  <div style="position:absolute;left:140px;top:1360px;width:140px;text-align:center;color:#5aa9ff;font-size:64px;font-weight:800;line-height:1;">−60°</div>
+  <div style="position:absolute;left:380px;top:560px;color:#55617a;font-size:22px;letter-spacing:6px;">TIME TO FREEZE SOLID</div>
+  <div id="frz" style="position:absolute;left:380px;top:600px;color:#fff;font-size:150px;font-weight:800;line-height:1;font-variant-numeric:tabular-nums;">2:00</div>
+  <svg width="1080" height="1920" style="position:absolute;inset:0;">${figure("peer", 700, 1150, 1.3)}</svg>
+  <div id="frost" style="position:absolute;left:520px;top:900px;width:420px;height:480px;border-radius:50%;background:radial-gradient(circle,rgba(223,232,243,.9),rgba(223,232,243,0) 70%);opacity:0;"></div>
+  <div id="solid" class="stamp" style="top:1180px;font-size:60px;opacity:0;">SOLID</div>
+  <div class="vign"></div>`);
+
+mk("rule1", rule(1, "SHELTER.", ""));
+
+mk("obey1", `${ice("a")}
+  ${station("a")}
+  <div style="position:absolute;left:60px;top:560px;color:#dfe8f3;font-size:44px;font-weight:800;line-height:1;">100<br><span style="font-size:20px;color:#9fb0d0;letter-spacing:5px;">MPH WIND</span></div>
+  ${tile("ck1", "SHELTER")}
+  <div class="vign"></div>`);
+
+mk("rule2", rule(2, "FOOD.", ""));
+
+mk("obey2", `<div style="position:absolute;inset:0;background:#06090f;"></div>
+  ${[["st1", "1 YEAR", "FROZEN STORES"], ["st2", "10,000", "GALLONS OF FUEL"], ["st3", "ALL OF IT", "WATER, ON THE GROUND"]].map(([id, n, l], i) => `
+    <div id="${id}" style="position:absolute;left:110px;right:110px;top:${470 + i * 250}px;height:200px;border-radius:14px;background:#0d1422;border:4px solid #2b3650;opacity:0;">
+      <div style="position:absolute;left:40px;top:40px;color:#fff;font-size:72px;font-weight:800;line-height:1;">${n}</div>
+      <div style="position:absolute;left:40px;top:130px;color:#7d8aa6;font-size:22px;letter-spacing:5px;">${l}</div>
+      <div style="position:absolute;right:40px;top:60px;color:#5df2b0;font-size:70px;">✓</div></div>`).join("")}
+  ${tile("ck2", "FOOD", 1280)}
+  <div class="vign"></div>`);
+
+mk("rule3", rule(3, "COLD.", ""));
+
+mk("obey3", `${runway("o", true)}
+  ${tile("ck3", "COLD", 1300)}
+  <div class="vign"></div>`);
+
+mk("paper", `<div style="position:absolute;inset:0;background:#06090f;"></div>
+  <div style="position:absolute;left:110px;right:110px;top:460px;height:780px;border-radius:14px;background:#0d1422;border:4px solid #2b3650;"></div>
+  <div style="position:absolute;left:160px;top:500px;color:#55617a;font-size:22px;letter-spacing:6px;">ON PAPER</div>
+  ${[["1", "SHELTER"], ["2", "FOOD"], ["3", "COLD"]].map(([n, t], i) => `
+    <div style="position:absolute;left:160px;right:160px;top:${580 + i * 200}px;height:150px;display:flex;align-items:center;justify-content:space-between;border-bottom:3px solid #1a2234;">
+      <div style="color:#fff;font-size:56px;font-weight:800;letter-spacing:6px;"><span style="color:#55617a;font-size:28px;margin-right:24px;">RULE ${n}</span>${t}</div>
+      <div style="width:90px;height:90px;border-radius:14px;border:4px solid #5df2b0;color:#5df2b0;font-size:60px;display:grid;place-items:center;">✓</div></div>`).join("")}
+  <div id="everything" class="stamp" style="top:1290px;font-size:56px;opacity:0;border-color:#5df2b0;color:#5df2b0;">EVERYTHING</div>
+  <div class="vign"></div>`);
+
+mk("turn", `<div style="position:absolute;inset:0;background:#070c16;"></div>
+  <svg width="1080" height="1920" style="position:absolute;inset:0;">${figure("peer", 160, 1250, 1.2, "#1c2538", HER)}
+    <rect x="200" y="760" width="70" height="200" rx="30" fill="#d9b08c" transform="rotate(30 235 860)"/></svg>
+  ${radioFront("rfront")}
+  ${radioBack("rback")}
+  <svg width="1080" height="1920" style="position:absolute;inset:0;">
+    <path id="aer" d="M720,668 L720,300" stroke="#dfe8f3" stroke-width="8" fill="none" stroke-linecap="round"/>
+  </svg>
+  <div id="aerlbl" class="badge" style="position:absolute;left:50%;transform:translateX(-50%);top:1080px;font-size:30px;opacity:0;">A RECEIVER. WITH AN AERIAL.</div>
+  <div class="vign"></div>`);
+
+mk("twoway", `<div style="position:absolute;inset:0;background:#070c16;"></div>
+  ${radioBack("rback2", true)}
+  <div id="twostamp" class="stamp" style="top:380px;font-size:64px;opacity:0;">TWO-WAY</div>
+  <div id="worn" class="badge red" style="position:absolute;left:50%;transform:translateX(-50%);top:1130px;font-size:30px;opacity:0;">TX · WORN SMOOTH</div>
+  <div class="vign"></div>`);
+
+mk("recall", `<div style="position:absolute;inset:0;background:#070c16;"></div>
+  ${[["n1", "DAY 1", "THE TRAFFIC"], ["n3", "DAY 3", "THE SERVICE STATION"], ["n5", "DAY 5", "THE SIGNAL BOX"]].map(([id, d, w], i) => `
+    <div id="${id}" style="position:absolute;left:110px;right:110px;top:${500 + i * 220}px;height:170px;border-radius:14px;background:#0d1422;border:4px solid #2b3650;opacity:0;">
+      <div style="position:absolute;left:40px;top:34px;color:var(--amber);font-size:30px;letter-spacing:6px;font-weight:800;">${d}</div>
+      <div style="position:absolute;left:40px;top:86px;color:#fff;font-size:40px;font-weight:800;">${w}</div>
+      <div class="txdot" style="position:absolute;right:40px;top:50px;display:flex;align-items:center;gap:14px;"><div style="width:24px;height:24px;border-radius:50%;background:var(--red);box-shadow:0 0 20px var(--red);"></div><div style="color:var(--red);font-size:26px;letter-spacing:5px;font-weight:800;">TX</div></div></div>`).join("")}
+  <div id="txstamp" class="stamp" style="top:1230px;font-size:60px;opacity:0;">TRANSMITTING</div>
+  <div class="vign"></div>`);
+
+mk("twist", `<div style="position:absolute;inset:0;background:#070c16;"></div>
+  <div style="position:absolute;left:90px;top:470px;color:#5aa9ff;font-size:22px;letter-spacing:6px;">YOU</div>
+  <div style="position:absolute;left:90px;right:90px;top:510px;height:150px;display:flex;align-items:center;gap:6px;">
+    ${Array.from({ length: 60 }, (_, i) => `<div class="wy" style="flex:1;height:${20 + ((i * 37) % 23) * 5}px;border-radius:4px;background:#5aa9ff;opacity:0;"></div>`).join("")}</div>
+  <div style="position:absolute;left:90px;top:690px;color:var(--red);font-size:22px;letter-spacing:6px;">SOMETHING</div>
+  <div style="position:absolute;left:90px;right:90px;top:730px;height:150px;display:flex;align-items:center;gap:6px;">
+    ${Array.from({ length: 60 }, (_, i) => `<div class="wt" style="flex:1;height:${20 + ((i * 53 + 11) % 23) * 5}px;border-radius:4px;background:var(--red);opacity:0;"></div>`).join("")}</div>
+  <div id="answer" class="stamp" style="top:900px;font-size:56px;opacity:0;">ANSWERING YOU</div>
+  <!-- and where you are: bearings closing on the station -->
+  <svg width="1080" height="1920" style="position:absolute;inset:0;">
+    ${[90, 180, 270].map((r) => `<circle cx="540" cy="1300" r="${r}" stroke="#2b3650" stroke-width="3" fill="none"/>`).join("")}
+    ${[[-520, -200], [520, -180], [-480, 180], [500, 160]].map(([dx, dy], i) => `<path id="w${i + 1}" d="M${540 + dx},${1300 + dy} L540,1300" stroke="var(--red)" stroke-width="8" fill="none" stroke-linecap="round"/>`).join("")}
+    <rect x="500" y="1282" width="80" height="36" rx="6" fill="#2a3650" stroke="var(--amber)" stroke-width="4"/>
+  </svg>
+  <div id="winter" class="badge red" style="position:absolute;left:50%;transform:translateX(-50%);top:1420px;font-size:28px;opacity:0;">WHERE YOU'LL BE ALL WINTER</div>
+  <div class="vign"></div>`);
+
+mk("lights", `${runway("l", false)}
+  <div id="bythem" class="stamp" style="top:420px;font-size:60px;opacity:0;">BY THEMSELVES</div>
+  <div class="vign"></div>`);
+
+
+/* ---- end card: the question, the buttons, and the next day's hook ---- */
+mk("end", `<div style="position:absolute;inset:0;
+       background:radial-gradient(90% 60% at 50% 46%,#2a0b0b 0%,#07090f 72%);"></div>
+  <div style="position:absolute;left:0;right:0;top:690px;text-align:center;">
+    <div style="color:#fff;font-size:84px;font-weight:800;">IT WAS</div>
+    <div style="color:var(--red);font-size:84px;font-weight:800;">FOLLOWING YOU.</div>
+  </div>
+  <div style="position:absolute;left:0;right:0;top:980px;display:flex;justify-content:center;gap:34px;">
+    <div style="background:var(--amber);color:#1a1205;font-size:38px;font-weight:800;
+         padding:20px 52px;border-radius:10px;letter-spacing:2px;">SEASON 2</div>
+    <div style="background:var(--red-dk);color:#fff;font-size:38px;font-weight:800;
+         padding:20px 52px;border-radius:10px;letter-spacing:2px;">FROM DAY 1</div>
+  </div>
+  <div style="position:absolute;left:0;right:0;top:1160px;text-align:center;">
+    <div style="color:#7d879b;font-size:26px;letter-spacing:4px;">TEN DAYS · SEASON 2</div>
+    <div style="color:#fff;font-size:44px;font-weight:800;margin-top:10px;">WHO WAS<br>ON THE RADIO?</div>
+    <div style="color:var(--amber);font-size:27px;letter-spacing:3px;margin-top:22px;">
+      FOLLOW FOR SEASON 2</div>
+  </div>`);
+
+const SH = [["recap", 0.0, 2.62], ["hook", 2.42, 11.309999999999999], ["wide", 11.11, 16.56], ["rule1", 16.36, 19.04], ["obey1", 18.84, 24.29], ["rule2", 24.09, 26.71], ["obey2", 26.51, 34.21], ["rule3", 34.01, 36.71], ["obey3", 36.51, 42.31], ["paper", 42.11, 45.980000000000004], ["turn", 45.78, 54.480000000000004], ["twoway", 54.28, 59.03], ["recall", 58.83, 68.46000000000001], ["twist", 68.26, 82.41], ["lights", 82.21, 87.64], ["end", 87.44, 94.2]];
+const FADE = 0.30;
+SH.forEach(([id, a, b]) => {
+  const el = document.getElementById(id);
+  if (!el) { console.warn("missing panel", id); return; }
+  tl.to(el, { opacity: 1, duration: FADE }, a);
+  if (b < DUR) tl.to(el, { opacity: 0, duration: FADE }, b - FADE);
+});
+
+/* recap: the log burns */
+tl.fromTo("#fl1", { scaleY: 0.92, transformOrigin: "50% 100%" }, { scaleY: 1.08, duration: 0.22, yoyo: true, repeat: 11, ease: "sine.inOut" }, 0.25);
+tl.fromTo("#fl2", { scaleY: 1.06, transformOrigin: "50% 100%" }, { scaleY: 0.9, duration: 0.17, yoyo: true, repeat: 15, ease: "sine.inOut" }, 0.25);
+/* hook: wind across the plain; the two badges on their words */
+tl.fromTo("#windh", { x: 0 }, { x: -1000, duration: 8.8, ease: "none" }, 2.6);
+tl.fromTo("#safest", { opacity: 0, y: 12 }, { opacity: 1, y: 0, duration: 0.3, ease: "power2.out" }, 6.2);
+tl.fromTo("#fourh", { opacity: 0, y: 12 }, { opacity: 1, y: 0, duration: 0.3, ease: "power2.out" }, 9.15);
+/* wide: mercury drops; the two minutes run out; frost takes the figure */
+tl.fromTo("#merc", { height: 120 }, { height: 26, duration: 1.0, ease: "power2.inOut" }, 11.7);
+["2:00", "1:30", "1:00", "0:30", "0:10", "0:00"].forEach((t, i) => tl.set("#frz", { textContent: t }, 14.8 + i * 0.24));
+tl.fromTo("#frost", { opacity: 0 }, { opacity: 0.85, duration: 1.4, ease: "power1.in" }, 14.8);
+tl.fromTo("#solid", { scale: 1.8, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.3, ease: "power3.out" }, 16.1);
+/* rule 1 obeyed: the wind hits, the station holds; the tick */
+tl.fromTo("#winda", { x: 0 }, { x: -1500, duration: 5.3, ease: "none" }, 19.0);
+tl.fromTo("#ck1", { opacity: 0, y: 12 }, { opacity: 1, y: 0, duration: 0.3, ease: "power2.out" }, 22.8);
+/* rule 2 obeyed: stores, fuel, water; the tick */
+[[27.1, "#st1"], [29.0, "#st2"], [31.1, "#st3"]].forEach(([t, id]) => tl.fromTo(id, { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.3, ease: "power2.out" }, t));
+tl.fromTo("#ck2", { opacity: 0, y: 12 }, { opacity: 1, y: 0, duration: 0.3, ease: "power2.out" }, 32.75);
+/* rule 3 obeyed: the runway goes dark on "off" -- a cut; the tick */
+tl.to(".rlo", { opacity: 0.08, duration: 0.14, ease: "none" }, 37.5);
+tl.fromTo("#ck3", { opacity: 0, y: 12 }, { opacity: 1, y: 0, duration: 0.3, ease: "power2.out" }, 40.8);
+/* on paper */
+tl.fromTo("#everything", { scale: 1.8, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.3, ease: "power3.out" }, 44.2);
+/* she turns it over: the front folds away, the back folds in; the aerial draws on the word */
+tl.set("#rback", { scaleX: 0 }, 46.0);
+tl.to("#rfront", { scaleX: 0, duration: 0.24, ease: "power2.in" }, 48.5);
+tl.to("#rback", { scaleX: 1, duration: 0.24, ease: "power2.out" }, 48.74);
+tl.fromTo("#aer", { drawSVG: "0% 0%" }, { drawSVG: "0% 100%", duration: 0.6, ease: "power2.out" }, 52.6);
+tl.fromTo("#aerlbl", { opacity: 0, y: 12 }, { opacity: 1, y: 0, duration: 0.3, ease: "power2.out" }, 52.9);
+/* two-way */
+tl.fromTo("#twostamp", { scale: 1.8, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.3, ease: "power3.out" }, 55.1);
+tl.fromTo("#rback2_sw", { boxShadow: "0 0 18px rgba(255,107,107,.5)" }, { boxShadow: "0 0 44px rgba(255,107,107,1)", duration: 0.35, yoyo: true, repeat: 5 }, 57.1);
+tl.fromTo("#worn", { opacity: 0, y: 12 }, { opacity: 1, y: 0, duration: 0.3, ease: "power2.out" }, 57.2);
+/* the recall: three nights, three transmissions */
+[[59.45, "#n1"], [60.9, "#n3"], [63.0, "#n5"]].forEach(([t, id]) => tl.fromTo(id, { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.3, ease: "power2.out" }, t));
+tl.fromTo(".txdot", { opacity: 0.35 }, { opacity: 1, duration: 0.3, yoyo: true, repeat: 25, ease: "sine.inOut" }, 59.5);
+tl.fromTo("#txstamp", { scale: 1.8, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.32, ease: "power3.out" }, 66.3);
+/* the twist: your signal, then the answer; then the bearings close on where you'll be all winter */
+tl.to(".wy", { opacity: 0.9, duration: 0.1, stagger: 0.022, ease: "none" }, 68.95);
+tl.to(".wt", { opacity: 0.9, duration: 0.1, stagger: 0.022, ease: "none" }, 71.28);
+tl.fromTo("#answer", { scale: 1.8, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.32, ease: "power3.out" }, 71.7);
+["#w1", "#w2", "#w3", "#w4"].forEach((id, i) => tl.fromTo(id, { drawSVG: "0% 0%" }, { drawSVG: "0% 100%", duration: 0.6, ease: "power2.in" }, 76.05 + i * 0.15));
+tl.fromTo("#winter", { opacity: 0, y: 12 }, { opacity: 1, y: 0, duration: 0.3, ease: "power2.out" }, 79.95);
+/* the runway lights come back on, from the far end, by themselves */
+tl.fromTo(".rll", { opacity: 0.08 }, { opacity: 1, duration: 0.12, stagger: { each: 0.08, from: "end" }, ease: "none" }, 84.2);
+tl.fromTo("#bythem", { scale: 1.8, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.32, ease: "power3.out" }, 85.5);
+
+/* ---- HUD clock, stepping minute by minute ---- */
+const S0 = 521, S1 = 548, AMPM = "PM";
+const clockEl = document.getElementById("clock");
+// seek(t, true) suppresses onUpdate as well as .call(), so neither survives a
+// renderer grabbing frames out of order. Only tl.set() actually renders: it is
+// a zero-duration tween, and tweens render at any playhead position.
+for (let m = S0; m <= S1; m++){
+  const at = ((m - S0) / Math.max(1, S1 - S0)) * (DUR - 4.0);
+  tl.set(clockEl, { textContent:
+    `${((Math.floor(m / 60) + 11) % 12) + 1}:${String(m % 60).padStart(2, "0")} ${AMPM}` }, at);
+}
+
+const LINES = [["YOU <b>BURNED</b> IT.", 0.25, 2.025], ["<b>DAY 10</b>. ANTARCTICA.<br>THE SAFEST PERSON ALIVE.", 2.625, 8.375], ["FOR ABOUT<br><u>FOUR MORE HOURS</u>.", 8.435, 10.81], ["<b>−60°</b>. THEY FREEZE SOLID<br>IN UNDER <u>TWO MINUTES</u>.", 11.31, 16.06], ["RULE 1. <b>SHELTER</b>.", 16.56, 18.735], ["BUILT FOR FORTY. SEALED<br>AGAINST A <b>100-MILE WIND</b>.", 19.035, 23.835], ["RULE 2. <b>FOOD</b>.", 24.285, 26.41], ["A YEAR OF STORES.<br>10,000 GALLONS OF <b>FUEL</b>.", 26.71, 33.76], ["RULE 3. <b>COLD</b>.", 34.21, 36.41], ["LIGHTS <b>OFF</b>. NOTHING FINDS<br>YOU FROM THE AIR.", 36.71, 41.76], ["ON PAPER, YOU HAVE<br>THOUGHT OF <b>EVERYTHING</b>.", 42.31, 45.485], ["PRIYA PICKS UP YOUR RADIO.<br>AND <u>TURNS IT OVER</u>.", 45.985, 50.035], ["“WHY DOES A RECEIVER<br>HAVE AN <u>AERIAL</u>?”", 50.585, 53.785], ["IT'S A <b>TWO-WAY</b> SET.<br>EVERY TIME YOU CRANKED IT—", 54.485, 58.735], ["DAY 1. DAY 3. DAY 5.<br>EVERY TIME YOU <u>LISTENED</u>—", 59.035, 65.41], ["YOU WERE <u>TRANSMITTING</u>.", 65.71, 67.86], ["NEVER A BROADCAST.<br>SOMEONE <u>ANSWERING YOU</u>.", 68.46, 73.16], ["FOR TEN DAYS, YOU TOLD IT<br>EXACTLY <b>WHERE YOU ARE</b>.", 73.86, 81.71], ["THE LIGHTS COME BACK ON.<br><u>BY THEMSELVES</u>.", 82.41, 86.935], ["", 87.635, 91.76]];
+const capEl = document.getElementById("cap");
+LINES.forEach(([html, a, b], i) => {
+  tl.set(capEl, { innerHTML: html }, a);   // render-time, survives seek
+  tl.fromTo(capEl, { opacity: 0, y: 14 },
+            { opacity: html ? 1 : 0, duration: 0.26, ease: "power2.out" }, a);
+  const next = LINES[i + 1] ? LINES[i + 1][1] : DUR;
+  tl.to(capEl, { opacity: 0, duration: 0.20 }, Math.min(b, next - 0.24));
+});
+
+window.__timelines = window.__timelines || {};
+window.__timelines["td10"] = tl;
+</script>
+  </body>
+</html>

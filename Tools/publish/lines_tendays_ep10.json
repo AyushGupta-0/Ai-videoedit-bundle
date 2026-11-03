@@ -1,0 +1,190 @@
+{
+  "episode": "tendays-ep10-minus-sixty",
+  "voices": {
+    "N": {
+      "kokoro": "am_michael",
+      "speed": 0.97,
+      "semitones": 0.0
+    }
+  },
+  "lines": [
+    {
+      "id": "l01",
+      "at": 0.25,
+      "who": "N",
+      "shot": "recap",
+      "text": "You burned it.",
+      "cap": "YOU <b>BURNED</b> IT.",
+      "pause": 0.6
+    },
+    {
+      "id": "l02",
+      "at": 2.1,
+      "who": "N",
+      "shot": "hook",
+      "text": "Day ten. Antarctica. And you are, genuinely, the safest person alive.",
+      "cap": "<b>DAY 10</b>. ANTARCTICA.<br>THE SAFEST PERSON ALIVE."
+    },
+    {
+      "id": "l03",
+      "at": 6.43,
+      "who": "N",
+      "shot": "hook",
+      "text": "For about four more hours.",
+      "cap": "FOR ABOUT<br><u>FOUR MORE HOURS</u>.",
+      "pause": 0.5
+    },
+    {
+      "id": "l04",
+      "at": 8.96,
+      "who": "N",
+      "shot": "wide",
+      "text": "Minus sixty outside. They freeze solid in under two minutes.",
+      "cap": "<b>−60°</b>. THEY FREEZE SOLID<br>IN UNDER <u>TWO MINUTES</u>.",
+      "pause": 0.5
+    },
+    {
+      "id": "l05",
+      "at": 13.4,
+      "who": "N",
+      "shot": "rule1",
+      "text": "Rule one. Shelter.",
+      "cap": "RULE 1. <b>SHELTER</b>.",
+      "pause": 0.3
+    },
+    {
+      "id": "l06",
+      "at": 14.96,
+      "who": "N",
+      "shot": "obey1",
+      "text": "Built for forty. Sealed against a hundred-mile wind. Check.",
+      "cap": "BUILT FOR FORTY. SEALED<br>AGAINST A <b>100-MILE WIND</b>.",
+      "pause": 0.45
+    },
+    {
+      "id": "l07",
+      "at": 18.97,
+      "who": "N",
+      "shot": "rule2",
+      "text": "Rule two. Food.",
+      "cap": "RULE 2. <b>FOOD</b>.",
+      "pause": 0.3
+    },
+    {
+      "id": "l08",
+      "at": 20.52,
+      "who": "N",
+      "shot": "obey2",
+      "text": "A year of frozen stores. Ten thousand gallons of fuel. Water, lying on the ground. Check.",
+      "cap": "A YEAR OF STORES.<br>10,000 GALLONS OF <b>FUEL</b>.",
+      "pause": 0.45
+    },
+    {
+      "id": "l09",
+      "at": 27.23,
+      "who": "N",
+      "shot": "rule3",
+      "text": "Rule three. Cold.",
+      "cap": "RULE 3. <b>COLD</b>.",
+      "pause": 0.3
+    },
+    {
+      "id": "l10",
+      "at": 28.78,
+      "who": "N",
+      "shot": "obey3",
+      "text": "You switch off the runway lights. Nothing finds you from the air. Check.",
+      "cap": "LIGHTS <b>OFF</b>. NOTHING FINDS<br>YOU FROM THE AIR.",
+      "pause": 0.55
+    },
+    {
+      "id": "l11",
+      "at": 34.43,
+      "who": "N",
+      "shot": "paper",
+      "text": "On paper, you have thought of everything.",
+      "cap": "ON PAPER, YOU HAVE<br>THOUGHT OF <b>EVERYTHING</b>.",
+      "pause": 0.5
+    },
+    {
+      "id": "l12",
+      "at": 37.72,
+      "who": "N",
+      "shot": "turn",
+      "text": "Then Priya picks up your radio. And turns it over.",
+      "cap": "PRIYA PICKS UP YOUR RADIO.<br>AND <u>TURNS IT OVER</u>.",
+      "pause": 0.55
+    },
+    {
+      "id": "l13",
+      "at": 42.22,
+      "who": "N",
+      "shot": "turn",
+      "text": "And asks why a receiver has an aerial.",
+      "cap": "“WHY DOES A RECEIVER<br>HAVE AN <u>AERIAL</u>?”",
+      "pause": 0.7
+    },
+    {
+      "id": "l14",
+      "at": 46.1,
+      "who": "N",
+      "shot": "twoway",
+      "text": "It's a two-way set. Every time you cranked it to listen—",
+      "cap": "IT'S A <b>TWO-WAY</b> SET.<br>EVERY TIME YOU CRANKED IT—",
+      "pause": 0.3
+    },
+    {
+      "id": "l15",
+      "at": 50.73,
+      "who": "N",
+      "shot": "recall",
+      "text": "Day one, the traffic. Day three, the service station. Day five, the signal box—",
+      "cap": "DAY 1. DAY 3. DAY 5.<br>EVERY TIME YOU <u>LISTENED</u>—",
+      "pause": 0.3
+    },
+    {
+      "id": "l16",
+      "at": 56.51,
+      "who": "N",
+      "shot": "recall",
+      "text": "You were transmitting.",
+      "cap": "YOU WERE <u>TRANSMITTING</u>.",
+      "pause": 0.6
+    },
+    {
+      "id": "l17",
+      "at": 58.37,
+      "who": "N",
+      "shot": "twist",
+      "text": "The loop was never a broadcast. It was someone answering you.",
+      "cap": "NEVER A BROADCAST.<br>SOMEONE <u>ANSWERING YOU</u>.",
+      "pause": 0.7
+    },
+    {
+      "id": "l18",
+      "at": 63.4,
+      "who": "N",
+      "shot": "twist",
+      "text": "For ten days, you've told something exactly where you are. Four hours ago, you told it where you'll be all winter.",
+      "cap": "FOR TEN DAYS, YOU TOLD IT<br>EXACTLY <b>WHERE YOU ARE</b>.",
+      "pause": 0.7
+    },
+    {
+      "id": "l19",
+      "at": 72.27,
+      "who": "N",
+      "shot": "lights",
+      "text": "Outside, the runway lights come back on. By themselves.",
+      "cap": "THE LIGHTS COME BACK ON.<br><u>BY THEMSELVES</u>.",
+      "pause": 0.7
+    },
+    {
+      "id": "l20",
+      "at": 76.53,
+      "who": "N",
+      "shot": "end",
+      "text": "You were never following the signal. It was following you.",
+      "cap": ""
+    }
+  ]
+}
