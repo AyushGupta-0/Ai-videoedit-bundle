@@ -1,0 +1,42 @@
+[
+  {
+    "file": "assets/sfx/sea.wav",
+    "at": 2.7,
+    "gain": 0.45
+  },
+  {
+    "file": "assets/sfx/sea.wav",
+    "at": 13.6,
+    "gain": 0.4
+  },
+  {
+    "file": "assets/sfx/sea.wav",
+    "at": 23.1,
+    "gain": 0.4
+  },
+  {
+    "file": "assets/sfx/low_drone_75eb41cd.ogg",
+    "at": 41.4,
+    "gain": 0.5
+  },
+  {
+    "file": "assets/sfx/low_drone_75eb41cd.ogg",
+    "at": 64.3,
+    "gain": 0.5
+  },
+  {
+    "file": "assets/sfx/low_drone_75eb41cd.ogg",
+    "at": 67.4,
+    "gain": 0.6
+  },
+  {
+    "file": "assets/sfx/low_drone_75eb41cd.ogg",
+    "at": 78.4,
+    "gain": 0.55
+  },
+  {
+    "file": "assets/sfx/low_drone_75eb41cd.ogg",
+    "at": 83.3,
+    "gain": 0.62
+  }
+]

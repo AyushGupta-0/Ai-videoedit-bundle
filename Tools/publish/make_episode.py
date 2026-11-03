@@ -101,7 +101,7 @@ SHELL = r'''<!doctype html>
   <div id="hud" class="clip" data-start="0" data-duration="{dur}" data-track-index="1" data-layout-ignore>
     <div id="daytag"><i></i>DAY {day} / 10</div>
     <div id="clock">{clock0}</div>
-    <div id="recov">RECOVERY IN {recov} DAYS</div>
+    <div id="recov">RECOVERY IN {recov_txt}</div>
   </div>
   <div id="mark" class="clip" data-start="0" data-duration="{dur}" data-track-index="2"
        data-layout-ignore>1min.thinker</div>
@@ -138,10 +138,10 @@ mk("end", `<div style="position:absolute;inset:0;
          padding:20px 52px;border-radius:10px;letter-spacing:2px;">{btnB}</div>
   </div>
   <div style="position:absolute;left:0;right:0;top:1160px;text-align:center;">
-    <div style="color:#7d879b;font-size:26px;letter-spacing:4px;">DAY {nextday}</div>
+    <div style="color:#7d879b;font-size:26px;letter-spacing:4px;">{nextlabel}</div>
     <div style="color:#fff;font-size:44px;font-weight:800;margin-top:10px;">{nexthook}</div>
     <div style="color:var(--amber);font-size:27px;letter-spacing:3px;margin-top:22px;">
-      FOLLOW FOR DAY {nextday}</div>
+      {followlabel}</div>
   </div>`);
 
 const SH = {panelwins};
@@ -194,6 +194,9 @@ def main():
         extra_css=cfg.get("extra_css", ""), panels=panels,
         q1=cfg["q1"], q2=cfg["q2"], btnA=cfg["btnA"], btnB=cfg["btnB"],
         nextday=cfg["day"] + 1, nexthook=cfg["nexthook"],
+        nextlabel=cfg.get("nextlabel", f'DAY {cfg["day"] + 1}'),
+        followlabel=cfg.get("followlabel", f'FOLLOW FOR DAY {cfg["day"] + 1}'),
+        recov_txt=f'{cfg["recov"]} DAY' + ("" if cfg["recov"] == 1 else "S"),
         panelwins=json.dumps(cfg["panels"]),
         motion=cfg.get("motion", ""),
         m0=cfg["m0"], m1=cfg["m1"], ampm=cfg["ampm"],

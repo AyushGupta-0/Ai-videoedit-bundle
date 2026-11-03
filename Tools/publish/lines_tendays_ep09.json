@@ -1,0 +1,181 @@
+{
+  "episode": "tendays-ep09-rig-bravo",
+  "voices": {
+    "N": {
+      "kokoro": "am_michael",
+      "speed": 0.97,
+      "semitones": 0.0
+    }
+  },
+  "lines": [
+    {
+      "id": "l01",
+      "at": 0.25,
+      "who": "N",
+      "shot": "recap",
+      "text": "You said nothing.",
+      "cap": "YOU SAID <b>NOTHING</b>.",
+      "pause": 0.6
+    },
+    {
+      "id": "l02",
+      "at": 2.1,
+      "who": "N",
+      "shot": "hook",
+      "text": "Day nine. A hundred and eighty feet above the ocean. The safest building on Earth.",
+      "cap": "<b>DAY 9</b>. 180 FEET UP. THE<br>SAFEST BUILDING ON EARTH."
+    },
+    {
+      "id": "l03",
+      "at": 7.97,
+      "who": "N",
+      "shot": "hook",
+      "text": "And it's been running without a crew for forty days.",
+      "cap": "IT'S RUN WITHOUT A CREW<br>FOR <u>FORTY DAYS</u>.",
+      "pause": 0.6
+    },
+    {
+      "id": "l04",
+      "at": 12.52,
+      "who": "N",
+      "shot": "wide",
+      "text": "One helideck. One ladder. They can't swim, and they can't climb.",
+      "cap": "ONE HELIDECK. ONE LADDER.<br>THEY CAN'T <b>SWIM</b> OR <b>CLIMB</b>.",
+      "pause": 0.5
+    },
+    {
+      "id": "l05",
+      "at": 17.35,
+      "who": "N",
+      "shot": "rule1",
+      "text": "Rule one. Raise the boat-landing ladder.",
+      "cap": "RULE 1. RAISE THE<br>BOAT-LANDING <b>LADDER</b>.",
+      "pause": 0.35
+    },
+    {
+      "id": "l06",
+      "at": 20.11,
+      "who": "N",
+      "shot": "obey1",
+      "text": "You winch it up. Now there is no way up at all.",
+      "cap": "YOU WINCH IT UP.<br>NOW THERE IS <u>NO WAY UP</u>.",
+      "pause": 0.55
+    },
+    {
+      "id": "l07",
+      "at": 25.37,
+      "who": "N",
+      "shot": "plant",
+      "text": "Radio. Recovery in two days. Hold at Rig Bravo. Own water. Own power. Sixty bunks.",
+      "cap": "RADIO: <b>HOLD AT RIG BRAVO</b>.<br>OWN WATER. OWN POWER.",
+      "pause": 0.6
+    },
+    {
+      "id": "l08",
+      "at": 31.84,
+      "who": "N",
+      "shot": "rule2",
+      "text": "Rule two. Keep the helideck lights off.",
+      "cap": "RULE 2. KEEP THE<br>HELIDECK LIGHTS <b>OFF</b>.",
+      "pause": 0.35
+    },
+    {
+      "id": "l09",
+      "at": 34.98,
+      "who": "N",
+      "shot": "obey2",
+      "text": "You kill the lights. From the air, from the sea, the rig is gone.",
+      "cap": "YOU KILL THE LIGHTS.<br>THE RIG IS <u>GONE</u>.",
+      "pause": 0.55
+    },
+    {
+      "id": "l10",
+      "at": 41.02,
+      "who": "N",
+      "shot": "good",
+      "text": "Sixty bunks. A year of food. Zero ways up.",
+      "cap": "60 BUNKS. A YEAR OF FOOD.<br><b>ZERO</b> WAYS UP.",
+      "pause": 0.6
+    },
+    {
+      "id": "l11",
+      "at": 45.18,
+      "who": "N",
+      "shot": "rule3",
+      "text": "Rule three. Read the log before you touch anything.",
+      "cap": "RULE 3. READ THE LOG BEFORE<br>YOU <b>TOUCH</b> ANYTHING.",
+      "pause": 0.45
+    },
+    {
+      "id": "l12",
+      "at": 49.19,
+      "who": "N",
+      "shot": "obey3",
+      "text": "So you touch nothing. You find the control room. You find the log.",
+      "cap": "YOU TOUCH NOTHING.<br>YOU FIND THE <u>LOG</u>.",
+      "pause": 0.6
+    },
+    {
+      "id": "l13",
+      "at": 54.89,
+      "who": "N",
+      "shot": "log",
+      "text": "Six twenty PM. Thirty-nine days of entries. Every one routine.",
+      "cap": "<b>6:20 PM</b>. 39 DAYS OF ENTRIES.<br>EVERY ONE ROUTINE.",
+      "pause": 0.5
+    },
+    {
+      "id": "l14",
+      "at": 59.34,
+      "who": "N",
+      "shot": "log",
+      "text": "The fortieth is four words.",
+      "cap": "THE FORTIETH IS<br><u>FOUR WORDS</u>.",
+      "pause": 0.7
+    },
+    {
+      "id": "l15",
+      "at": 62.06,
+      "who": "N",
+      "shot": "words",
+      "text": "It came by radio.",
+      "cap": "“IT CAME BY <u>RADIO</u>.”",
+      "pause": 0.8
+    },
+    {
+      "id": "l16",
+      "at": 64.5,
+      "who": "N",
+      "shot": "twist",
+      "text": "Forty people. Zero ways up. And it came by radio.",
+      "cap": "40 PEOPLE. ZERO WAYS UP.<br>AND IT CAME BY <u>RADIO</u>.",
+      "pause": 0.6
+    },
+    {
+      "id": "l17",
+      "at": 69.05,
+      "who": "N",
+      "shot": "fuel",
+      "text": "Then the thing that ends the night. The winter fuel isn't here.",
+      "cap": "THE WINTER FUEL<br><b>ISN'T HERE</b>.",
+      "pause": 0.6
+    },
+    {
+      "id": "l18",
+      "at": 74.36,
+      "who": "N",
+      "shot": "fuel",
+      "text": "It's four hundred miles further south. On the ice.",
+      "cap": "400 MILES FURTHER SOUTH.<br>ON THE <u>ICE</u>.",
+      "pause": 1.0
+    },
+    {
+      "id": "l19",
+      "at": 78.92,
+      "who": "N",
+      "shot": "end",
+      "text": "Do you read the rest of the log?",
+      "cap": ""
+    }
+  ]
+}

@@ -1,0 +1,195 @@
+{
+  "day": 9,
+  "dur": 90.5,
+  "clock0": "6:04 PM",
+  "recov": 2,
+  "m0": 364,
+  "m1": 388,
+  "ampm": "PM",
+  "q1": "DO YOU READ",
+  "q2": "THE REST?",
+  "btnA": "READ",
+  "btnB": "BURN IT",
+  "nexthook": "MINUS SIXTY. THEY FREEZE<br>IN UNDER TWO MINUTES.",
+  "extra_css": "",
+  "motion": "/* hook: the flare breathes; the tell on \"running\" */\ntl.fromTo(\"#flareh\", { opacity: 0.7 }, { opacity: 1, duration: 0.13, yoyo: true, repeat: 80, ease: \"none\" }, 2.8);\ntl.fromTo(\"#auto\", { opacity: 0, y: 12 }, { opacity: 1, y: 0, duration: 0.3, ease: \"power2.out\" }, 10.5);\n/* wide: what they cannot do, on \"They\" */\ntl.fromTo(\"#flarew\", { opacity: 0.7 }, { opacity: 1, duration: 0.13, yoyo: true, repeat: 40, ease: \"none\" }, 13.6);\ntl.fromTo(\"#cant\", { opacity: 0, y: 12 }, { opacity: 1, y: 0, duration: 0.3, ease: \"power2.out\" }, 15.9);\n/* rule 1 obeyed: the ladder winches up out of the sea; NO WAY UP on the words */\ntl.fromTo(\"#ladder2\", { y: 0 }, { y: -640, duration: 1.7, ease: \"power1.inOut\" }, 23.55);\ntl.fromTo(\"#noway\", { scale: 1.8, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.3, ease: \"power3.out\" }, 25.0);\n/* the plant: the radio gives an order; the rig's own water, power, bunks tick on the words */\ntl.fromTo(\"#hold\", { opacity: 0, y: 12 }, { opacity: 1, y: 0, duration: 0.3, ease: \"power2.out\" }, 29.65);\n[[31.3, \"#p1\"], [32.05, \"#p2\"], [33.05, \"#p3\"]].forEach(([t, id]) => tl.fromTo(id, { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.25, ease: \"power2.out\" }, t));\n/* rule 2 obeyed: every light out on \"kill\" — a cut; then the whole rig fades into the night on \"gone\" */\ntl.to(\".rigwinn, .decklightn\", { opacity: 0, duration: 0.12, ease: \"none\" }, 38.8);\ntl.to(\"#flaren\", { opacity: 0.2, duration: 0.3 }, 38.85);\ntl.to(\"#rigbodyn\", { opacity: 0.1, duration: 0.8, ease: \"power2.in\" }, 41.45);\ntl.fromTo(\"#gone\", { scale: 1.8, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.3, ease: \"power3.out\" }, 41.9);\n/* the good news: sixty bunks fill the grid, the three numbers land on their words */\ntl.to(\".bunk\", { opacity: 1, duration: 0.1, stagger: 0.02, ease: \"none\" }, 43.95);\n[[44.35, \"#s60\"], [44.92, \"#s1\"], [45.9, \"#s0\"]].forEach(([t, id]) => tl.fromTo(id, { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.3, ease: \"power2.out\" }, t));\n/* rule 3 obeyed: you touch nothing; the log is found */\ntl.to(\"#logbook\", { boxShadow: \"0 0 36px 8px rgba(240,169,60,.55)\", duration: 0.5 }, 56.2);\ntl.fromTo(\"#thelog\", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.25, ease: \"power2.out\" }, 56.3);\n/* 6:20: thirty-nine routine entries write themselves; the fortieth waits with a cursor */\ntl.to(\".lr\", { opacity: 1, duration: 0.08, stagger: 0.032, ease: \"none\" }, 59.7);\ntl.to(\"#r40\", { opacity: 1, duration: 0.2 }, 64.35);\ntl.fromTo(\"#cur\", { opacity: 1 }, { opacity: 0, duration: 0.4, yoyo: true, repeat: 6, ease: \"none\" }, 64.6);\n/* the four words */\ntl.set(\"#entry\", { textContent: \"\" }, 67.2);\ntl.to(\"#entry\", { duration: 1.5, scrambleText: { text: \"IT CAME BY RADIO.\", chars: \"upperCase\", speed: 0.55 } }, 67.5);\n/* the twist: forty, zero, and the radio */\ntl.fromTo(\"#t40\", { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.3, ease: \"power2.out\" }, 70.5);\ntl.fromTo(\"#t0\", { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.3, ease: \"power2.out\" }, 71.45);\ntl.fromTo(\"#byradio\", { scale: 1.8, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.32, ease: \"power3.out\" }, 73.4);\n/* the fuel: not here; the line draws south to the ice */\ntl.fromTo(\"#nofuel\", { opacity: 0, x: -10 }, { opacity: 1, x: 0, duration: 0.3, ease: \"power2.out\" }, 78.5);\ntl.fromTo(\"#south\", { drawSVG: \"0% 0%\" }, { drawSVG: \"0% 100%\", duration: 1.5, ease: \"power1.inOut\" }, 81.0);\ntl.fromTo(\"#ice\", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.3, ease: \"power2.out\" }, 83.35);",
+  "lines": [
+    [
+      "YOU SAID <b>NOTHING</b>.",
+      0.25,
+      2.15
+    ],
+    [
+      "<b>DAY 9</b>. 180 FEET UP. THE<br>SAFEST BUILDING ON EARTH.",
+      2.75,
+      9.2
+    ],
+    [
+      "IT'S RUN WITHOUT A CREW<br>FOR <u>FORTY DAYS</u>.",
+      9.26,
+      12.985
+    ],
+    [
+      "ONE HELIDECK. ONE LADDER.<br>THEY CAN'T <b>SWIM</b> OR <b>CLIMB</b>.",
+      13.585,
+      18.585
+    ],
+    [
+      "RULE 1. RAISE THE<br>BOAT-LANDING <b>LADDER</b>.",
+      19.085,
+      22.71
+    ],
+    [
+      "YOU WINCH IT UP.<br>NOW THERE IS <u>NO WAY UP</u>.",
+      23.06,
+      26.66
+    ],
+    [
+      "RADIO: <b>HOLD AT RIG BRAVO</b>.<br>OWN WATER. OWN POWER.",
+      27.21,
+      34.11
+    ],
+    [
+      "RULE 2. KEEP THE<br>HELIDECK LIGHTS <b>OFF</b>.",
+      34.71,
+      37.96
+    ],
+    [
+      "YOU KILL THE LIGHTS.<br>THE RIG IS <u>GONE</u>.",
+      38.31,
+      43.035
+    ],
+    [
+      "60 BUNKS. A YEAR OF FOOD.<br><b>ZERO</b> WAYS UP.",
+      43.585,
+      47.435
+    ],
+    [
+      "RULE 3. READ THE LOG BEFORE<br>YOU <b>TOUCH</b> ANYTHING.",
+      48.035,
+      52.135
+    ],
+    [
+      "YOU TOUCH NOTHING.<br>YOU FIND THE <u>LOG</u>.",
+      52.585,
+      57.31
+    ],
+    [
+      "<b>6:20 PM</b>. 39 DAYS OF ENTRIES.<br>EVERY ONE ROUTINE.",
+      57.91,
+      63.41
+    ],
+    [
+      "THE FORTIETH IS<br><u>FOUR WORDS</u>.",
+      63.91,
+      66.51
+    ],
+    [
+      "“IT CAME BY <u>RADIO</u>.”",
+      67.21,
+      69.36
+    ],
+    [
+      "40 PEOPLE. ZERO WAYS UP.<br>AND IT CAME BY <u>RADIO</u>.",
+      70.16,
+      74.61
+    ],
+    [
+      "THE WINTER FUEL<br><b>ISN'T HERE</b>.",
+      75.21,
+      79.81
+    ],
+    [
+      "400 MILES FURTHER SOUTH.<br>ON THE <u>ICE</u>.",
+      80.41,
+      84.41
+    ],
+    [
+      "",
+      85.41,
+      88.01
+    ]
+  ],
+  "panels": [
+    [
+      "recap",
+      0.0,
+      2.75
+    ],
+    [
+      "hook",
+      2.55,
+      13.59
+    ],
+    [
+      "wide",
+      13.39,
+      19.09
+    ],
+    [
+      "rule1",
+      18.89,
+      23.06
+    ],
+    [
+      "obey1",
+      22.86,
+      27.21
+    ],
+    [
+      "plant",
+      27.01,
+      34.71
+    ],
+    [
+      "rule2",
+      34.51,
+      38.31
+    ],
+    [
+      "obey2",
+      38.11,
+      43.580000000000005
+    ],
+    [
+      "good",
+      43.38,
+      48.03
+    ],
+    [
+      "rule3",
+      47.83,
+      52.580000000000005
+    ],
+    [
+      "obey3",
+      52.38,
+      57.910000000000004
+    ],
+    [
+      "log",
+      57.71,
+      67.21000000000001
+    ],
+    [
+      "words",
+      67.01,
+      70.16
+    ],
+    [
+      "twist",
+      69.96,
+      75.21000000000001
+    ],
+    [
+      "fuel",
+      75.01,
+      85.41
+    ],
+    [
+      "end",
+      85.21,
+      90.5
+    ]
+  ]
+}

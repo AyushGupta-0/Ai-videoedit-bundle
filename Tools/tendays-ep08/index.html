@@ -1,0 +1,424 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <title>Ten Days — Day 8</title>
+    <!-- vendored: no network fetch during render. The plugin set has been free
+         for commercial use since GSAP 3.13; copied in from Tools/_shared/gsap -->
+    <script src="assets/gsap/gsap.min.js"></script>
+    <script src="assets/gsap/ScrambleTextPlugin.min.js"></script>
+    <script src="assets/gsap/SplitText.min.js"></script>
+    <script src="assets/gsap/DrawSVGPlugin.min.js"></script>
+    <script src="assets/gsap/CustomEase.min.js"></script>
+<style>
+  :root{
+    --night:#0b1220; --night2:#131d30; --road:#161d2b;
+    --amber:#f0a93c; --amber-lt:#ffd38a; --warm:#ffb64d;
+    --red:#ff4242; --red-dk:#c22b2b;
+    --ink:#060a12; --white:#ffffff; --grey:#8b97ab;
+  }
+  html,body{margin:0;background:#000;}
+  #root{position:relative;width:1080px;height:1920px;overflow:hidden;background:var(--night);
+        font-family:"Avenir Next","Helvetica Neue",Arial,sans-serif;}
+  .panel{position:absolute;inset:0;opacity:0;will-change:opacity;}
+  #hud{position:absolute;left:46px;top:44px;z-index:40;}
+  #daytag{display:flex;align-items:center;gap:9px;font-size:23px;font-weight:700;
+          letter-spacing:2.4px;color:var(--red);}
+  #daytag i{width:11px;height:11px;border-radius:50%;background:var(--red);display:block;}
+  #clock{font-size:54px;font-weight:700;color:var(--white);letter-spacing:1px;margin-top:2px;
+         font-variant-numeric:tabular-nums;}
+  #recov{font-size:20px;font-weight:600;letter-spacing:2.6px;color:var(--grey);margin-top:1px;}
+  #mark{position:absolute;right:46px;top:52px;z-index:40;font-size:18px;
+        letter-spacing:1.6px;color:#55617a;}
+  /* Captions sit above y=1500. Anything a panel draws below that collides with a
+     two-line caption, which is a hard lint error — keep panel text above it. */
+  #capwrap{position:absolute;left:70px;right:70px;bottom:230px;text-align:center;z-index:38;}
+  #cap{display:inline-block;color:var(--white);font-size:58px;line-height:1.26;font-weight:700;
+       letter-spacing:.4px;opacity:0;
+       text-shadow:0 4px 22px rgba(0,0,0,.95),0 2px 4px rgba(0,0,0,.9);}
+  #cap b{color:var(--amber);font-weight:700;}
+  #cap u{color:var(--red);text-decoration:none;}
+  .vign{position:absolute;inset:0;pointer-events:none;
+        background:radial-gradient(125% 85% at 50% 45%,rgba(0,0,0,0) 42%,rgba(0,0,0,.82) 100%);}
+  .sky{position:absolute;inset:0;
+       background:linear-gradient(180deg,#0a1020 0%,#16233a 46%,#0c1322 100%);}
+  .rulecard{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;
+            justify-content:center;gap:34px;
+            background:linear-gradient(180deg,rgba(6,10,18,.90),rgba(6,10,18,.96));}
+  .rulebadge{background:var(--red);color:#fff;font-size:26px;font-weight:800;letter-spacing:3.4px;
+             padding:11px 26px;border-radius:5px;}
+  .ruletext{color:#fff;font-size:92px;font-weight:800;letter-spacing:1px;text-align:center;
+            line-height:1.1;max-width:880px;}
+  .rulesub{color:var(--grey);font-size:34px;font-weight:600;max-width:800px;text-align:center;
+           line-height:1.35;}
+  .news{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:830px;
+        border:3px solid var(--amber);border-radius:12px;background:rgba(8,13,22,.93);
+        padding:36px 40px;}
+  .news.bad{border-color:var(--red);}
+  .news h4{margin:0 0 22px;color:var(--amber);font-size:30px;letter-spacing:3.4px;font-weight:800;}
+  .news.bad h4{color:var(--red);}
+  .news .row{display:flex;justify-content:space-between;align-items:center;color:#fff;
+             font-size:40px;font-weight:600;padding:15px 0;
+             border-bottom:1px solid rgba(255,255,255,.10);}
+  .news .row:last-child{border-bottom:0;}
+  .news .row span:last-child{color:var(--amber);font-weight:800;}
+  .news.bad .row span:last-child{color:var(--red);}
+  .stamp{position:absolute;left:50%;transform:translateX(-50%) rotate(-7deg);border:7px solid var(--red);
+         color:var(--red);font-size:80px;font-weight:800;letter-spacing:6px;padding:13px 42px;
+         border-radius:8px;}
+  .badge{display:inline-block;border:4px solid var(--amber);color:var(--amber);font-size:38px;
+         font-weight:800;letter-spacing:4px;padding:14px 32px;border-radius:8px;
+         background:rgba(8,12,20,.85);}
+  .badge.red{border-color:var(--red);color:var(--red);}
+
+</style>
+  </head>
+  <body>
+<div id="root" data-composition-id="td8" data-start="0" data-duration="91.0"
+     data-width="1080" data-height="1920" data-track-kind="graphics">
+  <div id="panels" class="clip" data-start="0" data-duration="91.0" data-track-index="0"></div>
+  <div id="hud" class="clip" data-start="0" data-duration="91.0" data-track-index="1" data-layout-ignore>
+    <div id="daytag"><i></i>DAY 8 / 10</div>
+    <div id="clock">11:21 AM</div>
+    <div id="recov">RECOVERY IN 3 DAYS</div>
+  </div>
+  <div id="mark" class="clip" data-start="0" data-duration="91.0" data-track-index="2"
+       data-layout-ignore>1min.thinker</div>
+  <div id="capwrap" class="clip" data-start="0" data-duration="91.0" data-track-index="3"
+       data-track-kind="captions"><span id="cap"></span></div>
+</div>
+
+<audio id="vo" src="assets/audio/vo.wav" data-start="0" data-volume="1"></audio>
+
+<script>
+gsap.registerPlugin(ScrambleTextPlugin, SplitText, DrawSVGPlugin, CustomEase);
+const DUR = 91.0;
+const tl = gsap.timeline({ paused: true });
+const S = document.getElementById("panels");
+const mk = (id, html) => { const d=document.createElement("div");
+  d.className="panel"; d.id=id; d.innerHTML=html; S.appendChild(d); return d; };
+const rule = (n, text, sub) => `<div class="rulecard">
+    <div class="rulebadge">RULE #${n}</div><div class="ruletext">${text}</div>
+    ${sub ? `<div class="rulesub">${sub}</div>` : ""}</div>`;
+
+/* Ten Days — Day 8: six hundred kilos an hour.
+ *
+ * Same template. The helicopter episode, and the episode that turns the
+ * radio from a comfort into a question. Plant: "she found you by tracking
+ * your transmissions" (direction-finding lines converging on you). Recall:
+ * Day 1, Day 3, Day 5 — you only ever listened. Twist: you have never
+ * spoken into it, so what was she tracking? The answer is Day 10.
+ *
+ * Deterministic throughout — no unseeded randomness anywhere.
+ */
+
+function figure(pose, x, y, s = 1, tone = "#1c2538", hood = "#2a3650") {
+  const skin = "#d9b08c", pack = "#3a4a6a";
+  let body;
+  if (pose === "seat") {
+    body = `<rect x="-70" y="-10" width="140" height="150" rx="34" fill="${hood}"/>
+      <rect x="-50" y="60" width="60" height="110" rx="22" fill="${tone}"/>
+      <circle cx="-8" cy="-50" r="52" fill="${hood}"/><circle cx="4" cy="-44" r="34" fill="${skin}"/>
+      <rect x="-26" y="-56" width="56" height="26" rx="12" fill="${hood}"/>`;
+  } else if (pose === "crouch") {
+    body = `<rect x="-90" y="20" width="180" height="120" rx="48" fill="${hood}"/>
+      <rect x="-100" y="-30" width="70" height="90" rx="26" fill="${pack}"/>
+      <circle cx="30" cy="-30" r="50" fill="${hood}"/><circle cx="40" cy="-24" r="32" fill="${skin}"/>
+      <rect x="6" y="-40" width="60" height="24" rx="12" fill="${hood}"/>`;
+  } else if (pose === "back") {
+    body = `<rect x="-62" y="-30" width="124" height="200" rx="40" fill="${hood}"/>
+      <rect x="-40" y="-10" width="80" height="120" rx="24" fill="${pack}"/>
+      <rect x="-44" y="160" width="34" height="110" rx="14" fill="${tone}"/>
+      <rect x="10" y="160" width="34" height="100" rx="14" fill="${tone}"/>
+      <circle cx="0" cy="-80" r="52" fill="${hood}"/>`;
+  } else { // peer
+    body = `<rect x="-64" y="-20" width="128" height="200" rx="40" fill="${hood}"/>
+      <rect x="-104" y="-6" width="60" height="120" rx="24" fill="${pack}"/>
+      <circle cx="14" cy="-68" r="54" fill="${hood}"/><circle cx="22" cy="-62" r="36" fill="${skin}"/>
+      <rect x="-14" y="-78" width="64" height="26" rx="13" fill="${hood}"/>`;
+  }
+  return `<g transform="translate(${x},${y}) scale(${s})">${body}</g>`;
+}
+const HER = "#5a3a2e";   // her hood, every time she appears
+
+/* a Sea King, side on, over open water */
+function heli(x, y, s, id) {
+  return `<g id="${id}"><g transform="translate(${x},${y}) scale(${s})">
+    <ellipse id="${id}_disc" cx="0" cy="-150" rx="540" ry="26" fill="#c9d6ee" opacity=".4"/>
+    <rect x="-10" y="-150" width="20" height="50" fill="#3a4967"/>
+    <path d="M-220,-20 L-540,-70 L-540,-30 L-220,40 Z" fill="#3a4967" stroke="#9fb0d0" stroke-width="7"/>
+    <rect x="-556" y="-150" width="16" height="120" rx="4" fill="#9fb0d0"/>
+    <ellipse cx="-548" cy="-150" rx="14" ry="70" fill="#9fb0d0" opacity=".35"/>
+    <path d="M-220,0 C-220,-70 -150,-110 -60,-110 L120,-110 C200,-110 240,-60 240,-10 L240,30 C240,70 200,90 150,90 L-120,90 C-190,90 -220,50 -220,0 Z" fill="#3a4967" stroke="#9fb0d0" stroke-width="7"/>
+    <path d="M130,-100 L228,-44 L228,-8 L130,-30 Z" fill="#5aa9ff" opacity=".7"/>
+    ${[-120, -40, 40].map((wx) => `<rect x="${wx}" y="-70" width="44" height="36" rx="8" fill="#5aa9ff" opacity=".45"/>`).join("")}
+    <rect x="-170" y="80" width="100" height="36" rx="14" fill="#3a4967"/><rect x="70" y="80" width="100" height="36" rx="14" fill="#3a4967"/>
+  </g></g>`;
+}
+
+/* the sea from altitude: sky, a hard horizon, bands of swell */
+function sea(id) {
+  let bands = "";
+  for (let i = 0; i < 14; i++) bands += `<div style="position:absolute;left:0;width:2200px;top:${i * 40}px;height:3px;background:#1d3a5c;opacity:${0.25 + ((i * 5) % 4) * 0.12};"></div>`;
+  return `<div style="position:absolute;inset:0;background:linear-gradient(180deg,#0b1626 0%,#16304d 55%,#0a1a2c 56%,#061020 100%);"></div>
+  <div style="position:absolute;left:0;right:0;top:1060px;height:600px;overflow:hidden;"><div id="${id}" style="position:absolute;left:-600px;top:0;width:2200px;height:600px;">${bands}</div></div>`;
+}
+
+/* the cockpit from behind: you left, her right */
+function cockpit(night = false) {
+  return `<div style="position:absolute;inset:0;background:#06090f;"></div>
+  <div style="position:absolute;left:60px;top:200px;width:960px;height:640px;border-radius:70px 70px 20px 20px;background:linear-gradient(180deg,${night ? "#0a1526" : "#1b3a5f"} 0%,${night ? "#122a44" : "#4a86c0"} 58%,#0a1a2c 59%,#061020 100%);border:10px solid #2a3449;overflow:hidden;"></div>
+  <div style="position:absolute;left:0;right:0;top:840px;height:420px;background:linear-gradient(180deg,#1f2a3f,#121a28);border-top:8px solid #33425e;"></div>
+  ${[200, 420, 660, 880].map((x, i) => `<div style="position:absolute;left:${x - 54}px;top:900px;width:108px;height:108px;border-radius:50%;background:#0b111b;border:5px solid #3a4967;"></div>
+    <div style="position:absolute;left:${x - 3}px;top:916px;width:6px;height:46px;border-radius:3px;background:var(--amber);transform-origin:50% 100%;transform:rotate(${[-40, 20, -10, 35][i]}deg);"></div>`).join("")}
+  <svg width="1080" height="1920" style="position:absolute;inset:0;">${figure("back", 330, 760, 1.15)}${figure("back", 750, 760, 1.15, "#1c2538", HER)}</svg>
+  <div style="position:absolute;left:0;right:0;top:1260px;bottom:0;background:#0a0f17;"></div>`;
+}
+
+/* direction-finding: rings and bearing lines converging on a point */
+function df(cx, cy, ids, color) {
+  return `<svg width="1080" height="1920" style="position:absolute;inset:0;">
+    ${[120, 240, 360, 480].map((r) => `<circle cx="${cx}" cy="${cy}" r="${r}" stroke="#2b3650" stroke-width="3" fill="none"/>`).join("")}
+    ${[[-60, -560], [560, -520], [-520, 420], [520, 500]].map(([dx, dy], i) => `<path id="${ids}${i + 1}" d="M${cx + dx},${cy + dy} L${cx},${cy}" stroke="${color}" stroke-width="8" fill="none" stroke-linecap="round" opacity=".9"/>`).join("")}
+  </svg>`;
+}
+
+/* the radio, with the crank handle on the right and the transmit key under the dial */
+function radio(top, sfx = "") {
+  return `<div style="position:absolute;left:250px;top:${top}px;width:580px;height:290px;border-radius:16px;
+       background:linear-gradient(180deg,#222d41,#161e2e);border:4px solid #33425e;box-shadow:0 26px 70px rgba(0,0,0,.6);">
+    <div style="position:absolute;left:32px;top:30px;width:350px;height:108px;border-radius:8px;background:#0b2a21;border:3px solid #1d5742;display:flex;align-items:center;justify-content:center;">
+      <span style="color:#5df2b0;font-size:56px;font-weight:800;letter-spacing:5px;text-shadow:0 0 26px rgba(93,242,176,.8);">CH 09</span></div>
+    <div style="position:absolute;right:34px;top:42px;width:86px;height:86px;border-radius:50%;background:#2b374f;border:4px solid #44557a;"></div>
+    <div style="position:absolute;right:-26px;top:150px;width:26px;height:74px;border-radius:5px;background:#44557a;"></div>
+    <div style="position:absolute;right:-60px;top:196px;width:60px;height:14px;border-radius:7px;background:#44557a;"></div>
+    <div id="txkey${sfx}" style="position:absolute;left:32px;bottom:28px;width:120px;height:56px;border-radius:8px;background:#2a0e0e;border:3px solid #5c1f1f;display:grid;place-items:center;color:#ff6b6b;font-size:24px;font-weight:800;letter-spacing:4px;">TX</div>
+    <div style="position:absolute;left:170px;bottom:28px;right:32px;height:56px;display:flex;gap:11px;">
+      ${Array.from({ length: 7 }, () => `<div style="flex:1;border-radius:5px;background:#2b374f;"></div>`).join("")}</div>
+  </div>`;
+}
+
+/* ============================ PANELS ============================ */
+
+mk("recap", `<div style="position:absolute;inset:0;background:#05070c;"></div>
+  <div style="position:absolute;left:0;right:0;top:0;height:1500px;background:linear-gradient(180deg,#0a0f18,#111826);"></div>
+  <!-- the door, open: the frame, the dark inside, her in it -->
+  <div style="position:absolute;left:320px;top:420px;width:440px;height:1000px;background:#02030a;border:10px solid #3a4967;border-bottom:none;"></div>
+  <div style="position:absolute;left:720px;top:420px;width:120px;height:1000px;border-radius:0 14px 0 0;background:linear-gradient(90deg,#1b2435,#2a3650);border:10px solid #3a4967;border-left:none;"></div>
+  <svg width="1080" height="1920" style="position:absolute;inset:0;">${figure("peer", 560, 1230, 1.1, "#1c2538", HER)}</svg>
+  <div style="position:absolute;left:0;right:0;top:1420px;height:80px;background:#1b2435;"></div>
+  <div style="position:absolute;left:0;right:0;top:1500px;bottom:0;background:#0a0f17;"></div>
+  <div class="vign"></div>`);
+
+mk("hook", `${sea("swell1")}
+  <svg width="1080" height="1920" style="position:absolute;inset:0;">${heli(560, 760, 0.78, "h1")}</svg>
+  <div style="position:absolute;right:80px;top:300px;text-align:right;">
+    <div id="alt" style="color:#fff;font-size:96px;font-weight:800;line-height:1;font-variant-numeric:tabular-nums;">2,000</div>
+    <div style="color:#7d8aa6;font-size:22px;letter-spacing:6px;">FEET</div></div>
+  <div id="qmark" class="badge red" style="position:absolute;left:50%;transform:translateX(-50%);top:1340px;font-size:30px;opacity:0;">A QUESTION YOU CAN'T ANSWER</div>
+  <div class="vign"></div>`);
+
+mk("who", `${cockpit()}
+  <div style="position:absolute;left:150px;right:150px;top:1300px;height:180px;border-radius:14px;background:#0b111b;border:3px solid #5a3a2e;padding:22px 30px;">
+    <div style="color:#fff;font-size:56px;font-weight:800;letter-spacing:6px;">PRIYA</div>
+    <div style="color:#7d8aa6;font-size:22px;letter-spacing:5px;margin-top:8px;">COASTGUARD RADIO · 9 YEARS</div></div>
+  <div class="vign"></div>`);
+
+mk("plant", `<div style="position:absolute;inset:0;background:#070c16;"></div>
+  ${df(540, 900, "b", "var(--amber)")}
+  <svg width="1080" height="1920" style="position:absolute;inset:0;">${figure("seat", 540, 900, 0.55)}</svg>
+  <div style="position:absolute;left:0;right:0;top:420px;text-align:center;color:#7d8aa6;font-size:22px;letter-spacing:6px;">YOUR TRANSMISSIONS · TRACKED</div>
+  <div id="worry" class="badge red" style="position:absolute;left:50%;transform:translateX(-50%);top:1400px;font-size:30px;opacity:0;">THAT SHOULD HAVE WORRIED YOU</div>
+  <div class="vign"></div>`);
+
+mk("rule1", rule(1, "A SEA KING BURNS<br>600 KILOS AN HOUR.", ""));
+
+mk("obey1", `<div style="position:absolute;inset:0;background:#06090f;"></div>
+  <div style="position:absolute;left:390px;top:460px;width:300px;height:780px;border-radius:30px;background:#0b111b;border:8px solid #3a4967;overflow:hidden;">
+    <div id="fuel" style="position:absolute;left:0;right:0;bottom:0;height:0px;background:linear-gradient(0deg,#b77a1c,#f0a93c);"></div>
+    ${[0.25, 0.5, 0.75].map((f) => `<div style="position:absolute;left:0;width:40px;top:${780 - f * 780}px;height:4px;background:#3a4967;"></div>`).join("")}
+  </div>
+  <div style="position:absolute;left:720px;top:600px;color:#fff;font-size:88px;font-weight:800;line-height:1;font-variant-numeric:tabular-nums;"><span id="fpct">0</span><span style="font-size:40px;">%</span></div>
+  <div style="position:absolute;left:720px;top:700px;color:#7d8aa6;font-size:22px;letter-spacing:5px;line-height:1.6;">3,000 KG<br>FIVE HOURS</div>
+  <div id="brim" class="badge" style="position:absolute;left:50%;transform:translateX(-50%);top:1300px;font-size:30px;opacity:0;">TO THE BRIM</div>
+  <div class="vign"></div>`);
+
+mk("rule2", rule(2, "EVERY KILO<br>COSTS YOU RANGE.", ""));
+
+function scaleRows(extra = "") {
+  const rows = [["WATER", "w", "20 KG"], ["MAP", "m", "0.2 KG"], ["RADIO", "r", "3 KG"], ["FOOD", "f", "61 KG"]];
+  return `<div style="position:absolute;left:70px;right:70px;top:480px;height:800px;border-radius:18px;background:#0d1422;border:4px solid #2b3650;"></div>
+  ${rows.map(([n, k, kg], i) => `<div style="position:absolute;left:110px;top:${540 + i * 150}px;width:150px;color:#fff;font-size:30px;font-weight:800;letter-spacing:4px;">${n}</div>
+    <div style="position:absolute;left:280px;top:${536 + i * 150}px;width:560px;height:44px;border-radius:8px;background:#161e2e;"></div>
+    <div id="bar_${k}${extra}" style="position:absolute;left:280px;top:${536 + i * 150}px;width:0px;height:44px;border-radius:8px;background:${k === "f" ? "var(--red)" : "var(--amber)"};"></div>
+    <div id="kg_${k}${extra}" style="position:absolute;left:860px;top:${540 + i * 150}px;width:150px;text-align:right;color:#7d8aa6;font-size:28px;font-weight:800;font-variant-numeric:tabular-nums;opacity:0;">${kg}</div>`).join("")}
+  <div style="position:absolute;left:110px;top:1150px;color:#7d8aa6;font-size:22px;letter-spacing:6px;">RANGE</div>
+  <div style="position:absolute;left:110px;top:1180px;color:#fff;font-size:72px;font-weight:800;line-height:1;font-variant-numeric:tabular-nums;"><span id="rng${extra}">410</span><span style="font-size:28px;color:#7d8aa6;"> MI</span></div>
+  <div style="position:absolute;right:110px;top:1180px;text-align:right;color:var(--red);font-size:28px;letter-spacing:4px;font-weight:800;line-height:2.4;">NEED 400</div>`;
+}
+
+mk("obey2", `<div style="position:absolute;inset:0;background:#06090f;"></div>
+  ${scaleRows()}
+  <div class="vign"></div>`);
+
+mk("leave", `<div style="position:absolute;inset:0;background:#06090f;"></div>
+  ${scaleRows("2")}
+  <div id="strike" style="position:absolute;left:100px;top:${536 + 3 * 150 + 20}px;width:920px;height:8px;background:var(--red);transform-origin:0 50%;transform:scaleX(0);"></div>
+  <div id="ground" class="stamp" style="top:1330px;font-size:56px;opacity:0;">LEFT ON THE GROUND</div>
+  <div class="vign"></div>`);
+
+mk("rule3", rule(3, "RANGE IS THE ONLY THING<br>KEEPING YOU ALIVE.", ""));
+
+mk("obey3", `<div style="position:absolute;inset:0;background:#070c16;"></div>
+  <div style="position:absolute;left:60px;right:60px;top:420px;height:1060px;border-radius:18px;background:#0b1a2c;border:4px solid #2b3650;overflow:hidden;">
+    <!-- the coast, top; the rig, bottom; nothing between -->
+    <svg width="960" height="1060" style="position:absolute;inset:0;">
+      <path d="M0,0 L960,0 L960,120 C800,170 700,110 560,160 C420,210 300,140 160,190 C90,215 40,200 0,230 Z" fill="#1b2435"/>
+      <path id="route" d="M520,160 L520,940" stroke="#4a5775" stroke-width="8" stroke-dasharray="20 16" fill="none"/>
+      <circle id="helidot" cx="520" cy="170" r="20" fill="var(--amber)"/>
+      <rect x="470" y="930" width="100" height="40" rx="6" fill="#2a3650" stroke="var(--amber)" stroke-width="4"/>
+      ${[480, 520, 560].map((x) => `<rect x="${x - 4}" y="970" width="8" height="60" fill="#3a4967"/>`).join("")}
+    </svg>
+  </div>
+  <div style="position:absolute;left:0;right:0;top:450px;text-align:center;color:#7d8aa6;font-size:22px;letter-spacing:6px;">THE COAST</div>
+  <div style="position:absolute;left:120px;top:900px;color:#fff;font-size:56px;font-weight:800;line-height:1;">400<br><span style="font-size:22px;color:#7d8aa6;letter-spacing:5px;">MILES</span></div>
+  <div style="position:absolute;right:120px;top:900px;text-align:right;color:#fff;font-size:44px;font-weight:800;line-height:1.1;">NO<br><span style="font-size:22px;color:#7d8aa6;letter-spacing:5px;">LAND</span></div>
+  <div style="position:absolute;left:0;right:0;top:1410px;text-align:center;color:var(--amber);font-size:26px;letter-spacing:6px;font-weight:800;">RIG BRAVO</div>
+  <div class="vign"></div>`);
+
+mk("air", `${cockpit()}
+  <!-- the fuel gauge, the halfway mark, and what she says -->
+  <div style="position:absolute;left:150px;top:1300px;width:780px;height:60px;border-radius:12px;background:#0b111b;border:4px solid #3a4967;overflow:hidden;">
+    <div id="fuelbar" style="position:absolute;left:0;top:0;bottom:0;width:48%;background:linear-gradient(90deg,#b77a1c,#f0a93c);"></div>
+  </div>
+  <div style="position:absolute;left:${150 + 390 - 3}px;top:1280px;width:6px;height:100px;background:#fff;"></div>
+  <div style="position:absolute;left:150px;top:1390px;color:#7d8aa6;font-size:20px;letter-spacing:5px;">FUEL</div>
+  <div style="position:absolute;left:${150 + 390 - 120}px;top:1390px;width:240px;text-align:center;color:#fff;font-size:20px;letter-spacing:5px;">HALF</div>
+  <div style="position:absolute;left:0;right:0;top:300px;text-align:center;">
+    <span id="oneway" style="display:inline-block;color:var(--red);font-size:60px;font-weight:800;letter-spacing:8px;">ONE WAY</span></div>
+  <div class="vign"></div>`);
+
+mk("ask", `${cockpit(true)}
+  <div style="position:absolute;left:90px;right:90px;top:270px;text-align:center;">
+    <span id="askq" style="display:inline-block;color:var(--red);font-size:44px;font-weight:800;letter-spacing:4px;line-height:1.3;">WHO HAVE YOU BEEN<br>TALKING TO?</span></div>
+  <div style="position:absolute;left:250px;top:1290px;width:170px;height:90px;border-radius:10px;background:linear-gradient(180deg,#222d41,#161e2e);border:3px solid #33425e;">
+    <div style="position:absolute;left:10px;top:10px;width:100px;height:34px;border-radius:5px;background:#0b2a21;border:2px solid #1d5742;"></div>
+    <div style="position:absolute;right:-18px;top:30px;width:18px;height:40px;border-radius:4px;background:#44557a;"></div></div>
+  <div style="position:absolute;left:250px;top:1395px;width:170px;text-align:center;color:#7d8aa6;font-size:18px;letter-spacing:4px;">YOUR RADIO</div>
+  <div class="vign"></div>`);
+
+mk("recall", `<div style="position:absolute;inset:0;background:#070c16;"></div>
+  ${radio(520)}
+  <div style="position:absolute;left:50%;transform:translateX(-50%);top:880px;display:flex;gap:22px;">
+    ${[1, 3, 5].map((d) => `<div id="d${d}" class="badge" style="font-size:26px;opacity:0;">DAY ${d} · LISTENED</div>`).join("")}
+  </div>
+  <div id="txnever" style="position:absolute;left:0;right:0;top:1040px;text-align:center;color:#7d8aa6;font-size:22px;letter-spacing:6px;opacity:0;">TX · NEVER PRESSED</div>
+  <div class="vign"></div>`);
+
+mk("twist", `<div style="position:absolute;inset:0;background:#070c16;"></div>
+  ${df(540, 700, "t", "var(--red)")}
+  ${radio(555, "2")}
+  <div id="neverstamp" class="stamp" style="top:1000px;font-size:60px;opacity:0;">NEVER SPOKEN</div>
+  <div id="tracked" style="position:absolute;left:0;right:0;top:1300px;text-align:center;color:var(--red);font-size:72px;font-weight:800;letter-spacing:10px;opacity:0;">TRACKED</div>
+  <div class="vign"></div>`);
+
+
+/* ---- end card: the question, the buttons, and the next day's hook ---- */
+mk("end", `<div style="position:absolute;inset:0;
+       background:radial-gradient(90% 60% at 50% 46%,#2a0b0b 0%,#07090f 72%);"></div>
+  <div style="position:absolute;left:0;right:0;top:690px;text-align:center;">
+    <div style="color:#fff;font-size:84px;font-weight:800;">DO YOU</div>
+    <div style="color:var(--red);font-size:84px;font-weight:800;">TELL HER?</div>
+  </div>
+  <div style="position:absolute;left:0;right:0;top:980px;display:flex;justify-content:center;gap:34px;">
+    <div style="background:var(--amber);color:#1a1205;font-size:38px;font-weight:800;
+         padding:20px 52px;border-radius:10px;letter-spacing:2px;">TELL HER</div>
+    <div style="background:var(--red-dk);color:#fff;font-size:38px;font-weight:800;
+         padding:20px 52px;border-radius:10px;letter-spacing:2px;">SAY NOTHING</div>
+  </div>
+  <div style="position:absolute;left:0;right:0;top:1160px;text-align:center;">
+    <div style="color:#7d879b;font-size:26px;letter-spacing:4px;">DAY 9</div>
+    <div style="color:#fff;font-size:44px;font-weight:800;margin-top:10px;">ONE HELIDECK. ONE LADDER.<br>THE SAFEST BUILDING ON EARTH.</div>
+    <div style="color:var(--amber);font-size:27px;letter-spacing:3px;margin-top:22px;">
+      FOLLOW FOR DAY 9</div>
+  </div>`);
+
+const SH = [["recap", 0.0, 2.7], ["hook", 2.5, 12.79], ["who", 12.59, 17.49], ["plant", 17.29, 23.04], ["rule1", 22.84, 28.81], ["obey1", 28.61, 34.61], ["rule2", 34.41, 39.010000000000005], ["obey2", 38.81, 45.21], ["leave", 45.01, 50.43], ["rule3", 50.23, 55.31], ["obey3", 55.11, 60.080000000000005], ["air", 59.88, 68.31], ["ask", 68.11, 73.98], ["recall", 73.78, 79.96000000000001], ["twist", 79.76, 86.56], ["end", 86.36, 91.0]];
+const FADE = 0.30;
+SH.forEach(([id, a, b]) => {
+  const el = document.getElementById(id);
+  if (!el) { console.warn("missing panel", id); return; }
+  tl.to(el, { opacity: 1, duration: FADE }, a);
+  if (b < DUR) tl.to(el, { opacity: 0, duration: FADE }, b - FADE);
+});
+
+/* hook: the swell slides under you, the aircraft rides it, the disc flickers; the question lands on the word */
+tl.fromTo("#swell1", { x: 0 }, { x: -520, duration: 10.2, ease: "none" }, 2.7);
+tl.fromTo("#h1", { y: 0 }, { y: -12, duration: 1.6, yoyo: true, repeat: 6, ease: "sine.inOut" }, 2.7);
+tl.fromTo("#h1_disc", { opacity: 0.22 }, { opacity: 0.42, duration: 0.07, yoyo: true, repeat: 140, ease: "none" }, 2.7);
+tl.fromTo("#qmark", { opacity: 0, y: 12 }, { opacity: 1, y: 0, duration: 0.3, ease: "power2.out" }, 10.0);
+/* the plant: four bearings draw in to you on "tracking"; the tell on "That" */
+["#b1", "#b2", "#b3", "#b4"].forEach((id, i) => tl.fromTo(id, { drawSVG: "0% 0%" }, { drawSVG: "0% 100%", duration: 0.7, ease: "power1.inOut" }, 18.6 + i * 0.18));
+tl.fromTo("#worry", { opacity: 0, y: 12 }, { opacity: 1, y: 0, duration: 0.3, ease: "power2.out" }, 20.6);
+/* rule 1 obeyed: the tank fills to the brim, the percentage climbing with it */
+tl.fromTo("#fuel", { height: 0 }, { height: 764, duration: 3.2, ease: "power1.inOut" }, 29.8);
+for (let p = 0; p <= 100; p += 10) tl.set("#fpct", { textContent: String(p) }, 29.8 + (p / 100) * 3.2);
+tl.fromTo("#brim", { opacity: 0, y: 12 }, { opacity: 1, y: 0, duration: 0.3, ease: "power2.out" }, 33.0);
+/* rule 2 obeyed: each item loads on its word, and the range pays for it */
+[["w", 39.75, 170, "407"], ["m", 41.35, 6, "407"], ["r", 42.35, 26, "406"], ["f", 43.35, 520, "397"]].forEach(([k, t, w, r]) => {
+  tl.to(`#bar_${k}`, { width: w, duration: 0.45, ease: "power2.out" }, t);
+  tl.to(`#kg_${k}`, { opacity: 1, duration: 0.2 }, t);
+  tl.set("#rng", { textContent: r }, t + 0.3);
+});
+/* you leave the food: the row is struck through, the bar empties, the range comes back */
+tl.set("#bar_w2", { width: 170 }, 45.2); tl.set("#bar_m2", { width: 6 }, 45.2); tl.set("#bar_r2", { width: 26 }, 45.2); tl.set("#bar_f2", { width: 520 }, 45.2);
+tl.set("#kg_w2,#kg_m2,#kg_r2,#kg_f2", { opacity: 1 }, 45.2); tl.set("#rng2", { textContent: "397" }, 45.2);
+tl.to("#strike", { scaleX: 1, duration: 0.35, ease: "power2.out" }, 45.7);
+tl.to("#bar_f2", { width: 0, duration: 0.5, ease: "power2.inOut" }, 46.5);
+tl.fromTo("#ground", { scale: 1.8, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.3, ease: "power3.out" }, 46.5);
+tl.set("#rng2", { textContent: "406" }, 48.4);
+/* rule 3 obeyed: four hundred miles of nothing, crossed */
+tl.to("#helidot", { attr: { cy: 920 }, duration: 4.6, ease: "none" }, 55.4);
+/* 11:40: the gauge, and what she says */
+tl.fromTo("#fuelbar", { width: "49%" }, { width: "45%", duration: 8.0, ease: "none" }, 60.1);
+tl.set("#oneway", { textContent: "" }, 60.1);
+tl.to("#oneway", { duration: 1.0, scrambleText: { text: "ONE WAY", chars: "upperCase", speed: 0.7 } }, 66.35);
+/* the other thing */
+tl.set("#askq", { textContent: "" }, 68.3);
+tl.to("#askq", { duration: 1.6, scrambleText: { text: "WHO HAVE YOU BEEN TALKING TO?", chars: "upperCase", speed: 0.6 } }, 70.65);
+/* the recall: three nights, three listens, and a key never pressed */
+[[75.35, "#d1"], [75.95, "#d3"], [76.7, "#d5"]].forEach(([t, id]) => tl.fromTo(id, { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.25, ease: "power2.out" }, t));
+tl.to("#txnever", { opacity: 1, duration: 0.3 }, 78.25);
+/* the twist: never spoken; then the bearings draw in, in red, on "tracking" */
+tl.fromTo("#neverstamp", { scale: 1.8, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.32, ease: "power3.out" }, 80.6);
+["#t1", "#t2", "#t3", "#t4"].forEach((id, i) => tl.fromTo(id, { drawSVG: "0% 0%" }, { drawSVG: "0% 100%", duration: 0.5, ease: "power2.in" }, 84.3 + i * 0.12));
+tl.fromTo("#tracked", { opacity: 0, scale: 1.4 }, { opacity: 1, scale: 1, duration: 0.3, ease: "power3.out" }, 84.95);
+
+/* ---- HUD clock, stepping minute by minute ---- */
+const S0 = 681, S1 = 708, AMPM = "AM";
+const clockEl = document.getElementById("clock");
+// seek(t, true) suppresses onUpdate as well as .call(), so neither survives a
+// renderer grabbing frames out of order. Only tl.set() actually renders: it is
+// a zero-duration tween, and tweens render at any playhead position.
+for (let m = S0; m <= S1; m++){
+  const at = ((m - S0) / Math.max(1, S1 - S0)) * (DUR - 4.0);
+  tl.set(clockEl, { textContent:
+    `${((Math.floor(m / 60) + 11) % 12) + 1}:${String(m % 60).padStart(2, "0")} ${AMPM}` }, at);
+}
+
+const LINES = [["YOU <b>OPENED</b> IT.", 0.25, 2.1], ["<b>DAY 8</b>. EIGHT HOURS LATER,<br>YOU'RE 2,000 FEET UP.", 2.7, 7.9], ["AND SHE HAS A QUESTION<br>YOU <u>CAN'T ANSWER</u>.", 7.96, 12.185], ["HER NAME IS <b>PRIYA</b>.<br>COASTGUARD RADIO. 9 YEARS.", 12.785, 16.985], ["SHE FOUND YOU BY TRACKING<br>YOUR <u>TRANSMISSIONS</u>.", 17.485, 22.435], ["RULE 1. A SEA KING BURNS<br><b>600 KILOS</b> AN HOUR.", 23.035, 28.46], ["TANKS FULL. SHE CAN FLY.<br>YOU FILL IT TO THE <u>BRIM</u>.", 28.81, 34.06], ["RULE 2. EVERY KILO<br>COSTS YOU <b>RANGE</b>.", 34.61, 38.66], ["WATER 20. MAP 0.<br>RADIO 3. FOOD <u>61</u>.", 39.01, 44.66], ["FOOD IS AT THE RIG.<br><b>RANGE ISN'T</b>.", 45.21, 49.835], ["RULE 3. RANGE IS THE ONLY<br>THING KEEPING YOU <b>ALIVE</b>.", 50.435, 54.86], ["RIG BRAVO. <b>400 MILES</b><br>OF OPEN WATER.", 55.31, 59.485], ["<b>11:40 AM</b>. 2,000 FEET UP,<br>SHE FINALLY SAYS IT.", 60.085, 64.735], ["“WE'VE GOT FUEL <u>ONE WAY</u>.”", 65.235, 67.61], ["“WHO HAVE YOU BEEN<br>TALKING TO ON THAT <u>RADIO</u>?”", 68.31, 73.385], ["DAY 1. DAY 3. DAY 5.<br>YOU ONLY EVER <b>LISTENED</b>.", 73.985, 79.36], ["YOU HAVE <u>NEVER</u><br>SPOKEN INTO IT.", 79.96, 82.66], ["SO WHAT WAS SHE <u>TRACKING</u>?", 83.36, 85.56], ["", 86.56, 88.41]];
+const capEl = document.getElementById("cap");
+LINES.forEach(([html, a, b], i) => {
+  tl.set(capEl, { innerHTML: html }, a);   // render-time, survives seek
+  tl.fromTo(capEl, { opacity: 0, y: 14 },
+            { opacity: html ? 1 : 0, duration: 0.26, ease: "power2.out" }, a);
+  const next = LINES[i + 1] ? LINES[i + 1][1] : DUR;
+  tl.to(capEl, { opacity: 0, duration: 0.20 }, Math.min(b, next - 0.24));
+});
+
+window.__timelines = window.__timelines || {};
+window.__timelines["td8"] = tl;
+</script>
+  </body>
+</html>

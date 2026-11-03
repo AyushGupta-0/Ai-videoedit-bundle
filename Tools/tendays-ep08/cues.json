@@ -1,0 +1,42 @@
+[
+  {
+    "file": "assets/sfx/rotor.wav",
+    "at": 2.7,
+    "gain": 0.5
+  },
+  {
+    "file": "assets/sfx/low_drone_75eb41cd.ogg",
+    "at": 20.5,
+    "gain": 0.5
+  },
+  {
+    "file": "assets/sfx/rotor.wav",
+    "at": 60.1,
+    "gain": 0.42
+  },
+  {
+    "file": "assets/sfx/rotor.wav",
+    "at": 71.5,
+    "gain": 0.36
+  },
+  {
+    "file": "assets/sfx/low_drone_75eb41cd.ogg",
+    "at": 66.3,
+    "gain": 0.55
+  },
+  {
+    "file": "assets/sfx/low_drone_75eb41cd.ogg",
+    "at": 70.6,
+    "gain": 0.55
+  },
+  {
+    "file": "assets/sfx/low_drone_75eb41cd.ogg",
+    "at": 80.5,
+    "gain": 0.58
+  },
+  {
+    "file": "assets/sfx/low_drone_75eb41cd.ogg",
+    "at": 84.3,
+    "gain": 0.62
+  }
+]

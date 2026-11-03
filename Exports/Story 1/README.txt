@@ -23,8 +23,8 @@ EPISODES
   Day 5  The Signal Box       script written, no video
   Day 6  Twenty Miles An Hour ready   2026-11-08   90.6s
   Day 7  Carriage 32          ready   2026-11-09   91.5s
-  Day 8  Six Hundred Kilos    script written, no video
-  Day 9  Rig Bravo            script written, no video
+  Day 8  Six Hundred Kilos    ready   2026-11-10   91.0s
+  Day 9  Rig Bravo            ready   2026-11-11   90.5s
   Day 10 Minus Sixty          script written, no video
 
   Full scripts: "Editing styles /SCRIPTS_ten_days_full.md"

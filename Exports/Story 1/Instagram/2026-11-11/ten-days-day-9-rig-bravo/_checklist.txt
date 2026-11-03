@@ -1,0 +1,10 @@
+INSTAGRAM REEL
+  [ ] Cover: Edit cover -> Add from gallery -> cover.png (in this folder)
+      Fallback if you skip it: pick frame ~69s
+  [ ] Audio ON (voice-led — muted autoplay loses it)
+  [ ] Share to Facebook Page: ON
+  [ ] Allow remix + download: ON
+  [ ] Location: a big metro widens the first push
+  [ ] Post 7-10pm IST
+  First 125 chars show before "more" — they carry it.
+  FILE 1080x1920 · 90.5s · 8.6MB

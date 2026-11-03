@@ -22,12 +22,12 @@
       "at": 2.1,
       "who": "N",
       "shot": "hook",
-      "text": "Day eight. Eight hours later, that door is the only reason you're two thousand feet up.",
+      "text": "Day eight. Eight hours later, that door is why you're two thousand feet up.",
       "cap": "<b>DAY 8</b>. EIGHT HOURS LATER,<br>YOU'RE 2,000 FEET UP."
     },
     {
       "id": "l03",
-      "at": 8.36,
+      "at": 7.59,
       "who": "N",
       "shot": "hook",
       "text": "And the woman behind it has a question you can't answer.",
@@ -36,7 +36,7 @@
     },
     {
       "id": "l04",
-      "at": 13.29,
+      "at": 12.52,
       "who": "N",
       "shot": "who",
       "text": "Her name is Priya. Coastguard radio. Nine years.",
@@ -45,16 +45,16 @@
     },
     {
       "id": "l05",
-      "at": 16.97,
+      "at": 16.2,
       "who": "N",
       "shot": "plant",
-      "text": "She found you by tracking your transmissions. That should have worried you more than it did.",
+      "text": "She found you by tracking your transmissions. That should have worried you.",
       "cap": "SHE FOUND YOU BY TRACKING<br>YOUR <u>TRANSMISSIONS</u>.",
       "pause": 0.6
     },
     {
       "id": "l06",
-      "at": 23.82,
+      "at": 21.51,
       "who": "N",
       "shot": "rule1",
       "text": "Rule one. A Sea King burns six hundred kilos of fuel an hour.",
@@ -63,16 +63,16 @@
     },
     {
       "id": "l07",
-      "at": 29.27,
+      "at": 26.96,
       "who": "N",
       "shot": "obey1",
       "text": "The airfield's tanks are full. She can fly it. You fill it to the brim.",
-      "cap": "THE TANKS ARE FULL. SHE CAN FLY.<br>YOU FILL IT TO THE <u>BRIM</u>.",
+      "cap": "TANKS FULL. SHE CAN FLY.<br>YOU FILL IT TO THE <u>BRIM</u>.",
       "pause": 0.55
     },
     {
       "id": "l08",
-      "at": 35.69,
+      "at": 33.38,
       "who": "N",
       "shot": "rule2",
       "text": "Rule two. Every kilo you load costs you range.",
@@ -81,7 +81,7 @@
     },
     {
       "id": "l09",
-      "at": 39.6,
+      "at": 37.29,
       "who": "N",
       "shot": "obey2",
       "text": "Water, twenty kilos. Map, nothing. Radio, three. Food, sixty-one.",
@@ -90,16 +90,16 @@
     },
     {
       "id": "l10",
-      "at": 43.71,
+      "at": 41.4,
       "who": "N",
       "shot": "leave",
-      "text": "You leave the food. All sixty-one kilos. Food exists at the rig. Range doesn't.",
-      "cap": "YOU LEAVE THE FOOD. ALL OF IT.<br>FOOD IS AT THE RIG. <b>RANGE ISN'T</b>.",
+      "text": "You leave the food. All of it. Food is at the rig. Range isn't.",
+      "cap": "FOOD IS AT THE RIG.<br><b>RANGE ISN'T</b>.",
       "pause": 0.6
     },
     {
       "id": "l11",
-      "at": 49.8,
+      "at": 47.49,
       "who": "N",
       "shot": "rule3",
       "text": "Rule three. Range is the only thing keeping you alive.",
@@ -108,25 +108,25 @@
     },
     {
       "id": "l12",
-      "at": 54.19,
+      "at": 51.88,
       "who": "N",
       "shot": "obey3",
-      "text": "Rig Bravo. Four hundred miles of open water. No land between.",
+      "text": "Rig Bravo. Four hundred miles of open water.",
       "cap": "RIG BRAVO. <b>400 MILES</b><br>OF OPEN WATER.",
       "pause": 0.6
     },
     {
       "id": "l13",
-      "at": 59.12,
+      "at": 55.66,
       "who": "N",
       "shot": "air",
-      "text": "Eleven forty. Two thousand feet over the sea, she finally says it.",
+      "text": "Eleven forty. Two thousand feet up, she finally says it.",
       "cap": "<b>11:40 AM</b>. 2,000 FEET UP,<br>SHE FINALLY SAYS IT.",
       "pause": 0.5
     },
     {
       "id": "l14",
-      "at": 64.34,
+      "at": 60.11,
       "who": "N",
       "shot": "air",
       "text": "We've got fuel one way.",
@@ -135,7 +135,7 @@
     },
     {
       "id": "l15",
-      "at": 67.06,
+      "at": 62.83,
       "who": "N",
       "shot": "ask",
       "text": "Then she says the other thing. Who have you been talking to on that radio?",
@@ -144,16 +144,16 @@
     },
     {
       "id": "l16",
-      "at": 73.53,
+      "at": 69.3,
       "who": "N",
       "shot": "recall",
-      "text": "You look at the crank handle. Day one. Day three. Day five. You only ever listened.",
+      "text": "The crank handle. Day one. Day three. Day five. You only ever listened.",
       "cap": "DAY 1. DAY 3. DAY 5.<br>YOU ONLY EVER <b>LISTENED</b>.",
       "pause": 0.6
     },
     {
       "id": "l17",
-      "at": 80.38,
+      "at": 75.0,
       "who": "N",
       "shot": "twist",
       "text": "You have never spoken into it.",
@@ -162,7 +162,7 @@
     },
     {
       "id": "l18",
-      "at": 83.49,
+      "at": 78.11,
       "who": "N",
       "shot": "twist",
       "text": "So what was she tracking?",
@@ -171,7 +171,7 @@
     },
     {
       "id": "l19",
-      "at": 86.52,
+      "at": 81.13,
       "who": "N",
       "shot": "end",
       "text": "Do you tell her?",
