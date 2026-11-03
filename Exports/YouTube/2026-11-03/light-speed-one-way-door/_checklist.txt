@@ -1,0 +1,7 @@
+YOUTUBE SHORT
+  [ ] Title from title.txt (53/100 chars)
+  [ ] Tags from tags.txt
+  [ ] #Shorts present
+  [ ] Audience: not made for kids
+  [ ] Language set — enables the Hindi audio track later
+  FILE 1080x1920 · 57.4s · 76.6MB

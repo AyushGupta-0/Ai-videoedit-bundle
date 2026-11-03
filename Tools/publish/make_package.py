@@ -2,12 +2,12 @@
 """Build a ready-to-upload package for one video.
 
 Creates, under Exports/:
-    Instagram/<date>/<slug>/   video + caption.txt
-    YouTube/<date>/<slug>/     video + caption.txt
-    Facebook/<date>/<slug>/    video + caption.txt
+    Instagram/<date>/<slug>/   video, caption.txt, _checklist.txt
+    YouTube/<date>/<slug>/     video, title.txt, caption.txt, tags.txt, _checklist.txt
+    Facebook/<date>/<slug>/    video, caption.txt, _checklist.txt
 
-Each caption.txt is written for that platform's own rules, so you can copy-paste
-straight into the upload box.
+caption.txt holds ONLY what goes in the caption box — select all, copy, paste.
+Anything that is not pasteable lives in _checklist.txt.
 
     python3 make_package.py <video.mp4> <meta.json> [--date YYYY-MM-DD]
 """
@@ -32,104 +32,64 @@ def slugify(s):
 
 def probe(p):
     try:
-        out = subprocess.check_output([
-            "ffprobe", "-v", "error",
-            "-select_streams", "v:0",
+        j = json.loads(subprocess.check_output([
+            "ffprobe", "-v", "error", "-select_streams", "v:0",
             "-show_entries", "stream=width,height",
-            "-show_entries", "format=duration,size",
-            "-of", "json", str(p)
-        ]).decode()
-        j = json.loads(out)
+            "-show_entries", "format=duration,size", "-of", "json", str(p)
+        ]).decode())
         st = (j.get("streams") or [{}])[0]
-        return {
-            "w": st.get("width"), "h": st.get("height"),
-            "dur": round(float(j["format"]["duration"]), 1),
-            "mb": round(int(j["format"]["size"]) / 1048576, 1),
-        }
+        return {"w": st.get("width"), "h": st.get("height"),
+                "dur": round(float(j["format"]["duration"]), 1),
+                "mb": round(int(j["format"]["size"]) / 1048576, 1)}
     except Exception:
         return {}
 
 
-def tag_block(tags, limit):
-    return " ".join("#" + t.lstrip("#") for t in tags[:limit])
+def tags(meta, n):
+    return " ".join("#" + t.lstrip("#") for t in meta["hashtags"][:n])
 
 
-def build_instagram(m, info):
-    tags = tag_block(m["hashtags"], 30)
-    return f"""{m['hook']}
+# ---------- caption bodies: short, crisp, paste-ready ----------
 
-{m['caption']}
-
-{m.get('cta', '')}
-
-.
-.
-.
-{tags}
-
-— — — — — — — — — — — — — — —
-CHECKLIST BEFORE POSTING
-  [ ] Cover frame: pick ~{m.get('cover_at', '0')}s (the strongest visual)
-  [ ] Audio: ON (this reel is voice-led — muted autoplay loses it)
-  [ ] Share to Facebook Page: ON (free crosspost)
-  [ ] Allow remix / download: ON (helps reach)
-  [ ] Location tag: a big metro (Mumbai / Delhi) widens the first push
-  [ ] Post time: 7–10pm IST
-  FILE  {info.get('w')}x{info.get('h')} · {info.get('dur')}s · {info.get('mb')}MB
-  NOTE  The first 125 characters are what shows before "more" — they do the work.
-"""
+def cap_instagram(m):
+    return f"{m['short']}\n\n{m['cta']}\n\n{tags(m, 30)}\n"
 
 
-def build_youtube(m, info):
-    tags = ", ".join(t.lstrip("#") for t in m["hashtags"][:15])
-    short_tags = tag_block(m["hashtags"], 3)
-    return f"""TITLE  (max 100 chars — currently {len(m['yt_title'])})
-{m['yt_title']}
-
-— — — — — — — — — — — — — — —
-DESCRIPTION
-
-{m['hook']}
-
-{m['caption']}
-
-{m.get('credits', '')}
-
-{short_tags} #Shorts
-
-— — — — — — — — — — — — — — —
-TAGS  (paste into the Tags field)
-{tags}
-
-— — — — — — — — — — — — — — —
-CHECKLIST BEFORE POSTING
-  [ ] Title ends up under 100 chars
-  [ ] #Shorts is in the title or description
-  [ ] Thumbnail: not needed for Shorts, YouTube takes a frame
-  [ ] Audience: "No, not made for kids"  (for the What If channel)
-  [ ] Language: set correctly — this drives the multi-audio feature later
-  FILE  {info.get('w')}x{info.get('h')} · {info.get('dur')}s · {info.get('mb')}MB
-"""
+def cap_youtube(m):
+    return f"{m['short']}\n\n{m['cta']}\n\n{m.get('credits','')}\n\n{tags(m, 3)} #Shorts\n"
 
 
-def build_facebook(m, info):
-    tags = tag_block(m["hashtags"], 5)
-    return f"""{m['hook']}
-
-{m['caption']}
-
-{tags}
-
-— — — — — — — — — — — — — — —
-NOTE
-  Easiest path: publish on Instagram with "Share to Facebook" ON and skip this folder.
-  Only upload here manually if the crosspost fails or you want a different caption.
-  Facebook rewards fewer hashtags than Instagram — 3–5 is the sweet spot.
-  FILE  {info.get('w')}x{info.get('h')} · {info.get('dur')}s · {info.get('mb')}MB
-"""
+def cap_facebook(m):
+    return f"{m['short']}\n\n{m['cta']}\n\n{tags(m, 4)}\n"
 
 
-BUILDERS = {"Instagram": build_instagram, "YouTube": build_youtube, "Facebook": build_facebook}
+CAPTIONS = {"Instagram": cap_instagram, "YouTube": cap_youtube, "Facebook": cap_facebook}
+
+CHECKS = {
+    "Instagram": lambda m, i: f"""INSTAGRAM REEL
+  [ ] Cover frame ~{m.get('cover_at','0')}s
+  [ ] Audio ON (voice-led — muted autoplay loses it)
+  [ ] Share to Facebook Page: ON
+  [ ] Allow remix + download: ON
+  [ ] Location: a big metro widens the first push
+  [ ] Post 7-10pm IST
+  First 125 chars show before "more" — they carry it.
+  FILE {i.get('w')}x{i.get('h')} · {i.get('dur')}s · {i.get('mb')}MB
+""",
+    "YouTube": lambda m, i: f"""YOUTUBE SHORT
+  [ ] Title from title.txt ({len(m['yt_title'])}/100 chars)
+  [ ] Tags from tags.txt
+  [ ] #Shorts present
+  [ ] Audience: not made for kids
+  [ ] Language set — enables the Hindi audio track later
+  FILE {i.get('w')}x{i.get('h')} · {i.get('dur')}s · {i.get('mb')}MB
+""",
+    "Facebook": lambda m, i: f"""FACEBOOK REEL
+  Easiest: publish on Instagram with "Share to Facebook" ON and skip this folder.
+  Facebook rewards few hashtags — 3-5 only.
+  FILE {i.get('w')}x{i.get('h')} · {i.get('dur')}s · {i.get('mb')}MB
+""",
+}
 
 
 def main():
@@ -143,20 +103,26 @@ def main():
     if not vid.exists():
         sys.exit(f"no such video: {vid}")
     meta = json.loads(Path(a.meta).read_text())
+    for k in ("short", "cta", "hashtags", "yt_title"):
+        if k not in meta:
+            sys.exit(f"meta is missing '{k}'")
     info = probe(vid)
     slug = slugify(meta.get("slug") or meta["yt_title"])
 
-    made = []
     for p in PLATFORMS:
         d = EXPORTS / p / a.date / slug
         d.mkdir(parents=True, exist_ok=True)
         shutil.copy2(vid, d / vid.name)
-        (d / "caption.txt").write_text(BUILDERS[p](meta, info), encoding="utf-8")
-        made.append(d)
+        (d / "caption.txt").write_text(CAPTIONS[p](meta), encoding="utf-8")
+        (d / "_checklist.txt").write_text(CHECKS[p](meta, info), encoding="utf-8")
+        if p == "YouTube":
+            (d / "title.txt").write_text(meta["yt_title"] + "\n", encoding="utf-8")
+            (d / "tags.txt").write_text(
+                ", ".join(t.lstrip("#") for t in meta["hashtags"][:15]) + "\n", encoding="utf-8")
 
     print(f"packaged '{slug}'  ({info.get('dur')}s, {info.get('mb')}MB)")
-    for d in made:
-        print("  ", d.relative_to(ROOT))
+    for p in PLATFORMS:
+        print("  ", (EXPORTS / p / a.date / slug).relative_to(ROOT))
 
 
 if __name__ == "__main__":

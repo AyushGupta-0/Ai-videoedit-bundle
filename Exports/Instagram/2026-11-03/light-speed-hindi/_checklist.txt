@@ -1,0 +1,9 @@
+INSTAGRAM REEL
+  [ ] Cover frame ~23s
+  [ ] Audio ON (voice-led — muted autoplay loses it)
+  [ ] Share to Facebook Page: ON
+  [ ] Allow remix + download: ON
+  [ ] Location: a big metro widens the first push
+  [ ] Post 7-10pm IST
+  First 125 chars show before "more" — they carry it.
+  FILE 1080x1920 · 58.9s · 93.2MB
