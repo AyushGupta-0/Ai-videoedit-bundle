@@ -25,7 +25,7 @@ ROOT = Path(__file__).resolve().parents[2]
 # word changes the face in every shot at once, which is the point.
 
 BOY = "a cute little Indian boy, messy black hair, green striped t-shirt"
-GIRL = "a cute little Indian girl, two small pigtails, pink dress"
+GIRL = "a cute little Indian girl, two small pigtails, yellow dress"
 # kept for the parked elephant episode
 CHINTU = "chubby baby elephant calf, grey skin, huge round eyes, red collar"
 MIRA = "little Indian girl, black bob hair, yellow sun t-shirt, blue shorts"

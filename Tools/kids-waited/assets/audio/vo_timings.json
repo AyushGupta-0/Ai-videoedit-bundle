@@ -1,0 +1,101 @@
+{
+  "duration": 46.335,
+  "lines": [
+    {
+      "id": "l01",
+      "who": "N",
+      "shot": "w01",
+      "text": "Every evening, Anaya waited at the window.",
+      "start": 0.3,
+      "end": 3.85
+    },
+    {
+      "id": "l02",
+      "who": "N",
+      "shot": "w02",
+      "text": "She was waiting for her father.",
+      "start": 3.91,
+      "end": 6.56
+    },
+    {
+      "id": "l03",
+      "who": "N",
+      "shot": "w03",
+      "text": "He had gone far away to work. One more cross on the calendar.",
+      "start": 6.8,
+      "end": 11.475
+    },
+    {
+      "id": "l04",
+      "who": "N",
+      "shot": "w04",
+      "text": "Dinner was quieter now.",
+      "start": 11.6,
+      "end": 14.15
+    },
+    {
+      "id": "l05",
+      "who": "N",
+      "shot": "w05",
+      "text": "So she kept his photograph close.",
+      "start": 14.6,
+      "end": 17.625
+    },
+    {
+      "id": "l06",
+      "who": "N",
+      "shot": "w06",
+      "text": "Some nights, she fell asleep by the door.",
+      "start": 18.0,
+      "end": 21.275
+    },
+    {
+      "id": "l07",
+      "who": "N",
+      "shot": "w07",
+      "text": "And when it rained, she wondered if he was cold.",
+      "start": 22.0,
+      "end": 25.575
+    },
+    {
+      "id": "l08",
+      "who": "N",
+      "shot": "w08",
+      "text": "She drew him a picture. Four people, one house.",
+      "start": 26.2,
+      "end": 29.975
+    },
+    {
+      "id": "l09",
+      "who": "N",
+      "shot": "w08",
+      "text": "Two hundred and eleven days.",
+      "start": 30.6,
+      "end": 33.5
+    },
+    {
+      "id": "l10",
+      "who": "N",
+      "shot": "w09",
+      "text": "Then one morning, she heard a sound at the gate.",
+      "start": 33.6,
+      "end": 37.175
+    },
+    {
+      "id": "l11",
+      "who": "N",
+      "shot": "w10",
+      "text": "She did not even put her crayon down.",
+      "start": 37.8,
+      "end": 40.925
+    },
+    {
+      "id": "l12",
+      "who": "N",
+      "shot": "w10",
+      "text": "Some people are worth every single day of waiting.",
+      "start": 41.2,
+      "end": 45.075
+    }
+  ]
+}

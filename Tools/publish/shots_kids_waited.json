@@ -1,0 +1,16 @@
+{
+  "episode": "kids-ep01-the-girl-who-waited",
+  "note": "Every shot is ONE character alone. Not a compromise — the story is about waiting, so solitude IS the subject. This is the shape SD1.5 can actually deliver.",
+  "shots": [
+    {"id":"w01","seed":"girl","note":"at the window, evening","prompt":"{GIRL} standing at a window looking out at an orange evening sky, seen from behind and side, cosy room"},
+    {"id":"w02","seed":"girl","note":"close, hopeful face","prompt":"close-up face of {GIRL} looking up hopefully, big eyes, soft window light, warm room"},
+    {"id":"w03","seed":"girl","note":"marking the calendar","prompt":"{GIRL} reaching up to mark a wall calendar with a crayon, cosy room, afternoon light"},
+    {"id":"w04","seed":"girl","note":"dinner alone","prompt":"{GIRL} sitting at a big dining table with one small plate, empty chairs, warm lamp light"},
+    {"id":"w05","seed":"girl","note":"holding the photo","prompt":"{GIRL} holding a framed photograph close to her chest, sitting on a bed, soft light"},
+    {"id":"w06","seed":"girl","note":"asleep by the door","prompt":"{GIRL} asleep curled up on the floor beside a front door, blanket, night, warm hallway light"},
+    {"id":"w07","seed":"girl","note":"rain at the window","prompt":"{GIRL} pressing her hand on a rainy window, raindrops on glass, blue evening light, sad"},
+    {"id":"w08","seed":"girl","note":"drawing a family","prompt":"{GIRL} lying on the floor drawing a crayon picture, paper and crayons scattered, warm light"},
+    {"id":"w09","seed":"girl","note":"she hears something","prompt":"{GIRL} turning her head quickly with wide surprised eyes, morning light, cosy room"},
+    {"id":"w10","seed":"girl","note":"PAYOFF - running with joy","prompt":"{GIRL} running toward the camera with arms wide open and a huge joyful smile, bright hallway"}
+  ]
+}

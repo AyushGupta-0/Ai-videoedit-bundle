@@ -1,0 +1,18 @@
+{
+  "episode": "kids-ep01-the-girl-who-waited",
+  "voices": { "N": { "kokoro": "af_sarah", "speed": 0.95, "semitones": 0.0 } },
+  "lines": [
+    { "id":"l01","at":0.30,"who":"N","shot":"w01","text":"Every evening, Anaya waited at the window." },
+    { "id":"l02","at":3.80,"who":"N","shot":"w02","text":"She was waiting for her father." },
+    { "id":"l03","at":6.80,"who":"N","shot":"w03","text":"He had gone far away to work. One more cross on the calendar." },
+    { "id":"l04","at":11.60,"who":"N","shot":"w04","text":"Dinner was quieter now." },
+    { "id":"l05","at":14.60,"who":"N","shot":"w05","text":"So she kept his photograph close." },
+    { "id":"l06","at":18.00,"who":"N","shot":"w06","text":"Some nights, she fell asleep by the door." },
+    { "id":"l07","at":22.00,"who":"N","shot":"w07","text":"And when it rained, she wondered if he was cold." },
+    { "id":"l08","at":26.20,"who":"N","shot":"w08","text":"She drew him a picture. Four people, one house." },
+    { "id":"l09","at":30.60,"who":"N","shot":"w08","text":"Two hundred and eleven days." },
+    { "id":"l10","at":33.60,"who":"N","shot":"w09","text":"Then one morning, she heard a sound at the gate." },
+    { "id":"l11","at":37.80,"who":"N","shot":"w10","text":"She did not even put her crayon down." },
+    { "id":"l12","at":41.20,"who":"N","shot":"w10","text":"Some people are worth every single day of waiting." }
+  ]
+}

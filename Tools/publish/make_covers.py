@@ -17,11 +17,12 @@ is exactly ONE cover: 1080x1920, used on all three. No landscape thumbnail.
 
 import argparse
 import math
+import sys
 from pathlib import Path
 from PIL import Image, ImageDraw, ImageFont, ImageFilter, ImageEnhance
 
 ROOT = Path(__file__).resolve().parents[2]
-PLATES = ROOT / "Tools" / "lightspeed-v2" / "assets" / "shots"
+DEFAULT_PLATES = ROOT / "Tools" / "lightspeed-v2" / "assets" / "shots"
 IDENT = ROOT / "Brand Kit" / "identity"
 LAT = "/System/Library/Fonts/Avenir Next.ttc"
 DEV = "/System/Library/Fonts/Kohinoor.ttc"   # Avenir has no Devanagari glyphs
@@ -84,10 +85,21 @@ def badge(img, mark_path, size, xy):
     img.paste(m, xy, msk)
 
 
-def build(plate, l1, l2, kicker, outdir, accent, mark, hindi=False, page_cover=False):
+def find_plate(name, plates_dir):
+    """Plates are .jpg in the NASA compositions and .png from the SD pipeline."""
+    for ext in (".jpg", ".jpeg", ".png"):
+        p = plates_dir / f"{name}{ext}"
+        if p.exists():
+            return p
+    have = sorted(f.stem for f in plates_dir.glob("*") if not f.name.startswith("."))
+    sys.exit(f"no plate '{name}' in {plates_dir}\navailable: {', '.join(have[:14])}")
+
+
+def build(plate, l1, l2, kicker, outdir, accent, mark, hindi=False, page_cover=False,
+          plates_dir=None):
     face, bold_i, semi_i = (DEV, DEV_BOLD, DEV_SEMI) if hindi else (LAT, HEAVY, DEMI)
     outdir.mkdir(parents=True, exist_ok=True)
-    src = Image.open(PLATES / f"{plate}.jpg").convert("RGB")
+    src = Image.open(find_plate(plate, plates_dir or DEFAULT_PLATES)).convert("RGB")
     src = ImageEnhance.Color(src).enhance(1.08)
 
     # ---------- Reel / Shorts cover : keep type inside the centre square ----------
@@ -134,6 +146,8 @@ def build(plate, l1, l2, kicker, outdir, accent, mark, hindi=False, page_cover=F
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--plate", default="sun_surface")
+    ap.add_argument("--plates-dir", default=None,
+                    help="composition assets/shots dir (default: lightspeed-v2)")
     ap.add_argument("--line1", required=True)
     ap.add_argument("--line2", default="")
     ap.add_argument("--kicker", default="")
@@ -145,7 +159,8 @@ def main():
     build(a.plate, a.line1, a.line2, a.kicker, ROOT / a.out,
           SAFFRON if a.hindi else GOLD,
           IDENT / ("hindi_avatar_400.png" if a.hindi else "avatar_400.png"),
-          hindi=a.hindi, page_cover=a.page_cover)
+          hindi=a.hindi, page_cover=a.page_cover,
+          plates_dir=(ROOT / a.plates_dir) if a.plates_dir else None)
 
 
 if __name__ == "__main__":
