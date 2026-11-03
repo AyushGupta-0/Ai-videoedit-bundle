@@ -184,20 +184,20 @@ timeline registered at `window.__timelines["<id>"]`.
     first pass ran 161 tokens, so the entire style suffix was silently dropped
     and the plates came out styleless. `gen_kids_art.py` now hard-fails via
     `check_len()`. Keep character bibles terse.
-19. **`tl.call()` AND `onUpdate` are both seek-unsafe. Only `tl.set()` renders.**
-    GSAP's `seek(t, suppressEvents)` defaults `suppressEvents` to **true**, which
-    suppresses *callbacks and onUpdate alike*. A renderer grabbing frames out of
-    order therefore gets whatever state the last forward play left behind.
-    Verified in the browser on `tendays-ep02`: `tl.seek(70, true)` gave an **empty
-    caption**, a clock **frozen at its first value**, and the counter stuck on 12.
-    Our renders only looked right because the renderer happened to play forward.
-    **The fix is `tl.set()`** — a zero-duration tween, and tweens render at any
-    playhead position. Captions: `tl.set(capEl, { innerHTML: html }, a)`.
-    Stepping values like a HUD clock: one `tl.set()` per step, not a tween with
-    `onUpdate`. HyperFrames' own frame-presets say "never tl.call()"; the
-    onUpdate half of this is not written down anywhere and cost an hour.
-    All seven compositions were converted; `make_episode.py` generates the
-    correct form.
+19. **`tl.call()` is a style preference here, NOT a live bug — I got this wrong once.**
+    HyperFrames' GSAP adapter seeks with `n.totalTime(r, o)` where
+    `o = t.suppressEvents === true`, i.e. **false by default**, and its runtime
+    deliberately replays zero-duration callback boundaries on a cold frame grab.
+    So `tl.call()` captions and clocks render correctly in our renders, and
+    always did. If you test with `tl.seek(t, true)` in a plain browser you WILL
+    see empty captions and a frozen clock — that is raw GSAP semantics, not the
+    renderer's, and it is not evidence of a bug. I made exactly that mistake and
+    briefly "fixed" seven compositions for nothing.
+    What is still true: `tl.set()` is safer (it holds under plain GSAP with no
+    reliance on undocumented adapter behaviour), it is cheaper per frame (ep02
+    had ~61 zero-duration points, 29 of them the minute-by-minute clock), and
+    the frame-presets do say "never tl.call()". The compositions now use
+    `tl.set()` for that reason, not to fix broken output.
 20. **git on this exFAT SSD**: macOS writes `._` AppleDouble files *inside* `.git`, which corrupt
     pack indexes and refs. Before and after any git write, run:
     `find .git -name '._*' -delete`. Repo: `github.com/AyushGupta-0/Ai-videoedit-bundle` (ssh).

@@ -4,7 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=1080, height=1920" />
     <title>Ten Days — Day 2</title>
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+    <script src="assets/gsap/gsap.min.js"></script>
+    <script src="assets/gsap/ScrambleTextPlugin.min.js"></script>
+    <script src="assets/gsap/SplitText.min.js"></script>
+    <script src="assets/gsap/DrawSVGPlugin.min.js"></script>
+    <script src="assets/gsap/CustomEase.min.js"></script>
 <style>
   :root{
     --night:#0b1220; --night2:#131d30; --road:#161d2b;
@@ -97,6 +101,7 @@
 <audio id="vo" src="assets/audio/vo.wav" data-start="0" data-volume="1"></audio>
 
 <script>
+gsap.registerPlugin(ScrambleTextPlugin, SplitText, DrawSVGPlugin, CustomEase);
 const DUR = 76.6;
 const tl = gsap.timeline({ paused: true });
 const S = document.getElementById("panels");
@@ -322,7 +327,8 @@ tl.fromTo("#halo", { opacity: 0.3 }, { opacity: 0.85, duration: 3.2, ease: "sine
 /* the payoff: the thirteenth car arrives and the count turns red */
 tl.fromTo("#extra", { opacity: 0, scale: 0.6 },
           { opacity: 1, scale: 1, duration: 0.40, ease: "power3.out" }, 69.6);
-tl.set("#cnum", { textContent: "13" }, 69.6);
+tl.to("#cnum", { duration: 0.85,
+  scrambleText: { text: "13", chars: "0123456789", speed: 0.7, revealDelay: 0.3 } }, 69.3);
 tl.fromTo("#cnum", { scale: 1, color: "#ffffff" },
           { scale: 1.3, color: "#ff4242", duration: 0.40, ease: "power3.out" }, 69.6);
 
