@@ -212,7 +212,12 @@ timeline registered at `window.__timelines["<id>"]`.
     `git status` before committing: stage your own files by name, never `git add -A`
     blindly, and never rewrite history or force-push without confirming the other session
     is stopped.
-22. **git on this exFAT SSD**: macOS writes `._` AppleDouble files *inside* `.git`, which corrupt
+22. **Kokoro is not bit-deterministic, but it is timing-deterministic.** Re-synthesising an
+    identical lines file changed the wav's md5 while every line boundary shifted by 0 ms
+    across 19 lines. So: never assume a re-run reproduces the file, but a re-run never
+    invalidates a composition synced to the previous timings. Also: **macOS has no `timeout`
+    binary** — a command wrapped in it silently never runs. Use the watchdog pattern instead.
+23. **git on this exFAT SSD**: macOS writes `._` AppleDouble files *inside* `.git`, which corrupt
     pack indexes and refs. Before and after any git write, run:
     `find .git -name '._*' -delete`. Repo: `github.com/AyushGupta-0/Ai-videoedit-bundle` (ssh).
 
