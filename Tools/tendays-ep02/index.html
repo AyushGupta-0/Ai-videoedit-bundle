@@ -4,6 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=1080, height=1920" />
     <title>Ten Days — Day 2</title>
+    <!-- vendored: no network fetch during render. The plugin set has been free
+         for commercial use since GSAP 3.13; copied in from Tools/_shared/gsap -->
     <script src="assets/gsap/gsap.min.js"></script>
     <script src="assets/gsap/ScrambleTextPlugin.min.js"></script>
     <script src="assets/gsap/SplitText.min.js"></script>
@@ -84,17 +86,17 @@
 </style>
   </head>
   <body>
-<div id="root" data-composition-id="td2" data-start="0" data-duration="76.6"
+<div id="root" data-composition-id="td2" data-start="0" data-duration="78.8"
      data-width="1080" data-height="1920" data-track-kind="graphics">
-  <div id="panels" class="clip" data-start="0" data-duration="76.6" data-track-index="0"></div>
-  <div id="hud" class="clip" data-start="0" data-duration="76.6" data-track-index="1" data-layout-ignore>
+  <div id="panels" class="clip" data-start="0" data-duration="78.8" data-track-index="0"></div>
+  <div id="hud" class="clip" data-start="0" data-duration="78.8" data-track-index="1" data-layout-ignore>
     <div id="daytag"><i></i>DAY 2 / 10</div>
     <div id="clock">3:12 AM</div>
     <div id="recov">RECOVERY IN 9 DAYS</div>
   </div>
-  <div id="mark" class="clip" data-start="0" data-duration="76.6" data-track-index="2"
+  <div id="mark" class="clip" data-start="0" data-duration="78.8" data-track-index="2"
        data-layout-ignore>1min.thinker</div>
-  <div id="capwrap" class="clip" data-start="0" data-duration="76.6" data-track-index="3"
+  <div id="capwrap" class="clip" data-start="0" data-duration="78.8" data-track-index="3"
        data-track-kind="captions"><span id="cap"></span></div>
 </div>
 
@@ -102,7 +104,7 @@
 
 <script>
 gsap.registerPlugin(ScrambleTextPlugin, SplitText, DrawSVGPlugin, CustomEase);
-const DUR = 76.6;
+const DUR = 78.8;
 const tl = gsap.timeline({ paused: true });
 const S = document.getElementById("panels");
 const mk = (id, html) => { const d=document.createElement("div");
@@ -175,9 +177,9 @@ mk("ramp", `<div style="position:absolute;inset:0;background:#0a0f17;"></div>
   <!-- the single ramp, drawn as a converging trapezoid: one way in -->
   <svg width="1080" height="1920" style="position:absolute;inset:0;">
     <polygon points="140,1600 940,1600 700,760 380,760" fill="#1b2330"/>
-    <polygon points="140,1600 940,1600 700,760 380,760" fill="none" stroke="#39465e" stroke-width="5"/>
-    <line x1="540" y1="1560" x2="540" y2="820" stroke="#4a5770" stroke-width="7"
-          stroke-dasharray="46 40"/>
+    <polygon id="rampline" points="140,1600 940,1600 700,760 380,760" fill="none"
+             stroke="#5b6d94" stroke-width="6"/>
+    <line id="rampmid" x1="540" y1="1560" x2="540" y2="820" stroke="#6b7fa8" stroke-width="7"/>
   </svg>
   <div style="position:absolute;left:0;right:0;top:600px;text-align:center;">
     <div style="display:inline-block;border:4px solid var(--amber);color:var(--amber);
@@ -207,8 +209,8 @@ mk("radio", `<div style="position:absolute;inset:0;background:#070c16;"></div>
        font-size:30px;letter-spacing:4px;">STAY OFF THE GROUND FLOOR</div>
   <div class="vign"></div>`);
 
-mk("rule1", rule(1, "PARK FACING<br>THE EXIT", "always"));
-mk("rule2", rule(2, "NEVER SLEEP IN<br>THE DRIVER'S SEAT", "you cannot see behind you"));
+mk("rule1", rule(1, "PARK FACING<br>THE RAMP", "the only way down"));
+mk("rule2", rule(2, "SLEEP IN THE<br>BACK SEAT", "never the driver's — you cannot see behind you"));
 mk("rule3", rule(3, "COUNT THE CARS<br>BEFORE DARK", ""));
 
 mk("good", `<div style="position:absolute;inset:0;background:#070c16;"></div>
@@ -261,6 +263,10 @@ mk("voice", `<div style="position:absolute;inset:0;background:#06090f;"></div>
        border-radius:130px 130px 0 0;background:#03060b;"></div>
   <div id="halo" style="position:absolute;left:180px;top:620px;width:620px;height:760px;
        background:radial-gradient(circle at 50% 28%,rgba(190,215,255,.17),rgba(0,0,0,0) 62%);"></div>
+  <div style="position:absolute;left:0;right:0;top:330px;text-align:center;">
+    <span id="lvl" style="display:inline-block;color:var(--red);font-size:60px;font-weight:800;
+          letter-spacing:8px;font-variant-numeric:tabular-nums;">LEVEL ??</span>
+  </div>
   <div class="vign"></div>`);
 
 mk("dash", `<div style="position:absolute;inset:0;background:#05080e;"></div>
@@ -271,9 +277,22 @@ mk("dash", `<div style="position:absolute;inset:0;background:#05080e;"></div>
        background:linear-gradient(180deg,#2a3448,#1a2230);border:4px solid #39465e;"></div>
   <div style="position:absolute;left:432px;top:860px;width:216px;height:260px;border-radius:9px;
        background:#141b26;"></div>
+  <div style="position:absolute;left:0;right:0;top:1240px;display:flex;justify-content:center;gap:22px;">
+    <div id="plant1" class="badge" style="font-size:32px;opacity:0;">NO BRAKES</div>
+    <div id="plant2" class="badge" style="font-size:32px;opacity:0;">NO LIGHTS</div>
+  </div>
+  <div class="vign"></div>`);
+
+mk("dash2", `<div style="position:absolute;inset:0;background:#05080e;"></div>
+  <div style="position:absolute;left:0;right:0;top:1180px;bottom:0;
+       background:linear-gradient(180deg,#161d2a,#0a0f17);"></div>
+  <!-- brake pedal, unlit. the thing the voice claims to have seen -->
+  <div style="position:absolute;left:400px;top:820px;width:280px;height:340px;border-radius:14px;
+       background:linear-gradient(180deg,#2a3448,#1a2230);border:4px solid #39465e;"></div>
+  <div style="position:absolute;left:432px;top:860px;width:216px;height:260px;border-radius:9px;
+       background:#141b26;"></div>
   <div style="position:absolute;left:0;right:0;top:1260px;text-align:center;">
-    <div style="display:inline-block;border:4px solid #3c4a66;color:#6f7b93;font-size:34px;
-         font-weight:800;letter-spacing:4px;padding:12px 30px;border-radius:8px;">BRAKE LIGHTS — OFF</div>
+    <div id="brakestamp" class="badge red" style="font-size:34px;">BRAKE LIGHTS — NEVER ON</div>
   </div>
   <div class="vign"></div>`);
 
@@ -302,12 +321,12 @@ mk("end", `<div style="position:absolute;inset:0;
   </div>
   <div style="position:absolute;left:0;right:0;top:1160px;text-align:center;">
     <div style="color:#7d879b;font-size:26px;letter-spacing:4px;">DAY 3</div>
-    <div style="color:#fff;font-size:44px;font-weight:800;margin-top:10px;">YOU COUNTED TWELVE.<br>SO WHAT IS THE THIRTEENTH?</div>
+    <div style="color:#fff;font-size:44px;font-weight:800;margin-top:10px;">YOU NEVER TOLD ANYONE<br>WHICH LEVEL.</div>
     <div style="color:var(--amber);font-size:27px;letter-spacing:3px;margin-top:22px;">
       FOLLOW FOR DAY 3</div>
   </div>`);
 
-const SH = [["recap", 0.0, 4.0], ["park", 3.8, 11.739999999999998], ["ramp", 11.54, 20.64], ["radio", 20.3, 24.91], ["rule1", 24.71, 28.28], ["rule2", 27.94, 31.91], ["rule3", 31.57, 35.92], ["good", 35.72, 40.35], ["bad", 40.01, 45.71], ["door", 45.51, 54.620000000000005], ["steps", 54.42, 58.440000000000005], ["voice", 58.24, 62.67], ["dash", 62.47, 66.75], ["count", 66.55, 72.39], ["end", 72.19, 76.6]];
+const SH = [["recap", 0.0, 2.5500000000000003], ["park", 2.35, 9.059999999999999], ["ramp", 8.86, 14.63], ["dash", 14.29, 19.62], ["radio", 19.42, 25.52], ["rule1", 25.32, 28.75], ["rule2", 28.41, 33.13], ["rule3", 32.79, 37.14], ["good", 36.94, 41.57], ["bad", 41.22, 47.0], ["door", 46.8, 55.760000000000005], ["steps", 55.56, 59.160000000000004], ["voice", 58.96, 63.96], ["dash2", 63.76, 68.39], ["count", 68.19, 74.51], ["end", 74.31, 78.8]];
 const FADE = 0.30;
 SH.forEach(([id, a, b]) => {
   const el = document.getElementById(id);
@@ -316,39 +335,46 @@ SH.forEach(([id, a, b]) => {
   if (b < DUR) tl.to(el, { opacity: 0, duration: FADE }, b - FADE);
 });
 
-tl.fromTo("#levelart", { scale: 1.00 }, { scale: 1.10, duration: 8.0, ease: "none" }, 3.9);
-tl.fromTo("#wedge", { width: 0 }, { width: 190, duration: 1.5, ease: "power2.out" }, 44.4);
-tl.to("#wedge", { width: 0, duration: 2.6, ease: "power1.inOut" }, 47.2);
-[53.0, 54.0, 55.0].forEach((t, i) => {
-  tl.fromTo(`#pool${i + 1}`, { opacity: 0.13 },
-            { opacity: 0.44, duration: 0.22, yoyo: true, repeat: 1 }, t);
+tl.fromTo("#levelart", { scale: 1.00 }, { scale: 1.10, duration: 6.6, ease: "none" }, 2.4);
+/* the ramp draws itself on: outline first, then the centre line */
+tl.fromTo("#rampline", { drawSVG: "0% 0%" }, { drawSVG: "0% 100%", duration: 1.9, ease: "power1.inOut" }, 9.2);
+tl.fromTo("#rampmid",  { drawSVG: "0% 0%" }, { drawSVG: "0% 100%", duration: 1.4, ease: "power1.out" }, 10.6);
+/* the plant: two facts the viewer will need later, landed on the words */
+tl.fromTo("#plant1", { opacity: 0, y: 12 }, { opacity: 1, y: 0, duration: 0.3, ease: "power2.out" }, 16.7);
+tl.fromTo("#plant2", { opacity: 0, y: 12 }, { opacity: 1, y: 0, duration: 0.3, ease: "power2.out" }, 18.0);
+/* the door: a wedge of stairwell light opens, then is let close softly */
+tl.fromTo("#wedge", { width: 0 }, { width: 190, duration: 1.5, ease: "power2.out" }, 47.7);
+tl.to("#wedge", { width: 0, duration: 2.6, ease: "power1.inOut" }, 50.4);
+/* footsteps cross the light pools one at a time */
+[56.1, 56.9, 57.7].forEach((t, i) => {
+  tl.fromTo(`#pool${i + 1}`, { opacity: 0.13 }, { opacity: 0.46, duration: 0.2, yoyo: true, repeat: 1 }, t);
 });
-tl.fromTo("#halo", { opacity: 0.3 }, { opacity: 0.85, duration: 3.2, ease: "sine.inOut" }, 56.6);
-/* the payoff: the thirteenth car arrives and the count turns red */
-tl.fromTo("#extra", { opacity: 0, scale: 0.6 },
-          { opacity: 1, scale: 1, duration: 0.40, ease: "power3.out" }, 69.6);
-tl.to("#cnum", { duration: 0.85,
-  scrambleText: { text: "13", chars: "0123456789", speed: 0.7, revealDelay: 0.3 } }, 69.3);
-tl.fromTo("#cnum", { scale: 1, color: "#ffffff" },
-          { scale: 1.3, color: "#ff4242", duration: 0.40, ease: "power3.out" }, 69.6);
+tl.fromTo("#halo", { opacity: 0.3 }, { opacity: 0.85, duration: 3.0, ease: "sine.inOut" }, 59.3);
+/* "I know you're on four": the readout resolves to a fact nobody was told */
+tl.to("#lvl", { duration: 1.1, scrambleText: { text: "LEVEL 4", chars: "0123456789", speed: 0.8, revealDelay: 0.35 } }, 59.5);
+/* the recall lands as a stamp */
+tl.fromTo("#brakestamp", { scale: 1.8, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.32, ease: "power3.out" }, 65.3);
+/* the payoff: thirteenth car arrives, counter fails over to 13 */
+tl.fromTo("#extra", { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.4, ease: "power3.out" }, 71.6);
+tl.to("#cnum", { duration: 0.85, scrambleText: { text: "13", chars: "0123456789", speed: 0.7, revealDelay: 0.3 } }, 71.5);
+tl.fromTo("#cnum", { color: "#ffffff", scale: 1 }, { color: "#ff4242", scale: 1.3, duration: 0.4, ease: "power3.out" }, 71.9);
 
 /* ---- HUD clock, stepping minute by minute ---- */
 const S0 = 192, S1 = 220, AMPM = "AM";
 const clockEl = document.getElementById("clock");
-// seek(t, true) suppresses onUpdate as well as .call(), so neither is safe for
-// a renderer grabbing frames out of order. Only tl.set() actually renders —
-// it is a zero-duration tween, and tweens render at any playhead position.
-// One set() per minute is cheap and provably correct.
+// seek(t, true) suppresses onUpdate as well as .call(), so neither survives a
+// renderer grabbing frames out of order. Only tl.set() actually renders: it is
+// a zero-duration tween, and tweens render at any playhead position.
 for (let m = S0; m <= S1; m++){
   const at = ((m - S0) / Math.max(1, S1 - S0)) * (DUR - 4.0);
   tl.set(clockEl, { textContent:
     `${Math.floor(m / 60)}:${String(m % 60).padStart(2, "0")} ${AMPM}` }, at);
 }
 
-const LINES = [["YOU DIDN'T OPEN THE DOOR.<br>YOU <b>DROVE</b>.", 0.25, 3.3], ["A CAR PARK IS THE SAFEST PLACE<br>TO SLEEP IN AN OUTBREAK.", 4.0, 8.25], ["UNTIL YOU COUNT THE CARS <u>TWICE</u>.", 8.46, 11.085], ["<b>DAY 2</b>. LEVEL FOUR.<br>CONCRETE HAS <b>NO WINDOWS</b>.", 11.735, 15.91], ["HIGH ENOUGH OFF THE STREET.<br>LOW ENOUGH TO <b>DRIVE DOWN FAST</b>.", 15.97, 20.445], ["RECOVERY IN <b>NINE DAYS</b>.<br>STAY OFF THE GROUND FLOOR.", 20.505, 24.505], ["RULE 1. <b>PARK FACING THE EXIT</b>.", 24.905, 28.08], ["RULE 2. NEVER SLEEP IN<br>THE <b>DRIVER'S SEAT</b>.", 28.14, 31.715], ["RULE 3. <u>COUNT THE CARS</u><br>BEFORE DARK.", 31.775, 35.225], ["<b>GOOD NEWS</b>. ELEVEN CARS.<br>YOURS IS THE <b>TWELFTH</b>.", 35.925, 40.15], ["<u>BAD NEWS</u>. THE DOOR DOESN'T LOCK.<br>IT ONLY <b>CLOSES</b>.", 40.21, 45.11], ["<b>3:40 AM</b>. THE DOOR OPENS —<br>AND SOMEONE LETS IT CLOSE SOFTLY.", 45.71, 51.06], ["SOMEONE WHO DIDN'T WANT IT TO <u>BANG</u>.", 51.12, 53.87], ["THEN FOOTSTEPS.<br>NOT SHUFFLING. <u>WALKING</u>.", 54.62, 57.895], ["“I SAW YOUR BRAKE LIGHTS.<br>WHICH CAR ARE YOU IN?”", 58.445, 61.97], ["YOU HAVEN'T TOUCHED THE BRAKES<br>SINCE <u>YESTERDAY</u>.", 62.67, 65.845], ["SO YOU COUNT AGAIN.", 66.745, 68.77], ["<u>THIRTEEN</u>.", 69.62, 71.295], ["", 72.395, 74.62]];
+const LINES = [["YOU <b>DROVE</b>.", 0.25, 1.95], ["LAST NIGHT, THE CAR PARK<br>KEPT YOU ALIVE.", 2.55, 5.75], ["TONIGHT, IT <u>COSTS YOU</u> SOMETHING.", 5.81, 8.36], ["<b>DAY 2</b>. LEVEL FOUR. ONE RAMP UP —<br>CONCRETE HAS <b>NO WINDOWS</b>.", 9.06, 14.435], ["YOU COASTED IN, ENGINE OFF.<br><b>NO BRAKES. NO LIGHTS.</b>", 14.495, 19.17], ["RECOVERY IN <b>NINE DAYS</b>.<br>STAY ABOVE STREET LEVEL.", 19.62, 25.12], ["RULE 1. <b>PARK FACING THE RAMP</b>.", 25.52, 28.545], ["RULE 2. SLEEP IN THE BACK SEAT.<br><b>NEVER THE DRIVER'S</b>.", 28.605, 32.93], ["RULE 3. <u>COUNT THE CARS</u><br>BEFORE DARK.", 32.99, 36.44], ["<b>GOOD NEWS</b>. ELEVEN CARS.<br>YOURS IS THE <b>TWELFTH</b>.", 37.14, 41.365], ["<u>BAD NEWS</u>. THE STAIRWELL DOOR<br>HAS NO LOCK. IT ONLY <b>CLOSES</b>.", 41.425, 46.4], ["<b>3:40 AM</b>. THE DOOR OPENS.<br>AND SOMEONE LETS IT CLOSE SOFTLY.", 47.0, 52.45], ["SOFTLY. SO IT WOULDN'T <u>BANG</u>.", 52.51, 55.06], ["FOOTSTEPS.<br>NOT SHUFFLING. <u>WALKING</u>.", 55.76, 58.61], ["“I KNOW YOU'RE ON FOUR.<br>I SAW YOUR BRAKE LIGHTS COME ON.”", 59.16, 63.26], ["YOU COASTED IN.<br>YOU <u>NEVER TOUCHED THE BRAKES</u>.", 63.96, 67.485], ["SO YOU COUNT THE CARS AGAIN.", 68.385, 70.885], ["<u>THIRTEEN</u>.", 71.735, 73.41], ["", 74.51, 76.735]];
 const capEl = document.getElementById("cap");
 LINES.forEach(([html, a, b], i) => {
-  tl.set(capEl, { innerHTML: html }, a);   // set() renders; call() does not
+  tl.set(capEl, { innerHTML: html }, a);   // render-time, survives seek
   tl.fromTo(capEl, { opacity: 0, y: 14 },
             { opacity: html ? 1 : 0, duration: 0.26, ease: "power2.out" }, a);
   const next = LINES[i + 1] ? LINES[i + 1][1] : DUR;

@@ -1,0 +1,27 @@
+[
+  {
+    "file": "assets/sfx/low_drone_75eb41cd.ogg",
+    "at": 47.3,
+    "gain": 0.5
+  },
+  {
+    "file": "assets/sfx/concrete_footstep_c89198f4.ogg",
+    "at": 56.1,
+    "gain": 0.6
+  },
+  {
+    "file": "assets/sfx/concrete_footstep_c89198f4.ogg",
+    "at": 56.9,
+    "gain": 0.55
+  },
+  {
+    "file": "assets/sfx/concrete_footstep_c89198f4.ogg",
+    "at": 57.7,
+    "gain": 0.62
+  },
+  {
+    "file": "assets/sfx/low_drone_75eb41cd.ogg",
+    "at": 71.5,
+    "gain": 0.45
+  }
+]

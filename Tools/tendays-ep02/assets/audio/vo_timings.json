@@ -1,157 +1,176 @@
 {
-  "duration": 75.88,
+  "duration": 77.995,
   "lines": [
     {
       "id": "l01",
       "who": "N",
       "shot": "recap",
-      "text": "You didn't open the door. You drove.",
+      "text": "You drove.",
+      "cap": "YOU <b>DROVE</b>.",
       "start": 0.25,
-      "end": 3.3
+      "end": 1.95
     },
     {
       "id": "l02",
       "who": "N",
       "shot": "park",
-      "text": "A car park is the safest place to sleep in an outbreak.",
-      "start": 4.0,
-      "end": 8.25
+      "text": "Last night, the car park kept you alive.",
+      "cap": "LAST NIGHT, THE CAR PARK<br>KEPT YOU ALIVE.",
+      "start": 2.55,
+      "end": 5.75
     },
     {
       "id": "l03",
       "who": "N",
       "shot": "park",
-      "text": "Until you count the cars twice.",
-      "start": 8.46,
-      "end": 11.085
+      "text": "Tonight, it costs you something.",
+      "cap": "TONIGHT, IT <u>COSTS YOU</u> SOMETHING.",
+      "start": 5.81,
+      "end": 8.36
     },
     {
       "id": "l04",
       "who": "N",
       "shot": "ramp",
-      "text": "Day two. Level four. Concrete has no windows.",
-      "start": 11.735,
-      "end": 15.91
+      "text": "Day two. Level four. One ramp up, and concrete has no windows.",
+      "cap": "<b>DAY 2</b>. LEVEL FOUR. ONE RAMP UP,<br>AND CONCRETE HAS <b>NO WINDOWS</b>.",
+      "start": 9.06,
+      "end": 14.435
     },
     {
       "id": "l05",
       "who": "N",
-      "shot": "ramp",
-      "text": "High enough off the street. Low enough to drive down fast.",
-      "start": 15.97,
-      "end": 20.445
+      "shot": "dash",
+      "text": "You coasted in with the engine off. No brakes. No lights.",
+      "cap": "YOU COASTED IN, ENGINE OFF.<br><b>NO BRAKES. NO LIGHTS.</b>",
+      "start": 14.495,
+      "end": 19.17
     },
     {
       "id": "l06",
       "who": "N",
       "shot": "radio",
-      "text": "Radio, same loop. Recovery in nine days.",
-      "start": 20.505,
-      "end": 24.505
+      "text": "Radio, same loop. Recovery in nine days. Stay above street level.",
+      "cap": "RECOVERY IN <b>NINE DAYS</b>.<br>STAY ABOVE STREET LEVEL.",
+      "start": 19.62,
+      "end": 25.12
     },
     {
       "id": "l07",
       "who": "N",
       "shot": "rule1",
-      "text": "Rule one. Park facing the exit.",
-      "start": 24.905,
-      "end": 28.08
+      "text": "Rule one. Park facing the ramp.",
+      "cap": "RULE 1. <b>PARK FACING THE RAMP</b>.",
+      "start": 25.52,
+      "end": 28.545
     },
     {
       "id": "l08",
       "who": "N",
       "shot": "rule2",
-      "text": "Rule two. Never sleep in the driver's seat.",
-      "start": 28.14,
-      "end": 31.715
+      "text": "Rule two. Sleep in the back seat. Never the driver's.",
+      "cap": "RULE 2. SLEEP IN THE BACK SEAT.<br><b>NEVER THE DRIVER'S</b>.",
+      "start": 28.605,
+      "end": 32.93
     },
     {
       "id": "l09",
       "who": "N",
       "shot": "rule3",
       "text": "Rule three. Count the cars before dark.",
-      "start": 31.775,
-      "end": 35.225
+      "cap": "RULE 3. <u>COUNT THE CARS</u><br>BEFORE DARK.",
+      "start": 32.99,
+      "end": 36.44
     },
     {
       "id": "l10",
       "who": "N",
       "shot": "good",
       "text": "Good news. Eleven cars. Yours is the twelfth.",
-      "start": 35.925,
-      "end": 40.15
+      "cap": "<b>GOOD NEWS</b>. ELEVEN CARS.<br>YOURS IS THE <b>TWELFTH</b>.",
+      "start": 37.14,
+      "end": 41.365
     },
     {
       "id": "l11",
       "who": "N",
       "shot": "bad",
-      "text": "Bad news. The stairwell door doesn't lock. It only closes.",
-      "start": 40.21,
-      "end": 45.11
+      "text": "Bad news. The stairwell door has no lock. It only closes.",
+      "cap": "<u>BAD NEWS</u>. THE STAIRWELL DOOR<br>HAS NO LOCK. IT ONLY <b>CLOSES</b>.",
+      "start": 41.425,
+      "end": 46.4
     },
     {
       "id": "l12",
       "who": "N",
       "shot": "door",
-      "text": "Three forty A M. The door opens, and someone lets it close softly.",
-      "start": 45.71,
-      "end": 51.06
+      "text": "Three forty A M. The door opens. And someone lets it close softly.",
+      "cap": "<b>3:40 AM</b>. THE DOOR OPENS.<br>AND SOMEONE LETS IT CLOSE SOFTLY.",
+      "start": 47.0,
+      "end": 52.45
     },
     {
       "id": "l13",
       "who": "N",
       "shot": "door",
-      "text": "Someone who didn't want it to bang.",
-      "start": 51.12,
-      "end": 53.87
+      "text": "Softly. So it wouldn't bang.",
+      "cap": "SOFTLY. SO IT WOULDN'T <u>BANG</u>.",
+      "start": 52.51,
+      "end": 55.06
     },
     {
       "id": "l14",
       "who": "N",
       "shot": "steps",
-      "text": "Then footsteps. Not shuffling. Walking.",
-      "start": 54.62,
-      "end": 57.895
+      "text": "Footsteps. Not shuffling. Walking.",
+      "cap": "FOOTSTEPS.<br>NOT SHUFFLING. <u>WALKING</u>.",
+      "start": 55.76,
+      "end": 58.61
     },
     {
       "id": "l15",
       "who": "N",
       "shot": "voice",
-      "text": "I saw your brake lights. Which car are you in?",
-      "start": 58.445,
-      "end": 61.97
+      "text": "I know you're on four. I saw your brake lights come on.",
+      "cap": "\u201cI KNOW YOU'RE ON FOUR.<br>I SAW YOUR BRAKE LIGHTS COME ON.\u201d",
+      "start": 59.16,
+      "end": 63.26
     },
     {
       "id": "l16",
       "who": "N",
-      "shot": "dash",
-      "text": "You haven't touched the brakes since yesterday.",
-      "start": 62.67,
-      "end": 65.845
+      "shot": "dash2",
+      "text": "You coasted in. You never touched the brakes.",
+      "cap": "YOU COASTED IN.<br>YOU <u>NEVER TOUCHED THE BRAKES</u>.",
+      "start": 63.96,
+      "end": 67.485
     },
     {
       "id": "l17",
       "who": "N",
       "shot": "count",
-      "text": "So you count again.",
-      "start": 66.745,
-      "end": 68.77
+      "text": "So you count the cars again.",
+      "cap": "SO YOU COUNT THE CARS AGAIN.",
+      "start": 68.385,
+      "end": 70.885
     },
     {
       "id": "l18",
       "who": "N",
       "shot": "count",
       "text": "Thirteen.",
-      "start": 69.62,
-      "end": 71.295
+      "cap": "<u>THIRTEEN</u>.",
+      "start": 71.735,
+      "end": 73.41
     },
     {
       "id": "l19",
       "who": "N",
       "shot": "end",
       "text": "Do you start the engine?",
-      "start": 72.395,
-      "end": 74.62
+      "cap": "",
+      "start": 74.51,
+      "end": 76.735
     }
   ]
 }

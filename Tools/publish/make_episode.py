@@ -24,7 +24,13 @@ SHELL = r'''<!doctype html>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=1080, height=1920" />
     <title>Ten Days — Day {day}</title>
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+    <!-- vendored: no network fetch during render. The plugin set has been free
+         for commercial use since GSAP 3.13; copied in from Tools/_shared/gsap -->
+    <script src="assets/gsap/gsap.min.js"></script>
+    <script src="assets/gsap/ScrambleTextPlugin.min.js"></script>
+    <script src="assets/gsap/SplitText.min.js"></script>
+    <script src="assets/gsap/DrawSVGPlugin.min.js"></script>
+    <script src="assets/gsap/CustomEase.min.js"></script>
 <style>
   :root{{
     --night:#0b1220; --night2:#131d30; --road:#161d2b;
@@ -106,6 +112,7 @@ SHELL = r'''<!doctype html>
 <audio id="vo" src="assets/audio/vo.wav" data-start="0" data-volume="1"></audio>
 
 <script>
+gsap.registerPlugin(ScrambleTextPlugin, SplitText, DrawSVGPlugin, CustomEase);
 const DUR = {dur};
 const tl = gsap.timeline({{ paused: true }});
 const S = document.getElementById("panels");
@@ -192,6 +199,11 @@ def main():
         m0=cfg["m0"], m1=cfg["m1"], ampm=cfg["ampm"],
         lines=json.dumps(cfg["lines"], ensure_ascii=False),
     )
+    # every episode needs the vendored GSAP beside it; copy once from _shared
+    import shutil
+    g = d / "assets" / "gsap"
+    if not g.exists():
+        shutil.copytree(ROOT / "Tools" / "_shared" / "gsap", g)
     (d / "index.html").write_text(html)
     print(f"{d.name}/index.html  ·  {cfg['dur']}s  ·  "
           f"{len(cfg['panels'])} panels  ·  {len(cfg['lines'])} captions")

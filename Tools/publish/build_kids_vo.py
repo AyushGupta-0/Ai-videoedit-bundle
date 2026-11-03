@@ -24,13 +24,35 @@ TAIL = 1.2          # let the last line breathe before the loop point
 
 
 def say(pipe, text, voice, speed, semitones):
-    chunks = [a for _, _, a in pipe(text, voice=voice, speed=speed)]
+    """Synthesise one line AND return its word times.
+
+    Kokoro emits token timestamps as it synthesises (English: lang 'a'/'b').
+    They are exact by construction — the aligner is inside the synthesiser —
+    which beats re-transcribing the output with whisper and matching words
+    back: that pass was measured at a 3.7s MEDIAN error because `-ml 1` just
+    spreads tokens evenly across each segment. Hindi tokens carry no times
+    upstream, so `words` comes back empty there and callers fall back.
+    """
+    chunks, words, off = [], [], 0.0
+    for r in pipe(text, voice=voice, speed=speed):
+        a = r.audio.numpy().astype(np.float32)
+        for t in (getattr(r, "tokens", None) or []):
+            if getattr(t, "start_ts", None) is not None and any(c.isalnum() for c in t.text):
+                words.append({"w": t.text, "s": round(off + t.start_ts, 3),
+                              "e": round(off + t.end_ts, 3)})
+        chunks.append(a)
+        off += len(a) / SR
     if not chunks:
         raise RuntimeError(f"Kokoro returned nothing for {text!r}")
-    y = np.concatenate(chunks).astype(np.float32)
-    if abs(semitones) > 0.01:
+    y = np.concatenate(chunks)
+    # a phrase-final end_ts includes the trailing pause: end at the next start
+    for k in range(len(words) - 1):
+        words[k]["e"] = min(words[k]["e"], words[k + 1]["s"])
+    if words:
+        words[-1]["e"] = min(words[-1]["e"], round(len(y) / SR, 3))
+    if abs(semitones) > 0.01:          # pitch_shift preserves length, so times hold
         y = librosa.effects.pitch_shift(y=y, sr=SR, n_steps=semitones)
-    return y
+    return y, words
 
 
 def main():
@@ -45,25 +67,28 @@ def main():
 
     for ln in spec["lines"]:
         v = spec["voices"][ln["who"]]
-        y = say(pipe, ln["text"], v["kokoro"], v["speed"], v["semitones"])
-        rendered.append((ln, y))
+        y, words = say(pipe, ln["text"], v["kokoro"], v["speed"], v["semitones"])
+        rendered.append((ln, y, words))
         print(f"  {ln['id']}  {ln['who']}  {len(y)/SR:5.2f}s  {ln['text'][:46]}")
 
     # lay out, pushing a line later only if the one before it overruns
     cursor = 0.0
-    for ln, y in rendered:
+    for ln, y, words in rendered:
         start = max(ln["at"], cursor)
         dur = len(y) / SR
         timings.append({"id": ln["id"], "who": ln["who"], "shot": ln["shot"],
                         "text": ln["text"], "cap": ln.get("cap", ""),
-                        "start": round(start, 3), "end": round(start + dur, 3)})
+                        "start": round(start, 3), "end": round(start + dur, 3),
+                        # absolute word times, for word-level captions
+                        "words": [{"w": w["w"], "s": round(start + w["s"], 3),
+                                   "e": round(start + w["e"], 3)} for w in words]})
         # A scripted pause is a performance instruction, not slack. Without it
         # every line butts against the next and the tension beats disappear.
         cursor = start + dur + ln.get("pause", 0.06)
 
     total = cursor + TAIL
     bed = np.zeros(int(total * SR), dtype=np.float32)
-    for (ln, y), t in zip(rendered, timings):
+    for (ln, y, _w), t in zip(rendered, timings):
         i = int(t["start"] * SR)
         bed[i:i + len(y)] += y
 

@@ -24,7 +24,7 @@ UA = ("Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 "
       "(KHTML, like Gecko) Chrome/131.0 Safari/537.36")
 
 
-def get(url, tries=4):
+def get(url, tries=4, timeout=40):
     """Anonymous Openverse allows 20 req/min. Past that it 429s, and a 429 that
     is not handled comes back as an empty result set rather than an error —
     i.e. you silently get nothing and think the query was bad."""
@@ -32,7 +32,7 @@ def get(url, tries=4):
     for i in range(tries):
         try:
             return urllib.request.urlopen(
-                urllib.request.Request(url, headers={"User-Agent": UA}), timeout=40)
+                urllib.request.Request(url, headers={"User-Agent": UA}), timeout=timeout)
         except urllib.error.HTTPError as e:
             if e.code != 429 or i == tries - 1:
                 raise
@@ -113,7 +113,15 @@ def main():
                     pass
             name = f"{'bed' if is_bed else q.replace(' ', '_')}_{r['id'][:8]}.{ext}"
             dst = outdir / name
-            dst.write_bytes(get(url).read())
+            data = None
+            for attempt in range(3):
+                try:
+                    data = get(url, timeout=240 if is_bed else 40).read(); break
+                except (TimeoutError, OSError) as e:
+                    print(f"    read {type(e).__name__}, retry {attempt + 1}/3")
+            if data is None:
+                print(f"  giving up on {name}"); continue
+            dst.write_bytes(data)
             credits.append({
                 "file": name, "query": q, "license": r.get("license"),
                 "title": r.get("title"), "source": r.get("foreign_landing_url"),

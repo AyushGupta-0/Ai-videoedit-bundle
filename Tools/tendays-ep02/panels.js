@@ -62,9 +62,9 @@ mk("ramp", `<div style="position:absolute;inset:0;background:#0a0f17;"></div>
   <!-- the single ramp, drawn as a converging trapezoid: one way in -->
   <svg width="1080" height="1920" style="position:absolute;inset:0;">
     <polygon points="140,1600 940,1600 700,760 380,760" fill="#1b2330"/>
-    <polygon points="140,1600 940,1600 700,760 380,760" fill="none" stroke="#39465e" stroke-width="5"/>
-    <line x1="540" y1="1560" x2="540" y2="820" stroke="#4a5770" stroke-width="7"
-          stroke-dasharray="46 40"/>
+    <polygon id="rampline" points="140,1600 940,1600 700,760 380,760" fill="none"
+             stroke="#5b6d94" stroke-width="6"/>
+    <line id="rampmid" x1="540" y1="1560" x2="540" y2="820" stroke="#6b7fa8" stroke-width="7"/>
   </svg>
   <div style="position:absolute;left:0;right:0;top:600px;text-align:center;">
     <div style="display:inline-block;border:4px solid var(--amber);color:var(--amber);
@@ -94,8 +94,8 @@ mk("radio", `<div style="position:absolute;inset:0;background:#070c16;"></div>
        font-size:30px;letter-spacing:4px;">STAY OFF THE GROUND FLOOR</div>
   <div class="vign"></div>`);
 
-mk("rule1", rule(1, "PARK FACING<br>THE EXIT", "always"));
-mk("rule2", rule(2, "NEVER SLEEP IN<br>THE DRIVER'S SEAT", "you cannot see behind you"));
+mk("rule1", rule(1, "PARK FACING<br>THE RAMP", "the only way down"));
+mk("rule2", rule(2, "SLEEP IN THE<br>BACK SEAT", "never the driver's — you cannot see behind you"));
 mk("rule3", rule(3, "COUNT THE CARS<br>BEFORE DARK", ""));
 
 mk("good", `<div style="position:absolute;inset:0;background:#070c16;"></div>
@@ -148,6 +148,10 @@ mk("voice", `<div style="position:absolute;inset:0;background:#06090f;"></div>
        border-radius:130px 130px 0 0;background:#03060b;"></div>
   <div id="halo" style="position:absolute;left:180px;top:620px;width:620px;height:760px;
        background:radial-gradient(circle at 50% 28%,rgba(190,215,255,.17),rgba(0,0,0,0) 62%);"></div>
+  <div style="position:absolute;left:0;right:0;top:330px;text-align:center;">
+    <span id="lvl" style="display:inline-block;color:var(--red);font-size:60px;font-weight:800;
+          letter-spacing:8px;font-variant-numeric:tabular-nums;">LEVEL ??</span>
+  </div>
   <div class="vign"></div>`);
 
 mk("dash", `<div style="position:absolute;inset:0;background:#05080e;"></div>
@@ -158,9 +162,22 @@ mk("dash", `<div style="position:absolute;inset:0;background:#05080e;"></div>
        background:linear-gradient(180deg,#2a3448,#1a2230);border:4px solid #39465e;"></div>
   <div style="position:absolute;left:432px;top:860px;width:216px;height:260px;border-radius:9px;
        background:#141b26;"></div>
+  <div style="position:absolute;left:0;right:0;top:1240px;display:flex;justify-content:center;gap:22px;">
+    <div id="plant1" class="badge" style="font-size:32px;opacity:0;">NO BRAKES</div>
+    <div id="plant2" class="badge" style="font-size:32px;opacity:0;">NO LIGHTS</div>
+  </div>
+  <div class="vign"></div>`);
+
+mk("dash2", `<div style="position:absolute;inset:0;background:#05080e;"></div>
+  <div style="position:absolute;left:0;right:0;top:1180px;bottom:0;
+       background:linear-gradient(180deg,#161d2a,#0a0f17);"></div>
+  <!-- brake pedal, unlit. the thing the voice claims to have seen -->
+  <div style="position:absolute;left:400px;top:820px;width:280px;height:340px;border-radius:14px;
+       background:linear-gradient(180deg,#2a3448,#1a2230);border:4px solid #39465e;"></div>
+  <div style="position:absolute;left:432px;top:860px;width:216px;height:260px;border-radius:9px;
+       background:#141b26;"></div>
   <div style="position:absolute;left:0;right:0;top:1260px;text-align:center;">
-    <div style="display:inline-block;border:4px solid #3c4a66;color:#6f7b93;font-size:34px;
-         font-weight:800;letter-spacing:4px;padding:12px 30px;border-radius:8px;">BRAKE LIGHTS — OFF</div>
+    <div id="brakestamp" class="badge red" style="font-size:34px;">BRAKE LIGHTS — NEVER ON</div>
   </div>
   <div class="vign"></div>`);
 

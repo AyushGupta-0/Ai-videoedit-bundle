@@ -67,6 +67,8 @@ Do not "fix" this by creating a duplicate folder — that bug already happened o
 | yt-dlp | `~/Developer/tools-venv/ytdlp` | **symlinked over the broken brew one** |
 | HyperFrames | `npx hyperframes` | run inside a composition dir |
 | Claude CLI | `~/.local/bin/claude` | used headless by the dashboard |
+| mflux | `~/Developer/tools-venv/mflux` | FLUX.2 klein 4B (Apache-2.0) — the image path that replaces SD1.5. **Reboot before first run** (peak 7.7–9.9 GB) |
+| mlx-audio | `~/Developer/tools-venv/mlxaudio` | TTS A/B candidates (Chatterbox Turbo 4-bit, Ming-3.0-tts) and Qwen3 forced aligner |
 
 ---
 
@@ -76,9 +78,11 @@ Do not "fix" this by creating a duplicate folder — that bug already happened o
 # 1. script → VO
 ~/Developer/tools-venv/kokoro/bin/python  # KPipeline(lang_code='a'|'h')
 
-# 2. force-align captions to the REAL audio (never estimate — see §6)
-whisper-cli -m ggml-base.en.bin -f vo16.wav -oj -of out -ml 1 -nt
-#    then difflib-match the known script onto those timings
+# 2. word times come FREE from Kokoro — build_kids_vo.py writes them into
+#    vo_timings.json as `words:[{w,s,e}]`. Verified within ~5-40 ms of acoustic
+#    onsets. Do NOT re-transcribe synthesised VO with whisper (see §6 #21).
+#    whisper is only for audio we did not synthesise (owner's recorded Hindi):
+#    use ctc-forced-aligner with a permissive CTC model, never the NC MMS default.
 
 # 3. audio mix (Hindi / anything wanting a score)
 bash Tools/publish/build_mix.sh <vo.wav> <sfx_dir> <out.wav>

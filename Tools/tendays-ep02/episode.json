@@ -1,6 +1,6 @@
 {
   "day": 2,
-  "dur": 76.6,
+  "dur": 78.8,
   "clock0": "3:12 AM",
   "recov": 9,
   "m0": 192,
@@ -10,181 +10,186 @@
   "q2": "THE ENGINE?",
   "btnA": "START",
   "btnB": "WAIT",
-  "nexthook": "YOU COUNTED TWELVE.<br>SO WHAT IS THE THIRTEENTH?",
+  "nexthook": "YOU NEVER TOLD ANYONE<br>WHICH LEVEL.",
   "extra_css": "  .grid{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);\n        display:grid;grid-template-columns:repeat(4,118px);gap:26px;}\n  .cc{width:118px;height:74px;border-radius:10px;background:#28344c;\n      border:3px solid #3a4967;position:relative;}\n  .cc::after{content:\"\";position:absolute;left:22px;right:22px;top:-13px;height:20px;\n             border-radius:6px 6px 0 0;background:#32405c;}\n  .cc.me{background:#5a4a1e;border-color:var(--amber);}\n  .cc.me::after{background:#6d5a26;}\n  .cc.extra{background:#5a1e1e;border-color:var(--red);opacity:0;}\n  .cc.extra::after{background:#6d2626;}\n  .countlabel{position:absolute;left:0;right:0;top:1300px;text-align:center;\n              color:#fff;font-size:72px;font-weight:800;letter-spacing:2px;}",
-  "motion": "tl.fromTo(\"#levelart\", { scale: 1.00 }, { scale: 1.10, duration: 8.0, ease: \"none\" }, 3.9);\ntl.fromTo(\"#wedge\", { width: 0 }, { width: 190, duration: 1.5, ease: \"power2.out\" }, 44.4);\ntl.to(\"#wedge\", { width: 0, duration: 2.6, ease: \"power1.inOut\" }, 47.2);\n[53.0, 54.0, 55.0].forEach((t, i) => {\n  tl.fromTo(`#pool${i + 1}`, { opacity: 0.13 },\n            { opacity: 0.44, duration: 0.22, yoyo: true, repeat: 1 }, t);\n});\ntl.fromTo(\"#halo\", { opacity: 0.3 }, { opacity: 0.85, duration: 3.2, ease: \"sine.inOut\" }, 56.6);\n/* the payoff: the thirteenth car arrives and the count turns red */\ntl.fromTo(\"#extra\", { opacity: 0, scale: 0.6 },\n          { opacity: 1, scale: 1, duration: 0.40, ease: \"power3.out\" }, 69.6);\ntl.call(() => { document.getElementById(\"cnum\").textContent = \"13\"; }, null, 69.6);\ntl.fromTo(\"#cnum\", { scale: 1, color: \"#ffffff\" },\n          { scale: 1.3, color: \"#ff4242\", duration: 0.40, ease: \"power3.out\" }, 69.6);",
+  "motion": "tl.fromTo(\"#levelart\", { scale: 1.00 }, { scale: 1.10, duration: 6.6, ease: \"none\" }, 2.4);\n/* the ramp draws itself on: outline first, then the centre line */\ntl.fromTo(\"#rampline\", { drawSVG: \"0% 0%\" }, { drawSVG: \"0% 100%\", duration: 1.9, ease: \"power1.inOut\" }, 9.2);\ntl.fromTo(\"#rampmid\",  { drawSVG: \"0% 0%\" }, { drawSVG: \"0% 100%\", duration: 1.4, ease: \"power1.out\" }, 10.6);\n/* the plant: two facts the viewer will need later, landed on the words */\ntl.fromTo(\"#plant1\", { opacity: 0, y: 12 }, { opacity: 1, y: 0, duration: 0.3, ease: \"power2.out\" }, 16.7);\ntl.fromTo(\"#plant2\", { opacity: 0, y: 12 }, { opacity: 1, y: 0, duration: 0.3, ease: \"power2.out\" }, 18.0);\n/* the door: a wedge of stairwell light opens, then is let close softly */\ntl.fromTo(\"#wedge\", { width: 0 }, { width: 190, duration: 1.5, ease: \"power2.out\" }, 47.7);\ntl.to(\"#wedge\", { width: 0, duration: 2.6, ease: \"power1.inOut\" }, 50.4);\n/* footsteps cross the light pools one at a time */\n[56.1, 56.9, 57.7].forEach((t, i) => {\n  tl.fromTo(`#pool${i + 1}`, { opacity: 0.13 }, { opacity: 0.46, duration: 0.2, yoyo: true, repeat: 1 }, t);\n});\ntl.fromTo(\"#halo\", { opacity: 0.3 }, { opacity: 0.85, duration: 3.0, ease: \"sine.inOut\" }, 59.3);\n/* \"I know you're on four\": the readout resolves to a fact nobody was told */\ntl.to(\"#lvl\", { duration: 1.1, scrambleText: { text: \"LEVEL 4\", chars: \"0123456789\", speed: 0.8, revealDelay: 0.35 } }, 59.5);\n/* the recall lands as a stamp */\ntl.fromTo(\"#brakestamp\", { scale: 1.8, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.32, ease: \"power3.out\" }, 65.3);\n/* the payoff: thirteenth car arrives, counter fails over to 13 */\ntl.fromTo(\"#extra\", { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.4, ease: \"power3.out\" }, 71.6);\ntl.to(\"#cnum\", { duration: 0.85, scrambleText: { text: \"13\", chars: \"0123456789\", speed: 0.7, revealDelay: 0.3 } }, 71.5);\ntl.fromTo(\"#cnum\", { color: \"#ffffff\", scale: 1 }, { color: \"#ff4242\", scale: 1.3, duration: 0.4, ease: \"power3.out\" }, 71.9);",
   "lines": [
     [
-      "YOU DIDN'T OPEN THE DOOR.<br>YOU <b>DROVE</b>.",
+      "YOU <b>DROVE</b>.",
       0.25,
-      3.3
+      1.95
     ],
     [
-      "A CAR PARK IS THE SAFEST PLACE<br>TO SLEEP IN AN OUTBREAK.",
-      4.0,
-      8.25
+      "LAST NIGHT, THE CAR PARK<br>KEPT YOU ALIVE.",
+      2.55,
+      5.75
     ],
     [
-      "UNTIL YOU COUNT THE CARS <u>TWICE</u>.",
-      8.46,
-      11.085
+      "TONIGHT, IT <u>COSTS YOU</u> SOMETHING.",
+      5.81,
+      8.36
     ],
     [
-      "<b>DAY 2</b>. LEVEL FOUR.<br>CONCRETE HAS <b>NO WINDOWS</b>.",
-      11.735,
-      15.91
+      "<b>DAY 2</b>. LEVEL FOUR. ONE RAMP UP —<br>CONCRETE HAS <b>NO WINDOWS</b>.",
+      9.06,
+      14.435
     ],
     [
-      "HIGH ENOUGH OFF THE STREET.<br>LOW ENOUGH TO <b>DRIVE DOWN FAST</b>.",
-      15.97,
-      20.445
+      "YOU COASTED IN, ENGINE OFF.<br><b>NO BRAKES. NO LIGHTS.</b>",
+      14.495,
+      19.17
     ],
     [
-      "RECOVERY IN <b>NINE DAYS</b>.<br>STAY OFF THE GROUND FLOOR.",
-      20.505,
-      24.505
+      "RECOVERY IN <b>NINE DAYS</b>.<br>STAY ABOVE STREET LEVEL.",
+      19.62,
+      25.12
     ],
     [
-      "RULE 1. <b>PARK FACING THE EXIT</b>.",
-      24.905,
-      28.08
+      "RULE 1. <b>PARK FACING THE RAMP</b>.",
+      25.52,
+      28.545
     ],
     [
-      "RULE 2. NEVER SLEEP IN<br>THE <b>DRIVER'S SEAT</b>.",
-      28.14,
-      31.715
+      "RULE 2. SLEEP IN THE BACK SEAT.<br><b>NEVER THE DRIVER'S</b>.",
+      28.605,
+      32.93
     ],
     [
       "RULE 3. <u>COUNT THE CARS</u><br>BEFORE DARK.",
-      31.775,
-      35.225
+      32.99,
+      36.44
     ],
     [
       "<b>GOOD NEWS</b>. ELEVEN CARS.<br>YOURS IS THE <b>TWELFTH</b>.",
-      35.925,
-      40.15
+      37.14,
+      41.365
     ],
     [
-      "<u>BAD NEWS</u>. THE DOOR DOESN'T LOCK.<br>IT ONLY <b>CLOSES</b>.",
-      40.21,
-      45.11
+      "<u>BAD NEWS</u>. THE STAIRWELL DOOR<br>HAS NO LOCK. IT ONLY <b>CLOSES</b>.",
+      41.425,
+      46.4
     ],
     [
-      "<b>3:40 AM</b>. THE DOOR OPENS —<br>AND SOMEONE LETS IT CLOSE SOFTLY.",
-      45.71,
-      51.06
+      "<b>3:40 AM</b>. THE DOOR OPENS.<br>AND SOMEONE LETS IT CLOSE SOFTLY.",
+      47.0,
+      52.45
     ],
     [
-      "SOMEONE WHO DIDN'T WANT IT TO <u>BANG</u>.",
-      51.12,
-      53.87
+      "SOFTLY. SO IT WOULDN'T <u>BANG</u>.",
+      52.51,
+      55.06
     ],
     [
-      "THEN FOOTSTEPS.<br>NOT SHUFFLING. <u>WALKING</u>.",
-      54.62,
-      57.895
+      "FOOTSTEPS.<br>NOT SHUFFLING. <u>WALKING</u>.",
+      55.76,
+      58.61
     ],
     [
-      "“I SAW YOUR BRAKE LIGHTS.<br>WHICH CAR ARE YOU IN?”",
-      58.445,
-      61.97
+      "“I KNOW YOU'RE ON FOUR.<br>I SAW YOUR BRAKE LIGHTS COME ON.”",
+      59.16,
+      63.26
     ],
     [
-      "YOU HAVEN'T TOUCHED THE BRAKES<br>SINCE <u>YESTERDAY</u>.",
-      62.67,
-      65.845
+      "YOU COASTED IN.<br>YOU <u>NEVER TOUCHED THE BRAKES</u>.",
+      63.96,
+      67.485
     ],
     [
-      "SO YOU COUNT AGAIN.",
-      66.745,
-      68.77
+      "SO YOU COUNT THE CARS AGAIN.",
+      68.385,
+      70.885
     ],
     [
       "<u>THIRTEEN</u>.",
-      69.62,
-      71.295
+      71.735,
+      73.41
     ],
     [
       "",
-      72.395,
-      74.62
+      74.51,
+      76.735
     ]
   ],
   "panels": [
     [
       "recap",
       0.0,
-      4.0
+      2.5500000000000003
     ],
     [
       "park",
-      3.8,
-      11.739999999999998
+      2.35,
+      9.059999999999999
     ],
     [
       "ramp",
-      11.54,
-      20.64
-    ],
-    [
-      "radio",
-      20.3,
-      24.91
-    ],
-    [
-      "rule1",
-      24.71,
-      28.28
-    ],
-    [
-      "rule2",
-      27.94,
-      31.91
-    ],
-    [
-      "rule3",
-      31.57,
-      35.92
-    ],
-    [
-      "good",
-      35.72,
-      40.35
-    ],
-    [
-      "bad",
-      40.01,
-      45.71
-    ],
-    [
-      "door",
-      45.51,
-      54.620000000000005
-    ],
-    [
-      "steps",
-      54.42,
-      58.440000000000005
-    ],
-    [
-      "voice",
-      58.24,
-      62.67
+      8.86,
+      14.63
     ],
     [
       "dash",
-      62.47,
-      66.75
+      14.29,
+      19.62
+    ],
+    [
+      "radio",
+      19.42,
+      25.52
+    ],
+    [
+      "rule1",
+      25.32,
+      28.75
+    ],
+    [
+      "rule2",
+      28.41,
+      33.13
+    ],
+    [
+      "rule3",
+      32.79,
+      37.14
+    ],
+    [
+      "good",
+      36.94,
+      41.57
+    ],
+    [
+      "bad",
+      41.22,
+      47.0
+    ],
+    [
+      "door",
+      46.8,
+      55.760000000000005
+    ],
+    [
+      "steps",
+      55.56,
+      59.160000000000004
+    ],
+    [
+      "voice",
+      58.96,
+      63.96
+    ],
+    [
+      "dash2",
+      63.76,
+      68.39
     ],
     [
       "count",
-      66.55,
-      72.39
+      68.19,
+      74.51
     ],
     [
       "end",
-      72.19,
-      76.6
+      74.31,
+      78.8
     ]
   ]
 }
