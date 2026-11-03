@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+    <style>
+      :root {
+        --ink: #05060a;
+        --gold: #f5b53d;
+        --white: #ffffff;
+        --red: #e3372f;
+        --font: "Poppins", sans-serif;
+      }
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { width: 1080px; height: 1920px; overflow: hidden; background: var(--ink); font-family: var(--font); }
+      .clip { position: absolute; inset: 0; }
+
+      /* full-bleed photoreal plate + slow camera move */
+      .plate { position: absolute; inset: 0; overflow: hidden; opacity: 0; }
+      .plate img {
+        position: absolute; left: 50%; top: 50%;
+        width: 1350px; height: 2400px; margin: -1200px 0 0 -675px;
+        object-fit: cover; will-change: transform;
+      }
+      /* vignette + top/bottom grade so type always reads */
+      .grade {
+        position: absolute; inset: 0;
+        background:
+          linear-gradient(to bottom, rgba(5,6,10,.86) 0%, rgba(5,6,10,.20) 22%, rgba(5,6,10,0) 38%),
+          linear-gradient(to top,    rgba(5,6,10,.92) 0%, rgba(5,6,10,.55) 22%, rgba(5,6,10,0) 46%),
+          radial-gradient(130% 80% at 50% 50%, rgba(0,0,0,0) 40%, rgba(0,0,0,.55) 100%);
+      }
+
+      /* top title block — gold headline + small sub, per reference */
+      #titlewrap { position: absolute; left: 70px; right: 70px; top: 190px; text-align: center; }
+      #title {
+        font-size: 78px; font-weight: 800; color: var(--gold); line-height: 1.02;
+        letter-spacing: -0.02em; text-shadow: 0 6px 34px rgba(0,0,0,.85); opacity: 0;
+      }
+      #subtitle {
+        margin-top: 14px; font-size: 32px; font-weight: 600; color: rgba(255,255,255,.88);
+        text-shadow: 0 4px 20px rgba(0,0,0,.9); opacity: 0;
+      }
+
+      /* big number callout */
+      #statwrap { position: absolute; left: 70px; right: 70px; top: 760px; text-align: center; }
+      #statwrap.on::before { opacity: 1; }
+      #statwrap::before {
+        content: ""; position: absolute; left: -70px; right: -70px; top: -70px; bottom: -60px;
+        background: radial-gradient(60% 55% at 50% 50%, rgba(5,6,10,.80) 0%, rgba(5,6,10,.45) 55%, rgba(5,6,10,0) 100%);
+        opacity: 0; pointer-events: none;
+      }
+      #stat {
+        font-size: 150px; font-weight: 800; color: var(--gold); line-height: 1;
+        text-shadow: 0 10px 50px rgba(0,0,0,.95), 0 3px 10px rgba(0,0,0,.95), 0 0 70px rgba(0,0,0,.8);
+        opacity: 0;
+      }
+      #statsub {
+        margin-top: 10px; font-size: 36px; font-weight: 800; color: #fff; letter-spacing: .04em;
+        text-shadow: 0 4px 16px rgba(0,0,0,1), 0 2px 5px rgba(0,0,0,1), 0 0 40px rgba(0,0,0,.95);
+        opacity: 0;
+      }
+
+
+
+
+      #progress { position: absolute; left: 0; top: auto; bottom: 0; height: 7px; width: 0;
+                  background: linear-gradient(to right, var(--gold), #ff7a3d); }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="lshi" data-start="0" data-duration="58.9"
+         data-width="1080" data-height="1920" data-track-kind="graphics">
+
+      <div id="plates" class="clip" data-start="0" data-duration="58.9" data-track-index="0"></div>
+      <div id="grade" class="clip grade" data-start="0" data-duration="58.9" data-track-index="1"
+           data-layout-ignore></div>
+
+      <div id="titlewrap" class="clip" data-start="0" data-duration="58.9" data-track-index="2">
+        <div id="title"></div>
+        <div id="subtitle"></div>
+      </div>
+
+      <div id="statwrap" class="clip" data-start="0" data-duration="58.9" data-track-index="3">
+        <div id="stat"></div>
+        <div id="statsub"></div>
+      </div>
+
+
+
+      <div id="progress" class="clip" data-start="0" data-duration="58.9" data-track-index="7"
+           data-layout-ignore></div>
+    </div>
+
+    <audio id="vo" src="assets/audio/mix.wav" data-start="0" data-volume="1"></audio>
+
+    <script>
+      const DUR = 58.9;
+      const tl = gsap.timeline({ paused: true });
+      tl.fromTo("#progress", { width: 0 }, { width: 1080, duration: DUR, ease: "none" }, 0);
+
+      // ---- shot list: photoreal plate + slow camera move, cross-dissolved ----
+      const SHOTS = [
+        { img: "sun_surface", in: 0.0,   out: 5.0,  from: [1.00, 0, 0],    to: [1.16, 0, -40] },
+        { img: "spacecraft",  in: 4.7,   out: 9.9,  from: [1.14, 40, 0],   to: [1.00, -30, 20] },
+        { img: "starfield",   in: 9.6,   out: 13.3, from: [1.02, -30, -20],to: [1.18, 30, 20] },
+        { img: "milkyway",    in: 13.0,  out: 16.8, from: [1.16, 30, 30],  to: [1.00, -20, -20] },
+        { img: "sun_surface", in: 16.5,  out: 22.8, from: [1.22, -20, 0],  to: [1.42, 10, 10] },
+        { img: "nebula",      in: 22.5,  out: 25.8, from: [1.00, 0, 20],   to: [1.18, -25, -15] },
+        { img: "aurora",      in: 25.5,  out: 28.9, from: [1.16, 25, -10], to: [1.00, -25, 10] },
+        { img: "starfield",   in: 28.6,  out: 31.8, from: [1.00, 0, 0],    to: [1.38, 0, 0] },
+        { img: "milkyway",    in: 31.5,  out: 36.9, from: [1.30, -20, 10], to: [1.06, 20, -10] },
+        { img: "earth_limb",  in: 36.6,  out: 39.4, from: [1.08, 0, 10],   to: [1.18, 0, -10] },
+        { img: "andromeda",   in: 39.1,  out: 43.1, from: [1.20, -30, 0],  to: [1.02, 30, 0] },
+        { img: "earth_full",  in: 42.8,  out: 46.4, from: [1.02, 0, 0],    to: [1.16, 10, -15] },
+        { img: "earth_night", in: 46.1,  out: 56.2, from: [1.18, 25, 15],  to: [1.00, -25, -15] },
+        { img: "earth_limb",  in: 55.9,  out: DUR,  from: [1.00, 0, -10],  to: [1.20, 0, 14] },
+      ];
+
+      const platesEl = document.getElementById("plates");
+      SHOTS.forEach((s, i) => {
+        const d = document.createElement("div");
+        d.className = "plate";
+        d.id = `plate${i}`;
+        const im = document.createElement("img");
+        im.src = `assets/shots/${s.img}.jpg`;
+        d.appendChild(im);
+        platesEl.appendChild(d);
+
+        const FADE = 0.45;
+        tl.to(d, { opacity: 1, duration: FADE }, s.in);
+        if (s.out < DUR) tl.to(d, { opacity: 0, duration: FADE }, s.out - FADE);
+        // slow push / drift for the whole shot — the camera never sits still
+        tl.fromTo(im,
+          { scale: s.from[0], x: s.from[1], y: s.from[2] },
+          { scale: s.to[0], x: s.to[1], y: s.to[2], duration: s.out - s.in, ease: "none" },
+          s.in);
+      });
+
+      // ---- title cards ----
+      const TITLES = [
+        { t: 1.6,  u: 4.6,  a: "300,000 KM/S",       b: "light, in a vacuum" },
+        { t: 13.2, u: 16.4, a: "THE POSTULATE",       b: "c measures the same for every observer" },
+        { t: 16.7, u: 22.4, a: "THE ENERGY WALL",     b: "cost climbs without limit near c" },
+        { t: 28.8, u: 31.4, a: "ABERRATION",          b: "starlight bends toward your heading" },
+        { t: 31.7, u: 36.5, a: "LORENTZ CONTRACTION", b: "the distance ahead physically shrinks" },
+        { t: 39.3, u: 42.7, a: "ANDROMEDA",           b: "2,500,000 light years out" },
+        { t: 46.3, u: 55.8, a: "NO WAY BACK",         b: "the trip only runs forward in time" },
+      ];
+      const titleEl = document.getElementById("title");
+      const subEl = document.getElementById("subtitle");
+      TITLES.forEach((x) => {
+        tl.set(titleEl, { innerText: x.a }, x.t);
+        tl.set(subEl, { innerText: x.b }, x.t);
+        tl.fromTo(titleEl, { opacity: 0, y: -18 }, { opacity: 1, y: 0, duration: 0.32 }, x.t);
+        tl.fromTo(subEl, { opacity: 0, y: -10 }, { opacity: 1, y: 0, duration: 0.32 }, x.t + 0.12);
+        tl.to(titleEl, { opacity: 0, duration: 0.25 }, x.u - 0.25);
+        tl.to(subEl, { opacity: 0, duration: 0.25 }, x.u - 0.25);
+      });
+
+      // ---- big number moments ----
+      const STATS = [
+        { t: 22.7, u: 28.4, a: "99.9%", b: "OF LIGHT SPEED" },
+        { t: 39.5, u: 42.7, a: "28", b: "YEARS ABOARD" },
+        { t: 43.0, u: 46.1, a: "2,500,000", b: "YEARS ON EARTH" },
+      ];
+      const statEl = document.getElementById("stat");
+      const statSubEl = document.getElementById("statsub");
+      STATS.forEach((x) => {
+        tl.set(statEl, { innerText: x.a }, x.t);
+        tl.set(statSubEl, { innerText: x.b }, x.t);
+        tl.set("#statwrap", { className: "clip on" }, x.t);
+        tl.set("#statwrap", { className: "clip" }, x.u);
+        tl.fromTo(statEl, { opacity: 0, scale: 1.25 },
+                  { opacity: 1, scale: 1, duration: 0.4, ease: "back.out(2)" }, x.t);
+        tl.fromTo(statSubEl, { opacity: 0 }, { opacity: 1, duration: 0.3 }, x.t + 0.18);
+        tl.to(statEl, { opacity: 0, duration: 0.25 }, x.u - 0.25);
+        tl.to(statSubEl, { opacity: 0, duration: 0.25 }, x.u - 0.25);
+      });
+
+
+
+      window.__timelines = window.__timelines || {};
+      window.__timelines["lshi"] = tl;
+      tl.seek(0);
+    </script>
+  </body>
+</html>

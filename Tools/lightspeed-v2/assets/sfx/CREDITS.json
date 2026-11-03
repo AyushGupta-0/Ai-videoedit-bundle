@@ -1,0 +1,56 @@
+{
+  "whoosh": {
+    "file": "assets/sfx/whoosh.mp3",
+    "title": "whoosh+boom.wav",
+    "license": "cc0",
+    "url": "https://freesound.org/people/Capashen/sounds/118934"
+  },
+  "riser": {
+    "file": "assets/sfx/riser.mp3",
+    "title": "rise-crash.wav",
+    "license": "cc0",
+    "url": "https://freesound.org/people/soneproject/sounds/334522"
+  },
+  "impact": {
+    "file": "assets/sfx/impact.mp3",
+    "title": "Riser Hit sfx 046.wav",
+    "license": "cc0",
+    "url": "https://freesound.org/people/AudioPapkin/sounds/649933"
+  },
+  "sub_drop": {
+    "file": "assets/sfx/sub_drop.mp3",
+    "title": "SUB A# 2 secs.wav",
+    "license": "cc0",
+    "url": "https://freesound.org/people/uzerx/sounds/63138"
+  },
+  "shimmer": {
+    "file": "assets/sfx/shimmer.mp3",
+    "title": "MAGShim_Atonal Crystal Chime Transition.Short x20_EM",
+    "license": "cc0"
+  },
+  "swoosh2": {
+    "file": "assets/sfx/swoosh2.mp3",
+    "title": "Heavy Whoosh",
+    "license": "cc0"
+  },
+  "heartbeat": {
+    "file": "assets/sfx/heartbeat.mp3",
+    "title": "HEARTBEAT-FAST-SLOWDOWN.wav",
+    "license": "cc0"
+  },
+  "clock": {
+    "file": "assets/sfx/clock.mp3",
+    "title": "180608 Clock ticks, mechanical manual wall clock 2 different perspectives.flac",
+    "license": "cc0"
+  },
+  "drone_dark": {
+    "file": "assets/sfx/drone_dark.mp3",
+    "title": "spacedrone3.wav",
+    "license": "cc0"
+  },
+  "static": {
+    "file": "assets/sfx/static.mp3",
+    "title": "Radio transmission morse code @4606.2kHz Poland",
+    "license": "cc0"
+  }
+}

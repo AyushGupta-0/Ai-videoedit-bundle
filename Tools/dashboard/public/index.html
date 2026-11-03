@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Review &amp; Edit</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <div class="brand"><i class="dot"></i><span>Review &amp; Edit</span></div>
+    <select id="pick"></select>
+    <button id="regen" class="ghost">Re-analyse</button>
+    <div class="spacer"></div>
+    <div class="stat-row" id="stats"></div>
+    <button id="export" class="primary">Export cut</button>
+  </header>
+
+  <div class="wrap" id="wrap">
+    <div class="player-col">
+      <div class="card">
+        <div class="card-h">Preview</div>
+        <div class="player-body">
+          <video id="player" playsinline></video>
+          <div class="transport">
+            <button id="play" class="ghost">▶</button>
+            <div class="time" id="time">0:00.0 / 0:00.0</div>
+            <div class="scrub" id="scrub"><div class="fill" id="fill"></div><div class="head" id="head"></div></div>
+          </div>
+        </div>
+        <!-- filmstrip sits directly under the player and scrubs it -->
+        <div class="card-h" style="border-top:1px solid var(--border)">
+          Frames <span style="text-transform:none;letter-spacing:0;color:var(--faint)">— click to jump · amber = shot start</span>
+        </div>
+        <div class="strip-scroll"><div class="strip" id="strip"></div></div>
+      </div>
+    </div>
+
+    <div>
+      <div class="card">
+        <div class="card-h">Shots <span style="text-transform:none;letter-spacing:0;color:var(--faint)">— trim, keep/drop, approve, and brief the agent</span></div>
+        <div class="beats" id="beats"></div>
+      </div>
+    </div>
+  </div>
+
+  <div id="empty" style="display:none">
+    Drop a video into <code>Raw footage/</code> and pick it above.
+  </div>
+
+  <div id="toast"></div>
+  <script src="app.js"></script>
+</body>
+</html>

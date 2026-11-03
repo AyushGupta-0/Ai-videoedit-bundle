@@ -1,0 +1,69 @@
+# ---- rendered output & large binaries (regenerable) ----
+*.mp4
+*.mov
+*.mkv
+*.webm
+*.aiff
+renders/
+.hyperframes/
+Exports/**/*.mp4
+
+# ---- generated audio (rebuild from script.txt + TTS) ----
+**/assets/audio/*.wav
+**/assets/sfx/*.wav
+**/assets/sfx/*.mp3
+**/assets/sfx/*.ogg
+**/voicetests/
+**/vtest/
+
+# ---- source imagery originals (cropped plates in assets/shots ARE tracked) ----
+**/assets/img/*.jpg
+**/assets/img/*.png
+
+# ---- reference reels (copyright: analysis only, never redistribute) ----
+References/_source_temp/
+
+# ---- caches & models ----
+.hf-cache/
+**/dashboard/cache/
+**/dashboard/data/
+**/media/              # manim intermediate render tree
+**/__pycache__/
+*.pyc
+.cache/
+
+# ---- dependencies ----
+node_modules/
+.venv/
+venv/
+
+# ---- macOS ----
+.DS_Store
+._*
+.Spotlight-V100
+.Trashes
+
+# ---- secrets ----
+.env
+*.token
+credentials*.json
+
+# ---- stray generated audio anywhere ----
+*.wav
+*.aiff
+
+# ---- manim intermediate text/SVG cache ----
+Tools/manim-project/**/media/
+
+# ---- scaffolds with their own git / node_modules ----
+Tools/remotion-project/
+Tools/hyperframes-project/
+Tools/hyperframes-lightspeed/
+
+# ---- Hindi project reuses the English plates; track one copy only ----
+Tools/lightspeed-hi/assets/shots/
+Tools/lightspeed-hi/assets/sfx/
+
+# ---- debug/scratch ----
+**/check_frames/
+*.bak

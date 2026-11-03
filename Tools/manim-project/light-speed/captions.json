@@ -1,0 +1,757 @@
+[
+  {
+    "word": "Switch",
+    "from_ms": 0.0,
+    "to_ms": 402.6
+  },
+  {
+    "word": "on",
+    "from_ms": 402.6,
+    "to_ms": 608.8
+  },
+  {
+    "word": "a",
+    "from_ms": 608.8,
+    "to_ms": 766.0
+  },
+  {
+    "word": "light",
+    "from_ms": 766.0,
+    "to_ms": 1119.5
+  },
+  {
+    "word": "That",
+    "from_ms": 1119.5,
+    "to_ms": 1423.9
+  },
+  {
+    "word": "beam",
+    "from_ms": 1423.9,
+    "to_ms": 1728.3
+  },
+  {
+    "word": "leaves",
+    "from_ms": 1728.3,
+    "to_ms": 2131.0
+  },
+  {
+    "word": "you",
+    "from_ms": 2131.0,
+    "to_ms": 2386.3
+  },
+  {
+    "word": "at",
+    "from_ms": 2386.3,
+    "to_ms": 2592.5
+  },
+  {
+    "word": "three",
+    "from_ms": 2592.5,
+    "to_ms": 2946.0
+  },
+  {
+    "word": "hundred",
+    "from_ms": 2946.0,
+    "to_ms": 3397.7
+  },
+  {
+    "word": "thousand",
+    "from_ms": 3397.7,
+    "to_ms": 3898.6
+  },
+  {
+    "word": "kilometres",
+    "from_ms": 3898.6,
+    "to_ms": 4497.6
+  },
+  {
+    "word": "per",
+    "from_ms": 4497.6,
+    "to_ms": 4752.9
+  },
+  {
+    "word": "second",
+    "from_ms": 4752.9,
+    "to_ms": 5155.5
+  },
+  {
+    "word": "Chase",
+    "from_ms": 5155.5,
+    "to_ms": 5509.0
+  },
+  {
+    "word": "it",
+    "from_ms": 5509.0,
+    "to_ms": 5715.3
+  },
+  {
+    "word": "And",
+    "from_ms": 5715.3,
+    "to_ms": 5970.6
+  },
+  {
+    "word": "no",
+    "from_ms": 5970.6,
+    "to_ms": 6176.8
+  },
+  {
+    "word": "matter",
+    "from_ms": 6176.8,
+    "to_ms": 6579.4
+  },
+  {
+    "word": "how",
+    "from_ms": 6579.4,
+    "to_ms": 6834.8
+  },
+  {
+    "word": "fast",
+    "from_ms": 6834.8,
+    "to_ms": 7139.2
+  },
+  {
+    "word": "you",
+    "from_ms": 7139.2,
+    "to_ms": 7394.5
+  },
+  {
+    "word": "go",
+    "from_ms": 7394.5,
+    "to_ms": 7600.7
+  },
+  {
+    "word": "it",
+    "from_ms": 7600.7,
+    "to_ms": 7806.9
+  },
+  {
+    "word": "still",
+    "from_ms": 7806.9,
+    "to_ms": 8160.5
+  },
+  {
+    "word": "runs",
+    "from_ms": 8160.5,
+    "to_ms": 8464.9
+  },
+  {
+    "word": "away",
+    "from_ms": 8464.9,
+    "to_ms": 8769.3
+  },
+  {
+    "word": "from",
+    "from_ms": 8769.3,
+    "to_ms": 9073.7
+  },
+  {
+    "word": "you",
+    "from_ms": 9073.7,
+    "to_ms": 9329.0
+  },
+  {
+    "word": "at",
+    "from_ms": 9329.0,
+    "to_ms": 9535.3
+  },
+  {
+    "word": "exactly",
+    "from_ms": 9535.3,
+    "to_ms": 9987.0
+  },
+  {
+    "word": "the",
+    "from_ms": 9987.0,
+    "to_ms": 10242.3
+  },
+  {
+    "word": "same",
+    "from_ms": 10242.3,
+    "to_ms": 10546.7
+  },
+  {
+    "word": "speed",
+    "from_ms": 10546.7,
+    "to_ms": 10900.3
+  },
+  {
+    "word": "That",
+    "from_ms": 10900.3,
+    "to_ms": 11204.7
+  },
+  {
+    "word": "is",
+    "from_ms": 11204.7,
+    "to_ms": 11410.9
+  },
+  {
+    "word": "not",
+    "from_ms": 11410.9,
+    "to_ms": 11666.2
+  },
+  {
+    "word": "a",
+    "from_ms": 11666.2,
+    "to_ms": 11823.3
+  },
+  {
+    "word": "limit",
+    "from_ms": 11823.3,
+    "to_ms": 12176.9
+  },
+  {
+    "word": "of",
+    "from_ms": 12176.9,
+    "to_ms": 12383.1
+  },
+  {
+    "word": "engineering",
+    "from_ms": 12383.1,
+    "to_ms": 13031.2
+  },
+  {
+    "word": "It",
+    "from_ms": 13031.2,
+    "to_ms": 13237.4
+  },
+  {
+    "word": "is",
+    "from_ms": 13237.4,
+    "to_ms": 13443.6
+  },
+  {
+    "word": "a",
+    "from_ms": 13443.6,
+    "to_ms": 13600.8
+  },
+  {
+    "word": "rule",
+    "from_ms": 13600.8,
+    "to_ms": 13905.2
+  },
+  {
+    "word": "built",
+    "from_ms": 13905.2,
+    "to_ms": 14258.7
+  },
+  {
+    "word": "into",
+    "from_ms": 14258.7,
+    "to_ms": 14563.1
+  },
+  {
+    "word": "the",
+    "from_ms": 14563.1,
+    "to_ms": 14818.5
+  },
+  {
+    "word": "universe",
+    "from_ms": 14818.5,
+    "to_ms": 15319.3
+  },
+  {
+    "word": "But",
+    "from_ms": 15319.3,
+    "to_ms": 15574.6
+  },
+  {
+    "word": "get",
+    "from_ms": 15574.6,
+    "to_ms": 15829.9
+  },
+  {
+    "word": "close",
+    "from_ms": 15829.9,
+    "to_ms": 16183.4
+  },
+  {
+    "word": "ninety",
+    "from_ms": 16183.4,
+    "to_ms": 16586.1
+  },
+  {
+    "word": "nine",
+    "from_ms": 16586.1,
+    "to_ms": 16890.5
+  },
+  {
+    "word": "point",
+    "from_ms": 16890.5,
+    "to_ms": 17244.0
+  },
+  {
+    "word": "nine",
+    "from_ms": 17244.0,
+    "to_ms": 17548.4
+  },
+  {
+    "word": "nine",
+    "from_ms": 17548.4,
+    "to_ms": 17852.8
+  },
+  {
+    "word": "percent",
+    "from_ms": 17852.8,
+    "to_ms": 18304.6
+  },
+  {
+    "word": "of",
+    "from_ms": 18304.6,
+    "to_ms": 18510.8
+  },
+  {
+    "word": "light",
+    "from_ms": 18510.8,
+    "to_ms": 18864.3
+  },
+  {
+    "word": "speed",
+    "from_ms": 18864.3,
+    "to_ms": 19217.8
+  },
+  {
+    "word": "and",
+    "from_ms": 19217.8,
+    "to_ms": 19473.2
+  },
+  {
+    "word": "reality",
+    "from_ms": 19473.2,
+    "to_ms": 19924.9
+  },
+  {
+    "word": "starts",
+    "from_ms": 19924.9,
+    "to_ms": 20327.5
+  },
+  {
+    "word": "bending",
+    "from_ms": 20327.5,
+    "to_ms": 20779.2
+  },
+  {
+    "word": "to",
+    "from_ms": 20779.2,
+    "to_ms": 20985.4
+  },
+  {
+    "word": "let",
+    "from_ms": 20985.4,
+    "to_ms": 21240.8
+  },
+  {
+    "word": "you",
+    "from_ms": 21240.8,
+    "to_ms": 21496.1
+  },
+  {
+    "word": "through",
+    "from_ms": 21496.1,
+    "to_ms": 21947.8
+  },
+  {
+    "word": "The",
+    "from_ms": 21947.8,
+    "to_ms": 22203.1
+  },
+  {
+    "word": "stars",
+    "from_ms": 22203.1,
+    "to_ms": 22556.7
+  },
+  {
+    "word": "ahead",
+    "from_ms": 22556.7,
+    "to_ms": 22910.2
+  },
+  {
+    "word": "crush",
+    "from_ms": 22910.2,
+    "to_ms": 23263.7
+  },
+  {
+    "word": "into",
+    "from_ms": 23263.7,
+    "to_ms": 23568.1
+  },
+  {
+    "word": "a",
+    "from_ms": 23568.1,
+    "to_ms": 23725.2
+  },
+  {
+    "word": "tunnel",
+    "from_ms": 23725.2,
+    "to_ms": 24127.9
+  },
+  {
+    "word": "of",
+    "from_ms": 24127.9,
+    "to_ms": 24334.1
+  },
+  {
+    "word": "blue",
+    "from_ms": 24334.1,
+    "to_ms": 24638.5
+  },
+  {
+    "word": "white",
+    "from_ms": 24638.5,
+    "to_ms": 24992.0
+  },
+  {
+    "word": "light",
+    "from_ms": 24992.0,
+    "to_ms": 25345.5
+  },
+  {
+    "word": "Space",
+    "from_ms": 25345.5,
+    "to_ms": 25699.1
+  },
+  {
+    "word": "itself",
+    "from_ms": 25699.1,
+    "to_ms": 26101.7
+  },
+  {
+    "word": "contracts",
+    "from_ms": 26101.7,
+    "to_ms": 26651.6
+  },
+  {
+    "word": "A",
+    "from_ms": 26651.6,
+    "to_ms": 26808.7
+  },
+  {
+    "word": "four",
+    "from_ms": 26808.7,
+    "to_ms": 27113.2
+  },
+  {
+    "word": "light",
+    "from_ms": 27113.2,
+    "to_ms": 27466.7
+  },
+  {
+    "word": "year",
+    "from_ms": 27466.7,
+    "to_ms": 27771.1
+  },
+  {
+    "word": "trip",
+    "from_ms": 27771.1,
+    "to_ms": 28075.5
+  },
+  {
+    "word": "shrinks",
+    "from_ms": 28075.5,
+    "to_ms": 28527.2
+  },
+  {
+    "word": "to",
+    "from_ms": 28527.2,
+    "to_ms": 28733.5
+  },
+  {
+    "word": "a",
+    "from_ms": 28733.5,
+    "to_ms": 28890.6
+  },
+  {
+    "word": "few",
+    "from_ms": 28890.6,
+    "to_ms": 29145.9
+  },
+  {
+    "word": "weeks",
+    "from_ms": 29145.9,
+    "to_ms": 29499.4
+  },
+  {
+    "word": "And",
+    "from_ms": 29499.4,
+    "to_ms": 29754.7
+  },
+  {
+    "word": "time",
+    "from_ms": 29754.7,
+    "to_ms": 30059.2
+  },
+  {
+    "word": "slows",
+    "from_ms": 30059.2,
+    "to_ms": 30412.7
+  },
+  {
+    "word": "down",
+    "from_ms": 30412.7,
+    "to_ms": 30717.1
+  },
+  {
+    "word": "for",
+    "from_ms": 30717.1,
+    "to_ms": 30972.4
+  },
+  {
+    "word": "you",
+    "from_ms": 30972.4,
+    "to_ms": 31227.8
+  },
+  {
+    "word": "Fly",
+    "from_ms": 31227.8,
+    "to_ms": 31483.1
+  },
+  {
+    "word": "to",
+    "from_ms": 31483.1,
+    "to_ms": 31689.3
+  },
+  {
+    "word": "Andromeda",
+    "from_ms": 31689.3,
+    "to_ms": 32239.2
+  },
+  {
+    "word": "two",
+    "from_ms": 32239.2,
+    "to_ms": 32494.5
+  },
+  {
+    "word": "and",
+    "from_ms": 32494.5,
+    "to_ms": 32749.9
+  },
+  {
+    "word": "a",
+    "from_ms": 32749.9,
+    "to_ms": 32907.0
+  },
+  {
+    "word": "half",
+    "from_ms": 32907.0,
+    "to_ms": 33211.4
+  },
+  {
+    "word": "million",
+    "from_ms": 33211.4,
+    "to_ms": 33663.1
+  },
+  {
+    "word": "light",
+    "from_ms": 33663.1,
+    "to_ms": 34016.6
+  },
+  {
+    "word": "years",
+    "from_ms": 34016.6,
+    "to_ms": 34370.2
+  },
+  {
+    "word": "away",
+    "from_ms": 34370.2,
+    "to_ms": 34674.6
+  },
+  {
+    "word": "and",
+    "from_ms": 34674.6,
+    "to_ms": 34929.9
+  },
+  {
+    "word": "you",
+    "from_ms": 34929.9,
+    "to_ms": 35185.2
+  },
+  {
+    "word": "would",
+    "from_ms": 35185.2,
+    "to_ms": 35538.8
+  },
+  {
+    "word": "arrive",
+    "from_ms": 35538.8,
+    "to_ms": 35941.4
+  },
+  {
+    "word": "after",
+    "from_ms": 35941.4,
+    "to_ms": 36294.9
+  },
+  {
+    "word": "about",
+    "from_ms": 36294.9,
+    "to_ms": 36648.4
+  },
+  {
+    "word": "twenty",
+    "from_ms": 36648.4,
+    "to_ms": 37051.0
+  },
+  {
+    "word": "eight",
+    "from_ms": 37051.0,
+    "to_ms": 37404.6
+  },
+  {
+    "word": "years",
+    "from_ms": 37404.6,
+    "to_ms": 37758.1
+  },
+  {
+    "word": "of",
+    "from_ms": 37758.1,
+    "to_ms": 37964.3
+  },
+  {
+    "word": "your",
+    "from_ms": 37964.3,
+    "to_ms": 38268.7
+  },
+  {
+    "word": "own",
+    "from_ms": 38268.7,
+    "to_ms": 38524.1
+  },
+  {
+    "word": "life",
+    "from_ms": 38524.1,
+    "to_ms": 38828.5
+  },
+  {
+    "word": "But",
+    "from_ms": 38828.5,
+    "to_ms": 39083.8
+  },
+  {
+    "word": "Earth",
+    "from_ms": 39083.8,
+    "to_ms": 39437.3
+  },
+  {
+    "word": "would",
+    "from_ms": 39437.3,
+    "to_ms": 39790.8
+  },
+  {
+    "word": "be",
+    "from_ms": 39790.8,
+    "to_ms": 39997.1
+  },
+  {
+    "word": "two",
+    "from_ms": 39997.1,
+    "to_ms": 40252.4
+  },
+  {
+    "word": "and",
+    "from_ms": 40252.4,
+    "to_ms": 40507.7
+  },
+  {
+    "word": "a",
+    "from_ms": 40507.7,
+    "to_ms": 40664.8
+  },
+  {
+    "word": "half",
+    "from_ms": 40664.8,
+    "to_ms": 40969.2
+  },
+  {
+    "word": "million",
+    "from_ms": 40969.2,
+    "to_ms": 41421.0
+  },
+  {
+    "word": "years",
+    "from_ms": 41421.0,
+    "to_ms": 41774.5
+  },
+  {
+    "word": "older",
+    "from_ms": 41774.5,
+    "to_ms": 42128.0
+  },
+  {
+    "word": "Light",
+    "from_ms": 42128.0,
+    "to_ms": 42481.5
+  },
+  {
+    "word": "speed",
+    "from_ms": 42481.5,
+    "to_ms": 42835.1
+  },
+  {
+    "word": "is",
+    "from_ms": 42835.1,
+    "to_ms": 43041.3
+  },
+  {
+    "word": "not",
+    "from_ms": 43041.3,
+    "to_ms": 43296.6
+  },
+  {
+    "word": "a",
+    "from_ms": 43296.6,
+    "to_ms": 43453.7
+  },
+  {
+    "word": "speed",
+    "from_ms": 43453.7,
+    "to_ms": 43807.2
+  },
+  {
+    "word": "limit",
+    "from_ms": 43807.2,
+    "to_ms": 44160.8
+  },
+  {
+    "word": "It",
+    "from_ms": 44160.8,
+    "to_ms": 44367.0
+  },
+  {
+    "word": "is",
+    "from_ms": 44367.0,
+    "to_ms": 44573.2
+  },
+  {
+    "word": "a",
+    "from_ms": 44573.2,
+    "to_ms": 44730.3
+  },
+  {
+    "word": "one",
+    "from_ms": 44730.3,
+    "to_ms": 44985.6
+  },
+  {
+    "word": "way",
+    "from_ms": 44985.6,
+    "to_ms": 45241.0
+  },
+  {
+    "word": "door",
+    "from_ms": 45241.0,
+    "to_ms": 45545.4
+  },
+  {
+    "word": "into",
+    "from_ms": 45545.4,
+    "to_ms": 45849.8
+  },
+  {
+    "word": "the",
+    "from_ms": 45849.8,
+    "to_ms": 46105.1
+  },
+  {
+    "word": "future",
+    "from_ms": 46105.1,
+    "to_ms": 46507.8
+  }
+]

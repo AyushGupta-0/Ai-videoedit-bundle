@@ -1,0 +1,86 @@
+{
+  "earth_night": {
+    "file": "assets/img/earth_night.jpg",
+    "nasa_id": "iss070e062746",
+    "title": "iss070e062746",
+    "center": "JSC",
+    "src": "http://images-assets.nasa.gov/image/iss070e062746/iss070e062746~orig.jpg"
+  },
+  "earth_limb": {
+    "file": "assets/img/earth_limb.jpg",
+    "nasa_id": "iss028e007274",
+    "title": "Earth Observation",
+    "center": "JSC",
+    "src": "http://images-assets.nasa.gov/image/iss028e007274/iss028e007274~orig.jpg"
+  },
+  "milkyway": {
+    "file": "assets/img/milkyway.jpg",
+    "nasa_id": "PIA13995",
+    "title": "WISE Eyes Evolution of Massive Stars",
+    "center": "JPL",
+    "src": "http://images-assets.nasa.gov/image/PIA13995/PIA13995~orig.jpg"
+  },
+  "andromeda": {
+    "file": "assets/img/andromeda.jpg",
+    "nasa_id": "GSFC_20171208_Archive_e000839",
+    "title": "Hubble\u2019s High-Definition Panoramic View of the Andromeda Galaxy",
+    "center": "GSFC",
+    "src": "http://images-assets.nasa.gov/image/GSFC_20171208_Archive_e000839/GSFC_20171208_Archive_e000839~orig.jpg"
+  },
+  "nebula": {
+    "file": "assets/img/nebula.jpg",
+    "nasa_id": "carina_nebula",
+    "title": "James Webb Space Telescope NIRCam Image of the \u201cCosmic Cliffs\u201d in Carina Nebula",
+    "center": "STScI (Webb)",
+    "src": "http://images-assets.nasa.gov/image/carina_nebula/carina_nebula~large.jpg"
+  },
+  "starfield": {
+    "file": "assets/img/starfield.jpg",
+    "nasa_id": "hubble-sees-a-legion-of-galaxies_25608651281_o",
+    "title": "Swimming in Sculptor",
+    "center": "GSFC",
+    "src": "http://images-assets.nasa.gov/image/hubble-sees-a-legion-of-galaxies_25608651281_o/hubble-sees-a-legion-of-galaxies_25608651281_o~orig.jpg"
+  },
+  "solar_flare": {
+    "file": "assets/img/solar_flare.jpg",
+    "nasa_id": "PIA21958",
+    "title": "Major Solar Flare",
+    "center": "JPL",
+    "src": "http://images-assets.nasa.gov/image/PIA21958/PIA21958~orig.jpg"
+  },
+  "spacecraft": {
+    "file": "assets/img/spacecraft.jpg",
+    "nasa_id": "PIA04495",
+    "title": "Artist Concept of Voyager",
+    "center": "JPL",
+    "src": "http://images-assets.nasa.gov/image/PIA04495/PIA04495~orig.jpg"
+  },
+  "earth_full": {
+    "file": "assets/img/earth_full.jpg",
+    "nasa_id": "as17-148-22717",
+    "title": "View of Africa and Madagascar from the Apollo 17 spacecraft",
+    "center": "JSC",
+    "src": "http://images-assets.nasa.gov/image/as17-148-22717/as17-148-22717~orig.jpg"
+  },
+  "aurora": {
+    "file": "assets/img/aurora.jpg",
+    "nasa_id": "iss023e058455",
+    "title": "Earth Observations taken by the Expedition 23 Crew",
+    "center": "JSC",
+    "src": "http://images-assets.nasa.gov/image/iss023e058455/iss023e058455~orig.jpg"
+  },
+  "saturn": {
+    "file": "assets/img/saturn.jpg",
+    "nasa_id": "PIA22766",
+    "title": "Cassini orbiting Saturn (Illustration)",
+    "center": "JPL",
+    "src": "http://images-assets.nasa.gov/image/PIA22766/PIA22766~orig.jpg"
+  },
+  "sun_surface": {
+    "file": "assets/img/sun_surface.jpg",
+    "nasa_id": "GSFC_20171208_Archive_e000790",
+    "title": "NASA's SDO Sees Giant Filament on the Sun",
+    "center": "GSFC",
+    "src": "http://images-assets.nasa.gov/image/GSFC_20171208_Archive_e000790/GSFC_20171208_Archive_e000790~orig.jpg"
+  }
+}
