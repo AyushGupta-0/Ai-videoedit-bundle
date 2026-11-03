@@ -1,0 +1,185 @@
+{
+  "day": 6,
+  "dur": 90.6,
+  "clock0": "2:41 AM",
+  "recov": 5,
+  "m0": 161,
+  "m1": 190,
+  "ampm": "AM",
+  "q1": "DO YOU GO",
+  "q2": "AND LOOK?",
+  "btnA": "LOOK",
+  "btnB": "DRIVE ON",
+  "nexthook": "31 EMPTY CARRIAGES.<br>THE LAST IS SEALED FROM INSIDE.",
+  "extra_css": "",
+  "motion": "/* hook: the line streaks past; \"nothing can reach you\" lands on the word; then the checks stop */\ntl.fromTo(\"#streaks1\", { x: 0 }, { x: -900, duration: 8.6, ease: \"none\" }, 3.9);\ntl.to(\"#chk3\", { opacity: 1, duration: 0.2 }, 5.5);\ntl.fromTo(\"#safe\", { opacity: 0, y: -10 }, { opacity: 1, y: 0, duration: 0.3, ease: \"power2.out\" }, 6.2);\ntl.to(\"#checks\", { opacity: 0.3, duration: 0.6 }, 10.1);\n/* wide: the train crosses; the red zone flares on \"20\" */\ntl.fromTo(\"#strip\", { x: 0 }, { x: -640, duration: 6.6, ease: \"none\" }, 12.3);\ntl.to(\"#zone\", { opacity: 1, strokeWidth: 36, duration: 0.25, yoyo: true, repeat: 1 }, 16.9);\n/* rule 1 obeyed: the lamp breathes but never goes out */\ntl.fromTo(\"#held\", { opacity: 0.45 }, { opacity: 1, duration: 0.5, yoyo: true, repeat: 3, ease: \"sine.inOut\" }, 26.4);\n/* the plant: eleven light up as they are counted; the rest stay dark */\ntl.fromTo(\"#c1,#c2,#c3,#c4,#c5,#c6,#c7,#c8,#c9,#c10,#c11\", { opacity: 0.25 }, { opacity: 1, duration: 0.15, stagger: 0.07, ease: \"none\" }, 32.1);\ntl.fromTo(\"#sealed\", { opacity: 0, y: 12 }, { opacity: 1, y: 0, duration: 0.3, ease: \"power2.out\" }, 33.8);\n/* rule 2 obeyed: the ring counts a block down; three blocks tick */\ntl.fromTo(\"#ring\", { drawSVG: \"0% 100%\" }, { drawSVG: \"0% 0%\", duration: 3.2, ease: \"none\" }, 41.3);\n[41.92, 42.42, 42.95].forEach((t, i) => tl.to(`#t${i + 1}`, { opacity: 1, duration: 0.15 }, t));\n/* the radio: the loop plays whole, every bar; the rig named through the scramble */\ntl.to(\".lb\", { opacity: 0.9, duration: 0.1, stagger: 0.028, ease: \"none\" }, 45.7);\ntl.set(\"#rigword\", { textContent: \"\" }, 44.7);\ntl.to(\"#rigword\", { duration: 1.4, scrambleText: { text: \"RIG BRAVO · 62 SOUTH\", chars: \"upperCase\", speed: 0.6 } }, 49.5);\n/* rule 3 obeyed: you pass what is on the line and do not stop */\ntl.to(\"#traindot\", { attr: { cy: 1380 }, duration: 5.3, ease: \"none\" }, 57.3);\n/* 3:02: the streaks decelerate; the engine note drops; the lamp is still green */\ntl.fromTo(\"#streaks2\", { x: 0 }, { x: -700, duration: 9.6, ease: \"power2.out\" }, 62.8);\ntl.to(\".eb\", { scaleY: 0.42, duration: 1.1, ease: \"power2.inOut\", stagger: 0.02 }, 65.4);\ntl.fromTo(\"#held2\", { opacity: 0.45 }, { opacity: 1, duration: 0.5, yoyo: true, repeat: 5, ease: \"sine.inOut\" }, 67.9);\n/* the gauge: needle and readout fall on the spoken numbers */\ntl.fromTo(\"#needle2\", { rotation: 121.5, svgOrigin: \"540 1000\" }, { rotation: 108, duration: 1.2, ease: \"none\" }, 72.5);\n[[74.26, 40, 90], [74.80, 31, 69.75], [75.47, 22, 49.5]].forEach(([t, v, a]) => {\n  tl.to(\"#needle2\", { rotation: a, svgOrigin: \"540 1000\", duration: 0.45, ease: \"power2.out\" }, t);\n  tl.set(\"#spd\", { textContent: String(v) }, t);\n});\ntl.to(\"#zone2\", { opacity: 1, strokeWidth: 38, duration: 0.3, yoyo: true, repeat: 3 }, 75.5);\n/* the recall: the brake, carriage 32, the one you did not check */\ntl.fromTo(\"#brakestamp\", { scale: 1.8, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.32, ease: \"power3.out\" }, 79.2);\ntl.fromTo(\"#c32hot\", { opacity: 0 }, { opacity: 1, duration: 0.22, yoyo: true, repeat: 7 }, 80.7);\ntl.fromTo(\"#unchecked\", { scale: 1.8, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.32, ease: \"power3.out\" }, 83.9);",
+  "lines": [
+    [
+      "YOU WENT DOWN.<br>THE BOX WAS <b>EMPTY</b>.",
+      0.25,
+      3.3
+    ],
+    [
+      "<b>DAY 6</b>. FOR THE FIRST TIME,<br>NOTHING CAN REACH YOU.",
+      3.9,
+      7.975
+    ],
+    [
+      "THAT'S WHAT IT <u>COSTS YOU</u>.<br>YOU STOP CHECKING.",
+      8.035,
+      11.585
+    ],
+    [
+      "A MOVING TRAIN. NOTHING<br>BOARDS IT ABOVE <b>20 MPH</b>.",
+      12.335,
+      18.285
+    ],
+    [
+      "RULE 1. HOLD THE SWITCH.<br>LET GO, AND IT <b>STOPS</b>.",
+      18.785,
+      25.91
+    ],
+    [
+      "SO YOUR THUMB<br>NEVER LEAVES IT.",
+      26.26,
+      28.985
+    ],
+    [
+      "32 CARRIAGES BEHIND YOU.<br>YOU CHECKED <b>ELEVEN</b>.",
+      29.535,
+      34.935
+    ],
+    [
+      "RULE 2. SLEEP IN<br><b>20-MINUTE</b> BLOCKS.",
+      35.535,
+      40.135
+    ],
+    [
+      "YOU SET THE TIMER.<br>TWENTY. TWENTY. TWENTY.",
+      40.485,
+      44.135
+    ],
+    [
+      "THE LOOP, WHOLE AT LAST:<br><b>RIG BRAVO. SIX-TWO SOUTH.</b>",
+      44.685,
+      51.91
+    ],
+    [
+      "RULE 3. DO NOT STOP.<br>FOR <u>ANYTHING</u> ON THE LINE.",
+      52.46,
+      56.785
+    ],
+    [
+      "1,000 MILES OF RANGE.<br>THE COAST IN <b>TWO DAYS</b>.",
+      57.235,
+      62.235
+    ],
+    [
+      "<b>3:02 AM</b>. YOU WAKE.<br>THE ENGINE SOUNDS <u>WRONG</u>.",
+      62.835,
+      67.385
+    ],
+    [
+      "YOUR THUMB IS STILL ON IT.<br>YOU <b>NEVER LET GO</b>.",
+      67.885,
+      71.91
+    ],
+    [
+      "BUT THE TRAIN IS SLOWING.<br>40. 31. <u>22</u>.",
+      72.46,
+      76.76
+    ],
+    [
+      "THE BRAKE WAS PULLED.<br>FROM CARRIAGE <u>THIRTY-TWO</u>.",
+      77.46,
+      82.06
+    ],
+    [
+      "THE ONE YOU <u>DIDN'T CHECK</u>.",
+      82.66,
+      84.91
+    ],
+    [
+      "",
+      86.06,
+      88.06
+    ]
+  ],
+  "panels": [
+    [
+      "recap",
+      0.0,
+      3.9000000000000004
+    ],
+    [
+      "hook",
+      3.7,
+      12.34
+    ],
+    [
+      "wide",
+      12.14,
+      18.79
+    ],
+    [
+      "rule1",
+      18.59,
+      26.259999999999998
+    ],
+    [
+      "obey1",
+      26.06,
+      29.54
+    ],
+    [
+      "plant",
+      29.34,
+      35.53
+    ],
+    [
+      "rule2",
+      35.33,
+      40.480000000000004
+    ],
+    [
+      "obey2",
+      40.28,
+      44.68
+    ],
+    [
+      "radio",
+      44.48,
+      52.46
+    ],
+    [
+      "rule3",
+      52.26,
+      57.230000000000004
+    ],
+    [
+      "obey3",
+      57.03,
+      62.830000000000005
+    ],
+    [
+      "slow",
+      62.63,
+      72.46000000000001
+    ],
+    [
+      "gauge",
+      72.26,
+      77.46000000000001
+    ],
+    [
+      "recall",
+      77.26,
+      86.06
+    ],
+    [
+      "end",
+      85.86,
+      90.6
+    ]
+  ]
+}

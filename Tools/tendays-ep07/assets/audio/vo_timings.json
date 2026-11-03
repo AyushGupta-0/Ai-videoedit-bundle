@@ -1,0 +1,1214 @@
+{
+  "duration": 98.87,
+  "lines": [
+    {
+      "id": "l01",
+      "who": "N",
+      "shot": "recap",
+      "text": "You went to look.",
+      "cap": "YOU WENT TO <b>LOOK</b>.",
+      "start": 0.25,
+      "end": 2.0,
+      "words": [
+        {
+          "w": "You",
+          "s": 0.65,
+          "e": 0.8
+        },
+        {
+          "w": "went",
+          "s": 0.8,
+          "e": 0.988
+        },
+        {
+          "w": "to",
+          "s": 0.988,
+          "e": 1.1
+        },
+        {
+          "w": "look",
+          "s": 1.1,
+          "e": 1.7
+        }
+      ]
+    },
+    {
+      "id": "l02",
+      "who": "N",
+      "shot": "hook",
+      "text": "Day seven. Thirty-one carriages between you and the brake. One torch.",
+      "cap": "<b>DAY 7</b>. 31 CARRIAGES TO<br>THE BRAKE. ONE TORCH.",
+      "start": 2.6,
+      "end": 7.9,
+      "words": [
+        {
+          "w": "Day",
+          "s": 3.025,
+          "e": 3.275
+        },
+        {
+          "w": "seven",
+          "s": 3.275,
+          "e": 3.825
+        },
+        {
+          "w": "Thirty-one",
+          "s": 3.963,
+          "e": 4.513
+        },
+        {
+          "w": "carriages",
+          "s": 4.513,
+          "e": 4.975
+        },
+        {
+          "w": "between",
+          "s": 4.975,
+          "e": 5.363
+        },
+        {
+          "w": "you",
+          "s": 5.363,
+          "e": 5.55
+        },
+        {
+          "w": "and",
+          "s": 5.55,
+          "e": 5.662
+        },
+        {
+          "w": "the",
+          "s": 5.662,
+          "e": 5.75
+        },
+        {
+          "w": "brake",
+          "s": 5.75,
+          "e": 6.325
+        },
+        {
+          "w": "One",
+          "s": 6.462,
+          "e": 6.813
+        },
+        {
+          "w": "torch",
+          "s": 6.813,
+          "e": 7.6
+        }
+      ]
+    },
+    {
+      "id": "l03",
+      "who": "N",
+      "shot": "hook",
+      "text": "And the last carriage is sealed. From the inside.",
+      "cap": "AND THE LAST ONE IS SEALED.<br><u>FROM THE INSIDE</u>.",
+      "start": 7.96,
+      "end": 11.835,
+      "words": [
+        {
+          "w": "And",
+          "s": 8.31,
+          "e": 8.447
+        },
+        {
+          "w": "the",
+          "s": 8.447,
+          "e": 8.535
+        },
+        {
+          "w": "last",
+          "s": 8.535,
+          "e": 8.935
+        },
+        {
+          "w": "carriage",
+          "s": 8.935,
+          "e": 9.335
+        },
+        {
+          "w": "is",
+          "s": 9.335,
+          "e": 9.472
+        },
+        {
+          "w": "sealed",
+          "s": 9.472,
+          "e": 10.11
+        },
+        {
+          "w": "From",
+          "s": 10.248,
+          "e": 10.422
+        },
+        {
+          "w": "the",
+          "s": 10.422,
+          "e": 10.56
+        },
+        {
+          "w": "inside",
+          "s": 10.56,
+          "e": 11.535
+        }
+      ]
+    },
+    {
+      "id": "l04",
+      "who": "N",
+      "shot": "wide",
+      "text": "To move the train again, you reset the brake by hand. At the far end. On foot.",
+      "cap": "RESET THE BRAKE <b>BY HAND</b>.<br>AT THE FAR END. ON FOOT.",
+      "start": 12.585,
+      "end": 18.535,
+      "words": [
+        {
+          "w": "To",
+          "s": 12.96,
+          "e": 13.06
+        },
+        {
+          "w": "move",
+          "s": 13.06,
+          "e": 13.298
+        },
+        {
+          "w": "the",
+          "s": 13.298,
+          "e": 13.397
+        },
+        {
+          "w": "train",
+          "s": 13.397,
+          "e": 13.81
+        },
+        {
+          "w": "again",
+          "s": 13.81,
+          "e": 14.085
+        },
+        {
+          "w": "you",
+          "s": 14.135,
+          "e": 14.285
+        },
+        {
+          "w": "reset",
+          "s": 14.285,
+          "e": 14.623
+        },
+        {
+          "w": "the",
+          "s": 14.623,
+          "e": 14.71
+        },
+        {
+          "w": "brake",
+          "s": 14.71,
+          "e": 14.985
+        },
+        {
+          "w": "by",
+          "s": 14.985,
+          "e": 15.197
+        },
+        {
+          "w": "hand",
+          "s": 15.197,
+          "e": 15.91
+        },
+        {
+          "w": "At",
+          "s": 16.01,
+          "e": 16.147
+        },
+        {
+          "w": "the",
+          "s": 16.147,
+          "e": 16.248
+        },
+        {
+          "w": "far",
+          "s": 16.248,
+          "e": 16.598
+        },
+        {
+          "w": "end",
+          "s": 16.598,
+          "e": 17.16
+        },
+        {
+          "w": "On",
+          "s": 17.298,
+          "e": 17.572
+        },
+        {
+          "w": "foot",
+          "s": 17.572,
+          "e": 18.26
+        }
+      ]
+    },
+    {
+      "id": "l05",
+      "who": "N",
+      "shot": "rule1",
+      "text": "Rule one. Torch at the floor, never ahead. You see legs before you see faces.",
+      "cap": "RULE 1. TORCH AT THE FLOOR.<br>LEGS BEFORE <b>FACES</b>.",
+      "start": 19.035,
+      "end": 25.26,
+      "words": [
+        {
+          "w": "Rule",
+          "s": 19.485,
+          "e": 19.81
+        },
+        {
+          "w": "one",
+          "s": 19.81,
+          "e": 20.185
+        },
+        {
+          "w": "Torch",
+          "s": 20.297,
+          "e": 20.622
+        },
+        {
+          "w": "at",
+          "s": 20.622,
+          "e": 20.698
+        },
+        {
+          "w": "the",
+          "s": 20.698,
+          "e": 20.81
+        },
+        {
+          "w": "floor",
+          "s": 20.81,
+          "e": 21.235
+        },
+        {
+          "w": "never",
+          "s": 21.285,
+          "e": 21.56
+        },
+        {
+          "w": "ahead",
+          "s": 21.56,
+          "e": 22.26
+        },
+        {
+          "w": "You",
+          "s": 22.397,
+          "e": 22.573
+        },
+        {
+          "w": "see",
+          "s": 22.573,
+          "e": 22.823
+        },
+        {
+          "w": "legs",
+          "s": 22.823,
+          "e": 23.285
+        },
+        {
+          "w": "before",
+          "s": 23.285,
+          "e": 23.66
+        },
+        {
+          "w": "you",
+          "s": 23.66,
+          "e": 23.822
+        },
+        {
+          "w": "see",
+          "s": 23.822,
+          "e": 24.048
+        },
+        {
+          "w": "faces",
+          "s": 24.048,
+          "e": 24.985
+        }
+      ]
+    },
+    {
+      "id": "l06",
+      "who": "N",
+      "shot": "obey1",
+      "text": "So the beam stays on the floor. Carriage one. Empty.",
+      "cap": "THE BEAM STAYS LOW.<br>CARRIAGE ONE. <u>EMPTY</u>.",
+      "start": 25.61,
+      "end": 29.96,
+      "words": [
+        {
+          "w": "So",
+          "s": 26.01,
+          "e": 26.122
+        },
+        {
+          "w": "the",
+          "s": 26.122,
+          "e": 26.247
+        },
+        {
+          "w": "beam",
+          "s": 26.247,
+          "e": 26.585
+        },
+        {
+          "w": "stays",
+          "s": 26.585,
+          "e": 26.922
+        },
+        {
+          "w": "on",
+          "s": 26.922,
+          "e": 27.023
+        },
+        {
+          "w": "the",
+          "s": 27.023,
+          "e": 27.122
+        },
+        {
+          "w": "floor",
+          "s": 27.122,
+          "e": 27.785
+        },
+        {
+          "w": "Carriage",
+          "s": 27.947,
+          "e": 28.373
+        },
+        {
+          "w": "one",
+          "s": 28.373,
+          "e": 28.735
+        },
+        {
+          "w": "Empty",
+          "s": 28.822,
+          "e": 29.66
+        }
+      ]
+    },
+    {
+      "id": "l07",
+      "who": "N",
+      "shot": "plant",
+      "text": "Radio. Recovery in four days. Do not open sealed compartments.",
+      "cap": "RADIO: RECOVERY IN 4 DAYS.<br><b>DO NOT OPEN</b> SEALED DOORS.",
+      "start": 30.51,
+      "end": 35.785,
+      "words": [
+        {
+          "w": "Radio",
+          "s": 30.935,
+          "e": 31.435
+        },
+        {
+          "w": "Recovery",
+          "s": 31.51,
+          "e": 32.035
+        },
+        {
+          "w": "in",
+          "s": 32.035,
+          "e": 32.198
+        },
+        {
+          "w": "four",
+          "s": 32.198,
+          "e": 32.485
+        },
+        {
+          "w": "days",
+          "s": 32.485,
+          "e": 33.21
+        },
+        {
+          "w": "Do",
+          "s": 33.347,
+          "e": 33.485
+        },
+        {
+          "w": "not",
+          "s": 33.485,
+          "e": 33.735
+        },
+        {
+          "w": "open",
+          "s": 33.735,
+          "e": 34.085
+        },
+        {
+          "w": "sealed",
+          "s": 34.085,
+          "e": 34.46
+        },
+        {
+          "w": "compartments",
+          "s": 34.46,
+          "e": 35.51
+        }
+      ]
+    },
+    {
+      "id": "l08",
+      "who": "N",
+      "shot": "rule2",
+      "text": "Rule two. One hand always empty.",
+      "cap": "RULE 2. ONE HAND<br>ALWAYS <b>EMPTY</b>.",
+      "start": 36.385,
+      "end": 39.81,
+      "words": [
+        {
+          "w": "Rule",
+          "s": 36.81,
+          "e": 37.11
+        },
+        {
+          "w": "two",
+          "s": 37.11,
+          "e": 37.535
+        },
+        {
+          "w": "One",
+          "s": 37.673,
+          "e": 37.935
+        },
+        {
+          "w": "hand",
+          "s": 37.935,
+          "e": 38.272
+        },
+        {
+          "w": "always",
+          "s": 38.272,
+          "e": 38.722
+        },
+        {
+          "w": "empty",
+          "s": 38.722,
+          "e": 39.535
+        }
+      ]
+    },
+    {
+      "id": "l09",
+      "who": "N",
+      "shot": "obey2",
+      "text": "Torch left. Right hand free. Carriage twelve. Twenty. Twenty-six. Empty.",
+      "cap": "TORCH LEFT. RIGHT HAND FREE.<br>12. 20. 26. <u>EMPTY</u>.",
+      "start": 40.16,
+      "end": 45.91,
+      "words": [
+        {
+          "w": "Torch",
+          "s": 40.51,
+          "e": 40.835
+        },
+        {
+          "w": "left",
+          "s": 40.835,
+          "e": 41.16
+        },
+        {
+          "w": "Right",
+          "s": 41.247,
+          "e": 41.535
+        },
+        {
+          "w": "hand",
+          "s": 41.535,
+          "e": 41.898
+        },
+        {
+          "w": "free",
+          "s": 41.898,
+          "e": 42.435
+        },
+        {
+          "w": "Carriage",
+          "s": 42.573,
+          "e": 42.972
+        },
+        {
+          "w": "twelve",
+          "s": 42.972,
+          "e": 43.385
+        },
+        {
+          "w": "Twenty",
+          "s": 43.448,
+          "e": 43.885
+        },
+        {
+          "w": "Twenty-six",
+          "s": 43.972,
+          "e": 44.71
+        },
+        {
+          "w": "Empty",
+          "s": 44.798,
+          "e": 45.635
+        }
+      ]
+    },
+    {
+      "id": "l10",
+      "who": "N",
+      "shot": "count",
+      "text": "Thirty-one carriages. Thirty-one empty. You checked every one this time.",
+      "cap": "31 CARRIAGES. 31 EMPTY.<br>YOU CHECKED <b>EVERY ONE</b>.",
+      "start": 46.46,
+      "end": 51.935,
+      "words": [
+        {
+          "w": "Thirty-one",
+          "s": 46.86,
+          "e": 47.398
+        },
+        {
+          "w": "carriages",
+          "s": 47.398,
+          "e": 48.11
+        },
+        {
+          "w": "Thirty-one",
+          "s": 48.222,
+          "e": 48.797
+        },
+        {
+          "w": "empty",
+          "s": 48.797,
+          "e": 49.435
+        },
+        {
+          "w": "You",
+          "s": 49.547,
+          "e": 49.735
+        },
+        {
+          "w": "checked",
+          "s": 49.735,
+          "e": 50.098
+        },
+        {
+          "w": "every",
+          "s": 50.098,
+          "e": 50.435
+        },
+        {
+          "w": "one",
+          "s": 50.435,
+          "e": 50.66
+        },
+        {
+          "w": "this",
+          "s": 50.66,
+          "e": 50.872
+        },
+        {
+          "w": "time",
+          "s": 50.872,
+          "e": 51.66
+        }
+      ]
+    },
+    {
+      "id": "l11",
+      "who": "N",
+      "shot": "rule3",
+      "text": "Rule three. Never open a door you can't close behind you.",
+      "cap": "RULE 3. NEVER OPEN A DOOR<br>YOU CAN'T <u>CLOSE</u> BEHIND YOU.",
+      "start": 52.535,
+      "end": 57.035,
+      "words": [
+        {
+          "w": "Rule",
+          "s": 52.96,
+          "e": 53.26
+        },
+        {
+          "w": "three",
+          "s": 53.26,
+          "e": 53.81
+        },
+        {
+          "w": "Never",
+          "s": 53.948,
+          "e": 54.273
+        },
+        {
+          "w": "open",
+          "s": 54.273,
+          "e": 54.585
+        },
+        {
+          "w": "a",
+          "s": 54.585,
+          "e": 54.698
+        },
+        {
+          "w": "door",
+          "s": 54.698,
+          "e": 54.985
+        },
+        {
+          "w": "you",
+          "s": 54.985,
+          "e": 55.11
+        },
+        {
+          "w": "can't",
+          "s": 55.11,
+          "e": 55.385
+        },
+        {
+          "w": "close",
+          "s": 55.385,
+          "e": 55.735
+        },
+        {
+          "w": "behind",
+          "s": 55.735,
+          "e": 56.21
+        },
+        {
+          "w": "you",
+          "s": 56.21,
+          "e": 56.735
+        }
+      ]
+    },
+    {
+      "id": "l12",
+      "who": "N",
+      "shot": "obey3",
+      "text": "The brake lever is outside carriage thirty-two. You don't need the door.",
+      "cap": "THE LEVER IS <b>OUTSIDE</b> 32.<br>YOU DON'T NEED THE DOOR.",
+      "start": 57.485,
+      "end": 62.435,
+      "words": [
+        {
+          "w": "The",
+          "s": 57.86,
+          "e": 57.935
+        },
+        {
+          "w": "brake",
+          "s": 57.935,
+          "e": 58.285
+        },
+        {
+          "w": "lever",
+          "s": 58.285,
+          "e": 58.61
+        },
+        {
+          "w": "is",
+          "s": 58.61,
+          "e": 58.773
+        },
+        {
+          "w": "outside",
+          "s": 58.773,
+          "e": 59.385
+        },
+        {
+          "w": "carriage",
+          "s": 59.385,
+          "e": 59.773
+        },
+        {
+          "w": "thirty-two",
+          "s": 59.773,
+          "e": 60.61
+        },
+        {
+          "w": "You",
+          "s": 60.773,
+          "e": 60.898
+        },
+        {
+          "w": "don't",
+          "s": 60.898,
+          "e": 61.085
+        },
+        {
+          "w": "need",
+          "s": 61.085,
+          "e": 61.297
+        },
+        {
+          "w": "the",
+          "s": 61.297,
+          "e": 61.423
+        },
+        {
+          "w": "door",
+          "s": 61.423,
+          "e": 62.16
+        }
+      ]
+    },
+    {
+      "id": "l13",
+      "who": "N",
+      "shot": "knock",
+      "text": "Four thirty-one. Your hand is on the lever, and the knocking starts.",
+      "cap": "<b>4:31 AM</b>. HAND ON THE LEVER.<br>THE KNOCKING STARTS.",
+      "start": 63.035,
+      "end": 67.785,
+      "words": [
+        {
+          "w": "Four",
+          "s": 63.46,
+          "e": 63.723
+        },
+        {
+          "w": "thirty-one",
+          "s": 63.723,
+          "e": 64.635
+        },
+        {
+          "w": "Your",
+          "s": 64.773,
+          "e": 64.973
+        },
+        {
+          "w": "hand",
+          "s": 64.973,
+          "e": 65.323
+        },
+        {
+          "w": "is",
+          "s": 65.323,
+          "e": 65.423
+        },
+        {
+          "w": "on",
+          "s": 65.423,
+          "e": 65.548
+        },
+        {
+          "w": "the",
+          "s": 65.548,
+          "e": 65.635
+        },
+        {
+          "w": "lever",
+          "s": 65.635,
+          "e": 65.985
+        },
+        {
+          "w": "and",
+          "s": 66.035,
+          "e": 66.147
+        },
+        {
+          "w": "the",
+          "s": 66.147,
+          "e": 66.235
+        },
+        {
+          "w": "knocking",
+          "s": 66.235,
+          "e": 66.698
+        },
+        {
+          "w": "starts",
+          "s": 66.698,
+          "e": 67.51
+        }
+      ]
+    },
+    {
+      "id": "l14",
+      "who": "N",
+      "shot": "knock",
+      "text": "Not banging. Knocking. Three long. Three short. Three long.",
+      "cap": "NOT BANGING. <u>KNOCKING</u>.<br>THREE LONG. THREE SHORT. THREE LONG.",
+      "start": 68.285,
+      "end": 72.46,
+      "words": [
+        {
+          "w": "Not",
+          "s": 68.685,
+          "e": 68.935
+        },
+        {
+          "w": "banging",
+          "s": 68.935,
+          "e": 69.435
+        },
+        {
+          "w": "Knocking",
+          "s": 69.51,
+          "e": 69.91
+        },
+        {
+          "w": "Three",
+          "s": 69.973,
+          "e": 70.21
+        },
+        {
+          "w": "long",
+          "s": 70.21,
+          "e": 70.535
+        },
+        {
+          "w": "Three",
+          "s": 70.597,
+          "e": 70.847
+        },
+        {
+          "w": "short",
+          "s": 70.847,
+          "e": 71.16
+        },
+        {
+          "w": "Three",
+          "s": 71.223,
+          "e": 71.46
+        },
+        {
+          "w": "long",
+          "s": 71.46,
+          "e": 72.185
+        }
+      ]
+    },
+    {
+      "id": "l15",
+      "who": "N",
+      "shot": "recall",
+      "text": "You know that pattern. You watched it in a mirror on day four.",
+      "cap": "YOU KNOW THAT PATTERN.<br>YOUR MIRROR. <b>DAY 4</b>.",
+      "start": 73.06,
+      "end": 77.685,
+      "words": [
+        {
+          "w": "You",
+          "s": 73.46,
+          "e": 73.56
+        },
+        {
+          "w": "know",
+          "s": 73.56,
+          "e": 73.76
+        },
+        {
+          "w": "that",
+          "s": 73.76,
+          "e": 74.023
+        },
+        {
+          "w": "pattern",
+          "s": 74.023,
+          "e": 74.76
+        },
+        {
+          "w": "You",
+          "s": 74.897,
+          "e": 75.073
+        },
+        {
+          "w": "watched",
+          "s": 75.073,
+          "e": 75.435
+        },
+        {
+          "w": "it",
+          "s": 75.435,
+          "e": 75.535
+        },
+        {
+          "w": "in",
+          "s": 75.535,
+          "e": 75.622
+        },
+        {
+          "w": "a",
+          "s": 75.622,
+          "e": 75.723
+        },
+        {
+          "w": "mirror",
+          "s": 75.723,
+          "e": 76.16
+        },
+        {
+          "w": "on",
+          "s": 76.16,
+          "e": 76.36
+        },
+        {
+          "w": "day",
+          "s": 76.36,
+          "e": 76.66
+        },
+        {
+          "w": "four",
+          "s": 76.66,
+          "e": 77.41
+        }
+      ]
+    },
+    {
+      "id": "l16",
+      "who": "N",
+      "shot": "recall",
+      "text": "The car behind you. You drove on. Their lights went out.",
+      "cap": "THE CAR BEHIND YOU.<br>YOU DROVE ON. THEIR LIGHTS <u>WENT OUT</u>.",
+      "start": 78.235,
+      "end": 82.31,
+      "words": [
+        {
+          "w": "The",
+          "s": 78.585,
+          "e": 78.698
+        },
+        {
+          "w": "car",
+          "s": 78.698,
+          "e": 79.01
+        },
+        {
+          "w": "behind",
+          "s": 79.01,
+          "e": 79.435
+        },
+        {
+          "w": "you",
+          "s": 79.435,
+          "e": 79.61
+        },
+        {
+          "w": "You",
+          "s": 79.71,
+          "e": 79.86
+        },
+        {
+          "w": "drove",
+          "s": 79.86,
+          "e": 80.235
+        },
+        {
+          "w": "on",
+          "s": 80.235,
+          "e": 80.585
+        },
+        {
+          "w": "Their",
+          "s": 80.66,
+          "e": 80.885
+        },
+        {
+          "w": "lights",
+          "s": 80.885,
+          "e": 81.235
+        },
+        {
+          "w": "went",
+          "s": 81.235,
+          "e": 81.41
+        },
+        {
+          "w": "out",
+          "s": 81.41,
+          "e": 82.035
+        }
+      ]
+    },
+    {
+      "id": "l17",
+      "who": "N",
+      "shot": "walk",
+      "text": "She's been walking for three days. Following the only other thing alive.",
+      "cap": "SHE'S WALKED <b>THREE DAYS</b>.<br>FOLLOWING THE ONLY OTHER THING ALIVE.",
+      "start": 82.91,
+      "end": 88.11,
+      "words": [
+        {
+          "w": "She's",
+          "s": 83.31,
+          "e": 83.485
+        },
+        {
+          "w": "been",
+          "s": 83.485,
+          "e": 83.697
+        },
+        {
+          "w": "walking",
+          "s": 83.697,
+          "e": 84.135
+        },
+        {
+          "w": "for",
+          "s": 84.135,
+          "e": 84.31
+        },
+        {
+          "w": "three",
+          "s": 84.31,
+          "e": 84.585
+        },
+        {
+          "w": "days",
+          "s": 84.585,
+          "e": 85.285
+        },
+        {
+          "w": "Following",
+          "s": 85.435,
+          "e": 85.897
+        },
+        {
+          "w": "the",
+          "s": 85.897,
+          "e": 86.048
+        },
+        {
+          "w": "only",
+          "s": 86.048,
+          "e": 86.41
+        },
+        {
+          "w": "other",
+          "s": 86.41,
+          "e": 86.722
+        },
+        {
+          "w": "thing",
+          "s": 86.722,
+          "e": 86.96
+        },
+        {
+          "w": "alive",
+          "s": 86.96,
+          "e": 87.835
+        }
+      ]
+    },
+    {
+      "id": "l18",
+      "who": "N",
+      "shot": "twist",
+      "text": "And she sealed this door from the inside. Nobody seals a door against nothing.",
+      "cap": "SHE SEALED IT FROM INSIDE.<br>NOBODY SEALS A DOOR AGAINST <u>NOTHING</u>.",
+      "start": 88.71,
+      "end": 94.535,
+      "words": [
+        {
+          "w": "And",
+          "s": 89.085,
+          "e": 89.235
+        },
+        {
+          "w": "she",
+          "s": 89.235,
+          "e": 89.41
+        },
+        {
+          "w": "sealed",
+          "s": 89.41,
+          "e": 89.76
+        },
+        {
+          "w": "this",
+          "s": 89.76,
+          "e": 89.998
+        },
+        {
+          "w": "door",
+          "s": 89.998,
+          "e": 90.335
+        },
+        {
+          "w": "from",
+          "s": 90.335,
+          "e": 90.472
+        },
+        {
+          "w": "the",
+          "s": 90.472,
+          "e": 90.61
+        },
+        {
+          "w": "inside",
+          "s": 90.61,
+          "e": 91.56
+        },
+        {
+          "w": "Nobody",
+          "s": 91.735,
+          "e": 92.223
+        },
+        {
+          "w": "seals",
+          "s": 92.223,
+          "e": 92.66
+        },
+        {
+          "w": "a",
+          "s": 92.66,
+          "e": 92.772
+        },
+        {
+          "w": "door",
+          "s": 92.772,
+          "e": 93.135
+        },
+        {
+          "w": "against",
+          "s": 93.135,
+          "e": 93.485
+        },
+        {
+          "w": "nothing",
+          "s": 93.485,
+          "e": 94.26
+        }
+      ]
+    },
+    {
+      "id": "l19",
+      "who": "N",
+      "shot": "end",
+      "text": "Do you open it?",
+      "cap": "",
+      "start": 95.685,
+      "end": 97.61,
+      "words": [
+        {
+          "w": "Do",
+          "s": 96.06,
+          "e": 96.235
+        },
+        {
+          "w": "you",
+          "s": 96.235,
+          "e": 96.435
+        },
+        {
+          "w": "open",
+          "s": 96.435,
+          "e": 96.873
+        },
+        {
+          "w": "it",
+          "s": 96.873,
+          "e": 97.335
+        }
+      ]
+    }
+  ]
+}

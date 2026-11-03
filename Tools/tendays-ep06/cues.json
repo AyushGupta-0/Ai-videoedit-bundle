@@ -1,0 +1,7 @@
+[
+  { "file": "assets/sfx/horn_distant.wav",     "at": 12.4, "gain": 0.45 },
+  { "file": "assets/sfx/low_drone_75eb41cd.ogg","at": 62.9, "gain": 0.55 },
+  { "file": "assets/sfx/brake_squeal.wav",     "at": 72.6, "gain": 0.55 },
+  { "file": "assets/sfx/low_drone_75eb41cd.ogg","at": 77.8, "gain": 0.62 },
+  { "file": "assets/sfx/low_drone_75eb41cd.ogg","at": 83.8, "gain": 0.62 }
+]

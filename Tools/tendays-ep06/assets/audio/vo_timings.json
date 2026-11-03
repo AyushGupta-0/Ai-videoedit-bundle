@@ -1,0 +1,1078 @@
+{
+  "duration": 89.32,
+  "lines": [
+    {
+      "id": "l01",
+      "who": "N",
+      "shot": "recap",
+      "text": "You went down. The box was empty.",
+      "cap": "YOU WENT DOWN.<br>THE BOX WAS <b>EMPTY</b>.",
+      "start": 0.25,
+      "end": 3.3,
+      "words": [
+        {
+          "w": "You",
+          "s": 0.65,
+          "e": 0.775
+        },
+        {
+          "w": "went",
+          "s": 0.775,
+          "e": 0.95
+        },
+        {
+          "w": "down",
+          "s": 0.95,
+          "e": 1.4
+        },
+        {
+          "w": "The",
+          "s": 1.475,
+          "e": 1.613
+        },
+        {
+          "w": "box",
+          "s": 1.613,
+          "e": 2.0
+        },
+        {
+          "w": "was",
+          "s": 2.0,
+          "e": 2.188
+        },
+        {
+          "w": "empty",
+          "s": 2.188,
+          "e": 3.025
+        }
+      ]
+    },
+    {
+      "id": "l02",
+      "who": "N",
+      "shot": "hook",
+      "text": "Day six. For the first time, nothing can reach you.",
+      "cap": "<b>DAY 6</b>. FOR THE FIRST TIME,<br>NOTHING CAN REACH YOU.",
+      "start": 3.9,
+      "end": 7.975,
+      "words": [
+        {
+          "w": "Day",
+          "s": 4.3,
+          "e": 4.55
+        },
+        {
+          "w": "six",
+          "s": 4.55,
+          "e": 5.175
+        },
+        {
+          "w": "For",
+          "s": 5.3,
+          "e": 5.438
+        },
+        {
+          "w": "the",
+          "s": 5.438,
+          "e": 5.537
+        },
+        {
+          "w": "first",
+          "s": 5.537,
+          "e": 5.85
+        },
+        {
+          "w": "time",
+          "s": 5.85,
+          "e": 6.175
+        },
+        {
+          "w": "nothing",
+          "s": 6.225,
+          "e": 6.6
+        },
+        {
+          "w": "can",
+          "s": 6.6,
+          "e": 6.8
+        },
+        {
+          "w": "reach",
+          "s": 6.8,
+          "e": 7.137
+        },
+        {
+          "w": "you",
+          "s": 7.137,
+          "e": 7.65
+        }
+      ]
+    },
+    {
+      "id": "l03",
+      "who": "N",
+      "shot": "hook",
+      "text": "And that's what it costs you. You stop checking.",
+      "cap": "AND THAT'S WHAT IT <u>COSTS YOU</u>.<br>YOU STOP CHECKING.",
+      "start": 8.035,
+      "end": 11.585,
+      "words": [
+        {
+          "w": "And",
+          "s": 8.41,
+          "e": 8.547
+        },
+        {
+          "w": "that's",
+          "s": 8.547,
+          "e": 8.822
+        },
+        {
+          "w": "what",
+          "s": 8.822,
+          "e": 8.947
+        },
+        {
+          "w": "it",
+          "s": 8.947,
+          "e": 9.035
+        },
+        {
+          "w": "costs",
+          "s": 9.035,
+          "e": 9.46
+        },
+        {
+          "w": "you",
+          "s": 9.46,
+          "e": 9.81
+        },
+        {
+          "w": "You",
+          "s": 9.973,
+          "e": 10.135
+        },
+        {
+          "w": "stop",
+          "s": 10.135,
+          "e": 10.473
+        },
+        {
+          "w": "checking",
+          "s": 10.473,
+          "e": 11.31
+        }
+      ]
+    },
+    {
+      "id": "l04",
+      "who": "N",
+      "shot": "wide",
+      "text": "A moving train. Nothing boards it above twenty miles an hour. That's physics.",
+      "cap": "A MOVING TRAIN. NOTHING BOARDS<br>IT ABOVE <b>20 MPH</b>.",
+      "start": 12.335,
+      "end": 18.285,
+      "words": [
+        {
+          "w": "A",
+          "s": 12.735,
+          "e": 12.822
+        },
+        {
+          "w": "moving",
+          "s": 12.822,
+          "e": 13.273
+        },
+        {
+          "w": "train",
+          "s": 13.273,
+          "e": 14.035
+        },
+        {
+          "w": "Nothing",
+          "s": 14.185,
+          "e": 14.623
+        },
+        {
+          "w": "boards",
+          "s": 14.623,
+          "e": 14.973
+        },
+        {
+          "w": "it",
+          "s": 14.973,
+          "e": 15.047
+        },
+        {
+          "w": "above",
+          "s": 15.047,
+          "e": 15.322
+        },
+        {
+          "w": "twenty",
+          "s": 15.322,
+          "e": 15.66
+        },
+        {
+          "w": "miles",
+          "s": 15.66,
+          "e": 16.023
+        },
+        {
+          "w": "an",
+          "s": 16.023,
+          "e": 16.147
+        },
+        {
+          "w": "hour",
+          "s": 16.147,
+          "e": 16.735
+        },
+        {
+          "w": "That's",
+          "s": 16.848,
+          "e": 17.197
+        },
+        {
+          "w": "physics",
+          "s": 17.197,
+          "e": 18.01
+        }
+      ]
+    },
+    {
+      "id": "l05",
+      "who": "N",
+      "shot": "rule1",
+      "text": "Rule one. Hold the dead-man's switch. Let go for sixty seconds, and the train stops itself.",
+      "cap": "RULE 1. HOLD THE SWITCH.<br>LET GO, AND IT <b>STOPS</b>.",
+      "start": 18.785,
+      "end": 25.91,
+      "words": [
+        {
+          "w": "Rule",
+          "s": 19.235,
+          "e": 19.572
+        },
+        {
+          "w": "one",
+          "s": 19.572,
+          "e": 20.135
+        },
+        {
+          "w": "Hold",
+          "s": 20.273,
+          "e": 20.597
+        },
+        {
+          "w": "the",
+          "s": 20.597,
+          "e": 20.723
+        },
+        {
+          "w": "dead-man's",
+          "s": 20.723,
+          "e": 21.36
+        },
+        {
+          "w": "switch",
+          "s": 21.36,
+          "e": 22.11
+        },
+        {
+          "w": "Let",
+          "s": 22.272,
+          "e": 22.46
+        },
+        {
+          "w": "go",
+          "s": 22.46,
+          "e": 22.635
+        },
+        {
+          "w": "for",
+          "s": 22.635,
+          "e": 22.798
+        },
+        {
+          "w": "sixty",
+          "s": 22.798,
+          "e": 23.235
+        },
+        {
+          "w": "seconds",
+          "s": 23.235,
+          "e": 23.66
+        },
+        {
+          "w": "and",
+          "s": 23.697,
+          "e": 23.798
+        },
+        {
+          "w": "the",
+          "s": 23.798,
+          "e": 23.897
+        },
+        {
+          "w": "train",
+          "s": 23.897,
+          "e": 24.347
+        },
+        {
+          "w": "stops",
+          "s": 24.347,
+          "e": 24.735
+        },
+        {
+          "w": "itself",
+          "s": 24.735,
+          "e": 25.635
+        }
+      ]
+    },
+    {
+      "id": "l06",
+      "who": "N",
+      "shot": "obey1",
+      "text": "So your thumb never leaves it.",
+      "cap": "SO YOUR THUMB<br>NEVER LEAVES IT.",
+      "start": 26.26,
+      "end": 28.985,
+      "words": [
+        {
+          "w": "So",
+          "s": 26.66,
+          "e": 26.785
+        },
+        {
+          "w": "your",
+          "s": 26.785,
+          "e": 27.022
+        },
+        {
+          "w": "thumb",
+          "s": 27.022,
+          "e": 27.485
+        },
+        {
+          "w": "never",
+          "s": 27.485,
+          "e": 27.835
+        },
+        {
+          "w": "leaves",
+          "s": 27.835,
+          "e": 28.248
+        },
+        {
+          "w": "it",
+          "s": 28.248,
+          "e": 28.71
+        }
+      ]
+    },
+    {
+      "id": "l07",
+      "who": "N",
+      "shot": "plant",
+      "text": "Thirty-two carriages behind you. You checked eleven. The rest were sealed.",
+      "cap": "32 CARRIAGES BEHIND YOU.<br>YOU CHECKED <b>ELEVEN</b>.",
+      "start": 29.535,
+      "end": 34.935,
+      "words": [
+        {
+          "w": "Thirty-two",
+          "s": 29.935,
+          "e": 30.447
+        },
+        {
+          "w": "carriages",
+          "s": 30.447,
+          "e": 30.935
+        },
+        {
+          "w": "behind",
+          "s": 30.935,
+          "e": 31.41
+        },
+        {
+          "w": "you",
+          "s": 31.41,
+          "e": 31.785
+        },
+        {
+          "w": "You",
+          "s": 31.923,
+          "e": 32.097
+        },
+        {
+          "w": "checked",
+          "s": 32.097,
+          "e": 32.41
+        },
+        {
+          "w": "eleven",
+          "s": 32.41,
+          "e": 33.06
+        },
+        {
+          "w": "The",
+          "s": 33.16,
+          "e": 33.298
+        },
+        {
+          "w": "rest",
+          "s": 33.298,
+          "e": 33.66
+        },
+        {
+          "w": "were",
+          "s": 33.66,
+          "e": 33.835
+        },
+        {
+          "w": "sealed",
+          "s": 33.835,
+          "e": 34.66
+        }
+      ]
+    },
+    {
+      "id": "l08",
+      "who": "N",
+      "shot": "rule2",
+      "text": "Rule two. Sleep in twenty-minute blocks. Never longer.",
+      "cap": "RULE 2. SLEEP IN<br><b>20-MINUTE</b> BLOCKS.",
+      "start": 35.535,
+      "end": 40.135,
+      "words": [
+        {
+          "w": "Rule",
+          "s": 35.985,
+          "e": 36.335
+        },
+        {
+          "w": "two",
+          "s": 36.335,
+          "e": 36.71
+        },
+        {
+          "w": "Sleep",
+          "s": 36.835,
+          "e": 37.21
+        },
+        {
+          "w": "in",
+          "s": 37.21,
+          "e": 37.36
+        },
+        {
+          "w": "twenty-minute",
+          "s": 37.36,
+          "e": 37.885
+        },
+        {
+          "w": "blocks",
+          "s": 37.885,
+          "e": 38.535
+        },
+        {
+          "w": "Never",
+          "s": 38.673,
+          "e": 39.035
+        },
+        {
+          "w": "longer",
+          "s": 39.035,
+          "e": 39.835
+        }
+      ]
+    },
+    {
+      "id": "l09",
+      "who": "N",
+      "shot": "obey2",
+      "text": "You set the timer. Twenty. Twenty. Twenty.",
+      "cap": "YOU SET THE TIMER.<br>TWENTY. TWENTY. TWENTY.",
+      "start": 40.485,
+      "end": 44.135,
+      "words": [
+        {
+          "w": "You",
+          "s": 40.86,
+          "e": 40.997
+        },
+        {
+          "w": "set",
+          "s": 40.997,
+          "e": 41.223
+        },
+        {
+          "w": "the",
+          "s": 41.223,
+          "e": 41.31
+        },
+        {
+          "w": "timer",
+          "s": 41.31,
+          "e": 41.81
+        },
+        {
+          "w": "Twenty",
+          "s": 41.923,
+          "e": 42.335
+        },
+        {
+          "w": "Twenty",
+          "s": 42.423,
+          "e": 42.86
+        },
+        {
+          "w": "Twenty",
+          "s": 42.947,
+          "e": 43.835
+        }
+      ]
+    },
+    {
+      "id": "l10",
+      "who": "N",
+      "shot": "radio",
+      "text": "Radio. The loop, whole at last. Do not approach the cities. Transit south. Rig Bravo. Six-two south.",
+      "cap": "THE LOOP, WHOLE AT LAST:<br><b>RIG BRAVO. SIX-TWO SOUTH.</b>",
+      "start": 44.685,
+      "end": 51.91,
+      "words": [
+        {
+          "w": "Radio",
+          "s": 45.11,
+          "e": 45.56
+        },
+        {
+          "w": "The",
+          "s": 45.61,
+          "e": 45.747
+        },
+        {
+          "w": "loop",
+          "s": 45.747,
+          "e": 46.035
+        },
+        {
+          "w": "whole",
+          "s": 46.11,
+          "e": 46.322
+        },
+        {
+          "w": "at",
+          "s": 46.322,
+          "e": 46.41
+        },
+        {
+          "w": "last",
+          "s": 46.41,
+          "e": 46.935
+        },
+        {
+          "w": "Do",
+          "s": 47.035,
+          "e": 47.147
+        },
+        {
+          "w": "not",
+          "s": 47.147,
+          "e": 47.297
+        },
+        {
+          "w": "approach",
+          "s": 47.297,
+          "e": 47.66
+        },
+        {
+          "w": "the",
+          "s": 47.66,
+          "e": 47.797
+        },
+        {
+          "w": "cities",
+          "s": 47.797,
+          "e": 48.21
+        },
+        {
+          "w": "Transit",
+          "s": 48.26,
+          "e": 48.773
+        },
+        {
+          "w": "south",
+          "s": 48.773,
+          "e": 49.36
+        },
+        {
+          "w": "Rig",
+          "s": 49.497,
+          "e": 49.747
+        },
+        {
+          "w": "Bravo",
+          "s": 49.747,
+          "e": 50.31
+        },
+        {
+          "w": "Six-two",
+          "s": 50.398,
+          "e": 50.86
+        },
+        {
+          "w": "south",
+          "s": 50.86,
+          "e": 51.61
+        }
+      ]
+    },
+    {
+      "id": "l11",
+      "who": "N",
+      "shot": "rule3",
+      "text": "Rule three. Do not stop. For anything on the line.",
+      "cap": "RULE 3. DO NOT STOP.<br>FOR <u>ANYTHING</u> ON THE LINE.",
+      "start": 52.46,
+      "end": 56.785,
+      "words": [
+        {
+          "w": "Rule",
+          "s": 52.885,
+          "e": 53.21
+        },
+        {
+          "w": "three",
+          "s": 53.21,
+          "e": 53.585
+        },
+        {
+          "w": "Do",
+          "s": 53.66,
+          "e": 53.785
+        },
+        {
+          "w": "not",
+          "s": 53.785,
+          "e": 54.047
+        },
+        {
+          "w": "stop",
+          "s": 54.047,
+          "e": 54.66
+        },
+        {
+          "w": "For",
+          "s": 54.785,
+          "e": 54.973
+        },
+        {
+          "w": "anything",
+          "s": 54.973,
+          "e": 55.473
+        },
+        {
+          "w": "on",
+          "s": 55.473,
+          "e": 55.598
+        },
+        {
+          "w": "the",
+          "s": 55.598,
+          "e": 55.71
+        },
+        {
+          "w": "line",
+          "s": 55.71,
+          "e": 56.51
+        }
+      ]
+    },
+    {
+      "id": "l12",
+      "who": "N",
+      "shot": "obey3",
+      "text": "A thousand miles of range. The coast in two days. You don't stop.",
+      "cap": "1,000 MILES OF RANGE.<br>THE COAST IN <b>TWO DAYS</b>.",
+      "start": 57.235,
+      "end": 62.235,
+      "words": [
+        {
+          "w": "A",
+          "s": 57.635,
+          "e": 57.735
+        },
+        {
+          "w": "thousand",
+          "s": 57.735,
+          "e": 58.235
+        },
+        {
+          "w": "miles",
+          "s": 58.235,
+          "e": 58.622
+        },
+        {
+          "w": "of",
+          "s": 58.622,
+          "e": 58.747
+        },
+        {
+          "w": "range",
+          "s": 58.747,
+          "e": 59.31
+        },
+        {
+          "w": "The",
+          "s": 59.435,
+          "e": 59.572
+        },
+        {
+          "w": "coast",
+          "s": 59.572,
+          "e": 59.96
+        },
+        {
+          "w": "in",
+          "s": 59.96,
+          "e": 60.123
+        },
+        {
+          "w": "two",
+          "s": 60.123,
+          "e": 60.335
+        },
+        {
+          "w": "days",
+          "s": 60.335,
+          "e": 60.835
+        },
+        {
+          "w": "You",
+          "s": 60.91,
+          "e": 61.023
+        },
+        {
+          "w": "don't",
+          "s": 61.023,
+          "e": 61.222
+        },
+        {
+          "w": "stop",
+          "s": 61.222,
+          "e": 61.935
+        }
+      ]
+    },
+    {
+      "id": "l13",
+      "who": "N",
+      "shot": "slow",
+      "text": "Three oh two. You wake because the engine note has changed.",
+      "cap": "<b>3:02 AM</b>. YOU WAKE BECAUSE<br>THE ENGINE NOTE HAS CHANGED.",
+      "start": 62.835,
+      "end": 67.385,
+      "words": [
+        {
+          "w": "Three",
+          "s": 63.235,
+          "e": 63.548
+        },
+        {
+          "w": "oh",
+          "s": 63.548,
+          "e": 63.785
+        },
+        {
+          "w": "two",
+          "s": 63.785,
+          "e": 64.31
+        },
+        {
+          "w": "You",
+          "s": 64.498,
+          "e": 64.635
+        },
+        {
+          "w": "wake",
+          "s": 64.635,
+          "e": 64.86
+        },
+        {
+          "w": "because",
+          "s": 64.86,
+          "e": 65.21
+        },
+        {
+          "w": "the",
+          "s": 65.21,
+          "e": 65.373
+        },
+        {
+          "w": "engine",
+          "s": 65.373,
+          "e": 65.76
+        },
+        {
+          "w": "note",
+          "s": 65.76,
+          "e": 65.998
+        },
+        {
+          "w": "has",
+          "s": 65.998,
+          "e": 66.172
+        },
+        {
+          "w": "changed",
+          "s": 66.172,
+          "e": 67.085
+        }
+      ]
+    },
+    {
+      "id": "l14",
+      "who": "N",
+      "shot": "slow",
+      "text": "Your thumb is still on the switch. You never let go.",
+      "cap": "YOUR THUMB IS STILL ON IT.<br>YOU <b>NEVER LET GO</b>.",
+      "start": 67.885,
+      "end": 71.91,
+      "words": [
+        {
+          "w": "Your",
+          "s": 68.26,
+          "e": 68.46
+        },
+        {
+          "w": "thumb",
+          "s": 68.46,
+          "e": 68.785
+        },
+        {
+          "w": "is",
+          "s": 68.785,
+          "e": 68.91
+        },
+        {
+          "w": "still",
+          "s": 68.91,
+          "e": 69.197
+        },
+        {
+          "w": "on",
+          "s": 69.197,
+          "e": 69.323
+        },
+        {
+          "w": "the",
+          "s": 69.323,
+          "e": 69.423
+        },
+        {
+          "w": "switch",
+          "s": 69.423,
+          "e": 70.085
+        },
+        {
+          "w": "You",
+          "s": 70.222,
+          "e": 70.385
+        },
+        {
+          "w": "never",
+          "s": 70.385,
+          "e": 70.685
+        },
+        {
+          "w": "let",
+          "s": 70.685,
+          "e": 70.923
+        },
+        {
+          "w": "go",
+          "s": 70.923,
+          "e": 71.61
+        }
+      ]
+    },
+    {
+      "id": "l15",
+      "who": "N",
+      "shot": "gauge",
+      "text": "But the train is slowing. Forty. Thirty-one. Twenty-two.",
+      "cap": "BUT THE TRAIN IS SLOWING.<br>40. 31. <u>22</u>.",
+      "start": 72.46,
+      "end": 76.76,
+      "words": [
+        {
+          "w": "But",
+          "s": 72.81,
+          "e": 72.923
+        },
+        {
+          "w": "the",
+          "s": 72.923,
+          "e": 73.048
+        },
+        {
+          "w": "train",
+          "s": 73.048,
+          "e": 73.423
+        },
+        {
+          "w": "is",
+          "s": 73.423,
+          "e": 73.547
+        },
+        {
+          "w": "slowing",
+          "s": 73.547,
+          "e": 74.135
+        },
+        {
+          "w": "Forty",
+          "s": 74.26,
+          "e": 74.71
+        },
+        {
+          "w": "Thirty-one",
+          "s": 74.797,
+          "e": 75.41
+        },
+        {
+          "w": "Twenty-two",
+          "s": 75.473,
+          "e": 76.435
+        }
+      ]
+    },
+    {
+      "id": "l16",
+      "who": "N",
+      "shot": "recall",
+      "text": "Somebody pulled the emergency brake. From carriage thirty-two.",
+      "cap": "SOMEBODY PULLED THE BRAKE.<br>FROM CARRIAGE <u>THIRTY-TWO</u>.",
+      "start": 77.46,
+      "end": 82.06,
+      "words": [
+        {
+          "w": "Somebody",
+          "s": 77.86,
+          "e": 78.198
+        },
+        {
+          "w": "pulled",
+          "s": 78.198,
+          "e": 78.498
+        },
+        {
+          "w": "the",
+          "s": 78.498,
+          "e": 78.635
+        },
+        {
+          "w": "emergency",
+          "s": 78.635,
+          "e": 79.285
+        },
+        {
+          "w": "brake",
+          "s": 79.285,
+          "e": 79.91
+        },
+        {
+          "w": "From",
+          "s": 80.047,
+          "e": 80.297
+        },
+        {
+          "w": "carriage",
+          "s": 80.297,
+          "e": 80.772
+        },
+        {
+          "w": "thirty-two",
+          "s": 80.772,
+          "e": 81.76
+        }
+      ]
+    },
+    {
+      "id": "l17",
+      "who": "N",
+      "shot": "recall",
+      "text": "The one you didn't check.",
+      "cap": "THE ONE YOU <u>DIDN'T CHECK</u>.",
+      "start": 82.66,
+      "end": 84.91,
+      "words": [
+        {
+          "w": "The",
+          "s": 83.035,
+          "e": 83.16
+        },
+        {
+          "w": "one",
+          "s": 83.16,
+          "e": 83.447
+        },
+        {
+          "w": "you",
+          "s": 83.447,
+          "e": 83.61
+        },
+        {
+          "w": "didn't",
+          "s": 83.61,
+          "e": 83.948
+        },
+        {
+          "w": "check",
+          "s": 83.948,
+          "e": 84.61
+        }
+      ]
+    },
+    {
+      "id": "l18",
+      "who": "N",
+      "shot": "end",
+      "text": "Do you go and look?",
+      "cap": "",
+      "start": 86.06,
+      "end": 88.06,
+      "words": [
+        {
+          "w": "Do",
+          "s": 86.435,
+          "e": 86.535
+        },
+        {
+          "w": "you",
+          "s": 86.535,
+          "e": 86.697
+        },
+        {
+          "w": "go",
+          "s": 86.697,
+          "e": 87.01
+        },
+        {
+          "w": "and",
+          "s": 87.01,
+          "e": 87.16
+        },
+        {
+          "w": "look",
+          "s": 87.16,
+          "e": 87.76
+        }
+      ]
+    }
+  ]
+}

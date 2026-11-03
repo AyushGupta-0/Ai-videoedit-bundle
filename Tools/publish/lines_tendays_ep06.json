@@ -1,0 +1,172 @@
+{
+  "episode": "tendays-ep06-twenty-miles-an-hour",
+  "voices": {
+    "N": {
+      "kokoro": "am_michael",
+      "speed": 0.97,
+      "semitones": 0.0
+    }
+  },
+  "lines": [
+    {
+      "id": "l01",
+      "at": 0.25,
+      "who": "N",
+      "shot": "recap",
+      "text": "You went down. The box was empty.",
+      "cap": "YOU WENT DOWN.<br>THE BOX WAS <b>EMPTY</b>.",
+      "pause": 0.6
+    },
+    {
+      "id": "l02",
+      "at": 3.64,
+      "who": "N",
+      "shot": "hook",
+      "text": "Day six. For the first time, nothing can reach you.",
+      "cap": "<b>DAY 6</b>. FOR THE FIRST TIME,<br>NOTHING CAN REACH YOU."
+    },
+    {
+      "id": "l03",
+      "at": 7.59,
+      "who": "N",
+      "shot": "hook",
+      "text": "And that's what it costs you. You stop checking.",
+      "cap": "THAT'S WHAT IT <u>COSTS YOU</u>.<br>YOU STOP CHECKING.",
+      "pause": 0.75
+    },
+    {
+      "id": "l04",
+      "at": 11.9,
+      "who": "N",
+      "shot": "wide",
+      "text": "A moving train. Nothing boards it above twenty miles an hour. That's physics.",
+      "cap": "A MOVING TRAIN. NOTHING<br>BOARDS IT ABOVE <b>20 MPH</b>.",
+      "pause": 0.5
+    },
+    {
+      "id": "l05",
+      "at": 17.5,
+      "who": "N",
+      "shot": "rule1",
+      "text": "Rule one. Hold the dead-man's switch. Let go for sixty seconds, and the train stops itself.",
+      "cap": "RULE 1. HOLD THE SWITCH.<br>LET GO, AND IT <b>STOPS</b>.",
+      "pause": 0.35
+    },
+    {
+      "id": "l06",
+      "at": 24.1,
+      "who": "N",
+      "shot": "obey1",
+      "text": "So your thumb never leaves it.",
+      "cap": "SO YOUR THUMB<br>NEVER LEAVES IT.",
+      "pause": 0.55
+    },
+    {
+      "id": "l07",
+      "at": 27.06,
+      "who": "N",
+      "shot": "plant",
+      "text": "Thirty-two carriages behind you. You checked eleven. The rest were sealed.",
+      "cap": "32 CARRIAGES BEHIND YOU.<br>YOU CHECKED <b>ELEVEN</b>.",
+      "pause": 0.6
+    },
+    {
+      "id": "l08",
+      "at": 31.99,
+      "who": "N",
+      "shot": "rule2",
+      "text": "Rule two. Sleep in twenty-minute blocks. Never longer.",
+      "cap": "RULE 2. SLEEP IN<br><b>20-MINUTE</b> BLOCKS.",
+      "pause": 0.35
+    },
+    {
+      "id": "l09",
+      "at": 35.52,
+      "who": "N",
+      "shot": "obey2",
+      "text": "You set the timer. Twenty. Twenty. Twenty.",
+      "cap": "YOU SET THE TIMER.<br>TWENTY. TWENTY. TWENTY.",
+      "pause": 0.55
+    },
+    {
+      "id": "l10",
+      "at": 38.86,
+      "who": "N",
+      "shot": "radio",
+      "text": "Radio. The loop, whole at last. Do not approach the cities. Transit south. Rig Bravo. Six-two south.",
+      "cap": "THE LOOP, WHOLE AT LAST:<br><b>RIG BRAVO. SIX-TWO SOUTH.</b>",
+      "pause": 0.55
+    },
+    {
+      "id": "l11",
+      "at": 46.05,
+      "who": "N",
+      "shot": "rule3",
+      "text": "Rule three. Do not stop. For anything on the line.",
+      "cap": "RULE 3. DO NOT STOP.<br>FOR <u>ANYTHING</u> ON THE LINE.",
+      "pause": 0.45
+    },
+    {
+      "id": "l12",
+      "at": 50.45,
+      "who": "N",
+      "shot": "obey3",
+      "text": "A thousand miles of range. The coast in two days. You don't stop.",
+      "cap": "1,000 MILES OF RANGE.<br>THE COAST IN <b>TWO DAYS</b>.",
+      "pause": 0.6
+    },
+    {
+      "id": "l13",
+      "at": 56.15,
+      "who": "N",
+      "shot": "slow",
+      "text": "Three oh two. You wake because the engine note has changed.",
+      "cap": "<b>3:02 AM</b>. YOU WAKE.<br>THE ENGINE SOUNDS <u>WRONG</u>.",
+      "pause": 0.5
+    },
+    {
+      "id": "l14",
+      "at": 60.98,
+      "who": "N",
+      "shot": "slow",
+      "text": "Your thumb is still on the switch. You never let go.",
+      "cap": "YOUR THUMB IS STILL ON IT.<br>YOU <b>NEVER LET GO</b>.",
+      "pause": 0.55
+    },
+    {
+      "id": "l15",
+      "at": 65.86,
+      "who": "N",
+      "shot": "gauge",
+      "text": "But the train is slowing. Forty. Thirty-one. Twenty-two.",
+      "cap": "BUT THE TRAIN IS SLOWING.<br>40. 31. <u>22</u>.",
+      "pause": 0.7
+    },
+    {
+      "id": "l16",
+      "at": 69.73,
+      "who": "N",
+      "shot": "recall",
+      "text": "Somebody pulled the emergency brake. From carriage thirty-two.",
+      "cap": "THE BRAKE WAS PULLED.<br>FROM CARRIAGE <u>THIRTY-TWO</u>.",
+      "pause": 0.6
+    },
+    {
+      "id": "l17",
+      "at": 73.51,
+      "who": "N",
+      "shot": "recall",
+      "text": "The one you didn't check.",
+      "cap": "THE ONE YOU <u>DIDN'T CHECK</u>.",
+      "pause": 1.15
+    },
+    {
+      "id": "l18",
+      "at": 76.68,
+      "who": "N",
+      "shot": "end",
+      "text": "Do you go and look?",
+      "cap": ""
+    }
+  ]
+}

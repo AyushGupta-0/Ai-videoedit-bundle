@@ -1,0 +1,425 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <title>Ten Days — Day 6</title>
+    <!-- vendored: no network fetch during render. The plugin set has been free
+         for commercial use since GSAP 3.13; copied in from Tools/_shared/gsap -->
+    <script src="assets/gsap/gsap.min.js"></script>
+    <script src="assets/gsap/ScrambleTextPlugin.min.js"></script>
+    <script src="assets/gsap/SplitText.min.js"></script>
+    <script src="assets/gsap/DrawSVGPlugin.min.js"></script>
+    <script src="assets/gsap/CustomEase.min.js"></script>
+<style>
+  :root{
+    --night:#0b1220; --night2:#131d30; --road:#161d2b;
+    --amber:#f0a93c; --amber-lt:#ffd38a; --warm:#ffb64d;
+    --red:#ff4242; --red-dk:#c22b2b;
+    --ink:#060a12; --white:#ffffff; --grey:#8b97ab;
+  }
+  html,body{margin:0;background:#000;}
+  #root{position:relative;width:1080px;height:1920px;overflow:hidden;background:var(--night);
+        font-family:"Avenir Next","Helvetica Neue",Arial,sans-serif;}
+  .panel{position:absolute;inset:0;opacity:0;will-change:opacity;}
+  #hud{position:absolute;left:46px;top:44px;z-index:40;}
+  #daytag{display:flex;align-items:center;gap:9px;font-size:23px;font-weight:700;
+          letter-spacing:2.4px;color:var(--red);}
+  #daytag i{width:11px;height:11px;border-radius:50%;background:var(--red);display:block;}
+  #clock{font-size:54px;font-weight:700;color:var(--white);letter-spacing:1px;margin-top:2px;
+         font-variant-numeric:tabular-nums;}
+  #recov{font-size:20px;font-weight:600;letter-spacing:2.6px;color:var(--grey);margin-top:1px;}
+  #mark{position:absolute;right:46px;top:52px;z-index:40;font-size:18px;
+        letter-spacing:1.6px;color:#55617a;}
+  /* Captions sit above y=1500. Anything a panel draws below that collides with a
+     two-line caption, which is a hard lint error — keep panel text above it. */
+  #capwrap{position:absolute;left:70px;right:70px;bottom:230px;text-align:center;z-index:38;}
+  #cap{display:inline-block;color:var(--white);font-size:58px;line-height:1.26;font-weight:700;
+       letter-spacing:.4px;opacity:0;
+       text-shadow:0 4px 22px rgba(0,0,0,.95),0 2px 4px rgba(0,0,0,.9);}
+  #cap b{color:var(--amber);font-weight:700;}
+  #cap u{color:var(--red);text-decoration:none;}
+  .vign{position:absolute;inset:0;pointer-events:none;
+        background:radial-gradient(125% 85% at 50% 45%,rgba(0,0,0,0) 42%,rgba(0,0,0,.82) 100%);}
+  .sky{position:absolute;inset:0;
+       background:linear-gradient(180deg,#0a1020 0%,#16233a 46%,#0c1322 100%);}
+  .rulecard{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;
+            justify-content:center;gap:34px;
+            background:linear-gradient(180deg,rgba(6,10,18,.90),rgba(6,10,18,.96));}
+  .rulebadge{background:var(--red);color:#fff;font-size:26px;font-weight:800;letter-spacing:3.4px;
+             padding:11px 26px;border-radius:5px;}
+  .ruletext{color:#fff;font-size:92px;font-weight:800;letter-spacing:1px;text-align:center;
+            line-height:1.1;max-width:880px;}
+  .rulesub{color:var(--grey);font-size:34px;font-weight:600;max-width:800px;text-align:center;
+           line-height:1.35;}
+  .news{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:830px;
+        border:3px solid var(--amber);border-radius:12px;background:rgba(8,13,22,.93);
+        padding:36px 40px;}
+  .news.bad{border-color:var(--red);}
+  .news h4{margin:0 0 22px;color:var(--amber);font-size:30px;letter-spacing:3.4px;font-weight:800;}
+  .news.bad h4{color:var(--red);}
+  .news .row{display:flex;justify-content:space-between;align-items:center;color:#fff;
+             font-size:40px;font-weight:600;padding:15px 0;
+             border-bottom:1px solid rgba(255,255,255,.10);}
+  .news .row:last-child{border-bottom:0;}
+  .news .row span:last-child{color:var(--amber);font-weight:800;}
+  .news.bad .row span:last-child{color:var(--red);}
+  .stamp{position:absolute;left:50%;transform:translateX(-50%) rotate(-7deg);border:7px solid var(--red);
+         color:var(--red);font-size:80px;font-weight:800;letter-spacing:6px;padding:13px 42px;
+         border-radius:8px;}
+  .badge{display:inline-block;border:4px solid var(--amber);color:var(--amber);font-size:38px;
+         font-weight:800;letter-spacing:4px;padding:14px 32px;border-radius:8px;
+         background:rgba(8,12,20,.85);}
+  .badge.red{border-color:var(--red);color:var(--red);}
+
+</style>
+  </head>
+  <body>
+<div id="root" data-composition-id="td6" data-start="0" data-duration="90.6"
+     data-width="1080" data-height="1920" data-track-kind="graphics">
+  <div id="panels" class="clip" data-start="0" data-duration="90.6" data-track-index="0"></div>
+  <div id="hud" class="clip" data-start="0" data-duration="90.6" data-track-index="1" data-layout-ignore>
+    <div id="daytag"><i></i>DAY 6 / 10</div>
+    <div id="clock">2:41 AM</div>
+    <div id="recov">RECOVERY IN 5 DAYS</div>
+  </div>
+  <div id="mark" class="clip" data-start="0" data-duration="90.6" data-track-index="2"
+       data-layout-ignore>1min.thinker</div>
+  <div id="capwrap" class="clip" data-start="0" data-duration="90.6" data-track-index="3"
+       data-track-kind="captions"><span id="cap"></span></div>
+</div>
+
+<audio id="vo" src="assets/audio/vo.wav" data-start="0" data-volume="1"></audio>
+
+<script>
+gsap.registerPlugin(ScrambleTextPlugin, SplitText, DrawSVGPlugin, CustomEase);
+const DUR = 90.6;
+const tl = gsap.timeline({ paused: true });
+const S = document.getElementById("panels");
+const mk = (id, html) => { const d=document.createElement("div");
+  d.className="panel"; d.id=id; d.innerHTML=html; S.appendChild(d); return d; };
+const rule = (n, text, sub) => `<div class="rulecard">
+    <div class="rulebadge">RULE #${n}</div><div class="ruletext">${text}</div>
+    ${sub ? `<div class="rulesub">${sub}</div>` : ""}</div>`;
+
+/* Ten Days — Day 6: twenty miles an hour.
+ *
+ * Same template. The first episode where you are safe, and safety is the
+ * mistake: you stop checking. Plant: 32 carriages, you checked 11, the rest
+ * were sealed (as a diagram). Recall: the brake is pulled from carriage 32,
+ * the one you did not check. The radio loop plays whole for the first time
+ * and names the rig (Days 8-9); "six-two south" is where Day 10 ends.
+ *
+ * Deterministic throughout — no unseeded randomness anywhere.
+ */
+
+function figure(pose, x, y, s = 1, tone = "#1c2538") {
+  const hood = "#2a3650", skin = "#d9b08c", pack = "#3a4a6a";
+  let body;
+  if (pose === "seat") {
+    body = `<rect x="-70" y="-10" width="140" height="150" rx="34" fill="${hood}"/>
+      <rect x="-50" y="60" width="60" height="110" rx="22" fill="${tone}"/>
+      <circle cx="-8" cy="-50" r="52" fill="${hood}"/><circle cx="4" cy="-44" r="34" fill="${skin}"/>
+      <rect x="-26" y="-56" width="56" height="26" rx="12" fill="${hood}"/>`;
+  } else if (pose === "crouch") {
+    body = `<rect x="-90" y="20" width="180" height="120" rx="48" fill="${hood}"/>
+      <rect x="-100" y="-30" width="70" height="90" rx="26" fill="${pack}"/>
+      <circle cx="30" cy="-30" r="50" fill="${hood}"/><circle cx="40" cy="-24" r="32" fill="${skin}"/>
+      <rect x="6" y="-40" width="60" height="24" rx="12" fill="${hood}"/>`;
+  } else if (pose === "back") {
+    body = `<rect x="-62" y="-30" width="124" height="200" rx="40" fill="${hood}"/>
+      <rect x="-40" y="-10" width="80" height="120" rx="24" fill="${pack}"/>
+      <rect x="-44" y="160" width="34" height="110" rx="14" fill="${tone}"/>
+      <rect x="10" y="160" width="34" height="100" rx="14" fill="${tone}"/>
+      <circle cx="0" cy="-80" r="52" fill="${hood}"/>`;
+  } else { // peer
+    body = `<rect x="-64" y="-20" width="128" height="200" rx="40" fill="${hood}"/>
+      <rect x="-104" y="-6" width="60" height="120" rx="24" fill="${pack}"/>
+      <circle cx="14" cy="-68" r="54" fill="${hood}"/><circle cx="22" cy="-62" r="36" fill="${skin}"/>
+      <rect x="-14" y="-78" width="64" height="26" rx="13" fill="${hood}"/>`;
+  }
+  return `<g transform="translate(${x},${y}) scale(${s})">${body}</g>`;
+}
+
+/* the driver's cab from behind: windscreen with the line streaking past, console */
+function cab(streakId, night = false) {
+  const sky = night ? "#04060b" : "#0a1120";
+  let streaks = "";
+  for (let i = 0; i < 26; i++) {
+    const y = 40 + ((i * 53) % 540), w = 120 + ((i * 97) % 420), x = (i * 331) % 1800;
+    streaks += `<div style="position:absolute;left:${x}px;top:${y}px;width:${w}px;height:3px;border-radius:2px;background:${night ? "#2b3a58" : "#4a5f8c"};opacity:${0.25 + ((i * 7) % 5) * 0.12};"></div>`;
+  }
+  return `<div style="position:absolute;inset:0;background:#06090f;"></div>
+  <div style="position:absolute;left:90px;top:240px;width:900px;height:620px;border-radius:40px 40px 18px 18px;background:linear-gradient(180deg,${sky},#0f1727);border:10px solid #2a3449;overflow:hidden;">
+    <div id="${streakId}" style="position:absolute;left:0;top:0;width:1800px;height:100%;">${streaks}</div>
+    <div style="position:absolute;left:0;right:0;bottom:0;height:140px;background:linear-gradient(0deg,#1b2435,transparent);"></div>
+  </div>
+  <div style="position:absolute;left:0;right:0;top:860px;height:400px;background:linear-gradient(180deg,#1f2a3f,#121a28);border-top:8px solid #33425e;"></div>
+  ${[230, 540, 850].map((x) => `<div style="position:absolute;left:${x - 70}px;top:920px;width:140px;height:140px;border-radius:50%;background:#0b111b;border:5px solid #3a4967;"></div>
+    <div style="position:absolute;left:${x - 3}px;top:940px;width:6px;height:62px;border-radius:3px;background:var(--amber);transform-origin:50% 100%;transform:rotate(${x === 540 ? 30 : -35}deg);"></div>`).join("")}
+  <div style="position:absolute;left:0;right:0;top:1260px;bottom:0;background:#0a0f17;"></div>`;
+}
+
+/* a speed dial: half circle, red zone under 20, needle at v */
+function dial(cx, cy, r, v, ids = {}, max = 80) {
+  const P = (a, rr) => `${(cx - rr * Math.cos(a * Math.PI / 180)).toFixed(1)},${(cy - rr * Math.sin(a * Math.PI / 180)).toFixed(1)}`;
+  const za = (20 / max) * 180;
+  let h = `<svg width="1080" height="1920" style="position:absolute;inset:0;">
+    <path d="M${P(0, r)} A${r},${r} 0 0 1 ${P(180, r)}" stroke="#2b374f" stroke-width="26" fill="none" stroke-linecap="round"/>
+    <path id="${ids.zone || "zone"}" d="M${P(0, r)} A${r},${r} 0 0 1 ${P(za, r)}" stroke="var(--red)" stroke-width="26" fill="none" stroke-linecap="round" opacity=".85"/>`;
+  for (let k = 0; k <= 4; k++) {
+    const a = k * 45;
+    h += `<text x="${P(a, r - 70).split(",")[0]}" y="${P(a, r - 70).split(",")[1]}" fill="#7d8aa6" font-size="30" font-weight="700" text-anchor="middle" dominant-baseline="middle">${k * 20}</text>`;
+  }
+  h += `<g id="${ids.needle || "needle"}" transform="rotate(${(v / max) * 180} ${cx} ${cy})">
+      <line x1="${cx}" y1="${cy}" x2="${cx - r * 0.82}" y2="${cy}" stroke="#fff" stroke-width="10" stroke-linecap="round"/></g>
+    <circle cx="${cx}" cy="${cy}" r="22" fill="#fff"/>
+  </svg>
+  <div id="${ids.read || "read"}" style="position:absolute;left:0;right:0;top:${cy + 40}px;text-align:center;color:#fff;font-size:96px;font-weight:800;font-variant-numeric:tabular-nums;">${v}</div>
+  <div style="position:absolute;left:0;right:0;top:${cy + 160}px;text-align:center;color:#55617a;font-size:24px;letter-spacing:6px;">MPH</div>`;
+  return h;
+}
+
+/* the train from above: 32 carriages as a snake, the first `checked` lit */
+function diagram(checked) {
+  let h = `<div style="position:absolute;left:60px;right:60px;top:620px;height:600px;border-radius:18px;background:#0d1422;border:4px solid #2b3650;"></div>
+  <div style="position:absolute;left:110px;top:650px;color:#55617a;font-size:22px;letter-spacing:6px;">32 CARRIAGES</div>
+  <div style="position:absolute;left:110px;top:700px;width:60px;height:130px;border-radius:10px 14px 14px 10px;background:#2a3650;border:4px solid var(--amber);"></div>`;
+  for (let i = 0; i < 32; i++) {
+    const row = i < 16 ? 0 : 1, col = row === 0 ? i : 31 - i;
+    const x = 184 + col * 50, y = 700 + row * 250, n = i + 1, done = n <= checked;
+    h += `<div id="c${n}" style="position:absolute;left:${x}px;top:${y}px;width:42px;height:130px;border-radius:6px;background:${done ? "#1d5742" : "#1a2234"};border:3px solid ${done ? "#5df2b0" : "#3a4967"};">
+      ${done ? "" : `<div style="position:absolute;left:11px;top:8px;width:14px;height:12px;border:3px solid #5a4a2e;border-radius:3px;"></div>`}</div>`;
+  }
+  h += `<div style="position:absolute;left:184px;top:840px;color:#5df2b0;font-size:22px;letter-spacing:4px;">1</div>
+  <div style="position:absolute;left:174px;top:1090px;color:#7d8aa6;font-size:22px;letter-spacing:4px;">32</div>`;
+  return h;
+}
+
+/* ============================ PANELS ============================ */
+
+mk("recap", `<div style="position:absolute;inset:0;background:#0d0a06;"></div>
+  <div style="position:absolute;left:0;right:0;top:0;height:1300px;background:linear-gradient(180deg,#1a140c,#120d07);"></div>
+  ${[160, 300, 440, 580, 720, 860].map((x, i) => `<div style="position:absolute;left:${x}px;top:${560 + (i % 2) * 40}px;width:24px;height:300px;border-radius:12px;background:#5a4a2e;transform-origin:50% 100%;transform:rotate(${(i % 2 ? 14 : -10)}deg);"></div>
+    <div style="position:absolute;left:${x - 10}px;top:${540 + (i % 2) * 40}px;width:44px;height:44px;border-radius:50%;background:var(--red);"></div>`).join("")}
+  <div style="position:absolute;left:0;right:0;top:860px;height:40px;background:#3a2e1e;"></div>
+  <div style="position:absolute;left:380px;top:300px;width:320px;height:200px;border-radius:10px;background:#241c12;border:4px solid #5a4a2e;"></div>
+  ${[420, 500].map((x) => `<div style="position:absolute;left:${x}px;top:360px;width:40px;height:70px;border-radius:6px;background:#6d5a26;"></div>`).join("")}
+  <div style="position:absolute;left:580px;top:360px;width:40px;height:70px;border-radius:6px;border:3px dashed #6d5a26;"></div>
+  <div style="position:absolute;left:0;right:0;top:1300px;bottom:0;background:#0c0905;"></div>
+  <div class="badge" style="position:absolute;left:50%;transform:translateX(-50%);top:1060px;font-size:30px;">NOBODY. ONE KEY GONE.</div>
+  <div class="vign"></div>`);
+
+mk("hook", `${cab("streaks1")}
+  <svg width="1080" height="1920" style="position:absolute;inset:0;">${figure("back", 540, 800, 1.35)}</svg>
+  <div id="checks" style="position:absolute;right:70px;top:1300px;width:330px;border-radius:14px;background:#0b111bdd;border:3px solid #2b3650;padding:16px 22px;color:#9fb0d0;font-size:26px;letter-spacing:3px;line-height:1.5;">
+    <div style="color:#55617a;font-size:20px;letter-spacing:6px;">CHECKS</div>
+    <div>01:40 <span style="color:#5df2b0">✓</span></div>
+    <div>02:00 <span style="color:#5df2b0">✓</span></div>
+    <div>02:20 <span id="chk3" style="color:#5df2b0;opacity:0">✓</span></div>
+    <div id="chk4" style="opacity:.45">02:40 —</div>
+  </div>
+  <div id="safe" class="badge" style="position:absolute;left:50%;transform:translateX(-50%);top:140px;font-size:30px;opacity:0;">NOTHING CAN REACH YOU</div>
+  <div class="vign"></div>`);
+
+mk("wide", `<div style="position:absolute;inset:0;background:#06090f;"></div>
+  <div style="position:absolute;left:0;right:0;top:0;height:760px;background:linear-gradient(180deg,#070b14,#0f1626);"></div>
+  <div id="strip" style="position:absolute;left:60px;top:520px;width:3000px;height:170px;">
+    <div style="position:absolute;left:0;top:10px;width:170px;height:130px;border-radius:40px 12px 10px 10px;background:#2a3650;border:4px solid var(--amber);"></div>
+    ${Array.from({ length: 16 }, (_, i) => `<div style="position:absolute;left:${200 + i * 176}px;top:30px;width:156px;height:110px;border-radius:8px;background:#1f2a3f;border:4px solid #3a4967;"></div>`).join("")}
+  </div>
+  <div style="position:absolute;left:0;right:0;top:690px;height:8px;background:#4a5775;"></div>
+  <div style="position:absolute;left:0;right:0;top:700px;height:60px;background:linear-gradient(180deg,#161d28,#0c1119);"></div>
+  ${dial(540, 1290, 330, 54)}
+  <div class="badge red" style="position:absolute;left:50%;transform:translateX(-50%);top:830px;font-size:28px;">UNDER 20 · THEY BOARD</div>
+  <div class="vign"></div>`);
+
+mk("rule1", rule(1, "HOLD THE SWITCH.<br>LET GO, IT STOPS.", "sixty seconds, then the brakes"));
+
+mk("obey1", `<div style="position:absolute;inset:0;background:#06090f;"></div>
+  <div style="position:absolute;left:0;right:0;top:0;bottom:0;background:linear-gradient(180deg,#121a28,#0a0f17);"></div>
+  <!-- the dead-man's switch, close: a big button, a thumb on it, a lamp that stays lit -->
+  <div style="position:absolute;left:190px;top:560px;width:700px;height:700px;border-radius:50%;background:radial-gradient(circle at 50% 40%,#2a3650,#121a28);border:12px solid #33425e;"></div>
+  <div style="position:absolute;left:300px;top:670px;width:480px;height:480px;border-radius:50%;background:radial-gradient(circle at 50% 35%,#3a4967,#1f2a3f);border:10px solid #4a5a7c;"></div>
+  <svg width="1080" height="1920" style="position:absolute;inset:0;">
+    <rect x="470" y="560" width="140" height="420" rx="64" fill="#d9b08c" transform="rotate(-14 540 770)"/>
+    <rect x="455" y="820" width="170" height="130" rx="50" fill="#d9b08c"/>
+  </svg>
+  <div id="held" style="position:absolute;left:50%;transform:translateX(-50%);top:1320px;display:flex;align-items:center;gap:18px;">
+    <div style="width:26px;height:26px;border-radius:50%;background:#5df2b0;box-shadow:0 0 24px #5df2b0;"></div>
+    <div style="color:#5df2b0;font-size:30px;letter-spacing:8px;font-weight:800;">HELD</div></div>
+  <div style="position:absolute;left:50%;transform:translateX(-50%);top:1400px;color:#55617a;font-size:22px;letter-spacing:6px;">COUNTDOWN 60 · NEVER STARTS</div>
+  <div class="vign"></div>`);
+
+mk("plant", `<div style="position:absolute;inset:0;background:#070c16;"></div>
+  ${diagram(11)}
+  <div id="chk11" style="position:absolute;left:0;right:0;top:1300px;text-align:center;color:#5df2b0;font-size:30px;letter-spacing:6px;font-weight:800;">CHECKED · 11</div>
+  <div id="sealed" class="badge" style="position:absolute;left:50%;transform:translateX(-50%);top:1370px;font-size:30px;opacity:0;">THE REST · SEALED</div>
+  <div class="vign"></div>`);
+
+mk("rule2", rule(2, "SLEEP IN<br>20-MINUTE BLOCKS.", "never longer"));
+
+mk("obey2", `<div style="position:absolute;inset:0;background:#06090f;"></div>
+  <svg width="1080" height="1920" style="position:absolute;inset:0;">
+    <circle cx="540" cy="880" r="270" stroke="#2b374f" stroke-width="22" fill="none"/>
+    <circle id="ring" cx="540" cy="880" r="270" stroke="var(--amber)" stroke-width="22" fill="none" stroke-linecap="round" transform="rotate(-90 540 880)"/>
+  </svg>
+  <div id="tmr" style="position:absolute;left:0;right:0;top:810px;text-align:center;color:#fff;font-size:120px;font-weight:800;font-variant-numeric:tabular-nums;">20:00</div>
+  <div style="position:absolute;left:0;right:0;top:960px;text-align:center;color:#55617a;font-size:24px;letter-spacing:6px;">BLOCK</div>
+  <div style="position:absolute;left:50%;transform:translateX(-50%);top:1260px;display:flex;gap:40px;">
+    ${[1, 2, 3].map((k) => `<div id="t${k}" style="width:150px;height:84px;border-radius:14px;border:4px solid var(--amber);color:var(--amber);display:grid;place-items:center;font-size:40px;font-weight:800;opacity:.22;">20</div>`).join("")}
+  </div>
+  <div class="vign"></div>`);
+
+mk("radio", `<div style="position:absolute;inset:0;background:#070c16;"></div>
+  <div style="position:absolute;left:250px;top:520px;width:580px;height:290px;border-radius:16px;
+       background:linear-gradient(180deg,#222d41,#161e2e);border:4px solid #33425e;box-shadow:0 26px 70px rgba(0,0,0,.6);">
+    <div style="position:absolute;left:32px;top:30px;width:350px;height:108px;border-radius:8px;background:#0b2a21;border:3px solid #1d5742;display:flex;align-items:center;justify-content:center;">
+      <span style="color:#5df2b0;font-size:56px;font-weight:800;letter-spacing:5px;text-shadow:0 0 26px rgba(93,242,176,.8);">CH 09</span></div>
+    <div style="position:absolute;right:34px;top:42px;width:86px;height:86px;border-radius:50%;background:#2b374f;border:4px solid #44557a;"></div>
+    <div style="position:absolute;left:32px;bottom:28px;right:32px;height:56px;display:flex;gap:11px;">
+      ${Array.from({ length: 10 }, () => `<div style="flex:1;border-radius:5px;background:#2b374f;"></div>`).join("")}</div>
+  </div>
+  <!-- the whole loop this time: every bar blue, none red -->
+  <div style="position:absolute;left:90px;right:90px;top:900px;height:220px;display:flex;align-items:center;gap:6px;">
+    ${Array.from({ length: 60 }, (_, i) => `<div class="lb" style="flex:1;height:${24 + ((i * 37) % 23) * 7}px;border-radius:4px;background:#5aa9ff;opacity:0;"></div>`).join("")}
+  </div>
+  <div style="position:absolute;left:0;right:0;top:1140px;text-align:center;color:#55617a;font-size:22px;letter-spacing:6px;">WHOLE, FOR THE FIRST TIME</div>
+  <div style="position:absolute;left:0;right:0;top:1220px;text-align:center;">
+    <span id="rigword" style="display:inline-block;color:var(--amber);font-size:56px;font-weight:800;letter-spacing:6px;">RIG BRAVO · 62 SOUTH</span></div>
+  <div class="vign"></div>`);
+
+mk("rule3", rule(3, "DO NOT STOP.<br>FOR ANYTHING ON THE LINE.", ""));
+
+mk("obey3", `<div style="position:absolute;inset:0;background:#07090f;"></div>
+  <div style="position:absolute;left:60px;right:60px;top:420px;height:1060px;border-radius:18px;background:#141b28;border:4px solid #2b3650;"></div>
+  <svg width="1080" height="1920" style="position:absolute;inset:0;">
+    <path d="M540,520 L540,1400" stroke="#3a4560" stroke-width="12" fill="none" stroke-linecap="round" stroke-dasharray="28 18"/>
+    ${figure("peer", 600, 1000, 0.55)}
+    <circle id="traindot" cx="540" cy="540" r="26" fill="var(--amber)"/>
+  </svg>
+  <div style="position:absolute;left:0;right:0;top:450px;text-align:center;color:#55617a;font-size:22px;letter-spacing:6px;">YOU</div>
+  <div style="position:absolute;left:0;right:0;top:1410px;text-align:center;color:var(--amber);font-size:26px;letter-spacing:6px;font-weight:800;">THE COAST</div>
+  <div id="range" style="position:absolute;left:120px;top:900px;color:#fff;font-size:44px;font-weight:800;line-height:1.1;">1,000<br><span style="font-size:22px;color:#55617a;letter-spacing:5px;">MILES OF RANGE</span></div>
+  <div style="position:absolute;right:120px;top:900px;text-align:right;color:#fff;font-size:44px;font-weight:800;line-height:1.1;">2<br><span style="font-size:22px;color:#55617a;letter-spacing:5px;">DAYS</span></div>
+  <div class="vign"></div>`);
+
+mk("slow", `${cab("streaks2", true)}
+  <svg width="1080" height="1920" style="position:absolute;inset:0;">${figure("back", 540, 800, 1.35)}</svg>
+  <!-- the engine note, as bars that drop; the switch lamp, still green -->
+  <div style="position:absolute;left:80px;top:1300px;width:400px;height:150px;display:flex;align-items:flex-end;gap:8px;">
+    ${Array.from({ length: 18 }, (_, i) => `<div class="eb" style="flex:1;height:${60 + ((i * 29) % 17) * 5}px;border-radius:3px;background:#5aa9ff;transform-origin:50% 100%;"></div>`).join("")}
+  </div>
+  <div style="position:absolute;left:80px;top:1460px;color:#55617a;font-size:20px;letter-spacing:6px;">ENGINE NOTE</div>
+  <div id="held2" style="position:absolute;right:120px;top:1340px;display:flex;align-items:center;gap:18px;">
+    <div style="width:26px;height:26px;border-radius:50%;background:#5df2b0;box-shadow:0 0 24px #5df2b0;"></div>
+    <div style="color:#5df2b0;font-size:30px;letter-spacing:8px;font-weight:800;">HELD</div></div>
+  <div class="vign"></div>`);
+
+mk("gauge", `<div style="position:absolute;inset:0;background:#06090f;"></div>
+  ${dial(540, 1000, 400, 54, { needle: "needle2", read: "spd", zone: "zone2" })}
+  <div class="badge red" style="position:absolute;left:50%;transform:translateX(-50%);top:1260px;font-size:28px;">UNDER 20 · THEY BOARD</div>
+  <div class="vign"></div>`);
+
+mk("recall", `<div style="position:absolute;inset:0;background:#070c16;"></div>
+  ${diagram(11)}
+  <div id="c32hot" style="position:absolute;left:184px;top:950px;width:42px;height:130px;border-radius:6px;background:var(--red);box-shadow:0 0 30px var(--red);opacity:0;"></div>
+  <div id="brakestamp" class="stamp" style="top:420px;font-size:64px;opacity:0;">BRAKE PULLED</div>
+  <div id="unchecked" class="stamp" style="top:1300px;font-size:64px;opacity:0;">UNCHECKED</div>
+  <div class="vign"></div>`);
+
+
+/* ---- end card: the question, the buttons, and the next day's hook ---- */
+mk("end", `<div style="position:absolute;inset:0;
+       background:radial-gradient(90% 60% at 50% 46%,#2a0b0b 0%,#07090f 72%);"></div>
+  <div style="position:absolute;left:0;right:0;top:690px;text-align:center;">
+    <div style="color:#fff;font-size:84px;font-weight:800;">DO YOU GO</div>
+    <div style="color:var(--red);font-size:84px;font-weight:800;">AND LOOK?</div>
+  </div>
+  <div style="position:absolute;left:0;right:0;top:980px;display:flex;justify-content:center;gap:34px;">
+    <div style="background:var(--amber);color:#1a1205;font-size:38px;font-weight:800;
+         padding:20px 52px;border-radius:10px;letter-spacing:2px;">LOOK</div>
+    <div style="background:var(--red-dk);color:#fff;font-size:38px;font-weight:800;
+         padding:20px 52px;border-radius:10px;letter-spacing:2px;">DRIVE ON</div>
+  </div>
+  <div style="position:absolute;left:0;right:0;top:1160px;text-align:center;">
+    <div style="color:#7d879b;font-size:26px;letter-spacing:4px;">DAY 7</div>
+    <div style="color:#fff;font-size:44px;font-weight:800;margin-top:10px;">31 EMPTY CARRIAGES.<br>THE LAST IS SEALED FROM INSIDE.</div>
+    <div style="color:var(--amber);font-size:27px;letter-spacing:3px;margin-top:22px;">
+      FOLLOW FOR DAY 7</div>
+  </div>`);
+
+const SH = [["recap", 0.0, 3.9000000000000004], ["hook", 3.7, 12.34], ["wide", 12.14, 18.79], ["rule1", 18.59, 26.259999999999998], ["obey1", 26.06, 29.54], ["plant", 29.34, 35.53], ["rule2", 35.33, 40.480000000000004], ["obey2", 40.28, 44.68], ["radio", 44.48, 52.46], ["rule3", 52.26, 57.230000000000004], ["obey3", 57.03, 62.830000000000005], ["slow", 62.63, 72.46000000000001], ["gauge", 72.26, 77.46000000000001], ["recall", 77.26, 86.06], ["end", 85.86, 90.6]];
+const FADE = 0.30;
+SH.forEach(([id, a, b]) => {
+  const el = document.getElementById(id);
+  if (!el) { console.warn("missing panel", id); return; }
+  tl.to(el, { opacity: 1, duration: FADE }, a);
+  if (b < DUR) tl.to(el, { opacity: 0, duration: FADE }, b - FADE);
+});
+
+/* hook: the line streaks past; "nothing can reach you" lands on the word; then the checks stop */
+tl.fromTo("#streaks1", { x: 0 }, { x: -900, duration: 8.6, ease: "none" }, 3.9);
+tl.to("#chk3", { opacity: 1, duration: 0.2 }, 5.5);
+tl.fromTo("#safe", { opacity: 0, y: -10 }, { opacity: 1, y: 0, duration: 0.3, ease: "power2.out" }, 6.2);
+tl.to("#checks", { opacity: 0.3, duration: 0.6 }, 10.1);
+/* wide: the train crosses; the red zone flares on "20" */
+tl.fromTo("#strip", { x: 0 }, { x: -640, duration: 6.6, ease: "none" }, 12.3);
+tl.to("#zone", { opacity: 1, strokeWidth: 36, duration: 0.25, yoyo: true, repeat: 1 }, 16.9);
+/* rule 1 obeyed: the lamp breathes but never goes out */
+tl.fromTo("#held", { opacity: 0.45 }, { opacity: 1, duration: 0.5, yoyo: true, repeat: 3, ease: "sine.inOut" }, 26.4);
+/* the plant: eleven light up as they are counted; the rest stay dark */
+tl.fromTo("#c1,#c2,#c3,#c4,#c5,#c6,#c7,#c8,#c9,#c10,#c11", { opacity: 0.25 }, { opacity: 1, duration: 0.15, stagger: 0.07, ease: "none" }, 32.1);
+tl.fromTo("#sealed", { opacity: 0, y: 12 }, { opacity: 1, y: 0, duration: 0.3, ease: "power2.out" }, 33.8);
+/* rule 2 obeyed: the ring counts a block down; three blocks tick */
+tl.fromTo("#ring", { drawSVG: "0% 100%" }, { drawSVG: "0% 0%", duration: 3.2, ease: "none" }, 41.3);
+[41.92, 42.42, 42.95].forEach((t, i) => tl.to(`#t${i + 1}`, { opacity: 1, duration: 0.15 }, t));
+/* the radio: the loop plays whole, every bar; the rig named through the scramble */
+tl.to(".lb", { opacity: 0.9, duration: 0.1, stagger: 0.028, ease: "none" }, 45.7);
+tl.set("#rigword", { textContent: "" }, 44.7);
+tl.to("#rigword", { duration: 1.4, scrambleText: { text: "RIG BRAVO · 62 SOUTH", chars: "upperCase", speed: 0.6 } }, 49.5);
+/* rule 3 obeyed: you pass what is on the line and do not stop */
+tl.to("#traindot", { attr: { cy: 1380 }, duration: 5.3, ease: "none" }, 57.3);
+/* 3:02: the streaks decelerate; the engine note drops; the lamp is still green */
+tl.fromTo("#streaks2", { x: 0 }, { x: -700, duration: 9.6, ease: "power2.out" }, 62.8);
+tl.to(".eb", { scaleY: 0.42, duration: 1.1, ease: "power2.inOut", stagger: 0.02 }, 65.4);
+tl.fromTo("#held2", { opacity: 0.45 }, { opacity: 1, duration: 0.5, yoyo: true, repeat: 5, ease: "sine.inOut" }, 67.9);
+/* the gauge: needle and readout fall on the spoken numbers */
+tl.fromTo("#needle2", { rotation: 121.5, svgOrigin: "540 1000" }, { rotation: 108, duration: 1.2, ease: "none" }, 72.5);
+[[74.26, 40, 90], [74.80, 31, 69.75], [75.47, 22, 49.5]].forEach(([t, v, a]) => {
+  tl.to("#needle2", { rotation: a, svgOrigin: "540 1000", duration: 0.45, ease: "power2.out" }, t);
+  tl.set("#spd", { textContent: String(v) }, t);
+});
+tl.to("#zone2", { opacity: 1, strokeWidth: 38, duration: 0.3, yoyo: true, repeat: 3 }, 75.5);
+/* the recall: the brake, carriage 32, the one you did not check */
+tl.fromTo("#brakestamp", { scale: 1.8, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.32, ease: "power3.out" }, 79.2);
+tl.fromTo("#c32hot", { opacity: 0 }, { opacity: 1, duration: 0.22, yoyo: true, repeat: 7 }, 80.7);
+tl.fromTo("#unchecked", { scale: 1.8, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.32, ease: "power3.out" }, 83.9);
+
+/* ---- HUD clock, stepping minute by minute ---- */
+const S0 = 161, S1 = 190, AMPM = "AM";
+const clockEl = document.getElementById("clock");
+// seek(t, true) suppresses onUpdate as well as .call(), so neither survives a
+// renderer grabbing frames out of order. Only tl.set() actually renders: it is
+// a zero-duration tween, and tweens render at any playhead position.
+for (let m = S0; m <= S1; m++){
+  const at = ((m - S0) / Math.max(1, S1 - S0)) * (DUR - 4.0);
+  tl.set(clockEl, { textContent:
+    `${((Math.floor(m / 60) + 11) % 12) + 1}:${String(m % 60).padStart(2, "0")} ${AMPM}` }, at);
+}
+
+const LINES = [["YOU WENT DOWN.<br>THE BOX WAS <b>EMPTY</b>.", 0.25, 3.3], ["<b>DAY 6</b>. FOR THE FIRST TIME,<br>NOTHING CAN REACH YOU.", 3.9, 7.975], ["THAT'S WHAT IT <u>COSTS YOU</u>.<br>YOU STOP CHECKING.", 8.035, 11.585], ["A MOVING TRAIN. NOTHING<br>BOARDS IT ABOVE <b>20 MPH</b>.", 12.335, 18.285], ["RULE 1. HOLD THE SWITCH.<br>LET GO, AND IT <b>STOPS</b>.", 18.785, 25.91], ["SO YOUR THUMB<br>NEVER LEAVES IT.", 26.26, 28.985], ["32 CARRIAGES BEHIND YOU.<br>YOU CHECKED <b>ELEVEN</b>.", 29.535, 34.935], ["RULE 2. SLEEP IN<br><b>20-MINUTE</b> BLOCKS.", 35.535, 40.135], ["YOU SET THE TIMER.<br>TWENTY. TWENTY. TWENTY.", 40.485, 44.135], ["THE LOOP, WHOLE AT LAST:<br><b>RIG BRAVO. SIX-TWO SOUTH.</b>", 44.685, 51.91], ["RULE 3. DO NOT STOP.<br>FOR <u>ANYTHING</u> ON THE LINE.", 52.46, 56.785], ["1,000 MILES OF RANGE.<br>THE COAST IN <b>TWO DAYS</b>.", 57.235, 62.235], ["<b>3:02 AM</b>. YOU WAKE.<br>THE ENGINE SOUNDS <u>WRONG</u>.", 62.835, 67.385], ["YOUR THUMB IS STILL ON IT.<br>YOU <b>NEVER LET GO</b>.", 67.885, 71.91], ["BUT THE TRAIN IS SLOWING.<br>40. 31. <u>22</u>.", 72.46, 76.76], ["THE BRAKE WAS PULLED.<br>FROM CARRIAGE <u>THIRTY-TWO</u>.", 77.46, 82.06], ["THE ONE YOU <u>DIDN'T CHECK</u>.", 82.66, 84.91], ["", 86.06, 88.06]];
+const capEl = document.getElementById("cap");
+LINES.forEach(([html, a, b], i) => {
+  tl.set(capEl, { innerHTML: html }, a);   // render-time, survives seek
+  tl.fromTo(capEl, { opacity: 0, y: 14 },
+            { opacity: html ? 1 : 0, duration: 0.26, ease: "power2.out" }, a);
+  const next = LINES[i + 1] ? LINES[i + 1][1] : DUR;
+  tl.to(capEl, { opacity: 0, duration: 0.20 }, Math.min(b, next - 0.24));
+});
+
+window.__timelines = window.__timelines || {};
+window.__timelines["td6"] = tl;
+</script>
+  </body>
+</html>
