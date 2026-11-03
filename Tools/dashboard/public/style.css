@@ -113,6 +113,7 @@ video{display:block;width:100%;aspect-ratio:9/16;background:#000;}
   pointer-events:none;
 }
 .capline.on{opacity:1;}
+.capline .wnow{color:var(--amber);}
 
 .transport{display:flex;align-items:center;gap:11px;margin-top:12px;}
 .time{font-variant-numeric:tabular-nums;color:var(--mute);font-size:12px;min-width:104px;}

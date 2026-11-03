@@ -210,7 +210,14 @@ function highlight(t) {
   if (script?.lines) {
     const line = script.lines.find((l) => t >= l.start && t <= l.end);
     const cap = $("capline");
-    cap.textContent = line ? line.text : "";
+    if (line && line.words && line.words.length) {
+      // vo_timings.json now carries Kokoro's own word times, so the readout can
+      // show exactly which word is being spoken at the playhead
+      cap.innerHTML = line.words.map((w) =>
+        `<span class="${t >= w.s && t < w.e ? "wnow" : ""}">${esc(w.w)}</span>`).join(" ");
+    } else {
+      cap.textContent = line ? line.text : "";
+    }
     cap.classList.toggle("on", !!line);
     [...$("script").children].forEach((r) =>
       r.classList.toggle("now", !!line && r.dataset.id === line.id));

@@ -8,7 +8,19 @@
       "text": "You drove.",
       "cap": "YOU <b>DROVE</b>.",
       "start": 0.25,
-      "end": 1.95
+      "end": 1.95,
+      "words": [
+        {
+          "w": "You",
+          "s": 0.65,
+          "e": 0.838
+        },
+        {
+          "w": "drove",
+          "s": 0.838,
+          "e": 1.65
+        }
+      ]
     },
     {
       "id": "l02",
@@ -17,7 +29,49 @@
       "text": "Last night, the car park kept you alive.",
       "cap": "LAST NIGHT, THE CAR PARK<br>KEPT YOU ALIVE.",
       "start": 2.55,
-      "end": 5.75
+      "end": 5.75,
+      "words": [
+        {
+          "w": "Last",
+          "s": 2.975,
+          "e": 3.3
+        },
+        {
+          "w": "night",
+          "s": 3.3,
+          "e": 3.55
+        },
+        {
+          "w": "the",
+          "s": 3.588,
+          "e": 3.675
+        },
+        {
+          "w": "car",
+          "s": 3.675,
+          "e": 3.95
+        },
+        {
+          "w": "park",
+          "s": 3.95,
+          "e": 4.25
+        },
+        {
+          "w": "kept",
+          "s": 4.25,
+          "e": 4.525
+        },
+        {
+          "w": "you",
+          "s": 4.525,
+          "e": 4.675
+        },
+        {
+          "w": "alive",
+          "s": 4.675,
+          "e": 5.475
+        }
+      ]
     },
     {
       "id": "l03",
@@ -26,16 +80,105 @@
       "text": "Tonight, it costs you something.",
       "cap": "TONIGHT, IT <u>COSTS YOU</u> SOMETHING.",
       "start": 5.81,
-      "end": 8.36
+      "end": 8.36,
+      "words": [
+        {
+          "w": "Tonight",
+          "s": 6.185,
+          "e": 6.56
+        },
+        {
+          "w": "it",
+          "s": 6.597,
+          "e": 6.685
+        },
+        {
+          "w": "costs",
+          "s": 6.685,
+          "e": 7.06
+        },
+        {
+          "w": "you",
+          "s": 7.06,
+          "e": 7.223
+        },
+        {
+          "w": "something",
+          "s": 7.223,
+          "e": 8.085
+        }
+      ]
     },
     {
       "id": "l04",
       "who": "N",
       "shot": "ramp",
       "text": "Day two. Level four. One ramp up, and concrete has no windows.",
-      "cap": "<b>DAY 2</b>. LEVEL FOUR. ONE RAMP UP,<br>AND CONCRETE HAS <b>NO WINDOWS</b>.",
+      "cap": "<b>DAY 2</b>. LEVEL FOUR.<br>ONE RAMP UP. <b>NO WINDOWS</b>.",
       "start": 9.06,
-      "end": 14.435
+      "end": 14.435,
+      "words": [
+        {
+          "w": "Day",
+          "s": 9.485,
+          "e": 9.735
+        },
+        {
+          "w": "two",
+          "s": 9.735,
+          "e": 10.11
+        },
+        {
+          "w": "Level",
+          "s": 10.223,
+          "e": 10.585
+        },
+        {
+          "w": "four",
+          "s": 10.585,
+          "e": 11.26
+        },
+        {
+          "w": "One",
+          "s": 11.422,
+          "e": 11.685
+        },
+        {
+          "w": "ramp",
+          "s": 11.685,
+          "e": 11.973
+        },
+        {
+          "w": "up",
+          "s": 11.973,
+          "e": 12.16
+        },
+        {
+          "w": "and",
+          "s": 12.198,
+          "e": 12.323
+        },
+        {
+          "w": "concrete",
+          "s": 12.323,
+          "e": 12.86
+        },
+        {
+          "w": "has",
+          "s": 12.86,
+          "e": 13.06
+        },
+        {
+          "w": "no",
+          "s": 13.06,
+          "e": 13.248
+        },
+        {
+          "w": "windows",
+          "s": 13.248,
+          "e": 14.16
+        }
+      ]
     },
     {
       "id": "l05",
@@ -44,7 +187,64 @@
       "text": "You coasted in with the engine off. No brakes. No lights.",
       "cap": "YOU COASTED IN, ENGINE OFF.<br><b>NO BRAKES. NO LIGHTS.</b>",
       "start": 14.495,
-      "end": 19.17
+      "end": 19.17,
+      "words": [
+        {
+          "w": "You",
+          "s": 14.87,
+          "e": 15.007
+        },
+        {
+          "w": "coasted",
+          "s": 15.007,
+          "e": 15.445
+        },
+        {
+          "w": "in",
+          "s": 15.445,
+          "e": 15.632
+        },
+        {
+          "w": "with",
+          "s": 15.632,
+          "e": 15.757
+        },
+        {
+          "w": "the",
+          "s": 15.757,
+          "e": 15.908
+        },
+        {
+          "w": "engine",
+          "s": 15.908,
+          "e": 16.295
+        },
+        {
+          "w": "off",
+          "s": 16.295,
+          "e": 16.87
+        },
+        {
+          "w": "No",
+          "s": 17.008,
+          "e": 17.258
+        },
+        {
+          "w": "brakes",
+          "s": 17.258,
+          "e": 17.77
+        },
+        {
+          "w": "No",
+          "s": 17.857,
+          "e": 18.133
+        },
+        {
+          "w": "lights",
+          "s": 18.133,
+          "e": 18.895
+        }
+      ]
     },
     {
       "id": "l06",
@@ -53,7 +253,64 @@
       "text": "Radio, same loop. Recovery in nine days. Stay above street level.",
       "cap": "RECOVERY IN <b>NINE DAYS</b>.<br>STAY ABOVE STREET LEVEL.",
       "start": 19.62,
-      "end": 25.12
+      "end": 25.12,
+      "words": [
+        {
+          "w": "Radio",
+          "s": 20.045,
+          "e": 20.495
+        },
+        {
+          "w": "same",
+          "s": 20.558,
+          "e": 20.908
+        },
+        {
+          "w": "loop",
+          "s": 20.908,
+          "e": 21.395
+        },
+        {
+          "w": "Recovery",
+          "s": 21.495,
+          "e": 22.02
+        },
+        {
+          "w": "in",
+          "s": 22.02,
+          "e": 22.17
+        },
+        {
+          "w": "nine",
+          "s": 22.17,
+          "e": 22.495
+        },
+        {
+          "w": "days",
+          "s": 22.495,
+          "e": 23.02
+        },
+        {
+          "w": "Stay",
+          "s": 23.12,
+          "e": 23.495
+        },
+        {
+          "w": "above",
+          "s": 23.495,
+          "e": 23.808
+        },
+        {
+          "w": "street",
+          "s": 23.808,
+          "e": 24.17
+        },
+        {
+          "w": "level",
+          "s": 24.17,
+          "e": 24.845
+        }
+      ]
     },
     {
       "id": "l07",
@@ -62,7 +319,39 @@
       "text": "Rule one. Park facing the ramp.",
       "cap": "RULE 1. <b>PARK FACING THE RAMP</b>.",
       "start": 25.52,
-      "end": 28.545
+      "end": 28.545,
+      "words": [
+        {
+          "w": "Rule",
+          "s": 25.945,
+          "e": 26.22
+        },
+        {
+          "w": "one",
+          "s": 26.22,
+          "e": 26.595
+        },
+        {
+          "w": "Park",
+          "s": 26.695,
+          "e": 26.995
+        },
+        {
+          "w": "facing",
+          "s": 26.995,
+          "e": 27.383
+        },
+        {
+          "w": "the",
+          "s": 27.383,
+          "e": 27.508
+        },
+        {
+          "w": "ramp",
+          "s": 27.508,
+          "e": 28.245
+        }
+      ]
     },
     {
       "id": "l08",
@@ -71,7 +360,59 @@
       "text": "Rule two. Sleep in the back seat. Never the driver's.",
       "cap": "RULE 2. SLEEP IN THE BACK SEAT.<br><b>NEVER THE DRIVER'S</b>.",
       "start": 28.605,
-      "end": 32.93
+      "end": 32.93,
+      "words": [
+        {
+          "w": "Rule",
+          "s": 29.03,
+          "e": 29.38
+        },
+        {
+          "w": "two",
+          "s": 29.38,
+          "e": 29.73
+        },
+        {
+          "w": "Sleep",
+          "s": 29.83,
+          "e": 30.192
+        },
+        {
+          "w": "in",
+          "s": 30.192,
+          "e": 30.268
+        },
+        {
+          "w": "the",
+          "s": 30.268,
+          "e": 30.355
+        },
+        {
+          "w": "back",
+          "s": 30.355,
+          "e": 30.667
+        },
+        {
+          "w": "seat",
+          "s": 30.667,
+          "e": 31.155
+        },
+        {
+          "w": "Never",
+          "s": 31.268,
+          "e": 31.58
+        },
+        {
+          "w": "the",
+          "s": 31.58,
+          "e": 31.717
+        },
+        {
+          "w": "driver's",
+          "s": 31.717,
+          "e": 32.655
+        }
+      ]
     },
     {
       "id": "l09",
@@ -80,7 +421,44 @@
       "text": "Rule three. Count the cars before dark.",
       "cap": "RULE 3. <u>COUNT THE CARS</u><br>BEFORE DARK.",
       "start": 32.99,
-      "end": 36.44
+      "end": 36.44,
+      "words": [
+        {
+          "w": "Rule",
+          "s": 33.415,
+          "e": 33.74
+        },
+        {
+          "w": "three",
+          "s": 33.74,
+          "e": 34.19
+        },
+        {
+          "w": "Count",
+          "s": 34.29,
+          "e": 34.502
+        },
+        {
+          "w": "the",
+          "s": 34.502,
+          "e": 34.603
+        },
+        {
+          "w": "cars",
+          "s": 34.603,
+          "e": 35.04
+        },
+        {
+          "w": "before",
+          "s": 35.04,
+          "e": 35.465
+        },
+        {
+          "w": "dark",
+          "s": 35.465,
+          "e": 36.165
+        }
+      ]
     },
     {
       "id": "l10",
@@ -89,7 +467,49 @@
       "text": "Good news. Eleven cars. Yours is the twelfth.",
       "cap": "<b>GOOD NEWS</b>. ELEVEN CARS.<br>YOURS IS THE <b>TWELFTH</b>.",
       "start": 37.14,
-      "end": 41.365
+      "end": 41.365,
+      "words": [
+        {
+          "w": "Good",
+          "s": 37.515,
+          "e": 37.753
+        },
+        {
+          "w": "news",
+          "s": 37.753,
+          "e": 38.19
+        },
+        {
+          "w": "Eleven",
+          "s": 38.24,
+          "e": 38.652
+        },
+        {
+          "w": "cars",
+          "s": 38.652,
+          "e": 39.365
+        },
+        {
+          "w": "Yours",
+          "s": 39.515,
+          "e": 39.965
+        },
+        {
+          "w": "is",
+          "s": 39.965,
+          "e": 40.115
+        },
+        {
+          "w": "the",
+          "s": 40.115,
+          "e": 40.227
+        },
+        {
+          "w": "twelfth",
+          "s": 40.227,
+          "e": 41.09
+        }
+      ]
     },
     {
       "id": "l11",
@@ -98,7 +518,64 @@
       "text": "Bad news. The stairwell door has no lock. It only closes.",
       "cap": "<u>BAD NEWS</u>. THE STAIRWELL DOOR<br>HAS NO LOCK. IT ONLY <b>CLOSES</b>.",
       "start": 41.425,
-      "end": 46.4
+      "end": 46.4,
+      "words": [
+        {
+          "w": "Bad",
+          "s": 41.825,
+          "e": 42.1
+        },
+        {
+          "w": "news",
+          "s": 42.1,
+          "e": 42.8
+        },
+        {
+          "w": "The",
+          "s": 42.925,
+          "e": 43.025
+        },
+        {
+          "w": "stairwell",
+          "s": 43.025,
+          "e": 43.55
+        },
+        {
+          "w": "door",
+          "s": 43.55,
+          "e": 43.85
+        },
+        {
+          "w": "has",
+          "s": 43.85,
+          "e": 44.05
+        },
+        {
+          "w": "no",
+          "s": 44.05,
+          "e": 44.225
+        },
+        {
+          "w": "lock",
+          "s": 44.225,
+          "e": 44.6
+        },
+        {
+          "w": "It",
+          "s": 44.637,
+          "e": 44.75
+        },
+        {
+          "w": "only",
+          "s": 44.75,
+          "e": 45.063
+        },
+        {
+          "w": "closes",
+          "s": 45.063,
+          "e": 46.125
+        }
+      ]
     },
     {
       "id": "l12",
@@ -107,7 +584,74 @@
       "text": "Three forty A M. The door opens. And someone lets it close softly.",
       "cap": "<b>3:40 AM</b>. THE DOOR OPENS.<br>AND SOMEONE LETS IT CLOSE SOFTLY.",
       "start": 47.0,
-      "end": 52.45
+      "end": 52.45,
+      "words": [
+        {
+          "w": "Three",
+          "s": 47.4,
+          "e": 47.675
+        },
+        {
+          "w": "forty",
+          "s": 47.675,
+          "e": 48.113
+        },
+        {
+          "w": "A",
+          "s": 48.113,
+          "e": 48.425
+        },
+        {
+          "w": "M.",
+          "s": 48.425,
+          "e": 48.775
+        },
+        {
+          "w": "The",
+          "s": 48.775,
+          "e": 48.875
+        },
+        {
+          "w": "door",
+          "s": 48.875,
+          "e": 49.125
+        },
+        {
+          "w": "opens",
+          "s": 49.125,
+          "e": 49.925
+        },
+        {
+          "w": "And",
+          "s": 50.025,
+          "e": 50.188
+        },
+        {
+          "w": "someone",
+          "s": 50.188,
+          "e": 50.55
+        },
+        {
+          "w": "lets",
+          "s": 50.55,
+          "e": 50.763
+        },
+        {
+          "w": "it",
+          "s": 50.763,
+          "e": 50.85
+        },
+        {
+          "w": "close",
+          "s": 50.85,
+          "e": 51.263
+        },
+        {
+          "w": "softly",
+          "s": 51.263,
+          "e": 52.175
+        }
+      ]
     },
     {
       "id": "l13",
@@ -116,7 +660,34 @@
       "text": "Softly. So it wouldn't bang.",
       "cap": "SOFTLY. SO IT WOULDN'T <u>BANG</u>.",
       "start": 52.51,
-      "end": 55.06
+      "end": 55.06,
+      "words": [
+        {
+          "w": "Softly",
+          "s": 52.935,
+          "e": 53.46
+        },
+        {
+          "w": "So",
+          "s": 53.51,
+          "e": 53.673
+        },
+        {
+          "w": "it",
+          "s": 53.673,
+          "e": 53.76
+        },
+        {
+          "w": "wouldn't",
+          "s": 53.76,
+          "e": 54.035
+        },
+        {
+          "w": "bang",
+          "s": 54.035,
+          "e": 54.785
+        }
+      ]
     },
     {
       "id": "l14",
@@ -125,7 +696,29 @@
       "text": "Footsteps. Not shuffling. Walking.",
       "cap": "FOOTSTEPS.<br>NOT SHUFFLING. <u>WALKING</u>.",
       "start": 55.76,
-      "end": 58.61
+      "end": 58.61,
+      "words": [
+        {
+          "w": "Footsteps",
+          "s": 56.16,
+          "e": 56.66
+        },
+        {
+          "w": "Not",
+          "s": 56.698,
+          "e": 56.923
+        },
+        {
+          "w": "shuffling",
+          "s": 56.923,
+          "e": 57.385
+        },
+        {
+          "w": "Walking",
+          "s": 57.472,
+          "e": 58.335
+        }
+      ]
     },
     {
       "id": "l15",
@@ -134,7 +727,69 @@
       "text": "I know you're on four. I saw your brake lights come on.",
       "cap": "\u201cI KNOW YOU'RE ON FOUR.<br>I SAW YOUR BRAKE LIGHTS COME ON.\u201d",
       "start": 59.16,
-      "end": 63.26
+      "end": 63.26,
+      "words": [
+        {
+          "w": "I",
+          "s": 59.535,
+          "e": 59.66
+        },
+        {
+          "w": "know",
+          "s": 59.66,
+          "e": 59.885
+        },
+        {
+          "w": "you're",
+          "s": 59.885,
+          "e": 60.023
+        },
+        {
+          "w": "on",
+          "s": 60.023,
+          "e": 60.235
+        },
+        {
+          "w": "four",
+          "s": 60.235,
+          "e": 60.81
+        },
+        {
+          "w": "I",
+          "s": 60.935,
+          "e": 61.098
+        },
+        {
+          "w": "saw",
+          "s": 61.098,
+          "e": 61.335
+        },
+        {
+          "w": "your",
+          "s": 61.335,
+          "e": 61.485
+        },
+        {
+          "w": "brake",
+          "s": 61.485,
+          "e": 61.76
+        },
+        {
+          "w": "lights",
+          "s": 61.76,
+          "e": 62.085
+        },
+        {
+          "w": "come",
+          "s": 62.085,
+          "e": 62.335
+        },
+        {
+          "w": "on",
+          "s": 62.335,
+          "e": 62.985
+        }
+      ]
     },
     {
       "id": "l16",
@@ -143,7 +798,49 @@
       "text": "You coasted in. You never touched the brakes.",
       "cap": "YOU COASTED IN.<br>YOU <u>NEVER TOUCHED THE BRAKES</u>.",
       "start": 63.96,
-      "end": 67.485
+      "end": 67.485,
+      "words": [
+        {
+          "w": "You",
+          "s": 64.36,
+          "e": 64.497
+        },
+        {
+          "w": "coasted",
+          "s": 64.497,
+          "e": 65.01
+        },
+        {
+          "w": "in",
+          "s": 65.01,
+          "e": 65.41
+        },
+        {
+          "w": "You",
+          "s": 65.535,
+          "e": 65.66
+        },
+        {
+          "w": "never",
+          "s": 65.66,
+          "e": 65.973
+        },
+        {
+          "w": "touched",
+          "s": 65.973,
+          "e": 66.31
+        },
+        {
+          "w": "the",
+          "s": 66.31,
+          "e": 66.41
+        },
+        {
+          "w": "brakes",
+          "s": 66.41,
+          "e": 67.21
+        }
+      ]
     },
     {
       "id": "l17",
@@ -152,7 +849,39 @@
       "text": "So you count the cars again.",
       "cap": "SO YOU COUNT THE CARS AGAIN.",
       "start": 68.385,
-      "end": 70.885
+      "end": 70.885,
+      "words": [
+        {
+          "w": "So",
+          "s": 68.76,
+          "e": 68.86
+        },
+        {
+          "w": "you",
+          "s": 68.86,
+          "e": 69.022
+        },
+        {
+          "w": "count",
+          "s": 69.022,
+          "e": 69.31
+        },
+        {
+          "w": "the",
+          "s": 69.31,
+          "e": 69.447
+        },
+        {
+          "w": "cars",
+          "s": 69.447,
+          "e": 69.885
+        },
+        {
+          "w": "again",
+          "s": 69.885,
+          "e": 70.61
+        }
+      ]
     },
     {
       "id": "l18",
@@ -161,7 +890,14 @@
       "text": "Thirteen.",
       "cap": "<u>THIRTEEN</u>.",
       "start": 71.735,
-      "end": 73.41
+      "end": 73.41,
+      "words": [
+        {
+          "w": "Thirteen",
+          "s": 72.135,
+          "e": 73.11
+        }
+      ]
     },
     {
       "id": "l19",
@@ -170,7 +906,34 @@
       "text": "Do you start the engine?",
       "cap": "",
       "start": 74.51,
-      "end": 76.735
+      "end": 76.735,
+      "words": [
+        {
+          "w": "Do",
+          "s": 74.86,
+          "e": 74.96
+        },
+        {
+          "w": "you",
+          "s": 74.96,
+          "e": 75.11
+        },
+        {
+          "w": "start",
+          "s": 75.11,
+          "e": 75.46
+        },
+        {
+          "w": "the",
+          "s": 75.46,
+          "e": 75.623
+        },
+        {
+          "w": "engine",
+          "s": 75.623,
+          "e": 76.46
+        }
+      ]
     }
   ]
 }
