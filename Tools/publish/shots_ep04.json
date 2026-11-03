@@ -1,0 +1,66 @@
+{
+  "episode": "ep04-six-o'clock",
+  "note": "Day 7. Anaya alone in every frame. 'with black hair' in every prompt.",
+  "shots": [
+    {
+      "id": "g01",
+      "seed": "girl",
+      "note": "sitting down to wait",
+      "prompt": "{GIRL} with black hair sitting on a low step outside a small shop, chin on her hands, waiting, afternoon"
+    },
+    {
+      "id": "g02",
+      "seed": "girl",
+      "note": "the empty lane",
+      "prompt": "{GIRL} with black hair sitting alone on a step looking down an empty market lane, bright midday sun"
+    },
+    {
+      "id": "g03",
+      "seed": "girl",
+      "note": "heat of the day",
+      "prompt": "close-up of {GIRL} with black hair squinting in bright sunlight, tired, a little sweaty, patient face"
+    },
+    {
+      "id": "g04",
+      "seed": "girl",
+      "note": "counting coins again",
+      "prompt": "{GIRL} with black hair sitting on a step turning a coin over in her fingers, thoughtful, warm light"
+    },
+    {
+      "id": "g05",
+      "seed": "girl",
+      "note": "afternoon fading",
+      "prompt": "{GIRL} with black hair sitting on a step as long orange shadows stretch across an empty lane, late afternoon"
+    },
+    {
+      "id": "g06",
+      "seed": "girl",
+      "note": "standing up to look",
+      "prompt": "{GIRL} with black hair standing on tiptoes looking down a long empty lane, hopeful, golden hour"
+    },
+    {
+      "id": "g07",
+      "seed": "girl",
+      "note": "dusk",
+      "prompt": "{GIRL} with black hair sitting alone on a step at dusk, shop lights coming on behind her, small and tired"
+    },
+    {
+      "id": "g08",
+      "seed": "girl",
+      "note": "almost six",
+      "prompt": "close-up face of {GIRL} with black hair looking up at a clock, anxious, evening light on her face"
+    },
+    {
+      "id": "g09",
+      "seed": "girl",
+      "note": "nobody came",
+      "prompt": "{GIRL} with black hair standing alone in an empty market lane at night, lamps lit, quiet, hopeful"
+    },
+    {
+      "id": "g10",
+      "seed": "girl",
+      "note": "CLIFFHANGER footsteps",
+      "prompt": "close-up of {GIRL} with black hair turning sharply to look behind her, startled wide eyes, night lamps"
+    }
+  ]
+}

@@ -13,32 +13,54 @@
     <button id="regen" class="ghost">Re-analyse</button>
     <div class="spacer"></div>
     <div class="stat-row" id="stats"></div>
+    <button id="help" class="ghost" title="Keyboard shortcuts">⌘ Keys</button>
     <button id="export" class="primary">Export cut</button>
   </header>
 
   <div class="wrap" id="wrap">
     <div class="player-col">
       <div class="card">
-        <div class="card-h">Preview</div>
+        <div class="card-h">Preview <span class="sub right" id="nowshot"></span></div>
         <div class="player-body">
-          <video id="player" playsinline></video>
+          <div class="stage">
+            <video id="player" playsinline></video>
+            <div class="capline" id="capline"></div>
+          </div>
+
           <div class="transport">
-            <button id="play" class="ghost">▶</button>
+            <button id="play" class="ghost" title="Space">▶</button>
             <div class="time" id="time">0:00.0 / 0:00.0</div>
-            <div class="scrub" id="scrub"><div class="fill" id="fill"></div><div class="head" id="head"></div></div>
+            <div class="spacer"></div>
+            <button class="ghost mini" id="prevcut" title="Previous shot — [">◀ shot</button>
+            <button class="ghost mini" id="nextcut" title="Next shot — ]">shot ▶</button>
+          </div>
+
+          <!-- the waveform IS the scrubber: you can see where narration sits -->
+          <div class="wavewrap" id="wavewrap">
+            <canvas id="wave"></canvas>
+            <div class="wavecuts" id="wavecuts"></div>
+            <div class="wavehead" id="wavehead" style="left:0"></div>
           </div>
         </div>
-        <!-- filmstrip sits directly under the player and scrubs it -->
+
         <div class="card-h" style="border-top:1px solid var(--border)">
-          Frames <span style="text-transform:none;letter-spacing:0;color:var(--faint)">— click to jump · amber = shot start</span>
+          Frames <span class="sub">— click to jump · amber = shot start</span>
         </div>
         <div class="strip-scroll"><div class="strip" id="strip"></div></div>
+      </div>
+
+      <div class="card">
+        <div class="card-h">Script <span class="sub">— pacing notes, click a line to jump</span>
+          <span class="right" id="scriptsrc"></span></div>
+        <div class="script" id="script"></div>
       </div>
     </div>
 
     <div>
       <div class="card">
-        <div class="card-h">Shots <span style="text-transform:none;letter-spacing:0;color:var(--faint)">— trim, keep/drop, approve, and brief the agent</span></div>
+        <div class="card-h">Shots <span class="sub">— trim, keep/drop, approve, brief the agent</span>
+          <span class="right"><button class="ghost mini" id="approveall">Approve all kept</button></span>
+        </div>
         <div class="beats" id="beats"></div>
       </div>
     </div>
@@ -49,6 +71,21 @@
   </div>
 
   <div id="toast"></div>
+
+  <div id="keys">
+    <div class="keysbox">
+      <h3>Keyboard</h3>
+      <div><span>Play / pause</span><kbd>Space</kbd></div>
+      <div><span>Scrub 1 second</span><kbd>←</kbd> <kbd>→</kbd></div>
+      <div><span>Scrub one frame</span><kbd>,</kbd> <kbd>.</kbd></div>
+      <div><span>Previous / next shot</span><kbd>[</kbd> <kbd>]</kbd></div>
+      <div><span>Keep / drop this shot</span><kbd>K</kbd></div>
+      <div><span>Approve this shot</span><kbd>A</kbd></div>
+      <div><span>Jump to shot 1–9</span><kbd>1</kbd>…<kbd>9</kbd></div>
+      <div><span>Close this</span><kbd>Esc</kbd></div>
+    </div>
+  </div>
+
   <script src="app.js"></script>
 </body>
 </html>

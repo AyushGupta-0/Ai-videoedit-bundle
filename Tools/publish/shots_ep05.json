@@ -1,0 +1,66 @@
+{
+  "episode": "ep05-the-market",
+  "note": "Day 6. Anaya alone in every frame. 'with black hair' in every prompt.",
+  "shots": [
+    {
+      "id": "h01",
+      "seed": "girl",
+      "note": "entering the market",
+      "prompt": "{GIRL} with black hair walking into a busy colourful Indian vegetable market, cloth bag, morning light"
+    },
+    {
+      "id": "h02",
+      "seed": "girl",
+      "note": "the list",
+      "prompt": "close-up of {GIRL} with black hair reading a small paper list in her hands, concentrating, market light"
+    },
+    {
+      "id": "h03",
+      "seed": "girl",
+      "note": "choosing tomatoes",
+      "prompt": "{GIRL} with black hair reaching for bright red tomatoes on a market stall, careful, morning sun"
+    },
+    {
+      "id": "h04",
+      "seed": "girl",
+      "note": "bargaining",
+      "prompt": "close-up of {GIRL} with black hair talking seriously with a determined little face, market stall behind"
+    },
+    {
+      "id": "h05",
+      "seed": "girl",
+      "note": "bag filling",
+      "prompt": "{GIRL} with black hair holding a cloth bag with vegetables in it, pleased, busy market"
+    },
+    {
+      "id": "h06",
+      "seed": "girl",
+      "note": "paying",
+      "prompt": "close-up of small hands counting coins carefully over a market stall, {GIRL} with black hair behind"
+    },
+    {
+      "id": "h07",
+      "seed": "girl",
+      "note": "running out",
+      "prompt": "close-up face of {GIRL} with black hair looking at her empty palm, worried, market light"
+    },
+    {
+      "id": "h08",
+      "seed": "girl",
+      "note": "one thing missing",
+      "prompt": "{GIRL} with black hair standing in a market holding a half-full cloth bag, downcast, busy stalls"
+    },
+    {
+      "id": "h09",
+      "seed": "girl",
+      "note": "looking past the stalls",
+      "prompt": "{GIRL} with black hair looking out past market stalls toward distant green fields, thoughtful"
+    },
+    {
+      "id": "h10",
+      "seed": "girl",
+      "note": "CLIFFHANGER the fields",
+      "prompt": "close-up of {GIRL} with black hair with a slow determined look in her eyes, green fields blurred behind"
+    }
+  ]
+}

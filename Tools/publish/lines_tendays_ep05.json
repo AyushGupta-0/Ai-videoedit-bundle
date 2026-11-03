@@ -1,0 +1,175 @@
+{
+  "episode": "tendays-ep05",
+  "voices": {
+    "N": {
+      "kokoro": "am_michael",
+      "speed": 0.97,
+      "semitones": 0.0
+    }
+  },
+  "lines": [
+    {
+      "id": "l01",
+      "at": 0.25,
+      "who": "N",
+      "shot": "recap",
+      "text": "You kept driving. You still think about it.",
+      "cap": "YOU KEPT DRIVING.<br>YOU STILL <b>THINK ABOUT IT</b>.",
+      "pause": 0.65
+    },
+    {
+      "id": "l02",
+      "at": 4.08,
+      "who": "N",
+      "shot": "fuel",
+      "text": "Your car is going to die. You only choose where.",
+      "cap": "YOUR CAR IS GOING TO DIE.<br>YOU ONLY CHOOSE <b>WHERE</b>.",
+      "pause": 0.6
+    },
+    {
+      "id": "l03",
+      "at": 8.62,
+      "who": "N",
+      "shot": "bridge",
+      "text": "Eleven miles left. Every road south ends at one bridge.",
+      "cap": "<b>11 MILES</b> LEFT.<br>EVERY ROAD ENDS AT ONE BRIDGE."
+    },
+    {
+      "id": "l04",
+      "at": 12.57,
+      "who": "N",
+      "shot": "bridge",
+      "text": "And the bridge is a six mile car park.",
+      "cap": "AND THE BRIDGE IS A<br><u>SIX MILE CAR PARK</u>.",
+      "pause": 0.55
+    },
+    {
+      "id": "l05",
+      "at": 16.68,
+      "who": "N",
+      "shot": "rail",
+      "text": "So you stop choosing roads. You walk the railway.",
+      "cap": "SO YOU STOP CHOOSING ROADS.<br>YOU WALK THE <b>RAILWAY</b>."
+    },
+    {
+      "id": "l06",
+      "at": 20.24,
+      "who": "N",
+      "shot": "rail",
+      "text": "Elevated. Fenced both sides. Dead straight. And empty.",
+      "cap": "ELEVATED. FENCED. STRAIGHT.<br>AND <b>EMPTY</b>.",
+      "pause": 0.5
+    },
+    {
+      "id": "l07",
+      "at": 23.92,
+      "who": "N",
+      "shot": "radio",
+      "text": "Recovery in six days. Transit south. Avoid all crossings.",
+      "cap": "RECOVERY IN <b>SIX DAYS</b>.<br>AVOID ALL CROSSINGS.",
+      "pause": 0.4
+    },
+    {
+      "id": "l08",
+      "at": 27.88,
+      "who": "N",
+      "shot": "rule1",
+      "text": "Rule one. Walk the sleepers, not the stones.",
+      "cap": "RULE 1. WALK THE SLEEPERS.<br>STONE IS <b>LOUD</b>."
+    },
+    {
+      "id": "l09",
+      "at": 31.06,
+      "who": "N",
+      "shot": "rule2",
+      "text": "Rule two. Count bridges, not miles.",
+      "cap": "RULE 2. COUNT BRIDGES,<br>NOT <b>MILES</b>."
+    },
+    {
+      "id": "l10",
+      "at": 33.47,
+      "who": "N",
+      "shot": "rule3",
+      "text": "Rule three. Never shelter anywhere with one door.",
+      "cap": "RULE 3. <u>NEVER SHELTER ANYWHERE<br>WITH ONE DOOR</u>.",
+      "pause": 0.65
+    },
+    {
+      "id": "l11",
+      "at": 37.29,
+      "who": "N",
+      "shot": "good",
+      "text": "Good news. Eleven miles in, a freight yard. A locomotive, idling.",
+      "cap": "<b>GOOD NEWS</b>. A FREIGHT YARD.<br>A LOCOMOTIVE, <b>IDLING</b>."
+    },
+    {
+      "id": "l12",
+      "at": 41.62,
+      "who": "N",
+      "shot": "bad",
+      "text": "Bad news. Between you and it is a signal box. One room. One door.",
+      "cap": "<u>BAD NEWS</u>. A SIGNAL BOX.<br>ONE ROOM. <b>ONE DOOR</b>.",
+      "pause": 0.6
+    },
+    {
+      "id": "l13",
+      "at": 47.71,
+      "who": "N",
+      "shot": "box",
+      "text": "Four fifty five. You go in for the yard keys.",
+      "cap": "<b>4:55 AM</b>. YOU GO IN<br>FOR THE YARD KEYS."
+    },
+    {
+      "id": "l14",
+      "at": 51.65,
+      "who": "N",
+      "shot": "box",
+      "text": "And the staircase creaks behind you.",
+      "cap": "AND THE STAIRCASE<br><u>CREAKS BEHIND YOU</u>.",
+      "pause": 0.75
+    },
+    {
+      "id": "l15",
+      "at": 54.81,
+      "who": "N",
+      "shot": "voice",
+      "text": "Driver? I've been holding this train nine days. Come down.",
+      "cap": "“DRIVER? I'VE BEEN HOLDING<br>THIS TRAIN NINE DAYS.”",
+      "pause": 0.8
+    },
+    {
+      "id": "l16",
+      "at": 59.56,
+      "who": "N",
+      "shot": "evac",
+      "text": "All rail staff evacuated on day one.",
+      "cap": "ALL RAIL STAFF EVACUATED<br>ON <u>DAY ONE</u>.",
+      "pause": 0.85
+    },
+    {
+      "id": "l17",
+      "at": 63.2,
+      "who": "N",
+      "shot": "loop",
+      "text": "Then the loop plays past the point it has ever reached.",
+      "cap": "THEN THE LOOP PLAYS PAST<br>WHERE IT HAS EVER REACHED."
+    },
+    {
+      "id": "l18",
+      "at": 67.53,
+      "who": "N",
+      "shot": "loop",
+      "text": "It isn't a rescue message. It's a warning.",
+      "cap": "IT ISN'T A RESCUE MESSAGE.<br>IT'S A <u>WARNING</u>.",
+      "pause": 1.05
+    },
+    {
+      "id": "l19",
+      "at": 71.76,
+      "who": "N",
+      "shot": "end",
+      "text": "Do you go down the stairs?",
+      "cap": ""
+    }
+  ]
+}

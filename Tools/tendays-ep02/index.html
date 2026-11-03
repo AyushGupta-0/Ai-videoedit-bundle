@@ -6,8 +6,6 @@
     <title>Ten Days — Day 2</title>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
 <style>
-  /* Palette lifted from the reference: near-black night, one warm light source,
-     one red for danger. Nothing else — extra colour reads as decoration here. */
   :root{
     --night:#0b1220; --night2:#131d30; --road:#161d2b;
     --amber:#f0a93c; --amber-lt:#ffd38a; --warm:#ffb64d;
@@ -18,60 +16,55 @@
   #root{position:relative;width:1080px;height:1920px;overflow:hidden;background:var(--night);
         font-family:"Avenir Next","Helvetica Neue",Arial,sans-serif;}
   .panel{position:absolute;inset:0;opacity:0;will-change:opacity;}
-
-  /* ---------- persistent HUD (REF C: day tag, live clock, countdown) ------- */
   #hud{position:absolute;left:46px;top:44px;z-index:40;}
   #daytag{display:flex;align-items:center;gap:9px;font-size:23px;font-weight:700;
           letter-spacing:2.4px;color:var(--red);}
   #daytag i{width:11px;height:11px;border-radius:50%;background:var(--red);display:block;}
-  #clock{font-size:54px;font-weight:700;color:var(--white);letter-spacing:1px;
-         margin-top:2px;font-variant-numeric:tabular-nums;}
+  #clock{font-size:54px;font-weight:700;color:var(--white);letter-spacing:1px;margin-top:2px;
+         font-variant-numeric:tabular-nums;}
   #recov{font-size:20px;font-weight:600;letter-spacing:2.6px;color:var(--grey);margin-top:1px;}
   #mark{position:absolute;right:46px;top:52px;z-index:40;font-size:18px;
         letter-spacing:1.6px;color:#55617a;}
-
-  /* ---------- caption: white caps, one amber word ------------------------- */
+  /* Captions sit above y=1500. Anything a panel draws below that collides with a
+     two-line caption, which is a hard lint error — keep panel text above it. */
   #capwrap{position:absolute;left:70px;right:70px;bottom:230px;text-align:center;z-index:38;}
-  #cap{display:inline-block;color:var(--white);font-size:58px;line-height:1.26;
-       font-weight:700;letter-spacing:.4px;opacity:0;
+  #cap{display:inline-block;color:var(--white);font-size:58px;line-height:1.26;font-weight:700;
+       letter-spacing:.4px;opacity:0;
        text-shadow:0 4px 22px rgba(0,0,0,.95),0 2px 4px rgba(0,0,0,.9);}
   #cap b{color:var(--amber);font-weight:700;}
   #cap u{color:var(--red);text-decoration:none;}
-
-  /* ---------- shared pieces ---------------------------------------------- */
   .vign{position:absolute;inset:0;pointer-events:none;
         background:radial-gradient(125% 85% at 50% 45%,rgba(0,0,0,0) 42%,rgba(0,0,0,.82) 100%);}
-  .sky{position:absolute;inset:0;background:linear-gradient(180deg,#0a1020 0%,#16233a 46%,#0c1322 100%);}
-  .moon{position:absolute;width:86px;height:86px;border-radius:50%;
-        background:radial-gradient(circle at 36% 34%,#fff 0%,#dfe8f6 58%,#b9c7de 100%);
-        box-shadow:0 0 90px 30px rgba(200,220,255,.16);}
-
-  /* rule card */
-  .rulecard{position:absolute;inset:0;display:flex;flex-direction:column;
-            align-items:center;justify-content:center;gap:34px;
+  .sky{position:absolute;inset:0;
+       background:linear-gradient(180deg,#0a1020 0%,#16233a 46%,#0c1322 100%);}
+  .rulecard{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;
+            justify-content:center;gap:34px;
             background:linear-gradient(180deg,rgba(6,10,18,.90),rgba(6,10,18,.96));}
-  .rulebadge{background:var(--red);color:#fff;font-size:26px;font-weight:800;
-             letter-spacing:3.4px;padding:11px 26px;border-radius:5px;}
-  .ruletext{color:#fff;font-size:92px;font-weight:800;letter-spacing:1px;
-            text-align:center;line-height:1.1;max-width:880px;}
-  .rulesub{color:var(--grey);font-size:34px;font-weight:600;max-width:800px;
-           text-align:center;line-height:1.35;}
-
-  /* info / news card */
-  .news{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
-        width:830px;border:3px solid var(--amber);border-radius:12px;
-        background:rgba(8,13,22,.93);padding:36px 40px;}
+  .rulebadge{background:var(--red);color:#fff;font-size:26px;font-weight:800;letter-spacing:3.4px;
+             padding:11px 26px;border-radius:5px;}
+  .ruletext{color:#fff;font-size:92px;font-weight:800;letter-spacing:1px;text-align:center;
+            line-height:1.1;max-width:880px;}
+  .rulesub{color:var(--grey);font-size:34px;font-weight:600;max-width:800px;text-align:center;
+           line-height:1.35;}
+  .news{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:830px;
+        border:3px solid var(--amber);border-radius:12px;background:rgba(8,13,22,.93);
+        padding:36px 40px;}
   .news.bad{border-color:var(--red);}
   .news h4{margin:0 0 22px;color:var(--amber);font-size:30px;letter-spacing:3.4px;font-weight:800;}
   .news.bad h4{color:var(--red);}
-  .news .row{display:flex;justify-content:space-between;align-items:center;
-             color:#fff;font-size:40px;font-weight:600;padding:15px 0;
+  .news .row{display:flex;justify-content:space-between;align-items:center;color:#fff;
+             font-size:40px;font-weight:600;padding:15px 0;
              border-bottom:1px solid rgba(255,255,255,.10);}
   .news .row:last-child{border-bottom:0;}
   .news .row span:last-child{color:var(--amber);font-weight:800;}
   .news.bad .row span:last-child{color:var(--red);}
-
-  /* car-count grid: the rule-3 payoff, so it gets its own treatment */
+  .stamp{position:absolute;left:50%;transform:translateX(-50%) rotate(-7deg);border:7px solid var(--red);
+         color:var(--red);font-size:80px;font-weight:800;letter-spacing:6px;padding:13px 42px;
+         border-radius:8px;}
+  .badge{display:inline-block;border:4px solid var(--amber);color:var(--amber);font-size:38px;
+         font-weight:800;letter-spacing:4px;padding:14px 32px;border-radius:8px;
+         background:rgba(8,12,20,.85);}
+  .badge.red{border-color:var(--red);color:var(--red);}
   .grid{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
         display:grid;grid-template-columns:repeat(4,118px);gap:26px;}
   .cc{width:118px;height:74px;border-radius:10px;background:#28344c;
@@ -87,28 +80,31 @@
 </style>
   </head>
   <body>
-<div id="root" data-composition-id="td2" data-start="0" data-duration="81.4"
+<div id="root" data-composition-id="td2" data-start="0" data-duration="76.6"
      data-width="1080" data-height="1920" data-track-kind="graphics">
-  <div id="panels" class="clip" data-start="0" data-duration="81.4" data-track-index="0"></div>
-  <div id="hud" class="clip" data-start="0" data-duration="81.4" data-track-index="1" data-layout-ignore>
+  <div id="panels" class="clip" data-start="0" data-duration="76.6" data-track-index="0"></div>
+  <div id="hud" class="clip" data-start="0" data-duration="76.6" data-track-index="1" data-layout-ignore>
     <div id="daytag"><i></i>DAY 2 / 10</div>
     <div id="clock">3:12 AM</div>
     <div id="recov">RECOVERY IN 9 DAYS</div>
   </div>
-  <div id="mark" class="clip" data-start="0" data-duration="81.4" data-track-index="2"
+  <div id="mark" class="clip" data-start="0" data-duration="76.6" data-track-index="2"
        data-layout-ignore>1min.thinker</div>
-  <div id="capwrap" class="clip" data-start="0" data-duration="81.4" data-track-index="3"
+  <div id="capwrap" class="clip" data-start="0" data-duration="76.6" data-track-index="3"
        data-track-kind="captions"><span id="cap"></span></div>
 </div>
 
 <audio id="vo" src="assets/audio/vo.wav" data-start="0" data-volume="1"></audio>
 
 <script>
-const DUR = 81.4;
+const DUR = 76.6;
 const tl = gsap.timeline({ paused: true });
 const S = document.getElementById("panels");
 const mk = (id, html) => { const d=document.createElement("div");
   d.className="panel"; d.id=id; d.innerHTML=html; S.appendChild(d); return d; };
+const rule = (n, text, sub) => `<div class="rulecard">
+    <div class="rulebadge">RULE #${n}</div><div class="ruletext">${text}</div>
+    ${sub ? `<div class="rulesub">${sub}</div>` : ""}</div>`;
 
 /* A parking level in perspective: slab above, slab below, pillars receding.
    Deterministic throughout — the renderer seeks frames out of order. */
@@ -206,10 +202,6 @@ mk("radio", `<div style="position:absolute;inset:0;background:#070c16;"></div>
        font-size:30px;letter-spacing:4px;">STAY OFF THE GROUND FLOOR</div>
   <div class="vign"></div>`);
 
-const rule = (n, text, sub) => `<div class="rulecard">
-    <div class="rulebadge">RULE #${n}</div>
-    <div class="ruletext">${text}</div>
-    ${sub ? `<div class="rulesub">${sub}</div>` : ""}</div>`;
 mk("rule1", rule(1, "PARK FACING<br>THE EXIT", "always"));
 mk("rule2", rule(2, "NEVER SLEEP IN<br>THE DRIVER'S SEAT", "you cannot see behind you"));
 mk("rule3", rule(3, "COUNT THE CARS<br>BEFORE DARK", ""));
@@ -289,99 +281,61 @@ mk("count", `<div style="position:absolute;inset:0;background:#07090f;"></div>
   <div class="countlabel" id="cnum">12</div>
   <div class="vign"></div>`);
 
+
+/* ---- end card: the question, the buttons, and the next day's hook ---- */
 mk("end", `<div style="position:absolute;inset:0;
        background:radial-gradient(90% 60% at 50% 46%,#2a0b0b 0%,#07090f 72%);"></div>
-  <div style="position:absolute;left:0;right:0;top:700px;text-align:center;">
+  <div style="position:absolute;left:0;right:0;top:690px;text-align:center;">
     <div style="color:#fff;font-size:84px;font-weight:800;">DO YOU START</div>
     <div style="color:var(--red);font-size:84px;font-weight:800;">THE ENGINE?</div>
   </div>
-  <div style="position:absolute;left:0;right:0;top:990px;display:flex;justify-content:center;gap:34px;">
+  <div style="position:absolute;left:0;right:0;top:980px;display:flex;justify-content:center;gap:34px;">
     <div style="background:var(--amber);color:#1a1205;font-size:38px;font-weight:800;
          padding:20px 52px;border-radius:10px;letter-spacing:2px;">START</div>
     <div style="background:var(--red-dk);color:#fff;font-size:38px;font-weight:800;
          padding:20px 52px;border-radius:10px;letter-spacing:2px;">WAIT</div>
   </div>
-  <div style="position:absolute;left:0;right:0;top:1170px;text-align:center;">
+  <div style="position:absolute;left:0;right:0;top:1160px;text-align:center;">
     <div style="color:#7d879b;font-size:26px;letter-spacing:4px;">DAY 3</div>
-    <div style="color:#fff;font-size:44px;font-weight:800;margin-top:10px;">
-      YOU COUNTED TWELVE.<br>SO WHAT IS THE THIRTEENTH?</div>
-    <div style="color:var(--amber);font-size:27px;letter-spacing:3px;margin-top:22px;">FOLLOW FOR DAY 3</div>
+    <div style="color:#fff;font-size:44px;font-weight:800;margin-top:10px;">YOU COUNTED TWELVE.<br>SO WHAT IS THE THIRTEENTH?</div>
+    <div style="color:var(--amber);font-size:27px;letter-spacing:3px;margin-top:22px;">
+      FOLLOW FOR DAY 3</div>
   </div>`);
 
-/* ======================= TIMELINE (measured VO) ======================= */
-const SH = [
-  ["recap",  0.00,  3.95],
-  ["park",   3.75, 12.15],
-  ["ramp",  11.95, 18.10],
-  ["radio", 17.90, 23.95],
-  ["rule1", 23.75, 27.25],
-  ["rule2", 27.05, 32.55],
-  ["rule3", 32.35, 37.40],
-  ["good",  37.20, 42.25],
-  ["bad",   42.05, 47.70],
-  ["door",  47.50, 56.95],
-  ["steps", 56.75, 61.05],
-  ["voice", 60.85, 66.40],
-  ["dash",  66.20, 71.10],
-  ["count", 70.90, 76.80],
-  ["end",   76.60, DUR],
-];
+const SH = [["recap", 0.0, 4.0], ["park", 3.8, 11.739999999999998], ["ramp", 11.54, 20.64], ["radio", 20.3, 24.91], ["rule1", 24.71, 28.28], ["rule2", 27.94, 31.91], ["rule3", 31.57, 35.92], ["good", 35.72, 40.35], ["bad", 40.01, 45.71], ["door", 45.51, 54.620000000000005], ["steps", 54.42, 58.440000000000005], ["voice", 58.24, 62.67], ["dash", 62.47, 66.75], ["count", 66.55, 72.39], ["end", 72.19, 76.6]];
 const FADE = 0.30;
 SH.forEach(([id, a, b]) => {
   const el = document.getElementById(id);
+  if (!el) { console.warn("missing panel", id); return; }
   tl.to(el, { opacity: 1, duration: FADE }, a);
   if (b < DUR) tl.to(el, { opacity: 0, duration: FADE }, b - FADE);
 });
 
-tl.fromTo("#levelart", { scale: 1.00 }, { scale: 1.10, duration: 8.4, ease: "none" }, 3.75);
-tl.fromTo("#radiobox", { scale: 0.98 }, { scale: 1.04, duration: 6.0, ease: "none" }, 17.9);
-
-/* the door: opens a wedge of light, then lets it close softly */
-tl.fromTo("#wedge", { width: 0 }, { width: 190, duration: 1.5, ease: "power2.out" }, 48.6);
-tl.to("#wedge", { width: 0, duration: 2.6, ease: "power1.inOut" }, 51.6);
-
-/* footsteps cross the light pools, one at a time */
-[57.6, 58.6, 59.6].forEach((t, i) => {
+tl.fromTo("#levelart", { scale: 1.00 }, { scale: 1.10, duration: 8.0, ease: "none" }, 3.9);
+tl.fromTo("#wedge", { width: 0 }, { width: 190, duration: 1.5, ease: "power2.out" }, 44.4);
+tl.to("#wedge", { width: 0, duration: 2.6, ease: "power1.inOut" }, 47.2);
+[53.0, 54.0, 55.0].forEach((t, i) => {
   tl.fromTo(`#pool${i + 1}`, { opacity: 0.13 },
             { opacity: 0.44, duration: 0.22, yoyo: true, repeat: 1 }, t);
 });
-tl.fromTo("#halo", { opacity: 0.3 }, { opacity: 0.85, duration: 3.2, ease: "sine.inOut" }, 61.4);
-
-/* THE PAYOFF: the thirteenth car appears, and the count ticks over */
+tl.fromTo("#halo", { opacity: 0.3 }, { opacity: 0.85, duration: 3.2, ease: "sine.inOut" }, 56.6);
+/* the payoff: the thirteenth car arrives and the count turns red */
 tl.fromTo("#extra", { opacity: 0, scale: 0.6 },
-          { opacity: 1, scale: 1, duration: 0.40, ease: "power3.out" }, 74.1);
-tl.call(() => { document.getElementById("cnum").textContent = "13"; }, null, 74.1);
+          { opacity: 1, scale: 1, duration: 0.40, ease: "power3.out" }, 69.6);
+tl.call(() => { document.getElementById("cnum").textContent = "13"; }, null, 69.6);
 tl.fromTo("#cnum", { scale: 1, color: "#ffffff" },
-          { scale: 1.3, color: "#ff4242", duration: 0.40, ease: "power3.out" }, 74.1);
+          { scale: 1.3, color: "#ff4242", duration: 0.40, ease: "power3.out" }, 69.6);
 
-/* HUD clock 3:12 -> 3:40 AM */
-const S0 = 3 * 60 + 12, S1 = 3 * 60 + 40;
+/* ---- HUD clock, stepping minute by minute ---- */
+const S0 = 192, S1 = 220, AMPM = "AM";
 const clockEl = document.getElementById("clock");
 for (let m = S0; m <= S1; m++){
-  const at = ((m - S0) / (S1 - S0)) * (DUR - 4.0);
-  tl.call(() => { clockEl.textContent = `${Math.floor(m/60)}:${String(m%60).padStart(2,"0")} AM`; }, null, at);
+  const at = ((m - S0) / Math.max(1, S1 - S0)) * (DUR - 4.0);
+  tl.call(() => { clockEl.textContent =
+    `${Math.floor(m/60)}:${String(m%60).padStart(2,"0")} ${AMPM}`; }, null, at);
 }
 
-const LINES = [
-  ["YOU DIDN'T OPEN THE DOOR.<br>YOU <b>DROVE</b>.",                     0.25,  3.30],
-  ["<b>DAY 2</b>. FOURTH FLOOR OF<br>A MULTI-STOREY CAR PARK.",          4.00,  8.75],
-  ["BECAUSE CONCRETE HAS <b>NO WINDOWS</b>.",                            8.81, 11.69],
-  ["HIGH ENOUGH NOTHING REACHES YOU.<br>LOW ENOUGH TO <b>DRIVE DOWN FAST</b>.", 12.19, 18.04],
-  ["RECOVERY IN <b>NINE DAYS</b>.<br>STAY OFF THE GROUND FLOOR.",       18.09, 23.57],
-  ["RULE 1. <b>PARK FACING THE EXIT</b>.",                              24.02, 27.20],
-  ["RULE 2. NEVER SLEEP IN THE DRIVER'S SEAT.<br>YOU CAN'T SEE <b>BEHIND YOU</b>.", 27.25, 32.45],
-  ["RULE 3. <u>COUNT THE CARS</u> BEFORE DARK.",                        32.52, 36.74],
-  ["<b>GOOD NEWS</b>. ELEVEN CARS.<br>YOURS IS THE <b>TWELFTH</b>.",    37.44, 42.16],
-  ["<u>BAD NEWS</u>. THE STAIRWELL DOOR<br>DOESN'T LOCK. IT ONLY CLOSES.", 42.23, 47.12],
-  ["<b>3:40 AM</b>. THE DOOR OPENS —<br>AND SOMEONE LETS IT CLOSE SOFTLY.", 47.73, 53.75],
-  ["SOMEONE WHO DIDN'T WANT IT TO <u>BANG</u>.",                        53.81, 56.56],
-  ["THEN FOOTSTEPS.<br>NOT SHUFFLING. <u>WALKING</u>.",                 57.31, 60.59],
-  ["“I SAW YOUR BRAKE LIGHTS.<br>WHICH CAR ARE YOU IN?”",               61.13, 65.78],
-  ["YOU HAVEN'T TOUCHED THE BRAKES<br>SINCE <u>FOUR O'CLOCK YESTERDAY</u>.", 66.48, 70.31],
-  ["SO YOU COUNT AGAIN.",                                               71.21, 73.23],
-  ["<u>THIRTEEN</u>.",                                                  74.08, 75.76],
-  ["",                                                                  76.86, 79.08],
-];
+const LINES = [["YOU DIDN'T OPEN THE DOOR.<br>YOU <b>DROVE</b>.", 0.25, 3.3], ["A CAR PARK IS THE SAFEST PLACE<br>TO SLEEP IN AN OUTBREAK.", 4.0, 8.25], ["UNTIL YOU COUNT THE CARS <u>TWICE</u>.", 8.46, 11.085], ["<b>DAY 2</b>. LEVEL FOUR.<br>CONCRETE HAS <b>NO WINDOWS</b>.", 11.735, 15.91], ["HIGH ENOUGH OFF THE STREET.<br>LOW ENOUGH TO <b>DRIVE DOWN FAST</b>.", 15.97, 20.445], ["RECOVERY IN <b>NINE DAYS</b>.<br>STAY OFF THE GROUND FLOOR.", 20.505, 24.505], ["RULE 1. <b>PARK FACING THE EXIT</b>.", 24.905, 28.08], ["RULE 2. NEVER SLEEP IN<br>THE <b>DRIVER'S SEAT</b>.", 28.14, 31.715], ["RULE 3. <u>COUNT THE CARS</u><br>BEFORE DARK.", 31.775, 35.225], ["<b>GOOD NEWS</b>. ELEVEN CARS.<br>YOURS IS THE <b>TWELFTH</b>.", 35.925, 40.15], ["<u>BAD NEWS</u>. THE DOOR DOESN'T LOCK.<br>IT ONLY <b>CLOSES</b>.", 40.21, 45.11], ["<b>3:40 AM</b>. THE DOOR OPENS —<br>AND SOMEONE LETS IT CLOSE SOFTLY.", 45.71, 51.06], ["SOMEONE WHO DIDN'T WANT IT TO <u>BANG</u>.", 51.12, 53.87], ["THEN FOOTSTEPS.<br>NOT SHUFFLING. <u>WALKING</u>.", 54.62, 57.895], ["“I SAW YOUR BRAKE LIGHTS.<br>WHICH CAR ARE YOU IN?”", 58.445, 61.97], ["YOU HAVEN'T TOUCHED THE BRAKES<br>SINCE <u>YESTERDAY</u>.", 62.67, 65.845], ["SO YOU COUNT AGAIN.", 66.745, 68.77], ["<u>THIRTEEN</u>.", 69.62, 71.295], ["", 72.395, 74.62]];
 const capEl = document.getElementById("cap");
 LINES.forEach(([html, a, b], i) => {
   tl.call(() => { capEl.innerHTML = html; }, null, a);

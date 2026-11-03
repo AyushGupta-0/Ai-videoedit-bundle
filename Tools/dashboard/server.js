@@ -154,9 +154,17 @@ async function cutsFromComposition(duration) {
     const dm = html.match(/data-duration="([\d.]+)"/);
     if (!dm || Math.abs(parseFloat(dm[1]) - duration) > 0.25) continue;
 
-    const block = html.match(/const SHOTS\s*=\s*\[([\s\S]*?)\];/);
-    if (!block) continue;
-    const ins = [...block[1].matchAll(/\bin:\s*([\d.]+)/g)].map((m) => parseFloat(m[1]));
+    // two composition dialects:
+    //   explainers:  const SHOTS = [{ img:"x", in: 0.0, out: 5.6, ... }, ...]
+    //   Ten Days:    const SH    = [["panelId", 0.00, 8.40], ...]
+    let ins = [];
+    const shots = html.match(/const SHOTS\s*=\s*\[([\s\S]*?)\n\s*\];/);
+    if (shots) {
+      ins = [...shots[1].matchAll(/\bin:\s*([\d.]+)/g)].map((m) => parseFloat(m[1]));
+    } else {
+      const sh = html.match(/const SH\s*=\s*\[([\s\S]*?)\n\];/);
+      if (sh) ins = [...sh[1].matchAll(/\[\s*"[^"]+"\s*,\s*([\d.]+)/g)].map((m) => parseFloat(m[1]));
+    }
     if (ins.length < 2) continue;
 
     const bounds = [...new Set(ins.map((t) => Math.round(t * 100) / 100))].sort((a, b) => a - b);
@@ -544,6 +552,115 @@ app.post("/api/project/:id/export", async (req, res) => {
 
   const meta = await probe(path.join(exportDir(), "Instagram", day, base, name));
   res.json({ ok: true, files: written, duration: meta.duration, segments: keep.length });
+});
+
+
+/* ---------------------------------------------------------------------------
+ * Waveform + script pacing.
+ *
+ * Reviewing a story reel by scrubbing blind is slow: you cannot see where the
+ * narration actually sits, and you cannot see which lines are dragging. These
+ * two endpoints put both on screen.
+ * ------------------------------------------------------------------------- */
+
+const WAVE_BUCKETS = 900;
+
+async function waveform(videoPath) {
+  // 8-bit mono PCM at a low rate is plenty for a review waveform and avoids
+  // pulling a whole decoded track into memory.
+  const { stdout } = await execFileAsync("ffmpeg", [
+    "-v", "error", "-i", videoPath,
+    "-ac", "1", "-ar", "8000", "-f", "u8", "-",
+  ], { maxBuffer: 1024 * 1024 * 64, encoding: "buffer" });
+
+  const n = stdout.length;
+  if (!n) return [];
+  const per = Math.max(1, Math.floor(n / WAVE_BUCKETS));
+  const peaks = [];
+  for (let i = 0; i + per <= n; i += per) {
+    let hi = 0;
+    for (let j = i; j < i + per; j++) {
+      const v = Math.abs(stdout[j] - 128);   // u8 is centred on 128
+      if (v > hi) hi = v;
+    }
+    peaks.push(+(hi / 128).toFixed(3));
+  }
+  return peaks;
+}
+
+app.get("/api/project/:id/waveform", async (req, res) => {
+  const v = (await listVideos()).find((x) => x.id === req.params.id);
+  if (!v) return res.status(404).json({ error: "unknown video" });
+  const cache = path.join(CACHE_DIR, `${v.id}-wave.json`);
+  if (fssync.existsSync(cache)) return res.json(JSON.parse(await fs.readFile(cache, "utf-8")));
+  try {
+    const peaks = await waveform(path.join(v.dir, v.filename));
+    await fs.writeFile(cache, JSON.stringify(peaks));
+    res.json(peaks);
+  } catch (e) {
+    res.status(500).json({ error: String(e).slice(0, 200) });
+  }
+});
+
+/* Pacing notes. These thresholds came from measuring our own episodes against
+ * the reference reels, not from taste:
+ *   - the reference reels run ~2.4-2.9 words/sec; outside that reads as rushed
+ *     or draggy
+ *   - a caption over ~11 words does not fit two lines at 58px and gets clipped
+ *   - a single beat holding longer than ~6s with nothing moving is where the
+ *     first-render EP01 lost people
+ *   - the opening must land a second beat before 5s
+ */
+function pacingNotes(lines, duration) {
+  const notes = [];
+  lines.forEach((l, i) => {
+    const dur = l.end - l.start;
+    const words = (l.text || "").trim().split(/\s+/).filter(Boolean).length;
+    // a caption with <br> is two short lines, so measure the longest segment
+    const capSegs = (l.cap || "").split(/<br\s*\/?>/i)
+      .map((x) => x.replace(/<[^>]+>/g, "").trim().split(/\s+/).filter(Boolean).length);
+    const longest = capSegs.length ? Math.max(...capSegs) : words;
+    const wps = words / Math.max(0.01, dur);
+    if (dur > 6.0) notes.push({ id: l.id, level: "warn", msg: `holds ${dur.toFixed(1)}s on one line` });
+    if (longest > 7) notes.push({ id: l.id, level: "warn",
+      msg: `caption line of ${longest} words — will wrap past two lines` });
+    if (wps > 3.2) notes.push({ id: l.id, level: "warn", msg: `${wps.toFixed(1)} w/s — rushed` });
+    if (wps < 1.7 && words > 2) notes.push({ id: l.id, level: "info", msg: `${wps.toFixed(1)} w/s — draggy` });
+    const gap = i ? l.start - lines[i - 1].end : l.start;
+    if (gap > 1.4) notes.push({ id: l.id, level: "info", msg: `${gap.toFixed(1)}s of silence before` });
+  });
+  if (lines.length > 1 && lines[1].start > 5.0) {
+    notes.unshift({ id: lines[0].id, level: "warn",
+      msg: `second beat lands at ${lines[1].start.toFixed(1)}s — hook is slow` });
+  }
+  const spoken = lines.reduce((a, l) => a + (l.end - l.start), 0);
+  return { notes, spokenPct: Math.round((spoken / duration) * 100) };
+}
+
+app.get("/api/project/:id/script", async (req, res) => {
+  const v = (await listVideos()).find((x) => x.id === req.params.id);
+  if (!v) return res.status(404).json({ error: "unknown video" });
+  // find the composition whose VO produced this cut
+  const toolsDir = path.join(ROOT, "Tools");
+  let entries = [];
+  try { entries = await fs.readdir(toolsDir); } catch { /* none */ }
+  // Match by NAME first. Duration alone is not enough: EP01 is 75.4s and EP02
+  // is 76.6s, so a 3s tolerance happily returned the wrong episode's script.
+  const stem = v.filename.replace(/\.[^.]+$/, "");
+  const ranked = entries
+    .filter((n) => !n.startsWith("."))
+    .sort((a, b) => (stem.startsWith(b) ? 1 : 0) - (stem.startsWith(a) ? 1 : 0));
+  for (const name of ranked) {
+    const tj = path.join(toolsDir, name, "assets", "audio", "vo_timings.json");
+    if (!fssync.existsSync(tj)) continue;
+    const t = JSON.parse(await fs.readFile(tj, "utf-8"));
+    const meta = await probe(path.join(v.dir, v.filename));
+    const named = stem.startsWith(name);
+    if (!named && Math.abs(t.duration - meta.duration) > 1.0) continue;
+    return res.json({ source: name, duration: t.duration, lines: t.lines,
+                      ...pacingNotes(t.lines, t.duration) });
+  }
+  res.json({ source: null, lines: [], notes: [], spokenPct: 0 });
 });
 
 app.get("/video/:id", async (req, res) => {

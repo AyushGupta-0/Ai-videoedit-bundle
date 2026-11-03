@@ -1,0 +1,96 @@
+{
+  "episode": "ep07",
+  "voices": {
+    "N": {
+      "kokoro": "af_sarah",
+      "speed": 0.95,
+      "semitones": 0.0
+    }
+  },
+  "lines": [
+    {
+      "id": "l01",
+      "at": 0.3,
+      "who": "N",
+      "shot": "j01",
+      "text": "Four days. She came home wet to the bone."
+    },
+    {
+      "id": "l02",
+      "at": 4.4,
+      "who": "N",
+      "shot": "j02",
+      "text": "And then she remembered her school bag."
+    },
+    {
+      "id": "l03",
+      "at": 8.0,
+      "who": "N",
+      "shot": "j03",
+      "text": "Inside it was every piece of coloured paper she had been saving since the rains."
+    },
+    {
+      "id": "l04",
+      "at": 14.6,
+      "who": "N",
+      "shot": "j04",
+      "text": "For the card. For Papa."
+    },
+    {
+      "id": "l05",
+      "at": 17.8,
+      "who": "N",
+      "shot": "j05",
+      "text": "It had all gone to pulp."
+    },
+    {
+      "id": "l06",
+      "at": 20.4,
+      "who": "N",
+      "shot": "j05",
+      "text": "She laid every piece out on the floor to dry, very carefully."
+    },
+    {
+      "id": "l07",
+      "at": 26.0,
+      "who": "N",
+      "shot": "j06",
+      "text": "She sat with them until the lamp went low."
+    },
+    {
+      "id": "l08",
+      "at": 30.0,
+      "who": "N",
+      "shot": "j07",
+      "text": "When she tried to lift the gold one, it tore in half."
+    },
+    {
+      "id": "l09",
+      "at": 35.0,
+      "who": "N",
+      "shot": "j08",
+      "text": "Four days left, and nothing to make it from."
+    },
+    {
+      "id": "l10",
+      "at": 39.4,
+      "who": "N",
+      "shot": "j09",
+      "text": "She sat at the window for a long time."
+    },
+    {
+      "id": "l11",
+      "at": 43.4,
+      "who": "N",
+      "shot": "j10",
+      "text": "And then she remembered something."
+    },
+    {
+      "id": "l12",
+      "at": 46.4,
+      "who": "N",
+      "shot": "j10",
+      "text": "The art cupboard at school."
+    }
+  ]
+}

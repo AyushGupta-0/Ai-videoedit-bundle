@@ -1,0 +1,66 @@
+{
+  "episode": "ep06-the-farmer",
+  "note": "Day 5. Anaya alone in every frame. 'with black hair' in every prompt.",
+  "shots": [
+    {
+      "id": "i01",
+      "seed": "girl",
+      "note": "the road out",
+      "prompt": "{GIRL} with black hair walking along a dirt road beside green fields, cloth bag, big sky, afternoon"
+    },
+    {
+      "id": "i02",
+      "seed": "girl",
+      "note": "the field",
+      "prompt": "{GIRL} with black hair standing small at the edge of a large green vegetable field, looking in"
+    },
+    {
+      "id": "i03",
+      "seed": "girl",
+      "note": "gathering courage",
+      "prompt": "close-up of {GIRL} with black hair taking a deep breath, nervous but determined, field behind"
+    },
+    {
+      "id": "i04",
+      "seed": "girl",
+      "note": "asking",
+      "prompt": "{GIRL} with black hair looking up and speaking politely, hands together, hopeful, green field"
+    },
+    {
+      "id": "i05",
+      "seed": "girl",
+      "note": "the answer",
+      "prompt": "close-up face of {GIRL} with black hair as her hopeful expression slowly falls, quiet, field light"
+    },
+    {
+      "id": "i06",
+      "seed": "girl",
+      "note": "the empty bag",
+      "prompt": "close-up of {GIRL} with black hair holding an open empty cloth bag, looking down into it, sad"
+    },
+    {
+      "id": "i07",
+      "seed": "girl",
+      "note": "turning away",
+      "prompt": "{GIRL} with black hair seen from behind walking away along a dirt road beside fields, small, grey sky"
+    },
+    {
+      "id": "i08",
+      "seed": "girl",
+      "note": "first drops",
+      "prompt": "{GIRL} with black hair looking up as rain begins, raindrops on her face, grey sky, dirt road"
+    },
+    {
+      "id": "i09",
+      "seed": "girl",
+      "note": "walking in the rain",
+      "prompt": "{GIRL} with black hair walking in rain along a dirt road, hair wet, clutching an empty bag, grey light"
+    },
+    {
+      "id": "i10",
+      "seed": "girl",
+      "note": "CLIFFHANGER a voice",
+      "prompt": "close-up of {GIRL} with black hair stopping and turning her head in the rain, surprised, wet face"
+    }
+  ]
+}

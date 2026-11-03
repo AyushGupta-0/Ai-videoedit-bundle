@@ -1,0 +1,66 @@
+{
+  "episode": "ep10-the-gate",
+  "note": "Day 1. Anaya alone in every frame. 'with black hair' in every prompt.",
+  "shots": [
+    {
+      "id": "n01",
+      "seed": "girl",
+      "note": "dawn at the door",
+      "prompt": "{GIRL} with black hair asleep against a front door at dawn with a blanket, soft pink morning light"
+    },
+    {
+      "id": "n02",
+      "seed": "girl",
+      "note": "waking",
+      "prompt": "close-up face of {GIRL} with black hair slowly opening her eyes, early morning light, hopeful"
+    },
+    {
+      "id": "n03",
+      "seed": "girl",
+      "note": "listening",
+      "prompt": "close-up of {GIRL} with black hair going very still and listening hard, eyes wide, morning light"
+    },
+    {
+      "id": "n04",
+      "seed": "girl",
+      "note": "the gate",
+      "prompt": "{GIRL} with black hair seen from behind standing in an open doorway looking out at a garden gate, morning"
+    },
+    {
+      "id": "n05",
+      "seed": "girl",
+      "note": "she sees him",
+      "prompt": "close-up face of {GIRL} with black hair breaking into the biggest smile, eyes shining with tears, morning"
+    },
+    {
+      "id": "n06",
+      "seed": "girl",
+      "note": "running",
+      "prompt": "{GIRL} with black hair running flat out toward the camera with both arms open wide, pure joy, morning garden"
+    },
+    {
+      "id": "n07",
+      "seed": "girl",
+      "note": "the firecracker",
+      "prompt": "{GIRL} with black hair covering her ears and laughing as sparks fly nearby, delighted, bright day"
+    },
+    {
+      "id": "n08",
+      "seed": "girl",
+      "note": "the lunch",
+      "prompt": "{GIRL} with black hair proudly setting a plate of food on a table, pleased with herself, warm kitchen"
+    },
+    {
+      "id": "n09",
+      "seed": "girl",
+      "note": "giving the card",
+      "prompt": "{GIRL} with black hair holding out a handmade card with both hands, shy and proud, warm golden light"
+    },
+    {
+      "id": "n10",
+      "seed": "girl",
+      "note": "the new calendar",
+      "prompt": "{GIRL} with black hair looking up at a fresh blank calendar on a wall, quiet thoughtful face, warm light"
+    }
+  ]
+}

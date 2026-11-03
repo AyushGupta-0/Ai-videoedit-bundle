@@ -1,0 +1,176 @@
+{
+  "duration": 72.515,
+  "lines": [
+    {
+      "id": "l01",
+      "who": "N",
+      "shot": "recap",
+      "text": "You went out the back.",
+      "cap": "YOU WENT OUT THE <b>BACK</b>.",
+      "start": 0.25,
+      "end": 2.225
+    },
+    {
+      "id": "l02",
+      "who": "N",
+      "shot": "road",
+      "text": "On day four you meet another survivor.",
+      "cap": "ON DAY 4 YOU MEET<br>ANOTHER <b>SURVIVOR</b>.",
+      "start": 2.92,
+      "end": 6.195
+    },
+    {
+      "id": "l03",
+      "who": "N",
+      "shot": "road",
+      "text": "More dangerous than meeting the dead.",
+      "cap": "MORE DANGEROUS THAN<br>MEETING THE <u>DEAD</u>.",
+      "start": 6.255,
+      "end": 9.205
+    },
+    {
+      "id": "l04",
+      "who": "N",
+      "shot": "follow",
+      "text": "Headlights. Four hundred metres back. For sixty miles.",
+      "cap": "HEADLIGHTS. <b>400 METRES</b> BACK.<br>FOR SIXTY MILES.",
+      "start": 9.805,
+      "end": 14.28
+    },
+    {
+      "id": "l05",
+      "who": "N",
+      "shot": "follow",
+      "text": "You slow down. They slow down.",
+      "cap": "YOU SLOW DOWN.<br><u>THEY SLOW DOWN</u>.",
+      "start": 14.34,
+      "end": 17.065
+    },
+    {
+      "id": "l06",
+      "who": "N",
+      "shot": "radio",
+      "text": "Recovery in seven days. Do not convoy.",
+      "cap": "RECOVERY IN <b>SEVEN DAYS</b>.<br>DO NOT CONVOY.",
+      "start": 17.615,
+      "end": 21.39
+    },
+    {
+      "id": "l07",
+      "who": "N",
+      "shot": "rule1",
+      "text": "Rule one. Never drive straight to where you sleep.",
+      "cap": "RULE 1. NEVER DRIVE STRAIGHT<br>TO WHERE YOU <b>SLEEP</b>.",
+      "start": 21.79,
+      "end": 25.59
+    },
+    {
+      "id": "l08",
+      "who": "N",
+      "shot": "rule2",
+      "text": "Rule two. Never let a stranger see your fuel.",
+      "cap": "RULE 2. NEVER LET A STRANGER<br>SEE YOUR <b>FUEL</b>.",
+      "start": 25.65,
+      "end": 29.45
+    },
+    {
+      "id": "l09",
+      "who": "N",
+      "shot": "rule3",
+      "text": "Rule three. Do not stop on open road.",
+      "cap": "RULE 3. <u>DO NOT STOP<br>ON OPEN ROAD</u>.",
+      "start": 29.51,
+      "end": 33.06
+    },
+    {
+      "id": "l10",
+      "who": "N",
+      "shot": "good",
+      "text": "Good news. Ninety miles of fuel.",
+      "cap": "<b>GOOD NEWS</b>. 90 MILES OF FUEL.",
+      "start": 33.71,
+      "end": 36.885
+    },
+    {
+      "id": "l11",
+      "who": "N",
+      "shot": "bad",
+      "text": "Bad news. Every road south ends at one bridge.",
+      "cap": "<u>BAD NEWS</u>. EVERY ROAD SOUTH<br>ENDS AT <b>ONE BRIDGE</b>.",
+      "start": 36.945,
+      "end": 41.195
+    },
+    {
+      "id": "l12",
+      "who": "N",
+      "shot": "junction",
+      "text": "One seventeen. You kill your lights and turn off.",
+      "cap": "<b>1:17 AM</b>. YOU KILL YOUR LIGHTS<br>AND TURN OFF.",
+      "start": 41.745,
+      "end": 45.795
+    },
+    {
+      "id": "l13",
+      "who": "N",
+      "shot": "sos",
+      "text": "Behind you, they stop. And they flash their headlights.",
+      "cap": "BEHIND YOU, THEY <b>STOP</b>.<br>AND FLASH THEIR HEADLIGHTS.",
+      "start": 46.445,
+      "end": 50.37
+    },
+    {
+      "id": "l14",
+      "who": "N",
+      "shot": "sos",
+      "text": "Three long. Three short. Three long.",
+      "cap": "THREE LONG. THREE SHORT.<br>THREE LONG.",
+      "start": 50.43,
+      "end": 53.38
+    },
+    {
+      "id": "l15",
+      "who": "N",
+      "shot": "sos",
+      "text": "That's not a threat. That's S O S.",
+      "cap": "THAT'S NOT A THREAT.<br>THAT'S <u>S.O.S.</u>",
+      "start": 54.13,
+      "end": 57.28
+    },
+    {
+      "id": "l16",
+      "who": "N",
+      "shot": "drive",
+      "text": "And you keep driving.",
+      "cap": "AND YOU <u>KEEP DRIVING</u>.",
+      "start": 58.13,
+      "end": 60.18
+    },
+    {
+      "id": "l17",
+      "who": "N",
+      "shot": "out",
+      "text": "Thirty seconds later their lights go out.",
+      "cap": "THIRTY SECONDS LATER<br>THEIR LIGHTS GO <u>OUT</u>.",
+      "start": 60.98,
+      "end": 64.38
+    },
+    {
+      "id": "l18",
+      "who": "N",
+      "shot": "out",
+      "text": "And they don't come back on.",
+      "cap": "AND THEY DON'T <u>COME BACK ON</u>.",
+      "start": 65.03,
+      "end": 67.48
+    },
+    {
+      "id": "l19",
+      "who": "N",
+      "shot": "end",
+      "text": "Did you just leave someone to die?",
+      "cap": "",
+      "start": 68.53,
+      "end": 71.255
+    }
+  ]
+}

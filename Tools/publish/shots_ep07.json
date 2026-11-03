@@ -1,0 +1,66 @@
+{
+  "episode": "ep07-what-the-rain-took",
+  "note": "Day 4. Anaya alone in every frame. 'with black hair' in every prompt.",
+  "shots": [
+    {
+      "id": "j01",
+      "seed": "girl",
+      "note": "home, soaked",
+      "prompt": "{GIRL} with black hair standing just inside a doorway dripping wet, holding a wet school bag, warm hallway"
+    },
+    {
+      "id": "j02",
+      "seed": "girl",
+      "note": "opening the bag",
+      "prompt": "close-up of {GIRL} with black hair opening a wet cloth school bag and looking inside, worried, warm light"
+    },
+    {
+      "id": "j03",
+      "seed": "girl",
+      "note": "the ruined paper",
+      "prompt": "close-up of small wet hands holding soggy torn coloured paper, {GIRL} with black hair behind, lamp light"
+    },
+    {
+      "id": "j04",
+      "seed": "girl",
+      "note": "realising",
+      "prompt": "close-up face of {GIRL} with black hair going still, eyes filling, quiet shock, warm lamp light"
+    },
+    {
+      "id": "j05",
+      "seed": "girl",
+      "note": "laying it out",
+      "prompt": "{GIRL} with black hair kneeling on the floor spreading wet coloured paper out to dry, careful, lamp light"
+    },
+    {
+      "id": "j06",
+      "seed": "girl",
+      "note": "waiting for it to dry",
+      "prompt": "{GIRL} with black hair sitting on the floor with her chin on her knees watching paper dry, patient, night"
+    },
+    {
+      "id": "j07",
+      "seed": "girl",
+      "note": "it tears",
+      "prompt": "close-up of {GIRL} with black hair holding a torn piece of paper, dismayed, lamp light"
+    },
+    {
+      "id": "j08",
+      "seed": "girl",
+      "note": "the rainy window",
+      "prompt": "{GIRL} with black hair pressing her forehead against a rainy dark window, defeated, blue night light"
+    },
+    {
+      "id": "j09",
+      "seed": "girl",
+      "note": "thinking",
+      "prompt": "close-up face of {GIRL} with black hair staring at nothing, thinking hard, lamp light on one side"
+    },
+    {
+      "id": "j10",
+      "seed": "girl",
+      "note": "CLIFFHANGER the idea",
+      "prompt": "close-up of {GIRL} with black hair suddenly lifting her head, eyes bright with an idea, lamp light"
+    }
+  ]
+}

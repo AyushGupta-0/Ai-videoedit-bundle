@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <title>The Firecracker Shop</title>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+<style>
+  html,body { margin:0; background:#000; }
+  #root { position:relative; width:1080px; height:1920px; overflow:hidden;
+          background:#000; font-family:"Avenir Next","Helvetica Neue",sans-serif; }
+  .plate { position:absolute; inset:0; opacity:0; will-change:opacity; }
+  .plate img { position:absolute; left:50%; top:50%; width:1080px; height:1920px;
+               margin:-960px 0 0 -540px; object-fit:cover; will-change:transform; }
+  #grade { position:absolute; inset:0; pointer-events:none;
+           background:
+             radial-gradient(118% 80% at 50% 42%, rgba(0,0,0,0) 48%, rgba(10,6,2,.62) 100%),
+             linear-gradient(180deg, rgba(255,176,92,.10) 0%, rgba(0,0,0,0) 34%,
+                             rgba(0,0,0,0) 62%, rgba(24,10,2,.40) 100%); }
+  /* A text-shadow alone is not enough: on a bright plate the caption washed out
+     (EP03 shot f03). This scrim sits behind the caption band only, is invisible
+     over dark plates, and guarantees contrast over light ones. */
+  #capscrim { position:absolute; left:0; right:0; top:120px; height:330px;
+              pointer-events:none;
+              background:linear-gradient(180deg, rgba(8,5,2,0) 0%, rgba(8,5,2,.46) 26%,
+                                         rgba(8,5,2,.46) 74%, rgba(8,5,2,0) 100%); }
+  #capwrap { position:absolute; left:84px; right:84px; top:196px; text-align:center; }
+  #cap { display:inline-block; color:#fff; font-size:52px; line-height:1.3;
+         font-weight:600; letter-spacing:.2px; opacity:0;
+         text-shadow:0 3px 18px rgba(0,0,0,.85), 0 1px 3px rgba(0,0,0,.9); }
+  #progress { position:absolute; left:0; bottom:0; height:5px; width:0;
+              background:linear-gradient(90deg,#ffb45c,#ffe3b0); opacity:.85; }
+</style>
+  </head>
+  <body>
+<div id="root" data-composition-id="ep03" data-start="0" data-duration="58.43"
+     data-width="1080" data-height="1920" data-track-kind="graphics">
+  <div id="plates" class="clip" data-start="0" data-duration="58.43" data-track-index="0"></div>
+  <div id="grade"  class="clip" data-start="0" data-duration="58.43" data-track-index="1"
+       data-layout-ignore></div>
+  <div id="capscrim" class="clip" data-start="0" data-duration="58.43" data-track-index="2"
+       data-layout-ignore></div>
+  <div id="capwrap" class="clip" data-start="0" data-duration="58.43" data-track-index="3"
+       data-track-kind="captions"><span id="cap"></span></div>
+  <div id="progress" class="clip" data-start="0" data-duration="58.43" data-track-index="4"
+       data-layout-ignore></div>
+</div>
+
+<audio id="vo" src="assets/audio/mix.wav" data-start="0" data-volume="1"></audio>
+
+<script>
+  const DUR = 58.43;
+  const tl = gsap.timeline({ paused: true });
+  tl.fromTo("#progress", { width: 0 }, { width: 1080, duration: DUR, ease: "none" }, 0);
+
+  const SHOTS = [
+    { img:"f01", in:0.0, out:5.39, from:[1.05,-28,24], to:[1.32,32,-28] },
+    { img:"f02", in:5.2, out:10.19, from:[1.36,30,-26], to:[1.05,-26,22] },
+    { img:"f03", in:10.0, out:15.99, from:[1.05,28,-24], to:[1.4000000000000001,-32,28] },
+    { img:"f04", in:15.8, out:20.99, from:[1.32,-30,26], to:[1.05,26,-22] },
+    { img:"f05", in:20.8, out:24.59, from:[1.05,-28,24], to:[1.36,32,-28] },
+    { img:"f06", in:24.4, out:31.99, from:[1.4000000000000001,30,-26], to:[1.05,-26,22] },
+    { img:"f07", in:31.8, out:37.99, from:[1.05,28,-24], to:[1.32,-32,28] },
+    { img:"f08", in:37.8, out:44.39, from:[1.36,-30,26], to:[1.05,26,-22] },
+    { img:"f09", in:44.2, out:50.59, from:[1.05,-28,24], to:[1.4000000000000001,32,-28] },
+    { img:"f10", in:50.4, out:58.43, from:[1.32,30,-26], to:[1.05,-26,22] }
+  ];
+
+  const platesEl = document.getElementById("plates");
+  SHOTS.forEach((s, i) => {
+    const d = document.createElement("div");
+    d.className = "plate"; d.id = `plate${i}`;
+    const im = document.createElement("img");
+    im.src = `assets/shots/${s.img}.png`;
+    d.appendChild(im); platesEl.appendChild(d);
+    const FADE = 0.55;
+    tl.to(d, { opacity: 1, duration: FADE }, s.in);
+    if (s.out < DUR) tl.to(d, { opacity: 0, duration: FADE }, s.out - FADE);
+    tl.fromTo(im,
+      { scale: s.from[0], x: s.from[1], y: s.from[2] },
+      { scale: s.to[0], x: s.to[1], y: s.to[2], duration: s.out - s.in, ease: "none" },
+      s.in);
+  });
+
+  const LINES = [
+    ["Eight days. Anaya went to the shop at the end of the lane.", 0.3, 4.575],
+    ["She had walked past it a hundred times without going in.", 5.4, 9.5],
+    ["There it was. The big box. The one that goes up like a tree.", 10.2, 14.825],
+    ["Forty rupees, she said. I have forty-two.", 16.0, 19.6],
+    ["She put every coin on the counter.", 21.0, 23.85],
+    ["It's the festival, the shopkeeper said. The price went up.", 24.6, 28.925],
+    ["Sixty.", 30.0, 31.825],
+    ["She counted her coins one more time, as if they might have grown.", 32.0, 36.775],
+    ["They had not.", 38.0, 40.025],
+    ["She picked them up, and she walked home.", 40.2, 43.3],
+    ["Then he called after her.", 44.4, 46.9],
+    ["There's one box left at the old price.", 47.0, 50.25],
+    ["But it's promised to somebody else.", 50.6, 53.45],
+    ["He's coming at six o'clock.", 54.0, 56.775]
+  ];
+  const capEl = document.getElementById("cap");
+  LINES.forEach(([text, a, b], i) => {
+    tl.call(() => { capEl.textContent = text; }, null, a);
+    tl.fromTo(capEl, { opacity: 0, y: 16 },
+              { opacity: 1, y: 0, duration: 0.34, ease: "power2.out" }, a);
+    const next = LINES[i + 1] ? LINES[i + 1][1] : DUR;
+    tl.to(capEl, { opacity: 0, duration: 0.26 }, Math.min(b, next - 0.30));
+  });
+
+  window.__timelines = window.__timelines || {};
+  window.__timelines["ep03"] = tl;
+</script>
+  </body>
+</html>

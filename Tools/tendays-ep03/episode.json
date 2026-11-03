@@ -1,0 +1,175 @@
+{
+  "day": 3,
+  "dur": 68.9,
+  "clock0": "1:48 AM",
+  "recov": 8,
+  "m0": 108,
+  "m1": 126,
+  "ampm": "AM",
+  "q1": "DO YOU WALK",
+  "q2": "TO THE FRONT?",
+  "btnA": "WALK",
+  "btnB": "HIDE",
+  "nexthook": "NOTHING HERE HAS POWER.<br>SO WHO TURNED THE LIGHTS ON?",
+  "extra_css": "",
+  "motion": "tl.fromTo(\"#bayart\", { scale: 1.00 }, { scale: 1.09, duration: 8.0, ease: \"none\" }, 3.3);\ntl.fromTo(\"#drip\", { y: 0, opacity: 0 }, { y: 120, opacity: 1, duration: 1.1,\n          ease: \"power2.in\", repeat: 3 }, 12.4);\ntl.fromTo(\"#youdot\", { opacity: 0.4 }, { opacity: 1, duration: 0.6, yoyo: true, repeat: 5 }, 40.0);\n/* every light at once \u2014 a hard snap on the word, not a fade */\ntl.to(\"#flood\", { opacity: 1, duration: 0.10, ease: \"none\" }, 45.6);\ntl.to(\".lamp\", { opacity: 0.85, duration: 0.10, ease: \"none\" }, 45.6);\n/* the PA speaks: rings out of the cone, on each sentence */\n[49.4, 52.9].forEach((t, i) => {\n  tl.fromTo(\"#wave\" + (i + 1), { scale: 0.6, opacity: 0.9 },\n            { scale: 2.2, opacity: 0, duration: 1.4, ease: \"power2.out\" }, t);\n});\n/* the cone lights from inside while it speaks */\ntl.fromTo(\"#cone\", { opacity: 0 }, { opacity: 1, duration: 0.5 }, 49.2);\ntl.to(\"#cone\", { opacity: 0.35, duration: 0.9, yoyo: true, repeat: 5 }, 49.8);",
+  "lines": [
+    [
+      "YOU WAITED.<br>IT <b>WALKED AWAY</b>.",
+      0.25,
+      2.825
+    ],
+    [
+      "THREE WEEKS WITHOUT FOOD.<br>THREE DAYS WITHOUT <b>WATER</b>.",
+      3.525,
+      7.675
+    ],
+    [
+      "<b>DAY 3</b>. EVERY SHELF<br>IS ALREADY EMPTY.",
+      7.735,
+      11.51
+    ],
+    [
+      "EVERYONE LOOTS THE SHELVES.<br>NOBODY LOOTS THE <b>PLUMBING</b>.",
+      12.11,
+      16.46
+    ],
+    [
+      "<b>40 LITRES</b><br>IN THE WATER HEATER.",
+      16.52,
+      19.495
+    ],
+    [
+      "RECOVERY IN <b>EIGHT DAYS</b>.<br>AVOID ENCLOSED RETAIL.",
+      19.945,
+      24.345
+    ],
+    [
+      "RULE 1. <b>FILL FROM THE LOWEST TAP</b>.",
+      24.745,
+      27.845
+    ],
+    [
+      "RULE 2. NEVER LET A DOOR<br>CLOSE <b>BEHIND YOU</b>.",
+      27.905,
+      31.655
+    ],
+    [
+      "RULE 3. <u>IF THE LIGHTS COME ON,<br>LEAVE</u>.",
+      31.715,
+      35.09
+    ],
+    [
+      "<b>GOOD NEWS</b>. 31 LITRES<br>AND A PAPER MAP.",
+      35.79,
+      39.665
+    ],
+    [
+      "<u>BAD NEWS</u>. ONE EXIT \u2014<br>AND YOU'RE AT THE <b>BACK</b>.",
+      39.725,
+      43.375
+    ],
+    [
+      "<b>2:06 AM</b>. EVERY LIGHT<br>COMES ON AT ONCE.",
+      43.975,
+      48.2
+    ],
+    [
+      "A VOICE ON THE STATION'S<br>OWN <u>SPEAKERS</u>.",
+      49.0,
+      52.45
+    ],
+    [
+      "\u201cSTORE'S REOPENING.<br>BRING WHAT YOU'VE GOT TO THE FRONT.\u201d",
+      52.51,
+      56.41
+    ],
+    [
+      "MAINS POWER FAILED<br>ON <u>DAY ONE</u>.",
+      57.16,
+      60.66
+    ],
+    [
+      "AND THE LIGHTS ARE <u>ON</u>.",
+      61.56,
+      63.635
+    ],
+    [
+      "",
+      64.735,
+      66.885
+    ]
+  ],
+  "panels": [
+    [
+      "recap",
+      0.0,
+      3.52
+    ],
+    [
+      "station",
+      3.32,
+      12.11
+    ],
+    [
+      "plumb",
+      11.91,
+      19.95
+    ],
+    [
+      "radio",
+      19.75,
+      24.75
+    ],
+    [
+      "rule1",
+      24.55,
+      28.04
+    ],
+    [
+      "rule2",
+      27.71,
+      31.86
+    ],
+    [
+      "rule3",
+      31.52,
+      35.790000000000006
+    ],
+    [
+      "good",
+      35.59,
+      39.87
+    ],
+    [
+      "bad",
+      39.52,
+      43.970000000000006
+    ],
+    [
+      "lights",
+      43.77,
+      49.0
+    ],
+    [
+      "pa",
+      48.8,
+      57.160000000000004
+    ],
+    [
+      "grid",
+      56.96,
+      61.56
+    ],
+    [
+      "lights2",
+      61.36,
+      64.73
+    ],
+    [
+      "end",
+      64.53,
+      68.9
+    ]
+  ]
+}

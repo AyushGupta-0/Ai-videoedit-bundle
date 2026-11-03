@@ -1,0 +1,66 @@
+{
+  "episode": "ep09-the-night-before",
+  "note": "Day 2. Anaya alone in every frame. 'with black hair' in every prompt.",
+  "shots": [
+    {
+      "id": "m01",
+      "seed": "girl",
+      "note": "everything lined up",
+      "prompt": "{GIRL} with black hair crouching beside a neat row of things laid out by a front door, checking them, evening"
+    },
+    {
+      "id": "m02",
+      "seed": "girl",
+      "note": "the card on top",
+      "prompt": "close-up of a handmade card placed on top of a folded cloth, {GIRL} with black hair hands, warm lamp light"
+    },
+    {
+      "id": "m03",
+      "seed": "girl",
+      "note": "the calendar",
+      "prompt": "{GIRL} with black hair reaching up to cross off a day on a wall calendar, almost at the end, lamp light"
+    },
+    {
+      "id": "m04",
+      "seed": "girl",
+      "note": "in bed, awake",
+      "prompt": "{GIRL} with black hair lying in bed wide awake with her eyes open in the dark, blue night light"
+    },
+    {
+      "id": "m05",
+      "seed": "girl",
+      "note": "the storm starts",
+      "prompt": "{GIRL} with black hair sitting up in bed looking toward a window as rain lashes it, lightning, blue dark"
+    },
+    {
+      "id": "m06",
+      "seed": "girl",
+      "note": "at the window",
+      "prompt": "{GIRL} with black hair kneeling at a dark window watching a storm, worried face lit by lightning"
+    },
+    {
+      "id": "m07",
+      "seed": "girl",
+      "note": "thinking of the train",
+      "prompt": "close-up face of {GIRL} with black hair looking anxious in blue darkness, eyes wide, storm light"
+    },
+    {
+      "id": "m08",
+      "seed": "girl",
+      "note": "back to the door",
+      "prompt": "{GIRL} with black hair sitting on the floor beside the front door hugging her knees at night, lamp low"
+    },
+    {
+      "id": "m09",
+      "seed": "girl",
+      "note": "nearly asleep",
+      "prompt": "{GIRL} with black hair half asleep against a door frame with a blanket, peaceful, dim warm light"
+    },
+    {
+      "id": "m10",
+      "seed": "girl",
+      "note": "CLIFFHANGER the phone",
+      "prompt": "close-up of {GIRL} with black hair jolting awake with wide alarmed eyes in the dark, blue night light"
+    }
+  ]
+}

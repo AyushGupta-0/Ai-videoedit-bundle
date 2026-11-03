@@ -1,0 +1,110 @@
+{
+  "episode": "ep04",
+  "voices": {
+    "N": {
+      "kokoro": "af_sarah",
+      "speed": 0.95,
+      "semitones": 0.0
+    }
+  },
+  "lines": [
+    {
+      "id": "l01",
+      "at": 0.3,
+      "who": "N",
+      "shot": "g01",
+      "text": "Seven days. Anaya went back to the shop before the sun was high."
+    },
+    {
+      "id": "l02",
+      "at": 5.0,
+      "who": "N",
+      "shot": "g01",
+      "text": "The other buyer was coming at six o'clock."
+    },
+    {
+      "id": "l03",
+      "at": 9.0,
+      "who": "N",
+      "shot": "g02",
+      "text": "So she decided she would be there first."
+    },
+    {
+      "id": "l04",
+      "at": 12.4,
+      "who": "N",
+      "shot": "g03",
+      "text": "She sat on the step while the lane got hot and quiet."
+    },
+    {
+      "id": "l05",
+      "at": 17.4,
+      "who": "N",
+      "shot": "g04",
+      "text": "She turned her last coin over and over."
+    },
+    {
+      "id": "l06",
+      "at": 21.0,
+      "who": "N",
+      "shot": "g05",
+      "text": "The shadows got longer."
+    },
+    {
+      "id": "l07",
+      "at": 23.6,
+      "who": "N",
+      "shot": "g06",
+      "text": "Twice she stood up because she heard someone coming. Twice it was nobody."
+    },
+    {
+      "id": "l08",
+      "at": 30.0,
+      "who": "N",
+      "shot": "g07",
+      "text": "The shop lights came on."
+    },
+    {
+      "id": "l09",
+      "at": 32.6,
+      "who": "N",
+      "shot": "g08",
+      "text": "Ten to six. Five to six."
+    },
+    {
+      "id": "l10",
+      "at": 36.0,
+      "who": "N",
+      "shot": "g09",
+      "text": "Six o'clock."
+    },
+    {
+      "id": "l11",
+      "at": 38.2,
+      "who": "N",
+      "shot": "g09",
+      "text": "And nobody came."
+    },
+    {
+      "id": "l12",
+      "at": 40.8,
+      "who": "N",
+      "shot": "g09",
+      "text": "She had waited eight hours, and she had won."
+    },
+    {
+      "id": "l13",
+      "at": 45.4,
+      "who": "N",
+      "shot": "g10",
+      "text": "Then she heard footsteps behind her."
+    },
+    {
+      "id": "l14",
+      "at": 48.6,
+      "who": "N",
+      "shot": "g10",
+      "text": "Somebody was walking up the lane."
+    }
+  ]
+}

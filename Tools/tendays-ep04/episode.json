@@ -1,0 +1,185 @@
+{
+  "day": 4,
+  "dur": 73.3,
+  "clock0": "12:40 AM",
+  "recov": 7,
+  "m0": 40,
+  "m1": 77,
+  "ampm": "AM",
+  "q1": "DID YOU JUST LEAVE",
+  "q2": "SOMEONE TO DIE?",
+  "btnA": "YES",
+  "btnB": "NO",
+  "nexthook": "THEIR LIGHTS DIDN'T FADE.<br>THEY WENT OUT.",
+  "extra_css": "",
+  "motion": "tl.fromTo(\"#lamps\", { scale: 0.96, opacity: 0.85 },\n          { scale: 1.04, opacity: 1, duration: 8.6, ease: \"none\" }, 13.3);\ntl.to(\"#dark\", { opacity: 0.86, duration: 0.14, ease: \"none\" }, 43.6);\n/* The pattern, flashed for real: 3 long, 3 short, 3 long.\n   Each pulse is a fromTo at BOTH ends. A plain .to() records its start value on\n   first render, and the renderer seeks frames out of order, so chained .to()\n   tweens on one property silently flatten into no visible flash at all. */\n(() => {\n  const T = [\"#sosL\", \"#sosR\"], DIM = 0.10, LIT = 1;\n  const pat = [[0.00,0.50],[0.72,0.50],[1.44,0.50],\n               [2.34,0.16],[2.74,0.16],[3.14,0.16],\n               [3.86,0.50],[4.58,0.50],[5.30,0.50]];\n  pat.forEach(([o, len]) => {\n    tl.fromTo(T, { opacity: DIM }, { opacity: LIT, duration: 0.05, ease: \"none\" }, 50.6 + o);\n    tl.fromTo(T, { opacity: LIT }, { opacity: DIM, duration: 0.05, ease: \"none\" }, 50.6 + o + len);\n  });\n})();\n\n/* their lights do not dim. they stop. */\ntl.fromTo([\"#outL\",\"#outR\"], { opacity: 1 }, { opacity: 0, duration: 0.08, ease: \"none\" }, 63.4);",
+  "lines": [
+    [
+      "YOU WENT OUT THE <b>BACK</b>.",
+      0.25,
+      2.225
+    ],
+    [
+      "ON DAY 4 YOU MEET<br>ANOTHER <b>SURVIVOR</b>.",
+      2.92,
+      6.195
+    ],
+    [
+      "MORE DANGEROUS THAN<br>MEETING THE <u>DEAD</u>.",
+      6.255,
+      9.205
+    ],
+    [
+      "HEADLIGHTS. <b>400 METRES</b> BACK.<br>FOR SIXTY MILES.",
+      9.805,
+      14.28
+    ],
+    [
+      "YOU SLOW DOWN.<br><u>THEY SLOW DOWN</u>.",
+      14.34,
+      17.065
+    ],
+    [
+      "RECOVERY IN <b>SEVEN DAYS</b>.<br>DO NOT CONVOY.",
+      17.615,
+      21.39
+    ],
+    [
+      "RULE 1. NEVER DRIVE STRAIGHT<br>TO WHERE YOU <b>SLEEP</b>.",
+      21.79,
+      25.59
+    ],
+    [
+      "RULE 2. NEVER LET A STRANGER<br>SEE YOUR <b>FUEL</b>.",
+      25.65,
+      29.45
+    ],
+    [
+      "RULE 3. <u>DO NOT STOP<br>ON OPEN ROAD</u>.",
+      29.51,
+      33.06
+    ],
+    [
+      "<b>GOOD NEWS</b>. 90 MILES OF FUEL.",
+      33.71,
+      36.885
+    ],
+    [
+      "<u>BAD NEWS</u>. EVERY ROAD SOUTH<br>ENDS AT <b>ONE BRIDGE</b>.",
+      36.945,
+      41.195
+    ],
+    [
+      "<b>1:17 AM</b>. YOU KILL YOUR LIGHTS<br>AND TURN OFF.",
+      41.745,
+      45.795
+    ],
+    [
+      "BEHIND YOU, THEY <b>STOP</b>.<br>AND FLASH THEIR HEADLIGHTS.",
+      46.445,
+      50.37
+    ],
+    [
+      "THREE LONG. THREE SHORT.<br>THREE LONG.",
+      50.43,
+      53.38
+    ],
+    [
+      "THAT'S NOT A THREAT.<br>THAT'S <u>S.O.S.</u>",
+      54.13,
+      57.28
+    ],
+    [
+      "AND YOU <u>KEEP DRIVING</u>.",
+      58.13,
+      60.18
+    ],
+    [
+      "THIRTY SECONDS LATER<br>THEIR LIGHTS GO <u>OUT</u>.",
+      60.98,
+      64.38
+    ],
+    [
+      "AND THEY DON'T <u>COME BACK ON</u>.",
+      65.03,
+      67.48
+    ],
+    [
+      "",
+      68.53,
+      71.255
+    ]
+  ],
+  "panels": [
+    [
+      "recap",
+      0.0,
+      2.9200000000000004
+    ],
+    [
+      "road",
+      2.72,
+      9.809999999999999
+    ],
+    [
+      "follow",
+      9.61,
+      17.61
+    ],
+    [
+      "radio",
+      17.41,
+      21.79
+    ],
+    [
+      "rule1",
+      21.59,
+      25.79
+    ],
+    [
+      "rule2",
+      25.45,
+      29.65
+    ],
+    [
+      "rule3",
+      29.31,
+      33.71
+    ],
+    [
+      "good",
+      33.51,
+      37.09
+    ],
+    [
+      "bad",
+      36.74,
+      41.74
+    ],
+    [
+      "junction",
+      41.54,
+      46.440000000000005
+    ],
+    [
+      "sos",
+      46.24,
+      58.13
+    ],
+    [
+      "drive",
+      57.93,
+      60.980000000000004
+    ],
+    [
+      "out",
+      60.78,
+      68.53
+    ],
+    [
+      "end",
+      68.33,
+      73.3
+    ]
+  ]
+}

@@ -1,0 +1,141 @@
+{
+  "duration": 68.145,
+  "lines": [
+    {
+      "id": "l01",
+      "who": "N",
+      "shot": "recap",
+      "text": "You waited. It walked away.",
+      "start": 0.25,
+      "end": 2.825
+    },
+    {
+      "id": "l02",
+      "who": "N",
+      "shot": "station",
+      "text": "Three weeks without food. Three days without water.",
+      "start": 3.525,
+      "end": 7.675
+    },
+    {
+      "id": "l03",
+      "who": "N",
+      "shot": "station",
+      "text": "Day three, and every shelf is already empty.",
+      "start": 7.735,
+      "end": 11.51
+    },
+    {
+      "id": "l04",
+      "who": "N",
+      "shot": "plumb",
+      "text": "But everyone loots the shelves. Nobody loots the plumbing.",
+      "start": 12.11,
+      "end": 16.46
+    },
+    {
+      "id": "l05",
+      "who": "N",
+      "shot": "plumb",
+      "text": "Forty litres in the water heater.",
+      "start": 16.52,
+      "end": 19.495
+    },
+    {
+      "id": "l06",
+      "who": "N",
+      "shot": "radio",
+      "text": "Recovery in eight days. Avoid enclosed retail.",
+      "start": 19.945,
+      "end": 24.345
+    },
+    {
+      "id": "l07",
+      "who": "N",
+      "shot": "rule1",
+      "text": "Rule one. Fill from the lowest tap.",
+      "start": 24.745,
+      "end": 27.845
+    },
+    {
+      "id": "l08",
+      "who": "N",
+      "shot": "rule2",
+      "text": "Rule two. Never let a door close behind you.",
+      "start": 27.905,
+      "end": 31.655
+    },
+    {
+      "id": "l09",
+      "who": "N",
+      "shot": "rule3",
+      "text": "Rule three. If the lights come on, leave.",
+      "start": 31.715,
+      "end": 35.09
+    },
+    {
+      "id": "l10",
+      "who": "N",
+      "shot": "good",
+      "text": "Good news. Thirty one litres and a paper map.",
+      "start": 35.79,
+      "end": 39.665
+    },
+    {
+      "id": "l11",
+      "who": "N",
+      "shot": "bad",
+      "text": "Bad news. One exit, and you're at the back.",
+      "start": 39.725,
+      "end": 43.375
+    },
+    {
+      "id": "l12",
+      "who": "N",
+      "shot": "lights",
+      "text": "Two oh six A M. Every light comes on at once.",
+      "start": 43.975,
+      "end": 48.2
+    },
+    {
+      "id": "l13",
+      "who": "N",
+      "shot": "pa",
+      "text": "Then a voice, on the station's own speakers.",
+      "start": 49.0,
+      "end": 52.45
+    },
+    {
+      "id": "l14",
+      "who": "N",
+      "shot": "pa",
+      "text": "Store's reopening. Bring what you've got to the front.",
+      "start": 52.51,
+      "end": 56.41
+    },
+    {
+      "id": "l15",
+      "who": "N",
+      "shot": "grid",
+      "text": "Mains power to this grid failed on day one.",
+      "start": 57.16,
+      "end": 60.66
+    },
+    {
+      "id": "l16",
+      "who": "N",
+      "shot": "lights2",
+      "text": "And the lights are on.",
+      "start": 61.56,
+      "end": 63.635
+    },
+    {
+      "id": "l17",
+      "who": "N",
+      "shot": "end",
+      "text": "Do you walk to the front?",
+      "start": 64.735,
+      "end": 66.885
+    }
+  ]
+}

@@ -1,0 +1,66 @@
+{
+  "episode": "ep08-the-art-cupboard",
+  "note": "Day 3. Anaya alone in every frame. 'with black hair' in every prompt.",
+  "shots": [
+    {
+      "id": "k01",
+      "seed": "girl",
+      "note": "school corridor",
+      "prompt": "{GIRL} with black hair walking down a bright school corridor with her bag, purposeful, morning light"
+    },
+    {
+      "id": "k02",
+      "seed": "girl",
+      "note": "the cupboard",
+      "prompt": "{GIRL} with black hair standing on tiptoes reaching into a tall cupboard full of art supplies, classroom"
+    },
+    {
+      "id": "k03",
+      "seed": "girl",
+      "note": "gold foil",
+      "prompt": "close-up of {GIRL} with black hair holding up a piece of shiny gold foil to the light, delighted, classroom"
+    },
+    {
+      "id": "k04",
+      "seed": "girl",
+      "note": "collecting scraps",
+      "prompt": "{GIRL} with black hair holding an armful of coloured paper ribbon and card, happy, bright classroom"
+    },
+    {
+      "id": "k05",
+      "seed": "girl",
+      "note": "at the desk",
+      "prompt": "{GIRL} with black hair sitting at a school desk cutting paper with scissors, concentrating hard, afternoon"
+    },
+    {
+      "id": "k06",
+      "seed": "girl",
+      "note": "gluing",
+      "prompt": "close-up of small hands pressing a gold star onto a card, {GIRL} with black hair behind, warm afternoon light"
+    },
+    {
+      "id": "k07",
+      "seed": "girl",
+      "note": "it's working",
+      "prompt": "close-up face of {GIRL} with black hair smiling with quiet pride, afternoon light, classroom"
+    },
+    {
+      "id": "k08",
+      "seed": "girl",
+      "note": "holding it up",
+      "prompt": "{GIRL} with black hair holding up a finished handmade greeting card with both hands, proud, golden light"
+    },
+    {
+      "id": "k09",
+      "seed": "girl",
+      "note": "the pen",
+      "prompt": "close-up of {GIRL} with black hair holding a pen above the card, about to write, concentrating, warm light"
+    },
+    {
+      "id": "k10",
+      "seed": "girl",
+      "note": "CLIFFHANGER she stops",
+      "prompt": "close-up face of {GIRL} with black hair frozen, pen in hand, a small confused frown, warm light"
+    }
+  ]
+}

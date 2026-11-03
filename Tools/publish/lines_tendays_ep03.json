@@ -1,0 +1,158 @@
+{
+  "episode": "tendays-ep03",
+  "voices": {
+    "N": {
+      "kokoro": "am_michael",
+      "speed": 0.97,
+      "semitones": 0.0
+    }
+  },
+  "lines": [
+    {
+      "id": "l01",
+      "at": 0.25,
+      "who": "N",
+      "shot": "recap",
+      "text": "You waited. It walked away.",
+      "cap": "YOU WAITED.<br>IT <b>WALKED AWAY</b>.",
+      "pause": 0.7
+    },
+    {
+      "id": "l02",
+      "at": 2.97,
+      "who": "N",
+      "shot": "station",
+      "text": "Three weeks without food. Three days without water.",
+      "cap": "THREE WEEKS WITHOUT FOOD.<br>THREE DAYS WITHOUT <b>WATER</b>."
+    },
+    {
+      "id": "l03",
+      "at": 6.15,
+      "who": "N",
+      "shot": "station",
+      "text": "Day three, and every shelf is already empty.",
+      "cap": "<b>DAY 3</b>. EVERY SHELF<br>IS ALREADY EMPTY.",
+      "pause": 0.6
+    },
+    {
+      "id": "l04",
+      "at": 9.93,
+      "who": "N",
+      "shot": "plumb",
+      "text": "But everyone loots the shelves. Nobody loots the plumbing.",
+      "cap": "EVERYONE LOOTS THE SHELVES.<br>NOBODY LOOTS THE <b>PLUMBING</b>."
+    },
+    {
+      "id": "l05",
+      "at": 13.49,
+      "who": "N",
+      "shot": "plumb",
+      "text": "Forty litres in the water heater.",
+      "cap": "<b>40 LITRES</b><br>IN THE WATER HEATER.",
+      "pause": 0.45
+    },
+    {
+      "id": "l06",
+      "at": 16.35,
+      "who": "N",
+      "shot": "radio",
+      "text": "Recovery in eight days. Avoid enclosed retail.",
+      "cap": "RECOVERY IN <b>EIGHT DAYS</b>.<br>AVOID ENCLOSED RETAIL.",
+      "pause": 0.4
+    },
+    {
+      "id": "l07",
+      "at": 19.54,
+      "who": "N",
+      "shot": "rule1",
+      "text": "Rule one. Fill from the lowest tap.",
+      "cap": "RULE 1. <b>FILL FROM THE LOWEST TAP</b>."
+    },
+    {
+      "id": "l08",
+      "at": 22.33,
+      "who": "N",
+      "shot": "rule2",
+      "text": "Rule two. Never let a door close behind you.",
+      "cap": "RULE 2. NEVER LET A DOOR<br>CLOSE <b>BEHIND YOU</b>."
+    },
+    {
+      "id": "l09",
+      "at": 25.89,
+      "who": "N",
+      "shot": "rule3",
+      "text": "Rule three. If the lights come on, leave.",
+      "cap": "RULE 3. <u>IF THE LIGHTS COME ON,<br>LEAVE</u>.",
+      "pause": 0.7
+    },
+    {
+      "id": "l10",
+      "at": 29.77,
+      "who": "N",
+      "shot": "good",
+      "text": "Good news. Thirty one litres and a paper map.",
+      "cap": "<b>GOOD NEWS</b>. 31 LITRES<br>AND A PAPER MAP."
+    },
+    {
+      "id": "l11",
+      "at": 33.33,
+      "who": "N",
+      "shot": "bad",
+      "text": "Bad news. One exit, and you're at the back.",
+      "cap": "<u>BAD NEWS</u>. ONE EXIT —<br>AND YOU'RE AT THE <b>BACK</b>.",
+      "pause": 0.6
+    },
+    {
+      "id": "l12",
+      "at": 37.49,
+      "who": "N",
+      "shot": "lights",
+      "text": "Two oh six A M. Every light comes on at once.",
+      "cap": "<b>2:06 AM</b>. EVERY LIGHT<br>COMES ON AT ONCE.",
+      "pause": 0.8
+    },
+    {
+      "id": "l13",
+      "at": 42.62,
+      "who": "N",
+      "shot": "pa",
+      "text": "Then a voice, on the station's own speakers.",
+      "cap": "A VOICE ON THE STATION'S<br>OWN <u>SPEAKERS</u>."
+    },
+    {
+      "id": "l14",
+      "at": 45.8,
+      "who": "N",
+      "shot": "pa",
+      "text": "Store's reopening. Bring what you've got to the front.",
+      "cap": "“STORE'S REOPENING.<br>BRING WHAT YOU'VE GOT TO THE FRONT.”",
+      "pause": 0.75
+    },
+    {
+      "id": "l15",
+      "at": 50.11,
+      "who": "N",
+      "shot": "grid",
+      "text": "Mains power to this grid failed on day one.",
+      "cap": "MAINS POWER FAILED<br>ON <u>DAY ONE</u>.",
+      "pause": 0.9
+    },
+    {
+      "id": "l16",
+      "at": 54.57,
+      "who": "N",
+      "shot": "lights2",
+      "text": "And the lights are on.",
+      "cap": "AND THE LIGHTS ARE <u>ON</u>.",
+      "pause": 1.1
+    },
+    {
+      "id": "l17",
+      "at": 57.7,
+      "who": "N",
+      "shot": "end",
+      "text": "Do you walk to the front?",
+      "cap": ""
+    }
+  ]
+}

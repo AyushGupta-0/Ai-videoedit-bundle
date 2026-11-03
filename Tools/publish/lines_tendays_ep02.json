@@ -1,24 +1,175 @@
 {
   "episode": "tendays-ep02-level-four",
-  "voices": { "N": { "kokoro": "am_michael", "speed": 0.97, "semitones": 0.0 } },
+  "voices": {
+    "N": {
+      "kokoro": "am_michael",
+      "speed": 0.97,
+      "semitones": 0.0
+    }
+  },
   "lines": [
-    {"id":"l01","at":0.25,"who":"N","shot":"recap","text":"You didn't open the door. You drove.","pause":0.70},
-    {"id":"l02","at":3.40,"who":"N","shot":"park","text":"Day two. You're on the fourth floor of a multi storey car park."},
-    {"id":"l03","at":7.80,"who":"N","shot":"park","text":"Because concrete has no windows.","pause":0.50},
-    {"id":"l04","at":10.60,"who":"N","shot":"ramp","text":"High enough that nothing reaches you from the street. Low enough to drive down fast."},
-    {"id":"l05","at":16.60,"who":"N","shot":"radio","text":"Radio, same loop. Recovery in nine days. Stay off the ground floor.","pause":0.45},
-    {"id":"l06","at":22.40,"who":"N","shot":"rule1","text":"Rule one. Park facing the exit."},
-    {"id":"l07","at":25.40,"who":"N","shot":"rule2","text":"Rule two. Never sleep in the driver's seat. You can't see behind you."},
-    {"id":"l08","at":30.80,"who":"N","shot":"rule3","text":"Rule three. Count the cars on your level before dark.","pause":0.70},
-    {"id":"l09","at":35.40,"who":"N","shot":"good","text":"Good news. You counted. Eleven cars. Yours is the twelfth."},
-    {"id":"l10","at":40.60,"who":"N","shot":"bad","text":"Bad news. The stairwell door doesn't lock. It only closes.","pause":0.60},
-    {"id":"l11","at":45.80,"who":"N","shot":"door","text":"Three forty A M. The stairwell door opens, and someone lets it close softly."},
-    {"id":"l12","at":51.60,"who":"N","shot":"door","text":"Someone who didn't want it to bang.","pause":0.75},
-    {"id":"l13","at":55.00,"who":"N","shot":"steps","text":"Then footsteps. Not shuffling. Walking.","pause":0.55},
-    {"id":"l14","at":58.60,"who":"N","shot":"voice","text":"I know you're up here. I saw your brake lights. Which car are you in?","pause":0.70},
-    {"id":"l15","at":64.40,"who":"N","shot":"dash","text":"You haven't touched the brakes since four o'clock yesterday.","pause":0.90},
-    {"id":"l16","at":68.80,"who":"N","shot":"count","text":"So you count again.","pause":0.85},
-    {"id":"l17","at":71.40,"who":"N","shot":"count","text":"Thirteen.","pause":1.10},
-    {"id":"l18","at":74.20,"who":"N","shot":"end","text":"Do you start the engine?"}
+    {
+      "id": "l01",
+      "at": 0.25,
+      "who": "N",
+      "shot": "recap",
+      "text": "You didn't open the door. You drove.",
+      "cap": "YOU DIDN'T OPEN THE DOOR.<br>YOU <b>DROVE</b>.",
+      "pause": 0.7
+    },
+    {
+      "id": "l02",
+      "at": 3.74,
+      "who": "N",
+      "shot": "park",
+      "text": "A car park is the safest place to sleep in an outbreak.",
+      "cap": "A CAR PARK IS THE SAFEST PLACE<br>TO SLEEP IN AN OUTBREAK."
+    },
+    {
+      "id": "l03",
+      "at": 8.46,
+      "who": "N",
+      "shot": "park",
+      "text": "Until you count the cars twice.",
+      "cap": "UNTIL YOU COUNT THE CARS <u>TWICE</u>.",
+      "pause": 0.65
+    },
+    {
+      "id": "l04",
+      "at": 11.52,
+      "who": "N",
+      "shot": "ramp",
+      "text": "Day two. Level four. Concrete has no windows.",
+      "cap": "<b>DAY 2</b>. LEVEL FOUR.<br>CONCRETE HAS <b>NO WINDOWS</b>."
+    },
+    {
+      "id": "l05",
+      "at": 14.69,
+      "who": "N",
+      "shot": "ramp",
+      "text": "High enough off the street. Low enough to drive down fast.",
+      "cap": "HIGH ENOUGH OFF THE STREET.<br>LOW ENOUGH TO <b>DRIVE DOWN FAST</b>."
+    },
+    {
+      "id": "l06",
+      "at": 19.02,
+      "who": "N",
+      "shot": "radio",
+      "text": "Radio, same loop. Recovery in nine days.",
+      "cap": "RECOVERY IN <b>NINE DAYS</b>.<br>STAY OFF THE GROUND FLOOR.",
+      "pause": 0.4
+    },
+    {
+      "id": "l07",
+      "at": 22.22,
+      "who": "N",
+      "shot": "rule1",
+      "text": "Rule one. Park facing the exit.",
+      "cap": "RULE 1. <b>PARK FACING THE EXIT</b>."
+    },
+    {
+      "id": "l08",
+      "at": 24.62,
+      "who": "N",
+      "shot": "rule2",
+      "text": "Rule two. Never sleep in the driver's seat.",
+      "cap": "RULE 2. NEVER SLEEP IN<br>THE <b>DRIVER'S SEAT</b>."
+    },
+    {
+      "id": "l09",
+      "at": 27.8,
+      "who": "N",
+      "shot": "rule3",
+      "text": "Rule three. Count the cars before dark.",
+      "cap": "RULE 3. <u>COUNT THE CARS</u><br>BEFORE DARK.",
+      "pause": 0.7
+    },
+    {
+      "id": "l10",
+      "at": 31.29,
+      "who": "N",
+      "shot": "good",
+      "text": "Good news. Eleven cars. Yours is the twelfth.",
+      "cap": "<b>GOOD NEWS</b>. ELEVEN CARS.<br>YOURS IS THE <b>TWELFTH</b>."
+    },
+    {
+      "id": "l11",
+      "at": 34.47,
+      "who": "N",
+      "shot": "bad",
+      "text": "Bad news. The stairwell door doesn't lock. It only closes.",
+      "cap": "<u>BAD NEWS</u>. THE DOOR DOESN'T LOCK.<br>IT ONLY <b>CLOSES</b>.",
+      "pause": 0.6
+    },
+    {
+      "id": "l12",
+      "at": 39.02,
+      "who": "N",
+      "shot": "door",
+      "text": "Three forty A M. The door opens, and someone lets it close softly.",
+      "cap": "<b>3:40 AM</b>. THE DOOR OPENS —<br>AND SOMEONE LETS IT CLOSE SOFTLY."
+    },
+    {
+      "id": "l13",
+      "at": 44.12,
+      "who": "N",
+      "shot": "door",
+      "text": "Someone who didn't want it to bang.",
+      "cap": "SOMEONE WHO DIDN'T WANT IT TO <u>BANG</u>.",
+      "pause": 0.75
+    },
+    {
+      "id": "l14",
+      "at": 47.66,
+      "who": "N",
+      "shot": "steps",
+      "text": "Then footsteps. Not shuffling. Walking.",
+      "cap": "THEN FOOTSTEPS.<br>NOT SHUFFLING. <u>WALKING</u>.",
+      "pause": 0.55
+    },
+    {
+      "id": "l15",
+      "at": 50.23,
+      "who": "N",
+      "shot": "voice",
+      "text": "I saw your brake lights. Which car are you in?",
+      "cap": "“I SAW YOUR BRAKE LIGHTS.<br>WHICH CAR ARE YOU IN?”",
+      "pause": 0.7
+    },
+    {
+      "id": "l16",
+      "at": 54.88,
+      "who": "N",
+      "shot": "dash",
+      "text": "You haven't touched the brakes since yesterday.",
+      "cap": "YOU HAVEN'T TOUCHED THE BRAKES<br>SINCE <u>YESTERDAY</u>.",
+      "pause": 0.9
+    },
+    {
+      "id": "l17",
+      "at": 58.57,
+      "who": "N",
+      "shot": "count",
+      "text": "So you count again.",
+      "cap": "SO YOU COUNT AGAIN.",
+      "pause": 0.85
+    },
+    {
+      "id": "l18",
+      "at": 61.06,
+      "who": "N",
+      "shot": "count",
+      "text": "Thirteen.",
+      "cap": "<u>THIRTEEN</u>.",
+      "pause": 1.1
+    },
+    {
+      "id": "l19",
+      "at": 62.64,
+      "who": "N",
+      "shot": "end",
+      "text": "Do you start the engine?",
+      "cap": ""
+    }
   ]
 }

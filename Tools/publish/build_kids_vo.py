@@ -55,8 +55,8 @@ def main():
         start = max(ln["at"], cursor)
         dur = len(y) / SR
         timings.append({"id": ln["id"], "who": ln["who"], "shot": ln["shot"],
-                        "text": ln["text"], "start": round(start, 3),
-                        "end": round(start + dur, 3)})
+                        "text": ln["text"], "cap": ln.get("cap", ""),
+                        "start": round(start, 3), "end": round(start + dur, 3)})
         # A scripted pause is a performance instruction, not slack. Without it
         # every line butts against the next and the tension beats disappear.
         cursor = start + dur + ln.get("pause", 0.06)

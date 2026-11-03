@@ -1,0 +1,89 @@
+{
+  "episode": "ep09",
+  "voices": {
+    "N": {
+      "kokoro": "af_sarah",
+      "speed": 0.95,
+      "semitones": 0.0
+    }
+  },
+  "lines": [
+    {
+      "id": "l01",
+      "at": 0.3,
+      "who": "N",
+      "shot": "m01",
+      "text": "Two days. Everything was ready, and lined up by the door."
+    },
+    {
+      "id": "l02",
+      "at": 5.4,
+      "who": "N",
+      "shot": "m02",
+      "text": "The firecrackers. The vegetables. The card, on top, so it would not get crushed."
+    },
+    {
+      "id": "l03",
+      "at": 12.4,
+      "who": "N",
+      "shot": "m03",
+      "text": "She crossed off the day."
+    },
+    {
+      "id": "l04",
+      "at": 15.0,
+      "who": "N",
+      "shot": "m04",
+      "text": "And then she could not sleep."
+    },
+    {
+      "id": "l05",
+      "at": 17.8,
+      "who": "N",
+      "shot": "m05",
+      "text": "At eleven the storm came in off the fields."
+    },
+    {
+      "id": "l06",
+      "at": 22.0,
+      "who": "N",
+      "shot": "m06",
+      "text": "She knelt at the window and watched the lane turn into a river."
+    },
+    {
+      "id": "l07",
+      "at": 27.4,
+      "who": "N",
+      "shot": "m07",
+      "text": "She thought about the train. Whether trains stop for storms."
+    },
+    {
+      "id": "l08",
+      "at": 33.0,
+      "who": "N",
+      "shot": "m08",
+      "text": "She took her blanket to the front door, the way she used to."
+    },
+    {
+      "id": "l09",
+      "at": 37.8,
+      "who": "N",
+      "shot": "m09",
+      "text": "And she was almost asleep when it happened."
+    },
+    {
+      "id": "l10",
+      "at": 42.0,
+      "who": "N",
+      "shot": "m10",
+      "text": "The phone rang."
+    },
+    {
+      "id": "l11",
+      "at": 44.4,
+      "who": "N",
+      "shot": "m10",
+      "text": "At midnight, nobody calls with good news."
+    }
+  ]
+}

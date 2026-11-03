@@ -1,0 +1,96 @@
+{
+  "episode": "ep10",
+  "voices": {
+    "N": {
+      "kokoro": "af_sarah",
+      "speed": 0.95,
+      "semitones": 0.0
+    }
+  },
+  "lines": [
+    {
+      "id": "l01",
+      "at": 0.3,
+      "who": "N",
+      "shot": "n01",
+      "text": "The phone call was Papa, from a station two hours away."
+    },
+    {
+      "id": "l02",
+      "at": 5.4,
+      "who": "N",
+      "shot": "n02",
+      "text": "The train had stopped for the storm. He would be late."
+    },
+    {
+      "id": "l03",
+      "at": 10.0,
+      "who": "N",
+      "shot": "n03",
+      "text": "She fell asleep against the door waiting, and woke at first light."
+    },
+    {
+      "id": "l04",
+      "at": 16.0,
+      "who": "N",
+      "shot": "n04",
+      "text": "And then she heard the gate."
+    },
+    {
+      "id": "l05",
+      "at": 19.0,
+      "who": "N",
+      "shot": "n05",
+      "text": "This time it was him."
+    },
+    {
+      "id": "l06",
+      "at": 21.8,
+      "who": "N",
+      "shot": "n06",
+      "text": "She did not put her blanket down. She just ran."
+    },
+    {
+      "id": "l07",
+      "at": 26.0,
+      "who": "N",
+      "shot": "n07",
+      "text": "The firecracker was only one, because one was what she could afford."
+    },
+    {
+      "id": "l08",
+      "at": 31.4,
+      "who": "N",
+      "shot": "n08",
+      "text": "The lunch was a little burnt, because nobody had shown her."
+    },
+    {
+      "id": "l09",
+      "at": 36.4,
+      "who": "N",
+      "shot": "n09",
+      "text": "And the card had his name on the front, spelled wrong."
+    },
+    {
+      "id": "l10",
+      "at": 42.0,
+      "who": "N",
+      "shot": "n09",
+      "text": "She had asked her teacher, and still got it wrong."
+    },
+    {
+      "id": "l11",
+      "at": 46.6,
+      "who": "N",
+      "shot": "n10",
+      "text": "He kept it for the rest of his life."
+    },
+    {
+      "id": "l12",
+      "at": 50.4,
+      "who": "N",
+      "shot": "n10",
+      "text": "Thirty days from now, he leaves again."
+    }
+  ]
+}

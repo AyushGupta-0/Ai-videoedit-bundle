@@ -1,0 +1,89 @@
+{
+  "episode": "ep06",
+  "voices": {
+    "N": {
+      "kokoro": "af_sarah",
+      "speed": 0.95,
+      "semitones": 0.0
+    }
+  },
+  "lines": [
+    {
+      "id": "l01",
+      "at": 0.3,
+      "who": "N",
+      "shot": "i01",
+      "text": "Five days. The fields are a long walk from her lane."
+    },
+    {
+      "id": "l02",
+      "at": 4.8,
+      "who": "N",
+      "shot": "i02",
+      "text": "She found the one with the right green rows in it."
+    },
+    {
+      "id": "l03",
+      "at": 9.0,
+      "who": "N",
+      "shot": "i03",
+      "text": "It took her a while to go in."
+    },
+    {
+      "id": "l04",
+      "at": 12.0,
+      "who": "N",
+      "shot": "i04",
+      "text": "Please, she said. Just one. I can't pay today, but I will."
+    },
+    {
+      "id": "l05",
+      "at": 18.4,
+      "who": "N",
+      "shot": "i05",
+      "text": "The farmer looked at her for a long moment."
+    },
+    {
+      "id": "l06",
+      "at": 22.6,
+      "who": "N",
+      "shot": "i06",
+      "text": "And he said no."
+    },
+    {
+      "id": "l07",
+      "at": 25.0,
+      "who": "N",
+      "shot": "i06",
+      "text": "Not unkindly. He had his own children to feed. But no."
+    },
+    {
+      "id": "l08",
+      "at": 31.4,
+      "who": "N",
+      "shot": "i07",
+      "text": "So she turned around and started the long walk home with an empty bag."
+    },
+    {
+      "id": "l09",
+      "at": 38.0,
+      "who": "N",
+      "shot": "i08",
+      "text": "Halfway back, it began to rain."
+    },
+    {
+      "id": "l10",
+      "at": 41.6,
+      "who": "N",
+      "shot": "i09",
+      "text": "She did not run. She was too tired to run."
+    },
+    {
+      "id": "l11",
+      "at": 46.4,
+      "who": "N",
+      "shot": "i10",
+      "text": "And then, behind her, somebody called her name."
+    }
+  ]
+}
