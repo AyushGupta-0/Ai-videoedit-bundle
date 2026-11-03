@@ -164,6 +164,13 @@ timeline registered at `window.__timelines["<id>"]`.
       specified setting. Only "two kids walking holding hands" landed.
     Conclusion: SD1.5 locally is a **single-character portrait generator**. It cannot stage a
     scene. Any episode whose beats are interactions or actions needs a paid model.
+    - *Stable Video Diffusion* (image-to-video, would have animated the existing plates):
+      ~9.5GB of weights, does not fit. `model_cpu_offload` -> clean MPS OOM at the 10GB
+      cap; `enable_sequential_cpu_offload` -> CPU RAM thrash at 21k swapins/sec. Both fail
+      during model *loading*, so lowering resolution or frame count changes nothing.
+      `Tools/publish/svd_animate.py` is written and correct — run it on a 32GB+ host.
+      AnimateDiff (~4GB) is the only video model that would fit here, but it is
+      text-to-video with subtle motion only; it cannot animate an existing plate faithfully.
     NOTE ON THE 2026-11 REFERENCE REELS: those are AI-generated *video* (Veo/Kling class),
     not stills — real character animation and moving cameras. No local still-image pipeline
     reaches that, however good the plates. Matching them means a paid text-to-video model
