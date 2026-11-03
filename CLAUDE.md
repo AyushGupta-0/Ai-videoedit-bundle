@@ -31,6 +31,7 @@ Vertical 9:16 short-form explainers, 50–60s, for Instagram Reels / YouTube Sho
 | Captions | EN: word-by-word, force-aligned. **HI: none** — English info cards + numbers only | Owner's spec. |
 | Ending | Loop hook, no CTA, no watermark | Last line answers the first line on replay. |
 | Publishing | **Manual.** Folders + caption files, no API | Owner uploads by hand. Never ask for credentials. |
+| Format | **Vertical reels only, all three platforms** | YouTube gets the Short, not a landscape upload. Never build a 16:9 thumbnail — one 1080x1920 cover serves IG, Shorts and FB Reels. |
 
 ---
 
