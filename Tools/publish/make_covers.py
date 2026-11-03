@@ -1,12 +1,14 @@
 #!/usr/bin/env python3
-"""Generate the three different things platforms call a "cover".
+"""Generate the cover image for one reel.
 
-  reel_cover_1080x1920.png   Instagram Reel / Shorts cover.
-                             All text sits inside the centre 1080x1080, because
-                             the profile grid crops it to a square.
-  yt_thumbnail_1280x720.png  YouTube thumbnail.
-  fb_cover_1640x856.png      Facebook Page cover. Text kept inside the mobile
-                             safe band, which is much narrower than the image.
+We publish reels only — Instagram Reels, YouTube Shorts, Facebook Reels — so there
+is exactly ONE cover: 1080x1920, used on all three. No landscape thumbnail.
+
+  reel_cover_1080x1920.png   All text sits inside the centre 1080x1080, because
+                             the Instagram profile grid crops it to a square.
+
+  --page-cover also writes page_cover_1640x856.png, the Facebook *Page* banner.
+  That's a one-time channel asset, not a per-video one.
 
     python3 make_covers.py --plate sun_surface --line1 "YOU CAN NEVER" \
         --line2 "REACH LIGHT SPEED" --kicker "here's what happens if you try" \
@@ -82,7 +84,7 @@ def badge(img, mark_path, size, xy):
     img.paste(m, xy, msk)
 
 
-def build(plate, l1, l2, kicker, outdir, accent, mark, hindi=False):
+def build(plate, l1, l2, kicker, outdir, accent, mark, hindi=False, page_cover=False):
     face, bold_i, semi_i = (DEV, DEV_BOLD, DEV_SEMI) if hindi else (LAT, HEAVY, DEMI)
     outdir.mkdir(parents=True, exist_ok=True)
     src = Image.open(PLATES / f"{plate}.jpg").convert("RGB")
@@ -102,47 +104,31 @@ def build(plate, l1, l2, kicker, outdir, accent, mark, hindi=False):
     d.rectangle([W / 2 - 150, y + 26, W / 2 + 150, y + 32], fill=accent + (255,))
     kl = wrap(d, kicker, fk, W - 220)
     draw_block(d, kl, fk, W / 2, y + 68, accent + (255,))
-    badge(img, mark, 118, (W // 2 - 59, sq_top + W - 150))
+    badge(img, mark, 118, (W // 2 - 59, sq_top + W - 214))   # fully inside the 1:1 crop
     img.save(outdir / "reel_cover_1080x1920.png")
 
-    # ---------- YouTube thumbnail ----------
-    W, H = 1280, 720
-    img = scrim(fit_cover(src, W, H), 0.35, 0.55)
-    d = ImageDraw.Draw(img, "RGBA")
-    f1 = ImageFont.truetype(face, 86 if hindi else 96, index=bold_i)
-    fk = ImageFont.truetype(face, 38, index=semi_i)
-    lines = wrap(d, l1, f1, W - 420) + wrap(d, l2, f1, W - 420)
-    y = (H - len(lines) * 122) // 2 - 20
-    for ln in lines:
-        l, t, r, b = d.textbbox((0, 0), ln, font=f1)
-        d.text((74, y + 5), ln, font=f1, fill=(0, 0, 0, 190))
-        d.text((70, y), ln, font=f1, fill=(255, 255, 255, 255))
-        y += 122
-    d.rectangle([70, y + 12, 310, y + 19], fill=accent + (255,))
-    d.text((70, y + 46), kicker, font=fk, fill=accent + (255,))
-    badge(img, mark, 150, (W - 200, H - 200))
-    img.save(outdir / "yt_thumbnail_1280x720.png")
-
-    # ---------- Facebook Page cover ----------
-    W, H = 1640, 856
-    img = scrim(fit_cover(src, W, H), 0.45, 0.60)
-    d = ImageDraw.Draw(img, "RGBA")
-    fn = ImageFont.truetype(LAT, 104, index=HEAVY)
-    fs = ImageFont.truetype(LAT, 44, index=DEMI)
-    # mobile crops to roughly the centre 640-wide band — keep everything inside it
-    cx = W / 2
-    badge(img, mark, 190, (int(cx - 95), int(H / 2 - 190)))
-    name = "1min.thinker"
-    l, t, r, b = d.textbbox((0, 0), name, font=fn)
-    d.text((cx - (r - l) / 2 - l, H / 2 + 36), name, font=fn, fill=(255, 255, 255, 255))
-    tag = "one big idea, every week"
-    l, t, r, b = d.textbbox((0, 0), tag, font=fs)
-    d.text((cx - (r - l) / 2 - l, H / 2 + 162), tag, font=fs, fill=accent + (255,))
-    img.save(outdir / "fb_cover_1640x856.png")
+    # ---------- Facebook *Page* banner : channel asset, not per video ----------
+    if page_cover:
+        W, H = 1640, 856
+        img = scrim(fit_cover(src, W, H), 0.45, 0.60)
+        d = ImageDraw.Draw(img, "RGBA")
+        fn = ImageFont.truetype(LAT, 104, index=HEAVY)
+        fs = ImageFont.truetype(LAT, 44, index=DEMI)
+        # mobile crops to roughly the centre 640-wide band — keep everything inside it
+        cx = W / 2
+        badge(img, mark, 190, (int(cx - 95), int(H / 2 - 190)))
+        name = "1min.thinker"
+        l, t, r, b = d.textbbox((0, 0), name, font=fn)
+        d.text((cx - (r - l) / 2 - l, H / 2 + 36), name, font=fn, fill=(255, 255, 255, 255))
+        tag = "one big idea, every week"
+        l, t, r, b = d.textbbox((0, 0), tag, font=fs)
+        d.text((cx - (r - l) / 2 - l, H / 2 + 162), tag, font=fs, fill=accent + (255,))
+        img.save(outdir / "page_cover_1640x856.png")
 
     print(f"covers → {outdir.relative_to(ROOT)}")
     for f in sorted(outdir.glob("*.png")):
-        print("   ", f.name)
+        if not f.name.startswith("."):      # exFAT AppleDouble ._ twins
+            print("   ", f.name)
 
 
 def main():
@@ -153,11 +139,13 @@ def main():
     ap.add_argument("--kicker", default="")
     ap.add_argument("--out", required=True)
     ap.add_argument("--hindi", action="store_true")
+    ap.add_argument("--page-cover", action="store_true",
+                    help="also write the Facebook Page banner (one-time channel asset)")
     a = ap.parse_args()
     build(a.plate, a.line1, a.line2, a.kicker, ROOT / a.out,
           SAFFRON if a.hindi else GOLD,
           IDENT / ("hindi_avatar_400.png" if a.hindi else "avatar_400.png"),
-          hindi=a.hindi)
+          hindi=a.hindi, page_cover=a.page_cover)
 
 
 if __name__ == "__main__":

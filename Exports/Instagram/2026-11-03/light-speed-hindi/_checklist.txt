@@ -1,5 +1,6 @@
 INSTAGRAM REEL
-  [ ] Cover frame ~23s
+  [ ] Cover: Edit cover -> Add from gallery -> cover.png (in this folder)
+      Fallback if you skip it: pick frame ~23s
   [ ] Audio ON (voice-led — muted autoplay loses it)
   [ ] Share to Facebook Page: ON
   [ ] Allow remix + download: ON

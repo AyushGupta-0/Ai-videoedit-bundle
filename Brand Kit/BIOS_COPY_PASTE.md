@@ -88,7 +88,7 @@ Space · physics · the what-ifs. New drop every week.
 ```
 
 **Category:** Science, Technology & Engineering
-**Picture:** `identity/avatar_400.png` · **Cover:** `identity/youtube_banner_2560x1440.png`
+**Picture:** `identity/avatar_400.png` · **Cover:** `identity/fb_page_cover_1640x856.png`
 
 ---
 
@@ -102,6 +102,31 @@ Space · physics · the what-ifs. New drop every week.
 | `hindi_avatar_1024.png` | Hindi | master avatar — saffron ring |
 | `hindi_avatar_800 / 400 / 180 / 98.png` | Hindi | same sizes |
 | `hindi_youtube_banner_2560x1440.png` | Hindi | banner / cover |
+| `fb_page_cover_1640x856.png` | English | Facebook **Page** cover |
+| `hindi_fb_page_cover_1640x856.png` | Hindi | Facebook Page cover |
+
+### Per-video covers — a different thing
+
+"Cover" means three different images and all three are different sizes. They're
+generated per video, not once per channel:
+
+```bash
+~/Developer/tools-venv/manim/bin/python Tools/publish/make_covers.py \
+  --plate sun_surface --line1 "YOU CAN NEVER" --line2 "REACH LIGHT SPEED" \
+  --kicker "here's what happens if you try" --out "Exports/covers/<slug>"
+```
+
+| Output | Goes where |
+|---|---|
+| `reel_cover_1080x1920.png` | Instagram "Cover photo" → Add from gallery; Shorts custom thumbnail |
+| `yt_thumbnail_1280x720.png` | YouTube thumbnail (for the long-form/landscape upload) |
+| `fb_cover_1640x856.png` | Facebook Page cover |
+
+Add `--hindi` for the Hindi set (saffron accent, Kohinoor type).
+
+The reel cover's text is deliberately squeezed into the middle: Instagram crops your
+profile grid to a square, so anything in the top or bottom 420px is invisible to anyone
+browsing your profile. Centre square only.
 
 **Why the Hindi mark keeps the Latin "1":** I tested the Devanagari १ and it collapses
 into an unreadable blob at 40px, which is the size a profile picture actually appears at

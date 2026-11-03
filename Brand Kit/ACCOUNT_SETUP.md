@@ -12,6 +12,7 @@ Assets are in `Brand Kit/identity/`:
 | `avatar_180.png` | Instagram (it downsizes to 110px anyway) |
 | `avatar_98.png` | preview of how it reads tiny |
 | `youtube_banner_2560x1440.png` | YouTube channel banner |
+| `fb_page_cover_1640x856.png` | Facebook Page cover |
 
 The mark is built to survive being shown at 40px — a gold ring, a bold "1", one gold body on the
 ring. No small text, because small text disappears at profile size.
@@ -49,7 +50,7 @@ crossposts.
 3. **Category:** `Science, Technology & Engineering` → or `Video Creator`
 4. **Bio:** same one-liner as Instagram
 5. Create → then **Profile picture:** `avatar_400.png`,
-   **Cover photo:** `youtube_banner_2560x1440.png` (it crops fine)
+   **Cover photo:** `fb_page_cover_1640x856.png`
 6. Page settings → **Username** → set `@1min.thinker` so the URL is
    `facebook.com/1min.thinker`
 7. **Link it to Instagram:** Page → Settings → **Linked accounts** → Instagram → connect

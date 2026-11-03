@@ -67,7 +67,8 @@ CAPTIONS = {"Instagram": cap_instagram, "YouTube": cap_youtube, "Facebook": cap_
 
 CHECKS = {
     "Instagram": lambda m, i: f"""INSTAGRAM REEL
-  [ ] Cover frame ~{m.get('cover_at','0')}s
+  [ ] Cover: Edit cover -> Add from gallery -> cover.png (in this folder)
+      Fallback if you skip it: pick frame ~{m.get('cover_at','0')}s
   [ ] Audio ON (voice-led — muted autoplay loses it)
   [ ] Share to Facebook Page: ON
   [ ] Allow remix + download: ON
@@ -77,6 +78,8 @@ CHECKS = {
   FILE {i.get('w')}x{i.get('h')} · {i.get('dur')}s · {i.get('mb')}MB
 """,
     "YouTube": lambda m, i: f"""YOUTUBE SHORT
+  [ ] Cover: upload cover.png as the thumbnail
+      If YouTube doesn't offer a custom thumbnail, it auto-picks a frame. Leave it.
   [ ] Title from title.txt ({len(m['yt_title'])}/100 chars)
   [ ] Tags from tags.txt
   [ ] #Shorts present
@@ -86,6 +89,7 @@ CHECKS = {
 """,
     "Facebook": lambda m, i: f"""FACEBOOK REEL
   Easiest: publish on Instagram with "Share to Facebook" ON and skip this folder.
+  [ ] Cover: Edit cover -> Upload -> cover.png
   Facebook rewards few hashtags — 3-5 only.
   FILE {i.get('w')}x{i.get('h')} · {i.get('dur')}s · {i.get('mb')}MB
 """,
@@ -97,6 +101,7 @@ def main():
     ap.add_argument("video")
     ap.add_argument("meta")
     ap.add_argument("--date", default=date.today().isoformat())
+    ap.add_argument("--cover", help="reel_cover_1080x1920.png — copied into all three folders")
     a = ap.parse_args()
 
     vid = Path(a.video)
@@ -109,10 +114,18 @@ def main():
     info = probe(vid)
     slug = slugify(meta.get("slug") or meta["yt_title"])
 
+    # one vertical cover, same image on all three — we publish reels only
+    cover = Path(a.cover) if a.cover else None
+    if cover and not cover.exists():
+        sys.exit(f"no such cover: {cover}")
+
     for p in PLATFORMS:
         d = EXPORTS / p / a.date / slug
         d.mkdir(parents=True, exist_ok=True)
-        shutil.copy2(vid, d / vid.name)
+        if (d / vid.name).resolve() != vid.resolve():
+            shutil.copy2(vid, d / vid.name)
+        if cover:
+            shutil.copy2(cover, d / "cover.png")
         (d / "caption.txt").write_text(CAPTIONS[p](meta), encoding="utf-8")
         (d / "_checklist.txt").write_text(CHECKS[p](meta, info), encoding="utf-8")
         if p == "YouTube":
