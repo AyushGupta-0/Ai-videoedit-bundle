@@ -4,7 +4,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=1080, height=1920" />
     <title>Ten Days — Day 3</title>
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+    <!-- vendored: no network fetch during render. The plugin set has been free
+         for commercial use since GSAP 3.13; copied in from Tools/_shared/gsap -->
+    <script src="assets/gsap/gsap.min.js"></script>
+    <script src="assets/gsap/ScrambleTextPlugin.min.js"></script>
+    <script src="assets/gsap/SplitText.min.js"></script>
+    <script src="assets/gsap/DrawSVGPlugin.min.js"></script>
+    <script src="assets/gsap/CustomEase.min.js"></script>
 <style>
   :root{
     --night:#0b1220; --night2:#131d30; --road:#161d2b;
@@ -69,24 +75,25 @@
 </style>
   </head>
   <body>
-<div id="root" data-composition-id="td3" data-start="0" data-duration="68.9"
+<div id="root" data-composition-id="td3" data-start="0" data-duration="89.4"
      data-width="1080" data-height="1920" data-track-kind="graphics">
-  <div id="panels" class="clip" data-start="0" data-duration="68.9" data-track-index="0"></div>
-  <div id="hud" class="clip" data-start="0" data-duration="68.9" data-track-index="1" data-layout-ignore>
+  <div id="panels" class="clip" data-start="0" data-duration="89.4" data-track-index="0"></div>
+  <div id="hud" class="clip" data-start="0" data-duration="89.4" data-track-index="1" data-layout-ignore>
     <div id="daytag"><i></i>DAY 3 / 10</div>
-    <div id="clock">1:48 AM</div>
+    <div id="clock">1:52 AM</div>
     <div id="recov">RECOVERY IN 8 DAYS</div>
   </div>
-  <div id="mark" class="clip" data-start="0" data-duration="68.9" data-track-index="2"
+  <div id="mark" class="clip" data-start="0" data-duration="89.4" data-track-index="2"
        data-layout-ignore>1min.thinker</div>
-  <div id="capwrap" class="clip" data-start="0" data-duration="68.9" data-track-index="3"
+  <div id="capwrap" class="clip" data-start="0" data-duration="89.4" data-track-index="3"
        data-track-kind="captions"><span id="cap"></span></div>
 </div>
 
 <audio id="vo" src="assets/audio/vo.wav" data-start="0" data-volume="1"></audio>
 
 <script>
-const DUR = 68.9;
+gsap.registerPlugin(ScrambleTextPlugin, SplitText, DrawSVGPlugin, CustomEase);
+const DUR = 89.4;
 const tl = gsap.timeline({ paused: true });
 const S = document.getElementById("panels");
 const mk = (id, html) => { const d=document.createElement("div");
@@ -95,157 +102,210 @@ const rule = (n, text, sub) => `<div class="rulecard">
     <div class="rulebadge">RULE #${n}</div><div class="ruletext">${text}</div>
     ${sub ? `<div class="rulesub">${sub}</div>` : ""}</div>`;
 
-/* A service-station interior: shelf bays receding, one exit at the far end.
-   Deterministic throughout — the renderer seeks frames out of order. */
-function bays(empty){
+/* Ten Days — Day 3: the service station.
+ *
+ * Same template as Day 2 v4: a consistent vector "you" in shot, each rule
+ * followed by the shot of you obeying it, the tell planted early (grid seven
+ * died on day one) and recalled when the lights come on.
+ *
+ * Deterministic throughout — no unseeded randomness anywhere.
+ */
+
+function figure(pose, x, y, s = 1, tone = "#1c2538") {
+  const hood = "#2a3650", skin = "#d9b08c", pack = "#3a4a6a";
+  let body;
+  if (pose === "seat") {
+    body = `
+      <rect x="-70" y="-10" width="140" height="150" rx="34" fill="${hood}"/>
+      <rect x="-50" y="60" width="60" height="110" rx="22" fill="${tone}"/>
+      <circle cx="-8" cy="-50" r="52" fill="${hood}"/>
+      <circle cx="4" cy="-44" r="34" fill="${skin}"/>
+      <rect x="-26" y="-56" width="56" height="26" rx="12" fill="${hood}"/>`;
+  } else if (pose === "crouch") {
+    body = `
+      <rect x="-90" y="20" width="180" height="120" rx="48" fill="${hood}"/>
+      <rect x="-100" y="-30" width="70" height="90" rx="26" fill="${pack}"/>
+      <circle cx="30" cy="-30" r="50" fill="${hood}"/>
+      <circle cx="40" cy="-24" r="32" fill="${skin}"/>
+      <rect x="6" y="-40" width="60" height="24" rx="12" fill="${hood}"/>`;
+  } else if (pose === "walk") {
+    body = `
+      <rect x="-54" y="-30" width="108" height="190" rx="36" fill="${hood}"/>
+      <rect x="-96" y="-16" width="56" height="116" rx="22" fill="${pack}"/>
+      <rect x="-40" y="150" width="34" height="110" rx="14" fill="${tone}"/>
+      <rect x="10" y="150" width="34" height="100" rx="14" fill="${tone}" transform="rotate(-14 27 150)"/>
+      <circle cx="8" cy="-80" r="52" fill="${hood}"/>
+      <circle cx="16" cy="-74" r="34" fill="${skin}"/>
+      <rect x="-18" y="-88" width="60" height="24" rx="12" fill="${hood}"/>`;
+  } else { // peer
+    body = `
+      <rect x="-64" y="-20" width="128" height="200" rx="40" fill="${hood}"/>
+      <rect x="-104" y="-6" width="60" height="120" rx="24" fill="${pack}"/>
+      <circle cx="14" cy="-68" r="54" fill="${hood}"/>
+      <circle cx="22" cy="-62" r="36" fill="${skin}"/>
+      <rect x="-14" y="-78" width="64" height="26" rx="13" fill="${hood}"/>`;
+  }
+  return `<g transform="translate(${x},${y}) scale(${s})">${body}</g>`;
+}
+
+/* a retail aisle in one-point perspective: shelves both sides, stripped */
+function aisle(lit) {
   let h = "";
-  for (let i = 0; i < 5; i++){
-    const t = i / 4;
-    const w = 56 - t * 30, hgt = 560 - t * 250, top = 700 + t * 120;
-    for (const side of [0, 1]){
-      const x = side ? 1080 - (110 + t * 330) - w : 110 + t * 330;
-      h += `<div style="position:absolute;left:${x}px;top:${top}px;width:${w}px;height:${hgt}px;
-             background:linear-gradient(90deg,#44506a,#2a3448);opacity:${1 - t*0.34};"></div>`;
-      // shelves: full bays get stock blocks, stripped ones get bare rails
-      for (let s = 0; s < 4; s++){
-        const sy = top + 60 + s * (hgt / 4.4);
-        h += `<div style="position:absolute;left:${x - 52 + t*26}px;top:${sy}px;
-               width:${150 - t*72}px;height:${9 - t*3}px;background:#3c4a66;
-               opacity:${0.75 - t*0.3};"></div>`;
-        if (!empty && s % 2 === 0){
-          h += `<div style="position:absolute;left:${x - 44 + t*26}px;top:${sy - 26 + t*10}px;
-                 width:${128 - t*62}px;height:${26 - t*10}px;background:#4a3a24;
-                 opacity:${0.6 - t*0.25};"></div>`;
-        }
-      }
+  const floor = lit ? "#2a3345" : "#141b28", wall = lit ? "#3a4560" : "#1b2434";
+  h += `<div style="position:absolute;left:0;right:0;top:0;height:640px;background:${lit ? "#e8edf6" : "#0f1520"};"></div>`;
+  h += `<div style="position:absolute;left:0;right:0;top:640px;bottom:0;background:linear-gradient(180deg,${floor},#0c1119);"></div>`;
+  for (let i = 0; i < 7; i++) {
+    const t = i / 6, x = 60 + t * 400, w = 150 - t * 110, top = 520 + t * 180, hgt = 820 - t * 560;
+    for (const side of [0, 1]) {
+      const px = side ? 1080 - x - w : x;
+      h += `<div style="position:absolute;left:${px}px;top:${top}px;width:${w}px;height:${hgt}px;
+             background:${wall};opacity:${1 - t * 0.5};"></div>`;
+      for (let s = 1; s < 4; s++)
+        h += `<div style="position:absolute;left:${px}px;top:${top + hgt * s / 4}px;width:${w}px;height:${4 - t * 2}px;
+               background:${lit ? "#8b97ab" : "#2b3650"};opacity:${1 - t * 0.5};"></div>`;
     }
+  }
+  if (lit) for (let i = 0; i < 5; i++) {
+    const t = i / 4;
+    h += `<div style="position:absolute;left:${300 + t * 140}px;top:${120 + t * 100}px;width:${480 - t * 280}px;height:${14 - t * 8}px;
+           border-radius:7px;background:#fff;box-shadow:0 0 60px 20px rgba(255,255,255,.55);"></div>`;
   }
   return h;
 }
 
+/* ============================ PANELS ============================ */
+
 mk("recap", `<div style="position:absolute;inset:0;background:#06090f;"></div>
-  <div style="position:absolute;inset:0;opacity:.35;">${bays(true)}</div>
-  <div class="stamp" style="top:800px;border-color:var(--amber);color:var(--amber);">YOU WAITED</div>
+  <div style="position:absolute;left:0;right:0;top:120px;height:600px;background:linear-gradient(180deg,#2a3a5a,#0e1726);"></div>
+  <div style="position:absolute;left:0;right:0;top:120px;height:120px;background:linear-gradient(180deg,#f0a93c33,transparent);"></div>
+  <div style="position:absolute;left:0;right:0;top:720px;bottom:0;background:linear-gradient(180deg,#192234,#0d1422);"></div>
+  <svg width="1080" height="1920" style="position:absolute;inset:0;">${figure("seat", 540, 980, 2.4)}</svg>
+  <div style="position:absolute;left:170px;top:1360px;width:740px;height:740px;border-radius:50%;border:36px solid #141c2c;"></div>
   <div class="vign"></div>`);
 
-mk("station", `<div style="position:absolute;inset:0;background:#080c14;"></div>
-  <div style="position:absolute;left:0;right:0;top:0;height:700px;
-       background:linear-gradient(180deg,#161d29,#0d1219);"></div>
-  <div style="position:absolute;left:0;right:0;top:1380px;bottom:0;
-       background:linear-gradient(180deg,#141a24,#090d14);"></div>
-  <div id="bayart" style="position:absolute;inset:0;">${bays(true)}</div>
-  <div style="position:absolute;left:440px;top:980px;width:200px;height:300px;
-       background:#0e1522;"></div>
+mk("hook", `<div style="position:absolute;inset:0;background:#0a0f17;"></div>
+  <!-- the forecourt at 2am: dead sign, dead pumps, and you walking in -->
+  <div style="position:absolute;left:0;right:0;top:0;height:900px;background:linear-gradient(180deg,#0a1020,#121b2c);"></div>
+  <div style="position:absolute;left:120px;top:200px;width:840px;height:160px;border-radius:16px;background:#141b28;border:5px solid #2b3650;"></div>
+  <div style="position:absolute;left:120px;top:200px;width:840px;height:160px;display:flex;align-items:center;justify-content:center;
+       color:#3a4560;font-size:70px;font-weight:800;letter-spacing:12px;">SERVICES</div>
+  <div style="position:absolute;left:0;right:0;top:900px;bottom:0;background:linear-gradient(180deg,#1a2234,#0c1119);"></div>
+  ${[220, 540, 860].map((x) => `<div style="position:absolute;left:${x - 60}px;top:700px;width:120px;height:260px;border-radius:14px;
+       background:linear-gradient(180deg,#2a3650,#1a2234);border:4px solid #3a4967;"></div>`).join("")}
+  <svg id="hookfig" width="1080" height="1920" style="position:absolute;inset:0;">${figure("walk", 540, 1280, 2.6)}</svg>
   <div class="vign"></div>`);
 
-mk("plumb", `<div style="position:absolute;inset:0;background:#070c16;"></div>
-  <!-- a water heater: the thing nobody takes -->
-  <div style="position:absolute;left:340px;top:420px;width:400px;height:700px;border-radius:200px;
-       background:linear-gradient(180deg,#2c3448,#1a2230);border:5px solid #3a4967;"></div>
-  <div style="position:absolute;left:470px;top:1120px;width:140px;height:150px;
-       background:#2a3448;"></div>
-  <div style="position:absolute;left:300px;top:1250px;width:480px;height:26px;border-radius:7px;
-       background:#3a4967;"></div>
-  <div id="drip" style="position:absolute;left:528px;top:1290px;width:24px;height:24px;
-       border-radius:50%;background:#6fa8e0;box-shadow:0 0 26px rgba(110,170,230,.6);"></div>
-  <div style="position:absolute;left:0;right:0;top:1340px;text-align:center;">
-    <span class="badge">40 LITRES</span></div>
+mk("wide", `<div style="position:absolute;inset:0;background:#0a0f17;"></div>
+  <div id="aisledark" style="position:absolute;inset:0;">${aisle(false)}</div>
+  <div class="vign"></div>`);
+
+mk("rule1", rule(1, "NOBODY LOOTS<br>THE PLUMBING", "everyone takes the shelves"));
+
+mk("obey1", `<div style="position:absolute;inset:0;background:#070c16;"></div>
+  <!-- the back room: a water heater tank and you, crouched at its valve -->
+  <div style="position:absolute;left:0;right:0;top:1300px;bottom:0;background:linear-gradient(180deg,#1a2234,#0c1119);"></div>
+  <div style="position:absolute;left:600px;top:420px;width:300px;height:880px;border-radius:150px 150px 40px 40px;
+       background:linear-gradient(90deg,#3a4560,#242e44);border:6px solid #4a5775;"></div>
+  <div style="position:absolute;left:560px;top:1120px;width:120px;height:30px;background:#4a5775;border-radius:8px;"></div>
+  <div id="tankgauge" style="position:absolute;left:690px;top:640px;width:120px;height:120px;border-radius:50%;
+       background:#0b111b;border:5px solid #4a5775;display:grid;place-items:center;color:var(--amber);font-size:30px;font-weight:800;">40L</div>
+  <svg width="1080" height="1920" style="position:absolute;inset:0;">${figure("crouch", 330, 1150, 2.1)}</svg>
+  <div class="vign"></div>`);
+
+mk("plant", `<div style="position:absolute;inset:0;background:#070c16;"></div>
+  <!-- the breaker panel: the fact the whole episode turns on -->
+  <div style="position:absolute;left:240px;top:420px;width:600px;height:820px;border-radius:14px;
+       background:linear-gradient(180deg,#263048,#171f30);border:6px solid #3a4560;"></div>
+  ${Array.from({ length: 8 }, (_, i) => `<div style="position:absolute;left:${300 + (i % 2) * 260}px;top:${500 + Math.floor(i / 2) * 150}px;
+       width:220px;height:100px;border-radius:12px;background:#0b111b;border:4px solid #2b3650;"></div>
+     <div style="position:absolute;left:${330 + (i % 2) * 260}px;top:${530 + Math.floor(i / 2) * 150}px;width:60px;height:40px;border-radius:8px;
+       background:#39465e;"></div>`).join("")}
+  <div id="gridbadge" class="badge red" style="position:absolute;left:50%;transform:translateX(-50%);top:1290px;font-size:34px;opacity:0;">GRID 7 — DEAD · DAY 1</div>
+  <div class="vign"></div>`);
+
+mk("rule2", rule(2, "NEVER LET A DOOR<br>CLOSE BEHIND YOU", "between you and the car"));
+
+mk("obey2", `<div style="position:absolute;inset:0;background:#070c16;"></div>
+  <!-- the back door, wedged with a crate; the car outside, sixty feet off -->
+  <div style="position:absolute;left:0;right:0;top:0;height:1400px;background:linear-gradient(180deg,#0f1520,#141b28);"></div>
+  <div style="position:absolute;left:280px;top:260px;width:520px;height:1100px;border-radius:10px;background:#0a1020;border:8px solid #35425a;overflow:hidden;">
+    <div style="position:absolute;left:0;right:0;top:0;height:60%;background:linear-gradient(180deg,#0a1020,#152034);"></div>
+    <div style="position:absolute;left:0;right:0;top:60%;bottom:0;background:#1a2234;"></div>
+    <div id="farcar" style="position:absolute;left:190px;top:560px;width:140px;height:90px;border-radius:16px;background:#5a4a1e;border:3px solid var(--amber);"></div>
+  </div>
+  <div style="position:absolute;left:560px;top:1180px;width:260px;height:180px;border-radius:12px;background:#4a3a1e;border:5px solid #6d5a26;"></div>
+  <div style="position:absolute;left:0;right:0;top:1400px;bottom:0;background:#0c1119;"></div>
+  <div id="sixty" class="badge" style="position:absolute;left:50%;transform:translateX(-50%);top:170px;font-size:30px;">60 FT</div>
+  <svg width="1080" height="1920" style="position:absolute;inset:0;">${figure("peer", 190, 1260, 1.5)}</svg>
   <div class="vign"></div>`);
 
 mk("radio", `<div style="position:absolute;inset:0;background:#070c16;"></div>
-  <div id="radiobox" style="position:absolute;left:250px;top:760px;width:580px;height:290px;
-       border-radius:16px;background:linear-gradient(180deg,#222d41,#161e2e);border:4px solid #33425e;
-       box-shadow:0 26px 70px rgba(0,0,0,.6);">
-    <div style="position:absolute;left:32px;top:30px;width:350px;height:108px;border-radius:8px;
-         background:#0b2a21;border:3px solid #1d5742;display:flex;align-items:center;justify-content:center;">
-      <span style="color:#5df2b0;font-size:56px;font-weight:800;letter-spacing:5px;
-            text-shadow:0 0 26px rgba(93,242,176,.8);">CH 09</span></div>
-    <div style="position:absolute;right:34px;top:42px;width:86px;height:86px;border-radius:50%;
-         background:#2b374f;border:4px solid #44557a;"></div>
-    <div style="position:absolute;right:-26px;top:150px;width:26px;height:74px;border-radius:5px;
-         background:#44557a;"></div>
+  <div id="radiobox" style="position:absolute;left:250px;top:720px;width:580px;height:290px;border-radius:16px;
+       background:linear-gradient(180deg,#222d41,#161e2e);border:4px solid #33425e;box-shadow:0 26px 70px rgba(0,0,0,.6);">
+    <div style="position:absolute;left:32px;top:30px;width:350px;height:108px;border-radius:8px;background:#0b2a21;border:3px solid #1d5742;
+         display:flex;align-items:center;justify-content:center;">
+      <span style="color:#5df2b0;font-size:56px;font-weight:800;letter-spacing:5px;text-shadow:0 0 26px rgba(93,242,176,.8);">CH 09</span></div>
+    <div style="position:absolute;right:34px;top:42px;width:86px;height:86px;border-radius:50%;background:#2b374f;border:4px solid #44557a;"></div>
+    <div style="position:absolute;right:-26px;top:150px;width:26px;height:74px;border-radius:5px;background:#44557a;"></div>
     <div style="position:absolute;left:32px;bottom:28px;right:32px;height:56px;display:flex;gap:11px;">
-      ${Array.from({length:10},()=>`<div style="flex:1;border-radius:5px;background:#2b374f;"></div>`).join("")}
-    </div></div>
+      ${Array.from({ length: 10 }, () => `<div style="flex:1;border-radius:5px;background:#2b374f;"></div>`).join("")}</div>
+  </div>
+  <svg width="1080" height="1920" style="position:absolute;inset:0;"><rect x="800" y="860" width="60" height="150" rx="26" fill="#d9b08c" transform="rotate(-20 830 935)"/></svg>
+  <div id="radioline" style="position:absolute;left:0;right:0;top:1100px;text-align:center;color:#6f7b93;font-size:30px;letter-spacing:4px;">AVOID ENCLOSED RETAIL</div>
   <div class="vign"></div>`);
 
-mk("rule1", rule(1, "FILL FROM THE<br>LOWEST TAP", "gravity does the work"));
-mk("rule2", rule(2, "NEVER LET A DOOR<br>CLOSE BEHIND YOU", ""));
 mk("rule3", rule(3, "IF THE LIGHTS<br>COME ON, LEAVE", ""));
 
-mk("good", `<div style="position:absolute;inset:0;background:#070c16;"></div>
-  <div class="news"><h4>GOOD NEWS</h4>
-    <div class="row"><span>Water carried out</span><span>31 LITRES</span></div>
-    <div class="row"><span>Paper road map</span><span>YES</span></div>
-    <div class="row"><span>Phone</span><span>DEAD 36 HRS</span></div></div>
+mk("obey3", `<div style="position:absolute;inset:0;background:#070c16;"></div>
+  <div class="news">
+    <h4>WHAT YOU GOT</h4>
+    <div class="row"><span>Water</span><span>31 LITRES</span></div>
+    <div class="row"><span>Map</span><span>PAPER</span></div>
+    <div class="row"><span>Time inside</span><span id="mins">11 MIN</span></div>
+  </div>
   <div class="vign"></div>`);
 
 mk("bad", `<div style="position:absolute;inset:0;background:#070c16;"></div>
-  <!-- the floor plan: one door, and you at the far end of it -->
-  <div style="position:absolute;left:170px;top:520px;width:740px;height:860px;border:5px solid #3a4967;
-       border-radius:10px;background:#0d131d;"></div>
-  <div style="position:absolute;left:170px;top:900px;width:5px;height:100px;background:#070c16;"></div>
-  <div style="position:absolute;left:112px;top:915px;width:70px;height:70px;border-radius:50%;
-       border:4px solid var(--amber);"></div>
-  <div id="youdot" style="position:absolute;left:830px;top:915px;width:46px;height:46px;
-       border-radius:50%;background:var(--red);box-shadow:0 0 40px rgba(255,66,66,.7);"></div>
-  <div style="position:absolute;left:0;right:0;top:1270px;text-align:center;">
-    <span class="badge red">ONE EXIT</span></div>
+  <!-- the floor plan: one long room, one exit, and YOU at the far end -->
+  <div style="position:absolute;left:0;right:0;top:470px;text-align:center;color:#55617a;font-size:24px;letter-spacing:6px;">FLOOR PLAN</div>
+  <div style="position:absolute;left:140px;top:560px;width:800px;height:900px;border-radius:14px;background:#141b28;border:5px solid #2b3650;"></div>
+  ${[0, 1, 2, 3].map((i) => `<div style="position:absolute;left:${220 + i * 170}px;top:640px;width:70px;height:560px;border-radius:8px;background:#1f283a;border:3px solid #2b3650;"></div>`).join("")}
+  <div id="exitmark" style="position:absolute;left:470px;top:1452px;width:140px;height:16px;background:var(--amber);border-radius:4px;"></div>
+  <div style="position:absolute;left:0;right:0;top:1480px;text-align:center;color:var(--amber);font-size:26px;letter-spacing:6px;font-weight:800;">THE ONLY EXIT</div>
+  <div id="youdot" style="position:absolute;left:510px;top:600px;width:60px;height:60px;border-radius:50%;background:var(--red);box-shadow:0 0 0 0 rgba(255,66,66,0);"></div>
+  <div style="position:absolute;left:580px;top:605px;color:var(--red);font-size:30px;font-weight:800;letter-spacing:4px;">YOU</div>
   <div class="vign"></div>`);
 
-mk("lights", `<div style="position:absolute;inset:0;background:#080c14;"></div>
-  <div id="flood" style="position:absolute;inset:0;background:
-       radial-gradient(70% 45% at 50% 34%,rgba(255,246,214,.55),rgba(0,0,0,0) 72%);opacity:0;"></div>
-  <div style="position:absolute;inset:0;">${bays(true)}</div>
-  <div style="position:absolute;left:0;right:0;top:230px;display:flex;justify-content:center;gap:40px;">
-    ${Array.from({length:4},()=>`<div class="lamp" style="width:150px;height:22px;border-radius:11px;
-      background:#fff6d6;opacity:.14;"></div>`).join("")}
-  </div>
+mk("lights", `<div style="position:absolute;inset:0;background:#0a0f17;"></div>
+  <div style="position:absolute;inset:0;">${aisle(false)}</div>
+  <!-- the whole building comes on at once: the lit aisle fades in over the dark one -->
+  <div id="aislelit" style="position:absolute;inset:0;opacity:0;">${aisle(true)}</div>
+  <div id="flash" style="position:absolute;inset:0;background:#fff;opacity:0;"></div>
+  <svg width="1080" height="1920" style="position:absolute;inset:0;">${figure("peer", 540, 1420, 1.3)}</svg>
   <div class="vign"></div>`);
 
-mk("pa", `<div style="position:absolute;inset:0;background:#06090f;"></div>
-  <!-- a ceiling speaker, lit from inside. The voice has a body and this is it;
-       a bare dark ring read as nothing, so it needs a grille and a bracket. -->
-  <div style="position:absolute;left:510px;top:300px;width:60px;height:150px;
-       background:linear-gradient(180deg,#39465e,#232c3c);"></div>
-  <div style="position:absolute;left:452px;top:430px;width:176px;height:34px;border-radius:8px;
-       background:#39465e;"></div>
-  <div style="position:absolute;left:330px;top:470px;width:420px;height:420px;border-radius:50%;
-       background:linear-gradient(160deg,#38435a,#1b2230);border:7px solid #46557a;
-       box-shadow:0 30px 80px rgba(0,0,0,.7);"></div>
-  <div style="position:absolute;left:386px;top:526px;width:308px;height:308px;border-radius:50%;
-       background:radial-gradient(circle at 42% 36%,#2b3448,#0b1018 72%);
-       border:5px solid #55668c;overflow:hidden;">
-    ${Array.from({length:7},(_,r)=>
-      `<div style="position:absolute;left:0;right:0;top:${18+r*40}px;height:13px;
-        background:#0a0e16;opacity:.75;border-radius:7px;"></div>`).join("")}
-  </div>
-  <div id="cone" style="position:absolute;left:386px;top:526px;width:308px;height:308px;
-       border-radius:50%;background:radial-gradient(circle,rgba(240,169,60,.42),rgba(0,0,0,0) 68%);
-       opacity:0;"></div>
-  <div id="wave1" style="position:absolute;left:330px;top:470px;width:420px;height:420px;
-       border-radius:50%;border:5px solid rgba(240,169,60,.85);opacity:0;"></div>
-  <div id="wave2" style="position:absolute;left:330px;top:470px;width:420px;height:420px;
-       border-radius:50%;border:5px solid rgba(240,169,60,.85);opacity:0;"></div>
-  <div style="position:absolute;left:0;right:0;top:1000px;text-align:center;">
-    <span class="badge">PA — LIVE</span></div>
+mk("pa", `<div style="position:absolute;inset:0;background:#0d1220;"></div>
+  <div style="position:absolute;inset:0;opacity:.35;">${aisle(true)}</div>
+  <!-- the PA grille, and sound rings spreading from it -->
+  <div style="position:absolute;left:380px;top:720px;width:320px;height:320px;border-radius:50%;background:#1b2434;border:8px solid #3a4560;"></div>
+  ${Array.from({ length: 6 }, (_, i) => `<div style="position:absolute;left:440px;top:${780 + i * 36}px;width:200px;height:12px;border-radius:6px;background:#0b111b;"></div>`).join("")}
+  ${[1, 2, 3].map((i) => `<div id="ring${i}" style="position:absolute;left:400px;top:740px;width:280px;height:280px;border-radius:50%;border:4px solid rgba(255,255,255,.7);opacity:0;"></div>`).join("")}
   <div class="vign"></div>`);
 
-mk("grid", `<div style="position:absolute;inset:0;background:#070c16;"></div>
-  <div class="news bad"><h4>GRID STATUS</h4>
-    <div class="row"><span>Mains power</span><span>FAILED DAY 1</span></div>
-    <div class="row"><span>Backup generator</span><span>NONE</span></div>
-    <div class="row"><span>Lights</span><span>ON</span></div></div>
+mk("voice", `<div style="position:absolute;inset:0;background:#0d1220;"></div>
+  <div style="position:absolute;inset:0;opacity:.55;">${aisle(true)}</div>
+  <!-- you, small, at the far end of a lit aisle that wants you to walk to the front -->
+  <svg width="1080" height="1920" style="position:absolute;inset:0;">${figure("walk", 540, 1180, 1.0, "#141b2a")}</svg>
+  <div style="position:absolute;left:0;right:0;top:330px;text-align:center;">
+    <span id="checkout" style="display:inline-block;color:#fff;font-size:44px;font-weight:800;letter-spacing:6px;background:rgba(10,14,22,.8);padding:12px 30px;border-radius:10px;">CHECKOUT →</span></div>
   <div class="vign"></div>`);
 
-mk("lights2", `<div style="position:absolute;inset:0;background:#0d1016;"></div>
-  <div style="position:absolute;inset:0;background:
-       radial-gradient(70% 45% at 50% 34%,rgba(255,246,214,.6),rgba(0,0,0,0) 72%);"></div>
-  <div style="position:absolute;inset:0;">${bays(true)}</div>
-  <div style="position:absolute;left:0;right:0;top:230px;display:flex;justify-content:center;gap:40px;">
-    ${Array.from({length:4},()=>`<div style="width:150px;height:22px;border-radius:11px;
-      background:#fff6d6;opacity:.85;box-shadow:0 0 70px 26px rgba(255,240,200,.35);"></div>`).join("")}
-  </div>
+mk("recall", `<div style="position:absolute;inset:0;background:#070c16;"></div>
+  <div style="position:absolute;left:240px;top:420px;width:600px;height:820px;border-radius:14px;background:linear-gradient(180deg,#263048,#171f30);border:6px solid #3a4560;"></div>
+  ${Array.from({ length: 8 }, (_, i) => `<div style="position:absolute;left:${300 + (i % 2) * 260}px;top:${500 + Math.floor(i / 2) * 150}px;
+       width:220px;height:100px;border-radius:12px;background:#0b111b;border:4px solid #2b3650;"></div>`).join("")}
+  <div class="badge red" style="position:absolute;left:50%;transform:translateX(-50%);top:1290px;font-size:34px;">GRID 7 — DEAD · DAY 1</div>
+  <div id="onstamp" class="stamp" style="top:1400px;font-size:70px;opacity:0;">LIGHTS ON</div>
   <div class="vign"></div>`);
 
 
@@ -264,12 +324,12 @@ mk("end", `<div style="position:absolute;inset:0;
   </div>
   <div style="position:absolute;left:0;right:0;top:1160px;text-align:center;">
     <div style="color:#7d879b;font-size:26px;letter-spacing:4px;">DAY 4</div>
-    <div style="color:#fff;font-size:44px;font-weight:800;margin-top:10px;">NOTHING HERE HAS POWER.<br>SO WHO TURNED THE LIGHTS ON?</div>
+    <div style="color:#fff;font-size:44px;font-weight:800;margin-top:10px;">YOU LEAVE.<br>HEADLIGHTS FOLLOW.</div>
     <div style="color:var(--amber);font-size:27px;letter-spacing:3px;margin-top:22px;">
       FOLLOW FOR DAY 4</div>
   </div>`);
 
-const SH = [["recap", 0.0, 3.52], ["station", 3.32, 12.11], ["plumb", 11.91, 19.95], ["radio", 19.75, 24.75], ["rule1", 24.55, 28.04], ["rule2", 27.71, 31.86], ["rule3", 31.52, 35.790000000000006], ["good", 35.59, 39.87], ["bad", 39.52, 43.970000000000006], ["lights", 43.77, 49.0], ["pa", 48.8, 57.160000000000004], ["grid", 56.96, 61.56], ["lights2", 61.36, 64.73], ["end", 64.53, 68.9]];
+const SH = [["recap", 0.0, 3.9000000000000004], ["hook", 3.7, 13.139999999999999], ["wide", 12.94, 18.36], ["rule1", 18.16, 21.99], ["obey1", 21.79, 25.73], ["plant", 25.39, 32.220000000000006], ["rule2", 32.02, 37.120000000000005], ["obey2", 36.92, 42.120000000000005], ["radio", 41.92, 47.440000000000005], ["rule3", 47.24, 51.370000000000005], ["obey3", 51.17, 55.940000000000005], ["bad", 55.74, 60.34], ["lights", 60.14, 65.72], ["pa", 65.52, 69.87], ["voice", 69.67, 75.67], ["recall", 75.47, 84.69], ["end", 84.49, 89.4]];
 const FADE = 0.30;
 SH.forEach(([id, a, b]) => {
   const el = document.getElementById(id);
@@ -278,39 +338,51 @@ SH.forEach(([id, a, b]) => {
   if (b < DUR) tl.to(el, { opacity: 0, duration: FADE }, b - FADE);
 });
 
-tl.fromTo("#bayart", { scale: 1.00 }, { scale: 1.09, duration: 8.0, ease: "none" }, 3.3);
-tl.fromTo("#drip", { y: 0, opacity: 0 }, { y: 120, opacity: 1, duration: 1.1,
-          ease: "power2.in", repeat: 3 }, 12.4);
-tl.fromTo("#youdot", { opacity: 0.4 }, { opacity: 1, duration: 0.6, yoyo: true, repeat: 5 }, 40.0);
-/* every light at once — a hard snap on the word, not a fade */
-tl.to("#flood", { opacity: 1, duration: 0.10, ease: "none" }, 45.6);
-tl.to(".lamp", { opacity: 0.85, duration: 0.10, ease: "none" }, 45.6);
-/* the PA speaks: rings out of the cone, on each sentence */
-[49.4, 52.9].forEach((t, i) => {
-  tl.fromTo("#wave" + (i + 1), { scale: 0.6, opacity: 0.9 },
-            { scale: 2.2, opacity: 0, duration: 1.4, ease: "power2.out" }, t);
+/* hook: a slow push on you walking in under the dead sign */
+tl.fromTo("#hookfig", { scale: 1.0, transformOrigin: "50% 70%" }, { scale: 1.07, duration: 8.4, ease: "none" }, 3.8);
+/* wide: the stripped aisle drifts */
+tl.fromTo("#aisledark", { scale: 1.0 }, { scale: 1.08, duration: 4.8, ease: "none" }, 13.0);
+/* rule 1 obeyed: the gauge reads 40L as you find it */
+tl.fromTo("#tankgauge", { opacity: 0, scale: 0.7 }, { opacity: 1, scale: 1, duration: 0.4, ease: "power3.out" }, 23.6);
+/* the plant: grid seven died on day one */
+tl.fromTo("#gridbadge", { opacity: 0, y: 12 }, { opacity: 1, y: 0, duration: 0.3, ease: "power2.out" }, 28.6);
+/* rule 2 obeyed: sixty feet */
+tl.fromTo("#sixty", { scale: 1 }, { scale: 1.12, duration: 0.3, yoyo: true, repeat: 1, ease: "power2.inOut" }, 39.9);
+/* radio */
+tl.fromTo("#radiobox", { scale: 0.98 }, { scale: 1.04, duration: 4.8, ease: "none" }, 42.1);
+tl.set("#radioline", { textContent: "" }, 42.1);
+tl.to("#radioline", { duration: 1.3, scrambleText: { text: "AVOID ENCLOSED RETAIL", chars: "upperCase", speed: 0.6 } }, 44.4);
+/* bad: you, at the back of the only exit */
+tl.to("#youdot", { boxShadow: "0 0 0 18px rgba(255,66,66,0)", duration: 1.0, ease: "power2.out", repeat: 2 }, 57.9);
+/* THE INCIDENT: every light at once */
+tl.fromTo("#flash", { opacity: 0 }, { opacity: 0.92, duration: 0.06, ease: "none" }, 60.9);
+tl.to("#flash", { opacity: 0, duration: 0.55, ease: "power2.out" }, 60.96);
+tl.fromTo("#aislelit", { opacity: 0 }, { opacity: 1, duration: 0.2, ease: "none" }, 60.9);
+/* the PA: sound rings */
+[66.4, 67.0, 67.6].forEach((t, i) => {
+  tl.fromTo(`#ring${i + 1}`, { scale: 1, opacity: 0.7 }, { scale: 1.9, opacity: 0, duration: 1.1, ease: "power2.out" }, t);
 });
-/* the cone lights from inside while it speaks */
-tl.fromTo("#cone", { opacity: 0 }, { opacity: 1, duration: 0.5 }, 49.2);
-tl.to("#cone", { opacity: 0.35, duration: 0.9, yoyo: true, repeat: 5 }, 49.8);
+/* the lie: the sign that wants you to walk */
+tl.fromTo("#checkout", { scale: 1 }, { scale: 1.06, duration: 0.6, yoyo: true, repeat: 5, ease: "sine.inOut" }, 70.0);
+/* the recall: the stamp lands on "the lights are on" */
+tl.fromTo("#onstamp", { scale: 1.8, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.32, ease: "power3.out" }, 81.6);
 
 /* ---- HUD clock, stepping minute by minute ---- */
-const S0 = 108, S1 = 126, AMPM = "AM";
+const S0 = 112, S1 = 132, AMPM = "AM";
 const clockEl = document.getElementById("clock");
-// seek(t, true) suppresses onUpdate as well as .call(), so neither is safe for
-// a renderer grabbing frames out of order. Only tl.set() actually renders —
-// it is a zero-duration tween, and tweens render at any playhead position.
-// One set() per minute is cheap and provably correct.
+// seek(t, true) suppresses onUpdate as well as .call(), so neither survives a
+// renderer grabbing frames out of order. Only tl.set() actually renders: it is
+// a zero-duration tween, and tweens render at any playhead position.
 for (let m = S0; m <= S1; m++){
   const at = ((m - S0) / Math.max(1, S1 - S0)) * (DUR - 4.0);
   tl.set(clockEl, { textContent:
     `${Math.floor(m / 60)}:${String(m % 60).padStart(2, "0")} ${AMPM}` }, at);
 }
 
-const LINES = [["YOU WAITED.<br>IT <b>WALKED AWAY</b>.", 0.25, 2.825], ["THREE WEEKS WITHOUT FOOD.<br>THREE DAYS WITHOUT <b>WATER</b>.", 3.525, 7.675], ["<b>DAY 3</b>. EVERY SHELF<br>IS ALREADY EMPTY.", 7.735, 11.51], ["EVERYONE LOOTS THE SHELVES.<br>NOBODY LOOTS THE <b>PLUMBING</b>.", 12.11, 16.46], ["<b>40 LITRES</b><br>IN THE WATER HEATER.", 16.52, 19.495], ["RECOVERY IN <b>EIGHT DAYS</b>.<br>AVOID ENCLOSED RETAIL.", 19.945, 24.345], ["RULE 1. <b>FILL FROM THE LOWEST TAP</b>.", 24.745, 27.845], ["RULE 2. NEVER LET A DOOR<br>CLOSE <b>BEHIND YOU</b>.", 27.905, 31.655], ["RULE 3. <u>IF THE LIGHTS COME ON,<br>LEAVE</u>.", 31.715, 35.09], ["<b>GOOD NEWS</b>. 31 LITRES<br>AND A PAPER MAP.", 35.79, 39.665], ["<u>BAD NEWS</u>. ONE EXIT —<br>AND YOU'RE AT THE <b>BACK</b>.", 39.725, 43.375], ["<b>2:06 AM</b>. EVERY LIGHT<br>COMES ON AT ONCE.", 43.975, 48.2], ["A VOICE ON THE STATION'S<br>OWN <u>SPEAKERS</u>.", 49.0, 52.45], ["“STORE'S REOPENING.<br>BRING WHAT YOU'VE GOT TO THE FRONT.”", 52.51, 56.41], ["MAINS POWER FAILED<br>ON <u>DAY ONE</u>.", 57.16, 60.66], ["AND THE LIGHTS ARE <u>ON</u>.", 61.56, 63.635], ["", 64.735, 66.885]];
+const LINES = [["YOU WAITED FOR LIGHT.<br>THEN YOU <b>DROVE</b>.", 0.25, 3.3], ["THREE WEEKS WITHOUT FOOD.<br>THREE DAYS WITHOUT <b>WATER</b>.", 3.9, 8.05], ["<b>DAY 3</b>. THE WATER WILL<br><u>COST YOU THE EXIT</u>.", 8.11, 12.385], ["A SERVICE STATION, 2 AM.<br>EVERY SHELF ALREADY <b>EMPTY</b>.", 13.135, 17.91], ["RULE 1. NOBODY LOOTS<br>THE <b>PLUMBING</b>.", 18.36, 21.635], ["DON'T LOOK AT SHELVES.<br>LOOK FOR <b>PIPES</b>.", 21.985, 25.535], ["40 LITRES. COLD.<br><b>GRID 7 DIED ON DAY 1</b>.", 25.595, 31.62], ["RULE 2. NEVER LET A DOOR<br>CLOSE BEHIND <b>YOU</b>.", 32.22, 36.77], ["YOU WEDGE IT WITH A CRATE.<br>THE CAR IS <b>SIXTY FEET</b> AWAY.", 37.12, 41.67], ["RECOVERY IN <b>EIGHT DAYS</b>.<br>AVOID ENCLOSED RETAIL.", 42.12, 46.995], ["RULE 3. IF THE LIGHTS<br>COME ON, <u>LEAVE</u>.", 47.445, 50.82], ["<b>31 LITRES</b> AND A PAPER MAP.<br>ELEVEN MINUTES.", 51.37, 55.495], ["<u>BAD NEWS</u>. ONE EXIT.<br>YOU'RE AT THE <b>BACK</b> OF IT.", 55.945, 59.695], ["<b>2:06 AM</b>. EVERY LIGHT<br>COMES ON AT ONCE.", 60.345, 65.02], ["THEN A VOICE OVER THE PA.<br>CALM. <u>BORED</u>.", 65.72, 69.32], ["“STORE'S REOPENING.<br>BRING IT TO THE <b>FRONT</b>.”", 69.87, 74.87], ["GRID 7 DIED ON DAY ONE.<br>NOTHING HERE HAS <u>POWER</u>.", 75.67, 80.77], ["AND THE LIGHTS <u>ARE ON</u>.", 81.47, 83.545], ["", 84.695, 86.845]];
 const capEl = document.getElementById("cap");
 LINES.forEach(([html, a, b], i) => {
-  tl.set(capEl, { innerHTML: html }, a);   // set() renders; call() does not
+  tl.set(capEl, { innerHTML: html }, a);   // render-time, survives seek
   tl.fromTo(capEl, { opacity: 0, y: 14 },
             { opacity: html ? 1 : 0, duration: 0.26, ease: "power2.out" }, a);
   const next = LINES[i + 1] ? LINES[i + 1][1] : DUR;

@@ -1,5 +1,5 @@
 {
-  "episode": "tendays-ep03",
+  "episode": "tendays-ep03-service-station",
   "voices": {
     "N": {
       "kokoro": "am_michael",
@@ -13,142 +13,164 @@
       "at": 0.25,
       "who": "N",
       "shot": "recap",
-      "text": "You waited. It walked away.",
-      "cap": "YOU WAITED.<br>IT <b>WALKED AWAY</b>.",
-      "pause": 0.7
+      "text": "You waited for light. Then you drove.",
+      "cap": "YOU WAITED FOR LIGHT.<br>THEN YOU <b>DROVE</b>.",
+      "pause": 0.6
     },
     {
       "id": "l02",
-      "at": 2.97,
+      "at": 3.64,
       "who": "N",
-      "shot": "station",
+      "shot": "hook",
       "text": "Three weeks without food. Three days without water.",
       "cap": "THREE WEEKS WITHOUT FOOD.<br>THREE DAYS WITHOUT <b>WATER</b>."
     },
     {
       "id": "l03",
-      "at": 6.15,
+      "at": 6.82,
       "who": "N",
-      "shot": "station",
-      "text": "Day three, and every shelf is already empty.",
-      "cap": "<b>DAY 3</b>. EVERY SHELF<br>IS ALREADY EMPTY.",
-      "pause": 0.6
-    },
-    {
-      "id": "l04",
-      "at": 9.93,
-      "who": "N",
-      "shot": "plumb",
-      "text": "But everyone loots the shelves. Nobody loots the plumbing.",
-      "cap": "EVERYONE LOOTS THE SHELVES.<br>NOBODY LOOTS THE <b>PLUMBING</b>."
-    },
-    {
-      "id": "l05",
-      "at": 13.49,
-      "who": "N",
-      "shot": "plumb",
-      "text": "Forty litres in the water heater.",
-      "cap": "<b>40 LITRES</b><br>IN THE WATER HEATER.",
-      "pause": 0.45
-    },
-    {
-      "id": "l06",
-      "at": 16.35,
-      "who": "N",
-      "shot": "radio",
-      "text": "Recovery in eight days. Avoid enclosed retail.",
-      "cap": "RECOVERY IN <b>EIGHT DAYS</b>.<br>AVOID ENCLOSED RETAIL.",
-      "pause": 0.4
-    },
-    {
-      "id": "l07",
-      "at": 19.54,
-      "who": "N",
-      "shot": "rule1",
-      "text": "Rule one. Fill from the lowest tap.",
-      "cap": "RULE 1. <b>FILL FROM THE LOWEST TAP</b>."
-    },
-    {
-      "id": "l08",
-      "at": 22.33,
-      "who": "N",
-      "shot": "rule2",
-      "text": "Rule two. Never let a door close behind you.",
-      "cap": "RULE 2. NEVER LET A DOOR<br>CLOSE <b>BEHIND YOU</b>."
-    },
-    {
-      "id": "l09",
-      "at": 25.89,
-      "who": "N",
-      "shot": "rule3",
-      "text": "Rule three. If the lights come on, leave.",
-      "cap": "RULE 3. <u>IF THE LIGHTS COME ON,<br>LEAVE</u>.",
-      "pause": 0.7
-    },
-    {
-      "id": "l10",
-      "at": 29.77,
-      "who": "N",
-      "shot": "good",
-      "text": "Good news. Thirty one litres and a paper map.",
-      "cap": "<b>GOOD NEWS</b>. 31 LITRES<br>AND A PAPER MAP."
-    },
-    {
-      "id": "l11",
-      "at": 33.33,
-      "who": "N",
-      "shot": "bad",
-      "text": "Bad news. One exit, and you're at the back.",
-      "cap": "<u>BAD NEWS</u>. ONE EXIT —<br>AND YOU'RE AT THE <b>BACK</b>.",
-      "pause": 0.6
-    },
-    {
-      "id": "l12",
-      "at": 37.49,
-      "who": "N",
-      "shot": "lights",
-      "text": "Two oh six A M. Every light comes on at once.",
-      "cap": "<b>2:06 AM</b>. EVERY LIGHT<br>COMES ON AT ONCE.",
-      "pause": 0.8
-    },
-    {
-      "id": "l13",
-      "at": 42.62,
-      "who": "N",
-      "shot": "pa",
-      "text": "Then a voice, on the station's own speakers.",
-      "cap": "A VOICE ON THE STATION'S<br>OWN <u>SPEAKERS</u>."
-    },
-    {
-      "id": "l14",
-      "at": 45.8,
-      "who": "N",
-      "shot": "pa",
-      "text": "Store's reopening. Bring what you've got to the front.",
-      "cap": "“STORE'S REOPENING.<br>BRING WHAT YOU'VE GOT TO THE FRONT.”",
+      "shot": "hook",
+      "text": "Day three. And the water is going to cost you the exit.",
+      "cap": "<b>DAY 3</b>. THE WATER WILL<br><u>COST YOU THE EXIT</u>.",
       "pause": 0.75
     },
     {
-      "id": "l15",
-      "at": 50.11,
+      "id": "l04",
+      "at": 12.28,
       "who": "N",
-      "shot": "grid",
-      "text": "Mains power to this grid failed on day one.",
-      "cap": "MAINS POWER FAILED<br>ON <u>DAY ONE</u>.",
-      "pause": 0.9
+      "shot": "wide",
+      "text": "A service station, two A M. Every shelf is already empty.",
+      "cap": "A SERVICE STATION, 2 AM.<br>EVERY SHELF ALREADY <b>EMPTY</b>.",
+      "pause": 0.45
+    },
+    {
+      "id": "l05",
+      "at": 17.07,
+      "who": "N",
+      "shot": "rule1",
+      "text": "Rule one. Nobody loots the plumbing.",
+      "cap": "RULE 1. NOBODY LOOTS<br>THE <b>PLUMBING</b>.",
+      "pause": 0.35
+    },
+    {
+      "id": "l06",
+      "at": 19.82,
+      "who": "N",
+      "shot": "obey1",
+      "text": "So you don't look at shelves. You look for pipes.",
+      "cap": "DON'T LOOK AT SHELVES.<br>LOOK FOR <b>PIPES</b>."
+    },
+    {
+      "id": "l07",
+      "at": 23.77,
+      "who": "N",
+      "shot": "plant",
+      "text": "Forty litres in the water heater. Cold, because grid seven died on day one.",
+      "cap": "40 LITRES. COLD.<br><b>GRID 7 DIED ON DAY 1</b>.",
+      "pause": 0.6
+    },
+    {
+      "id": "l08",
+      "at": 29.85,
+      "who": "N",
+      "shot": "rule2",
+      "text": "Rule two. Never let a door close between you and your car.",
+      "cap": "RULE 2. NEVER LET A DOOR<br>CLOSE BEHIND <b>YOU</b>.",
+      "pause": 0.35
+    },
+    {
+      "id": "l09",
+      "at": 34.92,
+      "who": "N",
+      "shot": "obey2",
+      "text": "You wedge it open with a crate. The car is sixty feet away.",
+      "cap": "YOU WEDGE IT WITH A CRATE.<br>THE CAR IS <b>SIXTY FEET</b> AWAY.",
+      "pause": 0.45
+    },
+    {
+      "id": "l10",
+      "at": 40.47,
+      "who": "N",
+      "shot": "radio",
+      "text": "Radio. Recovery in eight days. Avoid enclosed retail.",
+      "cap": "RECOVERY IN <b>EIGHT DAYS</b>.<br>AVOID ENCLOSED RETAIL.",
+      "pause": 0.45
+    },
+    {
+      "id": "l11",
+      "at": 44.1,
+      "who": "N",
+      "shot": "rule3",
+      "text": "Rule three. If the lights come on, leave.",
+      "cap": "RULE 3. IF THE LIGHTS<br>COME ON, <u>LEAVE</u>.",
+      "pause": 0.55
+    },
+    {
+      "id": "l12",
+      "at": 47.82,
+      "who": "N",
+      "shot": "obey3",
+      "text": "Thirty-one litres and a paper map. Eleven minutes.",
+      "cap": "<b>31 LITRES</b> AND A PAPER MAP.<br>ELEVEN MINUTES.",
+      "pause": 0.45
+    },
+    {
+      "id": "l13",
+      "at": 51.45,
+      "who": "N",
+      "shot": "bad",
+      "text": "Bad news. One exit. And you're at the back of it.",
+      "cap": "<u>BAD NEWS</u>. ONE EXIT.<br>YOU'RE AT THE <b>BACK</b> OF IT.",
+      "pause": 0.65
+    },
+    {
+      "id": "l14",
+      "at": 56.43,
+      "who": "N",
+      "shot": "lights",
+      "text": "Two oh six. Every light in the building comes on at once.",
+      "cap": "<b>2:06 AM</b>. EVERY LIGHT<br>COMES ON AT ONCE.",
+      "pause": 0.7
+    },
+    {
+      "id": "l15",
+      "at": 61.85,
+      "who": "N",
+      "shot": "pa",
+      "text": "Then a voice over the P A. Calm. Bored.",
+      "cap": "THEN A VOICE OVER THE PA.<br>CALM. <u>BORED</u>.",
+      "pause": 0.55
     },
     {
       "id": "l16",
-      "at": 54.57,
+      "at": 65.96,
       "who": "N",
-      "shot": "lights2",
-      "text": "And the lights are on.",
-      "cap": "AND THE LIGHTS ARE <u>ON</u>.",
-      "pause": 1.1
+      "shot": "voice",
+      "text": "Store's reopening. Bring what you've got to the front, and we'll check you out.",
+      "cap": "“STORE'S REOPENING.<br>BRING IT TO THE <b>FRONT</b>.”",
+      "pause": 0.8
     },
     {
       "id": "l17",
-      "at": 57.7,
+      "at": 72.24,
+      "who": "N",
+      "shot": "recall",
+      "text": "Grid seven died on day one. Nothing in this building has power.",
+      "cap": "GRID 7 DIED ON DAY ONE.<br>NOTHING HERE HAS <u>POWER</u>.",
+      "pause": 0.7
+    },
+    {
+      "id": "l18",
+      "at": 77.66,
+      "who": "N",
+      "shot": "recall",
+      "text": "And the lights are on.",
+      "cap": "AND THE LIGHTS <u>ARE ON</u>.",
+      "pause": 1.15
+    },
+    {
+      "id": "l19",
+      "at": 80.83,
       "who": "N",
       "shot": "end",
       "text": "Do you walk to the front?",

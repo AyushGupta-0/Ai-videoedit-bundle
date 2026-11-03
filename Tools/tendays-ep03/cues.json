@@ -1,0 +1,27 @@
+[
+  {
+    "file": "assets/sfx/water_tap_running_62086a23.ogg",
+    "at": 22.3,
+    "gain": 0.45
+  },
+  {
+    "file": "assets/sfx/light_switch_click_2ea35434.ogg",
+    "at": 60.85,
+    "gain": 0.7
+  },
+  {
+    "file": "assets/sfx/fluorescent_light_buzz_e148dbd8.ogg",
+    "at": 60.9,
+    "gain": 0.45
+  },
+  {
+    "file": "assets/sfx/pa_chime_734056e0.ogg",
+    "at": 65.9,
+    "gain": 0.6
+  },
+  {
+    "file": "assets/sfx/low_drone_75eb41cd.ogg",
+    "at": 81.5,
+    "gain": 0.62
+  }
+]

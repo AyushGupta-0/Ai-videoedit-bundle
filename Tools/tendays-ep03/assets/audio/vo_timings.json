@@ -1,141 +1,1144 @@
 {
-  "duration": 68.145,
+  "duration": 88.105,
   "lines": [
     {
       "id": "l01",
       "who": "N",
       "shot": "recap",
-      "text": "You waited. It walked away.",
+      "text": "You waited for light. Then you drove.",
+      "cap": "YOU WAITED FOR LIGHT.<br>THEN YOU <b>DROVE</b>.",
       "start": 0.25,
-      "end": 2.825
+      "end": 3.3,
+      "words": [
+        {
+          "w": "You",
+          "s": 0.65,
+          "e": 0.8
+        },
+        {
+          "w": "waited",
+          "s": 0.8,
+          "e": 1.15
+        },
+        {
+          "w": "for",
+          "s": 1.15,
+          "e": 1.3
+        },
+        {
+          "w": "light",
+          "s": 1.3,
+          "e": 1.7
+        },
+        {
+          "w": "Then",
+          "s": 1.8,
+          "e": 2.0
+        },
+        {
+          "w": "you",
+          "s": 2.0,
+          "e": 2.163
+        },
+        {
+          "w": "drove",
+          "s": 2.163,
+          "e": 3.0
+        }
+      ]
     },
     {
       "id": "l02",
       "who": "N",
-      "shot": "station",
+      "shot": "hook",
       "text": "Three weeks without food. Three days without water.",
-      "start": 3.525,
-      "end": 7.675
+      "cap": "THREE WEEKS WITHOUT FOOD.<br>THREE DAYS WITHOUT <b>WATER</b>.",
+      "start": 3.9,
+      "end": 8.05,
+      "words": [
+        {
+          "w": "Three",
+          "s": 4.3,
+          "e": 4.55
+        },
+        {
+          "w": "weeks",
+          "s": 4.55,
+          "e": 4.812
+        },
+        {
+          "w": "without",
+          "s": 4.812,
+          "e": 5.162
+        },
+        {
+          "w": "food",
+          "s": 5.162,
+          "e": 5.8
+        },
+        {
+          "w": "Three",
+          "s": 5.95,
+          "e": 6.25
+        },
+        {
+          "w": "days",
+          "s": 6.25,
+          "e": 6.625
+        },
+        {
+          "w": "without",
+          "s": 6.625,
+          "e": 6.987
+        },
+        {
+          "w": "water",
+          "s": 6.987,
+          "e": 7.75
+        }
+      ]
     },
     {
       "id": "l03",
       "who": "N",
-      "shot": "station",
-      "text": "Day three, and every shelf is already empty.",
-      "start": 7.735,
-      "end": 11.51
+      "shot": "hook",
+      "text": "Day three. And the water is going to cost you the exit.",
+      "cap": "<b>DAY 3</b>. AND THE WATER<br>IS GOING TO <u>COST YOU THE EXIT</u>.",
+      "start": 8.11,
+      "end": 12.385,
+      "words": [
+        {
+          "w": "Day",
+          "s": 8.535,
+          "e": 8.823
+        },
+        {
+          "w": "three",
+          "s": 8.823,
+          "e": 9.46
+        },
+        {
+          "w": "And",
+          "s": 9.585,
+          "e": 9.723
+        },
+        {
+          "w": "the",
+          "s": 9.723,
+          "e": 9.848
+        },
+        {
+          "w": "water",
+          "s": 9.848,
+          "e": 10.26
+        },
+        {
+          "w": "is",
+          "s": 10.26,
+          "e": 10.41
+        },
+        {
+          "w": "going",
+          "s": 10.41,
+          "e": 10.623
+        },
+        {
+          "w": "to",
+          "s": 10.623,
+          "e": 10.735
+        },
+        {
+          "w": "cost",
+          "s": 10.735,
+          "e": 11.085
+        },
+        {
+          "w": "you",
+          "s": 11.085,
+          "e": 11.185
+        },
+        {
+          "w": "the",
+          "s": 11.185,
+          "e": 11.347
+        },
+        {
+          "w": "exit",
+          "s": 11.347,
+          "e": 12.11
+        }
+      ]
     },
     {
       "id": "l04",
       "who": "N",
-      "shot": "plumb",
-      "text": "But everyone loots the shelves. Nobody loots the plumbing.",
-      "start": 12.11,
-      "end": 16.46
+      "shot": "wide",
+      "text": "A service station, two A M. Every shelf is already empty.",
+      "cap": "A SERVICE STATION, 2 AM.<br>EVERY SHELF ALREADY <b>EMPTY</b>.",
+      "start": 13.135,
+      "end": 17.91,
+      "words": [
+        {
+          "w": "A",
+          "s": 13.51,
+          "e": 13.598
+        },
+        {
+          "w": "service",
+          "s": 13.598,
+          "e": 13.985
+        },
+        {
+          "w": "station",
+          "s": 13.985,
+          "e": 14.71
+        },
+        {
+          "w": "two",
+          "s": 14.847,
+          "e": 15.148
+        },
+        {
+          "w": "A",
+          "s": 15.148,
+          "e": 15.26
+        },
+        {
+          "w": "M.",
+          "s": 15.26,
+          "e": 15.497
+        },
+        {
+          "w": "Every",
+          "s": 15.497,
+          "e": 15.835
+        },
+        {
+          "w": "shelf",
+          "s": 15.835,
+          "e": 16.185
+        },
+        {
+          "w": "is",
+          "s": 16.185,
+          "e": 16.347
+        },
+        {
+          "w": "already",
+          "s": 16.347,
+          "e": 16.798
+        },
+        {
+          "w": "empty",
+          "s": 16.798,
+          "e": 17.635
+        }
+      ]
     },
     {
       "id": "l05",
       "who": "N",
-      "shot": "plumb",
-      "text": "Forty litres in the water heater.",
-      "start": 16.52,
-      "end": 19.495
+      "shot": "rule1",
+      "text": "Rule one. Nobody loots the plumbing.",
+      "cap": "RULE 1. NOBODY LOOTS<br>THE <b>PLUMBING</b>.",
+      "start": 18.36,
+      "end": 21.635,
+      "words": [
+        {
+          "w": "Rule",
+          "s": 18.785,
+          "e": 19.122
+        },
+        {
+          "w": "one",
+          "s": 19.122,
+          "e": 19.585
+        },
+        {
+          "w": "Nobody",
+          "s": 19.723,
+          "e": 20.122
+        },
+        {
+          "w": "loots",
+          "s": 20.122,
+          "e": 20.435
+        },
+        {
+          "w": "the",
+          "s": 20.435,
+          "e": 20.548
+        },
+        {
+          "w": "plumbing",
+          "s": 20.548,
+          "e": 21.36
+        }
+      ]
     },
     {
       "id": "l06",
       "who": "N",
-      "shot": "radio",
-      "text": "Recovery in eight days. Avoid enclosed retail.",
-      "start": 19.945,
-      "end": 24.345
+      "shot": "obey1",
+      "text": "So you don't look at shelves. You look for pipes.",
+      "cap": "SO YOU DON'T LOOK AT SHELVES.<br>YOU LOOK FOR <b>PIPES</b>.",
+      "start": 21.985,
+      "end": 25.535,
+      "words": [
+        {
+          "w": "So",
+          "s": 22.385,
+          "e": 22.51
+        },
+        {
+          "w": "you",
+          "s": 22.51,
+          "e": 22.598
+        },
+        {
+          "w": "don't",
+          "s": 22.598,
+          "e": 22.785
+        },
+        {
+          "w": "look",
+          "s": 22.785,
+          "e": 22.948
+        },
+        {
+          "w": "at",
+          "s": 22.948,
+          "e": 23.11
+        },
+        {
+          "w": "shelves",
+          "s": 23.11,
+          "e": 23.835
+        },
+        {
+          "w": "You",
+          "s": 23.973,
+          "e": 24.11
+        },
+        {
+          "w": "look",
+          "s": 24.11,
+          "e": 24.31
+        },
+        {
+          "w": "for",
+          "s": 24.31,
+          "e": 24.472
+        },
+        {
+          "w": "pipes",
+          "s": 24.472,
+          "e": 25.26
+        }
+      ]
     },
     {
       "id": "l07",
       "who": "N",
-      "shot": "rule1",
-      "text": "Rule one. Fill from the lowest tap.",
-      "start": 24.745,
-      "end": 27.845
+      "shot": "plant",
+      "text": "Forty litres in the water heater. Cold, because grid seven died on day one.",
+      "cap": "FORTY LITRES IN THE HEATER.<br>COLD: <b>GRID SEVEN DIED ON DAY ONE</b>.",
+      "start": 25.595,
+      "end": 31.62,
+      "words": [
+        {
+          "w": "Forty",
+          "s": 25.995,
+          "e": 26.32
+        },
+        {
+          "w": "litres",
+          "s": 26.32,
+          "e": 26.732
+        },
+        {
+          "w": "in",
+          "s": 26.732,
+          "e": 26.807
+        },
+        {
+          "w": "the",
+          "s": 26.807,
+          "e": 26.932
+        },
+        {
+          "w": "water",
+          "s": 26.932,
+          "e": 27.32
+        },
+        {
+          "w": "heater",
+          "s": 27.32,
+          "e": 27.945
+        },
+        {
+          "w": "Cold",
+          "s": 28.12,
+          "e": 28.72
+        },
+        {
+          "w": "because",
+          "s": 28.795,
+          "e": 29.133
+        },
+        {
+          "w": "grid",
+          "s": 29.133,
+          "e": 29.445
+        },
+        {
+          "w": "seven",
+          "s": 29.445,
+          "e": 29.82
+        },
+        {
+          "w": "died",
+          "s": 29.82,
+          "e": 30.157
+        },
+        {
+          "w": "on",
+          "s": 30.157,
+          "e": 30.345
+        },
+        {
+          "w": "day",
+          "s": 30.345,
+          "e": 30.632
+        },
+        {
+          "w": "one",
+          "s": 30.632,
+          "e": 31.345
+        }
+      ]
     },
     {
       "id": "l08",
       "who": "N",
       "shot": "rule2",
-      "text": "Rule two. Never let a door close behind you.",
-      "start": 27.905,
-      "end": 31.655
+      "text": "Rule two. Never let a door close between you and your car.",
+      "cap": "RULE 2. NEVER LET A DOOR CLOSE<br>BETWEEN YOU AND YOUR <b>CAR</b>.",
+      "start": 32.22,
+      "end": 36.77,
+      "words": [
+        {
+          "w": "Rule",
+          "s": 32.645,
+          "e": 32.995
+        },
+        {
+          "w": "two",
+          "s": 32.995,
+          "e": 33.495
+        },
+        {
+          "w": "Never",
+          "s": 33.633,
+          "e": 33.92
+        },
+        {
+          "w": "let",
+          "s": 33.92,
+          "e": 34.057
+        },
+        {
+          "w": "a",
+          "s": 34.057,
+          "e": 34.158
+        },
+        {
+          "w": "door",
+          "s": 34.158,
+          "e": 34.445
+        },
+        {
+          "w": "close",
+          "s": 34.445,
+          "e": 34.77
+        },
+        {
+          "w": "between",
+          "s": 34.77,
+          "e": 35.158
+        },
+        {
+          "w": "you",
+          "s": 35.158,
+          "e": 35.395
+        },
+        {
+          "w": "and",
+          "s": 35.395,
+          "e": 35.508
+        },
+        {
+          "w": "your",
+          "s": 35.508,
+          "e": 35.682
+        },
+        {
+          "w": "car",
+          "s": 35.682,
+          "e": 36.495
+        }
+      ]
     },
     {
       "id": "l09",
       "who": "N",
-      "shot": "rule3",
-      "text": "Rule three. If the lights come on, leave.",
-      "start": 31.715,
-      "end": 35.09
+      "shot": "obey2",
+      "text": "You wedge it open with a crate. The car is sixty feet away.",
+      "cap": "YOU WEDGE IT WITH A CRATE.<br>THE CAR IS <b>SIXTY FEET</b> AWAY.",
+      "start": 37.12,
+      "end": 41.67,
+      "words": [
+        {
+          "w": "You",
+          "s": 37.52,
+          "e": 37.645
+        },
+        {
+          "w": "wedge",
+          "s": 37.645,
+          "e": 37.833
+        },
+        {
+          "w": "it",
+          "s": 37.833,
+          "e": 37.92
+        },
+        {
+          "w": "open",
+          "s": 37.92,
+          "e": 38.257
+        },
+        {
+          "w": "with",
+          "s": 38.257,
+          "e": 38.382
+        },
+        {
+          "w": "a",
+          "s": 38.382,
+          "e": 38.483
+        },
+        {
+          "w": "crate",
+          "s": 38.483,
+          "e": 39.145
+        },
+        {
+          "w": "The",
+          "s": 39.27,
+          "e": 39.408
+        },
+        {
+          "w": "car",
+          "s": 39.408,
+          "e": 39.795
+        },
+        {
+          "w": "is",
+          "s": 39.795,
+          "e": 39.957
+        },
+        {
+          "w": "sixty",
+          "s": 39.957,
+          "e": 40.383
+        },
+        {
+          "w": "feet",
+          "s": 40.383,
+          "e": 40.645
+        },
+        {
+          "w": "away",
+          "s": 40.645,
+          "e": 41.395
+        }
+      ]
     },
     {
       "id": "l10",
       "who": "N",
-      "shot": "good",
-      "text": "Good news. Thirty one litres and a paper map.",
-      "start": 35.79,
-      "end": 39.665
+      "shot": "radio",
+      "text": "Radio. Recovery in eight days. Avoid enclosed retail.",
+      "cap": "RECOVERY IN <b>EIGHT DAYS</b>.<br>AVOID ENCLOSED RETAIL.",
+      "start": 42.12,
+      "end": 46.995,
+      "words": [
+        {
+          "w": "Radio",
+          "s": 42.545,
+          "e": 42.995
+        },
+        {
+          "w": "Recovery",
+          "s": 43.07,
+          "e": 43.595
+        },
+        {
+          "w": "in",
+          "s": 43.595,
+          "e": 43.757
+        },
+        {
+          "w": "eight",
+          "s": 43.757,
+          "e": 44.02
+        },
+        {
+          "w": "days",
+          "s": 44.02,
+          "e": 44.695
+        },
+        {
+          "w": "Avoid",
+          "s": 44.832,
+          "e": 45.232
+        },
+        {
+          "w": "enclosed",
+          "s": 45.232,
+          "e": 45.82
+        },
+        {
+          "w": "retail",
+          "s": 45.82,
+          "e": 46.72
+        }
+      ]
     },
     {
       "id": "l11",
       "who": "N",
-      "shot": "bad",
-      "text": "Bad news. One exit, and you're at the back.",
-      "start": 39.725,
-      "end": 43.375
+      "shot": "rule3",
+      "text": "Rule three. If the lights come on, leave.",
+      "cap": "RULE 3. IF THE LIGHTS COME ON,<br><u>LEAVE</u>.",
+      "start": 47.445,
+      "end": 50.82,
+      "words": [
+        {
+          "w": "Rule",
+          "s": 47.87,
+          "e": 48.17
+        },
+        {
+          "w": "three",
+          "s": 48.17,
+          "e": 48.62
+        },
+        {
+          "w": "If",
+          "s": 48.695,
+          "e": 48.858
+        },
+        {
+          "w": "the",
+          "s": 48.858,
+          "e": 48.945
+        },
+        {
+          "w": "lights",
+          "s": 48.945,
+          "e": 49.27
+        },
+        {
+          "w": "come",
+          "s": 49.27,
+          "e": 49.47
+        },
+        {
+          "w": "on",
+          "s": 49.47,
+          "e": 49.72
+        },
+        {
+          "w": "leave",
+          "s": 49.77,
+          "e": 50.52
+        }
+      ]
     },
     {
       "id": "l12",
       "who": "N",
-      "shot": "lights",
-      "text": "Two oh six A M. Every light comes on at once.",
-      "start": 43.975,
-      "end": 48.2
+      "shot": "obey3",
+      "text": "Thirty-one litres and a paper map. Eleven minutes.",
+      "cap": "<b>31 LITRES</b> AND A PAPER MAP.<br>ELEVEN MINUTES.",
+      "start": 51.37,
+      "end": 55.495,
+      "words": [
+        {
+          "w": "Thirty-one",
+          "s": 51.77,
+          "e": 52.32
+        },
+        {
+          "w": "litres",
+          "s": 52.32,
+          "e": 52.745
+        },
+        {
+          "w": "and",
+          "s": 52.745,
+          "e": 52.858
+        },
+        {
+          "w": "a",
+          "s": 52.858,
+          "e": 52.92
+        },
+        {
+          "w": "paper",
+          "s": 52.92,
+          "e": 53.32
+        },
+        {
+          "w": "map",
+          "s": 53.32,
+          "e": 53.895
+        },
+        {
+          "w": "Eleven",
+          "s": 54.033,
+          "e": 54.47
+        },
+        {
+          "w": "minutes",
+          "s": 54.47,
+          "e": 55.22
+        }
+      ]
     },
     {
       "id": "l13",
       "who": "N",
-      "shot": "pa",
-      "text": "Then a voice, on the station's own speakers.",
-      "start": 49.0,
-      "end": 52.45
+      "shot": "bad",
+      "text": "Bad news. One exit. And you're at the back of it.",
+      "cap": "<u>BAD NEWS</u>. ONE EXIT.<br>AND YOU'RE AT THE <b>BACK</b> OF IT.",
+      "start": 55.945,
+      "end": 59.695,
+      "words": [
+        {
+          "w": "Bad",
+          "s": 56.345,
+          "e": 56.62
+        },
+        {
+          "w": "news",
+          "s": 56.62,
+          "e": 57.145
+        },
+        {
+          "w": "One",
+          "s": 57.257,
+          "e": 57.52
+        },
+        {
+          "w": "exit",
+          "s": 57.52,
+          "e": 57.97
+        },
+        {
+          "w": "And",
+          "s": 58.045,
+          "e": 58.195
+        },
+        {
+          "w": "you're",
+          "s": 58.195,
+          "e": 58.358
+        },
+        {
+          "w": "at",
+          "s": 58.358,
+          "e": 58.432
+        },
+        {
+          "w": "the",
+          "s": 58.432,
+          "e": 58.52
+        },
+        {
+          "w": "back",
+          "s": 58.52,
+          "e": 58.833
+        },
+        {
+          "w": "of",
+          "s": 58.833,
+          "e": 58.945
+        },
+        {
+          "w": "it",
+          "s": 58.945,
+          "e": 59.42
+        }
+      ]
     },
     {
       "id": "l14",
       "who": "N",
-      "shot": "pa",
-      "text": "Store's reopening. Bring what you've got to the front.",
-      "start": 52.51,
-      "end": 56.41
+      "shot": "lights",
+      "text": "Two oh six. Every light in the building comes on at once.",
+      "cap": "<b>2:06 AM</b>. EVERY LIGHT<br>COMES ON AT ONCE.",
+      "start": 60.345,
+      "end": 65.02,
+      "words": [
+        {
+          "w": "Two",
+          "s": 60.72,
+          "e": 61.033
+        },
+        {
+          "w": "oh",
+          "s": 61.033,
+          "e": 61.283
+        },
+        {
+          "w": "six",
+          "s": 61.283,
+          "e": 61.97
+        },
+        {
+          "w": "Every",
+          "s": 62.133,
+          "e": 62.47
+        },
+        {
+          "w": "light",
+          "s": 62.47,
+          "e": 62.707
+        },
+        {
+          "w": "in",
+          "s": 62.707,
+          "e": 62.783
+        },
+        {
+          "w": "the",
+          "s": 62.783,
+          "e": 62.87
+        },
+        {
+          "w": "building",
+          "s": 62.87,
+          "e": 63.27
+        },
+        {
+          "w": "comes",
+          "s": 63.27,
+          "e": 63.595
+        },
+        {
+          "w": "on",
+          "s": 63.595,
+          "e": 63.82
+        },
+        {
+          "w": "at",
+          "s": 63.82,
+          "e": 63.957
+        },
+        {
+          "w": "once",
+          "s": 63.957,
+          "e": 64.745
+        }
+      ]
     },
     {
       "id": "l15",
       "who": "N",
-      "shot": "grid",
-      "text": "Mains power to this grid failed on day one.",
-      "start": 57.16,
-      "end": 60.66
+      "shot": "pa",
+      "text": "Then a voice over the P A. Calm. Bored.",
+      "cap": "THEN A VOICE OVER THE PA.<br>CALM. <u>BORED</u>.",
+      "start": 65.72,
+      "end": 69.32,
+      "words": [
+        {
+          "w": "Then",
+          "s": 66.095,
+          "e": 66.207
+        },
+        {
+          "w": "a",
+          "s": 66.207,
+          "e": 66.295
+        },
+        {
+          "w": "voice",
+          "s": 66.295,
+          "e": 66.607
+        },
+        {
+          "w": "over",
+          "s": 66.607,
+          "e": 66.782
+        },
+        {
+          "w": "the",
+          "s": 66.782,
+          "e": 66.908
+        },
+        {
+          "w": "P",
+          "s": 66.908,
+          "e": 67.182
+        },
+        {
+          "w": "A.",
+          "s": 67.182,
+          "e": 67.408
+        },
+        {
+          "w": "Calm",
+          "s": 67.408,
+          "e": 68.02
+        },
+        {
+          "w": "Bored",
+          "s": 68.195,
+          "e": 69.02
+        }
+      ]
     },
     {
       "id": "l16",
       "who": "N",
-      "shot": "lights2",
-      "text": "And the lights are on.",
-      "start": 61.56,
-      "end": 63.635
+      "shot": "voice",
+      "text": "Store's reopening. Bring what you've got to the front, and we'll check you out.",
+      "cap": "\u201cSTORE'S REOPENING. BRING IT<br>TO THE FRONT. WE'LL CHECK YOU OUT.\u201d",
+      "start": 69.87,
+      "end": 74.87,
+      "words": [
+        {
+          "w": "Store's",
+          "s": 70.27,
+          "e": 70.72
+        },
+        {
+          "w": "reopening",
+          "s": 70.72,
+          "e": 71.645
+        },
+        {
+          "w": "Bring",
+          "s": 71.783,
+          "e": 72.07
+        },
+        {
+          "w": "what",
+          "s": 72.07,
+          "e": 72.22
+        },
+        {
+          "w": "you've",
+          "s": 72.22,
+          "e": 72.37
+        },
+        {
+          "w": "got",
+          "s": 72.37,
+          "e": 72.595
+        },
+        {
+          "w": "to",
+          "s": 72.595,
+          "e": 72.682
+        },
+        {
+          "w": "the",
+          "s": 72.682,
+          "e": 72.82
+        },
+        {
+          "w": "front",
+          "s": 72.82,
+          "e": 73.17
+        },
+        {
+          "w": "and",
+          "s": 73.207,
+          "e": 73.32
+        },
+        {
+          "w": "we'll",
+          "s": 73.32,
+          "e": 73.533
+        },
+        {
+          "w": "check",
+          "s": 73.533,
+          "e": 73.795
+        },
+        {
+          "w": "you",
+          "s": 73.795,
+          "e": 73.958
+        },
+        {
+          "w": "out",
+          "s": 73.958,
+          "e": 74.595
+        }
+      ]
     },
     {
       "id": "l17",
       "who": "N",
+      "shot": "recall",
+      "text": "Grid seven died on day one. Nothing in this building has power.",
+      "cap": "GRID SEVEN DIED ON DAY ONE.<br>NOTHING HERE HAS <u>POWER</u>.",
+      "start": 75.67,
+      "end": 80.77,
+      "words": [
+        {
+          "w": "Grid",
+          "s": 76.045,
+          "e": 76.307
+        },
+        {
+          "w": "seven",
+          "s": 76.307,
+          "e": 76.708
+        },
+        {
+          "w": "died",
+          "s": 76.708,
+          "e": 77.083
+        },
+        {
+          "w": "on",
+          "s": 77.083,
+          "e": 77.27
+        },
+        {
+          "w": "day",
+          "s": 77.27,
+          "e": 77.557
+        },
+        {
+          "w": "one",
+          "s": 77.557,
+          "e": 78.17
+        },
+        {
+          "w": "Nothing",
+          "s": 78.345,
+          "e": 78.757
+        },
+        {
+          "w": "in",
+          "s": 78.757,
+          "e": 78.833
+        },
+        {
+          "w": "this",
+          "s": 78.833,
+          "e": 79.032
+        },
+        {
+          "w": "building",
+          "s": 79.032,
+          "e": 79.47
+        },
+        {
+          "w": "has",
+          "s": 79.47,
+          "e": 79.683
+        },
+        {
+          "w": "power",
+          "s": 79.683,
+          "e": 80.495
+        }
+      ]
+    },
+    {
+      "id": "l18",
+      "who": "N",
+      "shot": "recall",
+      "text": "And the lights are on.",
+      "cap": "AND THE LIGHTS <u>ARE ON</u>.",
+      "start": 81.47,
+      "end": 83.545,
+      "words": [
+        {
+          "w": "And",
+          "s": 81.82,
+          "e": 81.957
+        },
+        {
+          "w": "the",
+          "s": 81.957,
+          "e": 82.083
+        },
+        {
+          "w": "lights",
+          "s": 82.083,
+          "e": 82.445
+        },
+        {
+          "w": "are",
+          "s": 82.445,
+          "e": 82.607
+        },
+        {
+          "w": "on",
+          "s": 82.607,
+          "e": 83.27
+        }
+      ]
+    },
+    {
+      "id": "l19",
+      "who": "N",
       "shot": "end",
       "text": "Do you walk to the front?",
-      "start": 64.735,
-      "end": 66.885
+      "cap": "",
+      "start": 84.695,
+      "end": 86.845,
+      "words": [
+        {
+          "w": "Do",
+          "s": 85.045,
+          "e": 85.145
+        },
+        {
+          "w": "you",
+          "s": 85.145,
+          "e": 85.308
+        },
+        {
+          "w": "walk",
+          "s": 85.308,
+          "e": 85.595
+        },
+        {
+          "w": "to",
+          "s": 85.595,
+          "e": 85.683
+        },
+        {
+          "w": "the",
+          "s": 85.683,
+          "e": 85.808
+        },
+        {
+          "w": "front",
+          "s": 85.808,
+          "e": 86.545
+        }
+      ]
     }
   ]
 }

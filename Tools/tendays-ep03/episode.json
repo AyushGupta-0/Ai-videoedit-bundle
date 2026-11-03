@@ -1,175 +1,200 @@
 {
   "day": 3,
-  "dur": 68.9,
-  "clock0": "1:48 AM",
+  "dur": 89.4,
+  "clock0": "1:52 AM",
   "recov": 8,
-  "m0": 108,
-  "m1": 126,
+  "m0": 112,
+  "m1": 132,
   "ampm": "AM",
   "q1": "DO YOU WALK",
   "q2": "TO THE FRONT?",
   "btnA": "WALK",
   "btnB": "HIDE",
-  "nexthook": "NOTHING HERE HAS POWER.<br>SO WHO TURNED THE LIGHTS ON?",
+  "nexthook": "YOU LEAVE.<br>HEADLIGHTS FOLLOW.",
   "extra_css": "",
-  "motion": "tl.fromTo(\"#bayart\", { scale: 1.00 }, { scale: 1.09, duration: 8.0, ease: \"none\" }, 3.3);\ntl.fromTo(\"#drip\", { y: 0, opacity: 0 }, { y: 120, opacity: 1, duration: 1.1,\n          ease: \"power2.in\", repeat: 3 }, 12.4);\ntl.fromTo(\"#youdot\", { opacity: 0.4 }, { opacity: 1, duration: 0.6, yoyo: true, repeat: 5 }, 40.0);\n/* every light at once \u2014 a hard snap on the word, not a fade */\ntl.to(\"#flood\", { opacity: 1, duration: 0.10, ease: \"none\" }, 45.6);\ntl.to(\".lamp\", { opacity: 0.85, duration: 0.10, ease: \"none\" }, 45.6);\n/* the PA speaks: rings out of the cone, on each sentence */\n[49.4, 52.9].forEach((t, i) => {\n  tl.fromTo(\"#wave\" + (i + 1), { scale: 0.6, opacity: 0.9 },\n            { scale: 2.2, opacity: 0, duration: 1.4, ease: \"power2.out\" }, t);\n});\n/* the cone lights from inside while it speaks */\ntl.fromTo(\"#cone\", { opacity: 0 }, { opacity: 1, duration: 0.5 }, 49.2);\ntl.to(\"#cone\", { opacity: 0.35, duration: 0.9, yoyo: true, repeat: 5 }, 49.8);",
+  "motion": "/* hook: a slow push on you walking in under the dead sign */\ntl.fromTo(\"#hookfig\", { scale: 1.0, transformOrigin: \"50% 70%\" }, { scale: 1.07, duration: 8.4, ease: \"none\" }, 3.8);\n/* wide: the stripped aisle drifts */\ntl.fromTo(\"#aisledark\", { scale: 1.0 }, { scale: 1.08, duration: 4.8, ease: \"none\" }, 13.0);\n/* rule 1 obeyed: the gauge reads 40L as you find it */\ntl.fromTo(\"#tankgauge\", { opacity: 0, scale: 0.7 }, { opacity: 1, scale: 1, duration: 0.4, ease: \"power3.out\" }, 23.6);\n/* the plant: grid seven died on day one */\ntl.fromTo(\"#gridbadge\", { opacity: 0, y: 12 }, { opacity: 1, y: 0, duration: 0.3, ease: \"power2.out\" }, 28.6);\n/* rule 2 obeyed: sixty feet */\ntl.fromTo(\"#sixty\", { scale: 1 }, { scale: 1.12, duration: 0.3, yoyo: true, repeat: 1, ease: \"power2.inOut\" }, 39.9);\n/* radio */\ntl.fromTo(\"#radiobox\", { scale: 0.98 }, { scale: 1.04, duration: 4.8, ease: \"none\" }, 42.1);\ntl.set(\"#radioline\", { textContent: \"\" }, 42.1);\ntl.to(\"#radioline\", { duration: 1.3, scrambleText: { text: \"AVOID ENCLOSED RETAIL\", chars: \"upperCase\", speed: 0.6 } }, 44.4);\n/* bad: you, at the back of the only exit */\ntl.to(\"#youdot\", { boxShadow: \"0 0 0 18px rgba(255,66,66,0)\", duration: 1.0, ease: \"power2.out\", repeat: 2 }, 57.9);\n/* THE INCIDENT: every light at once */\ntl.fromTo(\"#flash\", { opacity: 0 }, { opacity: 0.92, duration: 0.06, ease: \"none\" }, 60.9);\ntl.to(\"#flash\", { opacity: 0, duration: 0.55, ease: \"power2.out\" }, 60.96);\ntl.fromTo(\"#aislelit\", { opacity: 0 }, { opacity: 1, duration: 0.2, ease: \"none\" }, 60.9);\n/* the PA: sound rings */\n[66.4, 67.0, 67.6].forEach((t, i) => {\n  tl.fromTo(`#ring${i + 1}`, { scale: 1, opacity: 0.7 }, { scale: 1.9, opacity: 0, duration: 1.1, ease: \"power2.out\" }, t);\n});\n/* the lie: the sign that wants you to walk */\ntl.fromTo(\"#checkout\", { scale: 1 }, { scale: 1.06, duration: 0.6, yoyo: true, repeat: 5, ease: \"sine.inOut\" }, 70.0);\n/* the recall: the stamp lands on \"the lights are on\" */\ntl.fromTo(\"#onstamp\", { scale: 1.8, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.32, ease: \"power3.out\" }, 81.6);",
   "lines": [
     [
-      "YOU WAITED.<br>IT <b>WALKED AWAY</b>.",
+      "YOU WAITED FOR LIGHT.<br>THEN YOU <b>DROVE</b>.",
       0.25,
-      2.825
+      3.3
     ],
     [
       "THREE WEEKS WITHOUT FOOD.<br>THREE DAYS WITHOUT <b>WATER</b>.",
-      3.525,
-      7.675
+      3.9,
+      8.05
     ],
     [
-      "<b>DAY 3</b>. EVERY SHELF<br>IS ALREADY EMPTY.",
-      7.735,
-      11.51
+      "<b>DAY 3</b>. THE WATER WILL<br><u>COST YOU THE EXIT</u>.",
+      8.11,
+      12.385
     ],
     [
-      "EVERYONE LOOTS THE SHELVES.<br>NOBODY LOOTS THE <b>PLUMBING</b>.",
-      12.11,
-      16.46
+      "A SERVICE STATION, 2 AM.<br>EVERY SHELF ALREADY <b>EMPTY</b>.",
+      13.135,
+      17.91
     ],
     [
-      "<b>40 LITRES</b><br>IN THE WATER HEATER.",
-      16.52,
-      19.495
+      "RULE 1. NOBODY LOOTS<br>THE <b>PLUMBING</b>.",
+      18.36,
+      21.635
+    ],
+    [
+      "DON'T LOOK AT SHELVES.<br>LOOK FOR <b>PIPES</b>.",
+      21.985,
+      25.535
+    ],
+    [
+      "40 LITRES. COLD.<br><b>GRID 7 DIED ON DAY 1</b>.",
+      25.595,
+      31.62
+    ],
+    [
+      "RULE 2. NEVER LET A DOOR<br>CLOSE BEHIND <b>YOU</b>.",
+      32.22,
+      36.77
+    ],
+    [
+      "YOU WEDGE IT WITH A CRATE.<br>THE CAR IS <b>SIXTY FEET</b> AWAY.",
+      37.12,
+      41.67
     ],
     [
       "RECOVERY IN <b>EIGHT DAYS</b>.<br>AVOID ENCLOSED RETAIL.",
-      19.945,
-      24.345
+      42.12,
+      46.995
     ],
     [
-      "RULE 1. <b>FILL FROM THE LOWEST TAP</b>.",
-      24.745,
-      27.845
+      "RULE 3. IF THE LIGHTS<br>COME ON, <u>LEAVE</u>.",
+      47.445,
+      50.82
     ],
     [
-      "RULE 2. NEVER LET A DOOR<br>CLOSE <b>BEHIND YOU</b>.",
-      27.905,
-      31.655
+      "<b>31 LITRES</b> AND A PAPER MAP.<br>ELEVEN MINUTES.",
+      51.37,
+      55.495
     ],
     [
-      "RULE 3. <u>IF THE LIGHTS COME ON,<br>LEAVE</u>.",
-      31.715,
-      35.09
-    ],
-    [
-      "<b>GOOD NEWS</b>. 31 LITRES<br>AND A PAPER MAP.",
-      35.79,
-      39.665
-    ],
-    [
-      "<u>BAD NEWS</u>. ONE EXIT \u2014<br>AND YOU'RE AT THE <b>BACK</b>.",
-      39.725,
-      43.375
+      "<u>BAD NEWS</u>. ONE EXIT.<br>YOU'RE AT THE <b>BACK</b> OF IT.",
+      55.945,
+      59.695
     ],
     [
       "<b>2:06 AM</b>. EVERY LIGHT<br>COMES ON AT ONCE.",
-      43.975,
-      48.2
+      60.345,
+      65.02
     ],
     [
-      "A VOICE ON THE STATION'S<br>OWN <u>SPEAKERS</u>.",
-      49.0,
-      52.45
+      "THEN A VOICE OVER THE PA.<br>CALM. <u>BORED</u>.",
+      65.72,
+      69.32
     ],
     [
-      "\u201cSTORE'S REOPENING.<br>BRING WHAT YOU'VE GOT TO THE FRONT.\u201d",
-      52.51,
-      56.41
+      "“STORE'S REOPENING.<br>BRING IT TO THE <b>FRONT</b>.”",
+      69.87,
+      74.87
     ],
     [
-      "MAINS POWER FAILED<br>ON <u>DAY ONE</u>.",
-      57.16,
-      60.66
+      "GRID 7 DIED ON DAY ONE.<br>NOTHING HERE HAS <u>POWER</u>.",
+      75.67,
+      80.77
     ],
     [
-      "AND THE LIGHTS ARE <u>ON</u>.",
-      61.56,
-      63.635
+      "AND THE LIGHTS <u>ARE ON</u>.",
+      81.47,
+      83.545
     ],
     [
       "",
-      64.735,
-      66.885
+      84.695,
+      86.845
     ]
   ],
   "panels": [
     [
       "recap",
       0.0,
-      3.52
+      3.9000000000000004
     ],
     [
-      "station",
-      3.32,
-      12.11
+      "hook",
+      3.7,
+      13.139999999999999
     ],
     [
-      "plumb",
-      11.91,
-      19.95
-    ],
-    [
-      "radio",
-      19.75,
-      24.75
+      "wide",
+      12.94,
+      18.36
     ],
     [
       "rule1",
-      24.55,
-      28.04
+      18.16,
+      21.99
+    ],
+    [
+      "obey1",
+      21.79,
+      25.73
+    ],
+    [
+      "plant",
+      25.39,
+      32.220000000000006
     ],
     [
       "rule2",
-      27.71,
-      31.86
+      32.02,
+      37.120000000000005
+    ],
+    [
+      "obey2",
+      36.92,
+      42.120000000000005
+    ],
+    [
+      "radio",
+      41.92,
+      47.440000000000005
     ],
     [
       "rule3",
-      31.52,
-      35.790000000000006
+      47.24,
+      51.370000000000005
     ],
     [
-      "good",
-      35.59,
-      39.87
+      "obey3",
+      51.17,
+      55.940000000000005
     ],
     [
       "bad",
-      39.52,
-      43.970000000000006
+      55.74,
+      60.34
     ],
     [
       "lights",
-      43.77,
-      49.0
+      60.14,
+      65.72
     ],
     [
       "pa",
-      48.8,
-      57.160000000000004
+      65.52,
+      69.87
     ],
     [
-      "grid",
-      56.96,
-      61.56
+      "voice",
+      69.67,
+      75.67
     ],
     [
-      "lights2",
-      61.36,
-      64.73
+      "recall",
+      75.47,
+      84.69
     ],
     [
       "end",
-      64.53,
-      68.9
+      84.49,
+      89.4
     ]
   ]
 }
