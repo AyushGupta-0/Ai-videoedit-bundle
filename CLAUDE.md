@@ -175,11 +175,16 @@ timeline registered at `window.__timelines["<id>"]`.
     not stills — real character animation and moving cameras. No local still-image pipeline
     reaches that, however good the plates. Matching them means a paid text-to-video model
     (~$0.30-0.75 per 5-8s clip, so roughly $2-4 for a 25s reel).
-17. **CLIP truncates prompts at 77 tokens and the warning is easy to miss.** A
+17. **A locked seed is not enough to hold a character — say the hair colour every time.**
+    EP02's shot e09 came back blonde mid-episode on the same seed that produced a
+    black-haired girl in the other nine. Adding "with black hair" to the prompt fixed it
+    on the first try. Put the one or two identity-critical features (hair colour, dress
+    colour) into *every* prompt, not just the character bible constant.
+18. **CLIP truncates prompts at 77 tokens and the warning is easy to miss.** A
     first pass ran 161 tokens, so the entire style suffix was silently dropped
     and the plates came out styleless. `gen_kids_art.py` now hard-fails via
     `check_len()`. Keep character bibles terse.
-18. **git on this exFAT SSD**: macOS writes `._` AppleDouble files *inside* `.git`, which corrupt
+19. **git on this exFAT SSD**: macOS writes `._` AppleDouble files *inside* `.git`, which corrupt
     pack indexes and refs. Before and after any git write, run:
     `find .git -name '._*' -delete`. Repo: `github.com/AyushGupta-0/Ai-videoedit-bundle` (ssh).
 
