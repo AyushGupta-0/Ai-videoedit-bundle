@@ -244,7 +244,20 @@ timeline registered at `window.__timelines["<id>"]`.
     Ming-3.0-tts-0.5B (MIT, #4 open leaderboard), VoxCPM2 (Apache, Hindi), Pocket TTS
     (CC-BY-4.0), Supertonic 3 (OpenRAIL-M). Kokoro is #10 on that board; swap only on a
     measured A/B.
-27. **git on this exFAT SSD**: macOS writes `._` AppleDouble files *inside* `.git`, which corrupt
+27. **TTS A/B done 2026-11-04 — Kokoro stays. Do not re-run without a new candidate.**
+    Same Day 2 line, measured (whisper transcribe-back = intelligibility; pyin f0 std = pitch
+    movement; RMS p95/p20 = dynamic range):
+
+    | voice | dur | intellig | f0 std | dyn dB | note |
+    |---|---|---|---|---|---|
+    | Kokoro am_michael 0.97 | 7.7s | 85% | 27.6 | 23.1 | baseline |
+    | Chatterbox Turbo 4-bit, cloning Kokoro's clip | 6.3s | 85% | 30.0 | 22.9 | a wash; 18% faster |
+    | Qwen3-TTS 0.6B "ryan" 8-bit | 9.8s | 81% | 46.1 | 25.9 | most movement, dropped a word, 27% slower |
+
+    Chatterbox with NO reference clip defaults to a female voice (230 Hz) — always pass
+    `--ref_audio`. Qwen3 CustomVoice refuses to load without `--voice`. Pitch std is a crude
+    proxy; the owner's ear decides. Samples: scratchpad `ttsab/`. Both venvs stay installed.
+28. **git on this exFAT SSD**: macOS writes `._` AppleDouble files *inside* `.git`, which corrupt
     pack indexes and refs. Before and after any git write, run:
     `find .git -name '._*' -delete`. Repo: `github.com/AyushGupta-0/Ai-videoedit-bundle` (ssh).
 
