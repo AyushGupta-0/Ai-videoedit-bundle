@@ -1,0 +1,12 @@
+{
+  "episode": "ep01-reroll",
+  "shots": [
+    {"id":"w10a","seed":"girl","note":"joy A","prompt":"{GIRL} running forward with both arms stretched out wide, huge open smile, bright hallway"},
+    {"id":"w10b","seed":"boy","note":"joy B","prompt":"{GIRL} jumping up in the air with joy, arms raised high above her head, bright hallway"},
+    {"id":"w10c","seed":"both","note":"joy C","prompt":"{GIRL} mid-run toward the camera, hair flying, delighted laughing face, sunlit doorway"},
+    {"id":"w10d","seed":"world","note":"joy D","prompt":"excited {GIRL} with both hands raised high in the air, mouth open in a happy shout, hallway"},
+    {"id":"w11","seed":"girl","note":"the letter","prompt":"{GIRL} holding an open paper letter in both hands, looking down at it with wide surprised eyes, warm room"},
+    {"id":"w12","seed":"girl","note":"ten days circled","prompt":"{GIRL} looking up at a wall calendar with one date circled in red crayon, hopeful smile, cosy room"},
+    {"id":"w13","seed":"girl","note":"hugging the letter","prompt":"{GIRL} hugging a paper letter tightly against her chest with her eyes closed, happy, warm light"}
+  ]
+}
