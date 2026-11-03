@@ -59,6 +59,7 @@ def main():
         # pad holds the bar
         p = pad([midi(n - 12) for n in ch], BAR + 0.6, 0.085)
         i = int(t0 * SR)
+        p = p[:max(0, buf.size - i)]          # last bar can overhang the buffer
         buf[i:i + p.size] += p
         # music box: a sparse arpeggio, not every eighth — space is what makes it tender
         for k, off in enumerate((0.0, 0.75, 1.5, 2.25, 3.0)):
@@ -67,6 +68,7 @@ def main():
             n = ch[k % 3] + (12 if k >= 3 else 0)
             v = box(midi(n), 1.9, 0.115 * (0.82 + 0.3 * rng.random()))
             j = int((t0 + off) * SR)
+            v = v[:max(0, buf.size - j)]
             buf[j:j + v.size] += v
 
     buf = buf[:int(SR * total)]

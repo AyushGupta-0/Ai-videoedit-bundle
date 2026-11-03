@@ -1,0 +1,411 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <title>Ten Days — Day 1</title>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+<style>
+  /* Palette lifted from the reference: near-black night, one warm light source,
+     one red for danger. Nothing else — extra colour reads as decoration here. */
+  :root{
+    --night:#0b1220; --night2:#131d30; --road:#161d2b;
+    --amber:#f0a93c; --amber-lt:#ffd38a; --warm:#ffb64d;
+    --red:#ff4242; --red-dk:#c22b2b;
+    --ink:#060a12; --white:#ffffff; --grey:#8b97ab;
+  }
+  html,body{margin:0;background:#000;}
+  #root{position:relative;width:1080px;height:1920px;overflow:hidden;background:var(--night);
+        font-family:"Avenir Next","Helvetica Neue",Arial,sans-serif;}
+  .panel{position:absolute;inset:0;opacity:0;will-change:opacity;}
+
+  /* ---------- persistent HUD (REF C: day tag, live clock, countdown) ------- */
+  #hud{position:absolute;left:46px;top:44px;z-index:40;}
+  #daytag{display:flex;align-items:center;gap:9px;font-size:23px;font-weight:700;
+          letter-spacing:2.4px;color:var(--red);}
+  #daytag i{width:11px;height:11px;border-radius:50%;background:var(--red);display:block;}
+  #clock{font-size:54px;font-weight:700;color:var(--white);letter-spacing:1px;
+         margin-top:2px;font-variant-numeric:tabular-nums;}
+  #recov{font-size:20px;font-weight:600;letter-spacing:2.6px;color:var(--grey);margin-top:1px;}
+  #mark{position:absolute;right:46px;top:52px;z-index:40;font-size:18px;
+        letter-spacing:1.6px;color:#55617a;}
+
+  /* ---------- caption: white caps, one amber word ------------------------- */
+  #capwrap{position:absolute;left:70px;right:70px;bottom:230px;text-align:center;z-index:38;}
+  #cap{display:inline-block;color:var(--white);font-size:58px;line-height:1.26;
+       font-weight:700;letter-spacing:.4px;opacity:0;
+       text-shadow:0 4px 22px rgba(0,0,0,.95),0 2px 4px rgba(0,0,0,.9);}
+  #cap b{color:var(--amber);font-weight:700;}
+  #cap u{color:var(--red);text-decoration:none;}
+
+  /* ---------- shared pieces ---------------------------------------------- */
+  .vign{position:absolute;inset:0;pointer-events:none;
+        background:radial-gradient(125% 85% at 50% 45%,rgba(0,0,0,0) 42%,rgba(0,0,0,.82) 100%);}
+  .sky{position:absolute;inset:0;background:linear-gradient(180deg,#0a1020 0%,#16233a 46%,#0c1322 100%);}
+  .moon{position:absolute;width:86px;height:86px;border-radius:50%;
+        background:radial-gradient(circle at 36% 34%,#fff 0%,#dfe8f6 58%,#b9c7de 100%);
+        box-shadow:0 0 90px 30px rgba(200,220,255,.16);}
+
+  /* rule card */
+  .rulecard{position:absolute;inset:0;display:flex;flex-direction:column;
+            align-items:center;justify-content:center;gap:34px;
+            background:linear-gradient(180deg,rgba(6,10,18,.90),rgba(6,10,18,.96));}
+  .rulebadge{background:var(--red);color:#fff;font-size:26px;font-weight:800;
+             letter-spacing:3.4px;padding:11px 26px;border-radius:5px;}
+  .ruletext{color:#fff;font-size:92px;font-weight:800;letter-spacing:1px;
+            text-align:center;line-height:1.1;max-width:880px;}
+  .rulesub{color:var(--grey);font-size:34px;font-weight:600;max-width:800px;
+           text-align:center;line-height:1.35;}
+
+  /* info / news card */
+  .news{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
+        width:830px;border:3px solid var(--amber);border-radius:12px;
+        background:rgba(8,13,22,.93);padding:36px 40px;}
+  .news.bad{border-color:var(--red);}
+  .news h4{margin:0 0 22px;color:var(--amber);font-size:30px;letter-spacing:3.4px;font-weight:800;}
+  .news.bad h4{color:var(--red);}
+  .news .row{display:flex;justify-content:space-between;align-items:center;
+             color:#fff;font-size:40px;font-weight:600;padding:15px 0;
+             border-bottom:1px solid rgba(255,255,255,.10);}
+  .news .row:last-child{border-bottom:0;}
+  .news .row span:last-child{color:var(--amber);font-weight:800;}
+  .news.bad .row span:last-child{color:var(--red);}
+</style>
+  </head>
+  <body>
+<div id="root" data-composition-id="td1" data-start="0" data-duration="95.4"
+     data-width="1080" data-height="1920" data-track-kind="graphics">
+
+  <div id="panels" class="clip" data-start="0" data-duration="95.4" data-track-index="0"></div>
+
+  <div id="hud" class="clip" data-start="0" data-duration="95.4" data-track-index="1" data-layout-ignore>
+    <div id="daytag"><i></i>DAY 1 / 10</div>
+    <div id="clock">11:12 PM</div>
+    <div id="recov">RECOVERY IN 10 DAYS</div>
+  </div>
+  <div id="mark" class="clip" data-start="0" data-duration="95.4" data-track-index="2"
+       data-layout-ignore>1min.thinker</div>
+
+  <div id="capwrap" class="clip" data-start="0" data-duration="95.4" data-track-index="3"
+       data-track-kind="captions"><span id="cap"></span></div>
+</div>
+
+<audio id="vo" src="assets/audio/vo.wav" data-start="0" data-volume="1"></audio>
+
+<script>
+const DUR = 95.4;
+const tl = gsap.timeline({ paused: true });
+const S = document.getElementById("panels");
+const mk = (id, html) => {
+  const d = document.createElement("div");
+  d.className = "panel"; d.id = id; d.innerHTML = html;
+  S.appendChild(d); return d;
+};
+
+/* ---- a line of cars in perspective, built in script so the markup stays readable.
+       Seeded offsets only — nothing here may use Math.random(), the render seeks
+       frames out of order and anything unseeded flickers. ---- */
+function carRows(rows){
+  let h = "";
+  for (let r = 0; r < rows; r++){
+    const t = r / (rows - 1);                 // 0 = far, 1 = near
+    const w = 58 + t * 268, hh = 30 + t * 126;
+    const y = 700 + Math.pow(t, 2.0) * 1060;
+    const seed = (r * 2654435761) % 1000 / 1000;   // deterministic jitter, never Math.random
+    // lanes splay outward as they approach, which is what sells the perspective
+    for (const lane of [-1.62, -0.54, 0.54, 1.62]){
+      const x = 540 + lane * (52 + t * 252) + (seed - .5) * t * 30;
+      const dim = 0.34 + t * 0.66;
+      const body = `linear-gradient(180deg,#3a4866 0%,#283350 55%,#1b2338 100%)`;
+      h += `<div style="position:absolute;left:${x-w/2}px;top:${y-hh}px;width:${w}px;height:${hh}px;
+             border-radius:${7+t*14}px;background:${body};opacity:${0.5+t*0.5};"></div>
+            <!-- roof + rear screen: without these a car is just a blob -->
+            <div style="position:absolute;left:${x-w*0.33}px;top:${y-hh*1.34}px;
+             width:${w*0.66}px;height:${hh*0.42}px;border-radius:${5+t*9}px ${5+t*9}px 0 0;
+             background:linear-gradient(180deg,#46557a,#2d3a59);opacity:${0.45+t*0.5};"></div>
+            <div style="position:absolute;left:${x-w*0.27}px;top:${y-hh*1.24}px;
+             width:${w*0.54}px;height:${hh*0.26}px;border-radius:3px;
+             background:#0c1322;opacity:${0.55+t*0.4};"></div>
+            <div style="position:absolute;left:${x-w*0.42}px;top:${y-hh*0.30}px;
+             width:${w*0.20}px;height:${Math.max(3,hh*0.12)}px;border-radius:3px;background:#ff3b3b;
+             opacity:${dim};box-shadow:0 0 ${9+t*24}px rgba(255,60,60,${dim*.8});"></div>
+            <div style="position:absolute;left:${x+w*0.22}px;top:${y-hh*0.30}px;
+             width:${w*0.20}px;height:${Math.max(3,hh*0.12)}px;border-radius:3px;background:#ff3b3b;
+             opacity:${dim};box-shadow:0 0 ${9+t*24}px rgba(255,60,60,${dim*.8});"></div>`;
+    }
+  }
+  return h;
+}
+
+/* Dashed lane markings converging to a vanishing point — the ground plane is what
+   turns a pile of shapes into a road you are sitting on. */
+function laneLines(){
+  let h = "";
+  for (const lane of [-1.08, 0, 1.08]){
+    for (let i = 0; i < 13; i++){
+      const t = i / 12;
+      const y = 700 + Math.pow(t, 2.0) * 1060;
+      const x = 540 + lane * (52 + t * 252);
+      const w = 4 + t * 16, len = 16 + t * 86;
+      h += `<div style="position:absolute;left:${x-w/2}px;top:${y}px;width:${w}px;height:${len}px;
+             border-radius:2px;background:#4a5570;opacity:${0.10 + t*0.30};"></div>`;
+    }
+  }
+  return h;
+}
+
+/* ============================ PANELS ============================ */
+mk("jam", `<div class="sky"></div>
+  <div class="moon" style="left:790px;top:160px;"></div>
+  <div style="position:absolute;left:0;right:0;top:688px;bottom:0;
+       background:linear-gradient(180deg,#1d2537 0%,#141b29 40%,#0d131f 100%);"></div>
+  <div style="position:absolute;left:0;right:0;top:686px;height:3px;background:#2d3850;"></div>
+  <div id="jamcars" style="position:absolute;inset:0;">${laneLines()}${carRows(10)}</div>
+  <!-- your own bonnet, cropped by the frame: you are in the queue, not watching it -->
+  <div style="position:absolute;left:-60px;right:-60px;bottom:-40px;height:250px;border-radius:120px 120px 0 0;
+       background:linear-gradient(180deg,#39465f,#1d2639);"></div>
+  <div class="vign"></div>`);
+
+mk("radio", `<div style="position:absolute;inset:0;background:#070c16;"></div>
+  <!-- windscreen across the full width: the jam, seen from the driver's seat -->
+  <div style="position:absolute;left:0;right:0;top:120px;height:620px;overflow:hidden;
+       background:linear-gradient(180deg,#121d31,#0a1322);">
+    <div style="position:absolute;inset:0;opacity:.85;">${laneLines()}</div>
+    <div style="position:absolute;left:150px;top:430px;width:84px;height:20px;border-radius:5px;
+         background:#ff3b3b;box-shadow:0 0 40px rgba(255,60,60,.85);"></div>
+    <div style="position:absolute;left:480px;top:470px;width:84px;height:20px;border-radius:5px;
+         background:#ff3b3b;box-shadow:0 0 40px rgba(255,60,60,.85);"></div>
+    <div style="position:absolute;left:800px;top:412px;width:84px;height:20px;border-radius:5px;
+         background:#ff3b3b;box-shadow:0 0 40px rgba(255,60,60,.85);"></div>
+  </div>
+  <div style="position:absolute;left:0;right:0;top:120px;height:70px;
+       background:linear-gradient(180deg,#0a0f1a,rgba(10,15,26,0));"></div>
+  <!-- dashboard + wheel -->
+  <div style="position:absolute;left:0;right:0;top:740px;bottom:0;
+       background:linear-gradient(180deg,#192234 0%,#0d1422 55%,#080d16 100%);"></div>
+  <div style="position:absolute;left:170px;top:1400px;width:740px;height:740px;border-radius:50%;
+       border:36px solid #141c2c;"></div>
+  <div style="position:absolute;left:0;right:0;top:756px;height:140px;
+       background:radial-gradient(60% 100% at 50% 0%,rgba(255,170,70,.16),rgba(0,0,0,0) 70%);"></div>
+  <!-- the radio: hero prop of the whole series, so it owns the centre -->
+  <div id="radiobox" style="position:absolute;left:250px;top:880px;width:580px;height:290px;
+       border-radius:16px;background:linear-gradient(180deg,#222d41,#161e2e);border:4px solid #33425e;
+       box-shadow:0 26px 70px rgba(0,0,0,.6);">
+    <div style="position:absolute;left:32px;top:30px;width:350px;height:108px;border-radius:8px;
+         background:#0b2a21;border:3px solid #1d5742;display:flex;align-items:center;
+         justify-content:center;">
+      <span id="chtext" style="color:#5df2b0;font-size:56px;font-weight:800;letter-spacing:5px;
+            text-shadow:0 0 26px rgba(93,242,176,.8);">CH 09</span>
+    </div>
+    <div style="position:absolute;right:34px;top:42px;width:86px;height:86px;border-radius:50%;
+         background:#2b374f;border:4px solid #44557a;"></div>
+    <!-- crank handle, folded against the side -->
+    <div style="position:absolute;right:-26px;top:150px;width:26px;height:74px;border-radius:5px;
+         background:#44557a;"></div>
+    <div style="position:absolute;left:32px;bottom:28px;right:32px;height:56px;display:flex;gap:11px;">
+      ${Array.from({length:10},()=>`<div style="flex:1;border-radius:5px;background:#2b374f;"></div>`).join("")}
+    </div>
+  </div>
+  <div class="vign"></div>`);
+
+const rule = (n, text, sub) => `<div class="rulecard">
+    <div class="rulebadge">RULE #${n}</div>
+    <div class="ruletext">${text}</div>
+    ${sub ? `<div class="rulesub">${sub}</div>` : ""}
+  </div>`;
+mk("rule1", rule(1, "ENGINE OFF", "an idling car is audible at 200 metres"));
+mk("rule2", rule(2, "HAZARDS OFF", "light is an address"));
+mk("rule3", rule(3, "IF SOMEONE USES<br>YOUR NAME,<br>DO NOT ANSWER", ""));
+
+mk("good", `<div style="position:absolute;inset:0;background:#070c16;"></div>
+  <div class="news">
+    <h4>GOOD NEWS</h4>
+    <div class="row"><span>Fuel</span><span>HALF A TANK</span></div>
+    <div class="row"><span>Water</span><span>1 BOTTLE</span></div>
+    <div class="row"><span>Hand-crank radio</span><span>WORKS</span></div>
+  </div>
+  <div class="vign"></div>`);
+
+mk("bad", `<div style="position:absolute;inset:0;background:#070c16;"></div>
+  <!-- the car door, seen from inside -->
+  <div style="position:absolute;left:150px;top:360px;width:780px;height:1060px;border-radius:22px;
+       background:linear-gradient(180deg,#1d2638,#101827);border:4px solid #2c3850;"></div>
+  <!-- window aperture -->
+  <div style="position:absolute;left:206px;top:420px;width:668px;height:470px;border-radius:12px;
+       background:#0a111d;border:4px solid #36435e;overflow:hidden;">
+    <!-- the glass sits 2 inches low, so night shows through the top as a bright slit -->
+    <div style="position:absolute;left:0;right:0;top:58px;bottom:0;
+         background:linear-gradient(180deg,#16233a,#0c1524);border-top:3px solid #46567a;"></div>
+    <div id="gap" style="position:absolute;left:0;right:0;top:0;height:58px;
+         background:linear-gradient(180deg,#5f7bb0 0%,#2b3f66 70%,#0a111d 100%);
+         box-shadow:0 10px 30px rgba(120,160,230,.35);"></div>
+  </div>
+  <!-- measurement bracket pointing at the slit -->
+  <div style="position:absolute;left:900px;top:424px;width:4px;height:58px;background:var(--red);"></div>
+  <div style="position:absolute;left:880px;top:424px;width:44px;height:4px;background:var(--red);"></div>
+  <div style="position:absolute;left:880px;top:478px;width:44px;height:4px;background:var(--red);"></div>
+  <div style="position:absolute;left:600px;top:330px;width:380px;text-align:right;
+       color:var(--red);font-size:38px;font-weight:800;letter-spacing:3px;">2 INCHES</div>
+  <!-- armrest + handle, so it reads as a door and not a picture frame -->
+  <div style="position:absolute;left:206px;top:960px;width:668px;height:54px;border-radius:10px;
+       background:#2a3550;"></div>
+  <div style="position:absolute;left:250px;top:1050px;width:190px;height:34px;border-radius:8px;
+       background:#36435e;"></div>
+  <div class="vign"></div>`);
+
+mk("torch", `<div class="sky"></div>
+  <div style="position:absolute;left:0;right:0;top:640px;bottom:0;background:var(--road);"></div>
+  <div style="position:absolute;inset:0;">${carRows(9)}</div>
+  <!-- the beam: a cone that walks down the line -->
+  <div id="beam" style="position:absolute;left:120px;top:900px;width:420px;height:620px;
+       background:conic-gradient(from 200deg at 50% 0%, rgba(255,214,140,0) 0deg,
+                 rgba(255,214,140,.30) 18deg, rgba(255,214,140,0) 36deg);
+       filter:blur(8px);"></div>
+  <div id="torchdot" style="position:absolute;left:300px;top:890px;width:26px;height:26px;
+       border-radius:50%;background:#ffe6b0;box-shadow:0 0 60px 22px rgba(255,214,140,.55);"></div>
+  <div class="vign"></div>`);
+
+mk("tap", `<div style="position:absolute;inset:0;background:#070c16;"></div>
+  <div style="position:absolute;left:150px;top:420px;width:780px;height:760px;border-radius:14px;
+       background:linear-gradient(180deg,#101c2e,#0a1322);border:4px solid #2c3850;"></div>
+  <div id="ring1" style="position:absolute;left:470px;top:740px;width:140px;height:140px;
+       border-radius:50%;border:4px solid rgba(255,214,140,.85);opacity:0;"></div>
+  <div id="ring2" style="position:absolute;left:470px;top:740px;width:140px;height:140px;
+       border-radius:50%;border:4px solid rgba(255,214,140,.85);opacity:0;"></div>
+  <div style="position:absolute;left:504px;top:774px;width:72px;height:72px;border-radius:30px;
+       background:#1d2740;"></div>
+  <div class="vign"></div>`);
+
+mk("voice", `<div style="position:absolute;inset:0;background:#070c16;"></div>
+  <div style="position:absolute;left:150px;top:420px;width:780px;height:760px;border-radius:14px;
+       background:linear-gradient(180deg,#0f1a2b,#0a1322);border:4px solid #2c3850;overflow:hidden;">
+    <!-- a silhouette outside the glass. no face: REF B never shows one. -->
+    <div style="position:absolute;left:285px;top:150px;width:210px;height:210px;border-radius:50%;
+         background:#05080f;"></div>
+    <div style="position:absolute;left:170px;top:345px;width:440px;height:430px;
+         border-radius:150px 150px 0 0;background:#05080f;"></div>
+    <div id="halo" style="position:absolute;left:120px;top:90px;width:560px;height:700px;
+         background:radial-gradient(circle at 50% 30%,rgba(255,200,120,.20),rgba(0,0,0,0) 62%);"></div>
+  </div>
+  <div class="vign"></div>`);
+
+mk("radio2", `<div style="position:absolute;inset:0;background:#070c16;"></div>
+  <div style="position:absolute;left:140px;top:600px;width:800px;height:300px;border-radius:14px;
+       background:#1b2434;border:3px solid #2e3b52;">
+    <div style="position:absolute;left:36px;top:40px;right:36px;height:110px;border-radius:8px;
+         background:#2a0e0e;border:2px solid #5c1f1f;display:flex;align-items:center;
+         justify-content:center;padding:0 22px;">
+      <span id="warn" style="color:#ff6b6b;font-size:36px;font-weight:800;letter-spacing:1.5px;
+            text-align:center;line-height:1.2;">ALL RESPONSE UNITS<br>WITHDRAWN · 06:00</span>
+    </div>
+    <div style="position:absolute;left:36px;bottom:34px;right:36px;height:52px;display:flex;gap:9px;">
+      ${Array.from({length:12},()=>`<div style="flex:1;border-radius:4px;background:#28344a;"></div>`).join("")}
+    </div>
+  </div>
+  <div class="vign"></div>`);
+
+mk("end", `<div style="position:absolute;inset:0;
+       background:radial-gradient(90% 60% at 50% 46%,#2a0b0b 0%,#07090f 72%);"></div>
+  <div style="position:absolute;left:0;right:0;top:720px;text-align:center;">
+    <div style="color:#fff;font-size:84px;font-weight:800;letter-spacing:1px;">DO YOU OPEN</div>
+    <div style="color:var(--red);font-size:84px;font-weight:800;letter-spacing:1px;">THE DOOR?</div>
+  </div>
+  <div style="position:absolute;left:0;right:0;top:1010px;display:flex;justify-content:center;gap:34px;">
+    <div style="background:var(--amber);color:#1a1205;font-size:38px;font-weight:800;
+         padding:20px 52px;border-radius:10px;letter-spacing:2px;">OPEN</div>
+    <div style="background:var(--red-dk);color:#fff;font-size:38px;font-weight:800;
+         padding:20px 52px;border-radius:10px;letter-spacing:2px;">STAY</div>
+  </div>
+  <div style="position:absolute;left:0;right:0;top:1180px;text-align:center;color:#7d879b;
+       font-size:30px;letter-spacing:3px;">FOLLOW FOR DAY 2</div>`);
+
+/* ============================ TIMELINE ============================ */
+/* Panel windows come from the measured VO timings, never estimates. */
+const SH = [
+  ["jam",    0.00, 13.60],
+  ["radio", 13.40, 26.30],
+  ["rule1", 26.10, 32.95],
+  ["rule2", 32.75, 36.90],
+  ["rule3", 36.70, 42.45],
+  ["good",  42.25, 51.70],
+  ["bad",   51.50, 58.00],
+  ["torch", 57.80, 69.40],
+  ["tap",   69.20, 72.80],
+  ["voice", 72.60, 81.80],
+  ["radio2",81.60, 90.95],
+  ["end",   90.75, DUR],
+];
+const FADE = 0.30;                      // hard-ish cuts: this genre does not dissolve
+SH.forEach(([id, a, b]) => {
+  const el = document.getElementById(id);
+  tl.to(el, { opacity: 1, duration: FADE }, a);
+  if (b < DUR) tl.to(el, { opacity: 0, duration: FADE }, b - FADE);
+});
+
+/* slow drift on the two wide plates so they are never static */
+tl.fromTo("#jamcars", { scale: 1.00, y: 0 }, { scale: 1.12, y: -30, duration: 13.6, ease: "none" }, 0);
+tl.fromTo("#radiobox", { scale: 0.97 }, { scale: 1.05, duration: 12.9, ease: "none" }, 13.4);
+
+/* the torch walks down the line of cars and stops at yours */
+tl.fromTo(["#beam", "#torchdot"], { x: 0 }, { x: 430, duration: 8.4, ease: "power1.inOut" }, 58.0);
+tl.to(["#beam", "#torchdot"], { x: 448, duration: 2.6, ease: "power2.out" }, 66.4);
+
+/* two knocks, on the beat of the line */
+[69.9, 70.9].forEach((t, i) => {
+  const r = `#ring${i + 1}`;
+  tl.fromTo(r, { scale: 0.35, opacity: 0.95 },
+               { scale: 2.3, opacity: 0, duration: 0.85, ease: "power2.out" }, t);
+});
+
+/* the lie, glowing as it is spoken */
+tl.fromTo("#halo", { opacity: 0.25 }, { opacity: 0.75, duration: 4.0, ease: "sine.inOut" }, 73.2);
+tl.fromTo("#warn", { opacity: 0.25 }, { opacity: 1, duration: 0.5 }, 82.0);
+
+/* ---- HUD clock: 11:12 PM -> 11:52 PM, stepping, never smooth ---- */
+const START_MIN = 11 * 60 + 12, END_MIN = 11 * 60 + 52;
+const clockEl = document.getElementById("clock");
+for (let m = START_MIN; m <= END_MIN; m++){
+  const at = ((m - START_MIN) / (END_MIN - START_MIN)) * (DUR - 4.0);
+  const hh = Math.floor(m / 60), mm = m % 60;
+  tl.call(() => { clockEl.textContent = `${hh}:${String(mm).padStart(2,"0")} PM`; }, null, at);
+}
+
+/* ---- captions: white caps, one amber word, from the real timings ---- */
+const LINES = [
+  ["IMAGINE YOU'RE SITTING IN FOUR LANES OF TRAFFIC<br>THAT HAVEN'T MOVED IN <b>FORTY MINUTES</b>.", 0.30, 6.47],
+  ["NOBODY'S HORN IS WORKING.",                                   6.54,  9.09],
+  ["THAT'S THE FIRST THING YOU NOTICE.<br>NOBODY IS <b>HONKING</b>.", 9.14, 13.17],
+  ["THEN THE RADIO STATION STOPS <b>MID-SENTENCE</b>.",           13.72, 17.09],
+  ["EMERGENCY BROADCAST. ONE LOOP.",                              17.16, 20.38],
+  ["STAY IN YOUR VEHICLE.<br>RECOVERY IN <b>TEN DAYS</b>.",       20.44, 26.02],
+  ["RULE 1. <b>ENGINE OFF</b>.",                                26.46, 28.89],
+  ["AN IDLING CAR IS AUDIBLE AT <b>200 METRES</b>.",              28.95, 32.88],
+  ["RULE 2. HAZARDS OFF.<br>LIGHT IS AN <b>ADDRESS</b>.",       32.94, 36.84],
+  ["RULE 3. IF SOMEONE USES YOUR NAME,<br><u>DO NOT ANSWER</u>.", 36.90, 41.84],
+  ["<b>GOOD NEWS</b>. HALF A TANK, A BOTTLE OF WATER,",           42.55, 46.15],
+  ["AND A HAND-CRANK RADIO YOUR FATHER<br>LEFT IN THE BOOT IN 2009.", 46.20, 51.63],
+  ["<u>BAD NEWS</u>. YOUR WINDOW HAS BEEN STUCK<br><b>TWO INCHES</b> OPEN SINCE AUGUST.", 51.69, 57.52],
+  ["<b>11:52 PM</b>. A TORCH BEAM STARTS MOVING<br>DOWN THE LINE OF CARS.", 58.06, 64.06],
+  ["WINDOW. BY <b>WINDOW</b>.",                                   64.12, 66.35],
+  ["IT STOPS AT <u>YOURS</u>.",                                   66.41, 68.61],
+  ["SOMEONE TAPS THE GLASS. <b>TWICE</b>.",                       69.46, 72.33],
+  ["“IT'S MARCUS, PARAMEDIC.<br>I'M WITH THE RESPONSE UNIT.”", 72.83, 77.33],
+  ["“YOU'RE <b>BLEEDING</b>. LET ME IN.”",              77.39, 80.87],
+  ["ALL RESPONSE UNITS WERE WITHDRAWN<br><u>SIX HOURS AGO</u>.",  81.87, 87.80],
+  ["AND YOU'RE <u>NOT BLEEDING</u>.",                             87.86, 89.93],
+  ["",                                                            91.03, 93.20],
+];
+const capEl = document.getElementById("cap");
+LINES.forEach(([html, a, b], i) => {
+  tl.call(() => { capEl.innerHTML = html; }, null, a);
+  tl.fromTo(capEl, { opacity: 0, y: 14 },
+            { opacity: html ? 1 : 0, duration: 0.26, ease: "power2.out" }, a);
+  const next = LINES[i + 1] ? LINES[i + 1][1] : DUR;
+  tl.to(capEl, { opacity: 0, duration: 0.20 }, Math.min(b, next - 0.24));
+});
+
+window.__timelines = window.__timelines || {};
+window.__timelines["td1"] = tl;
+</script>
+  </body>
+</html>

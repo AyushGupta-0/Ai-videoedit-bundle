@@ -57,7 +57,9 @@ def main():
         timings.append({"id": ln["id"], "who": ln["who"], "shot": ln["shot"],
                         "text": ln["text"], "start": round(start, 3),
                         "end": round(start + dur, 3)})
-        cursor = start + dur + 0.06
+        # A scripted pause is a performance instruction, not slack. Without it
+        # every line butts against the next and the tension beats disappear.
+        cursor = start + dur + ln.get("pause", 0.06)
 
     total = cursor + TAIL
     bed = np.zeros(int(total * SR), dtype=np.float32)
@@ -73,7 +75,10 @@ def main():
     tj = out.with_name(out.stem + "_timings.json")
     tj.write_text(json.dumps({"duration": round(total, 3), "lines": timings}, indent=2))
 
-    drift = [t for t, ln in zip(timings, spec["lines"]) if t["start"] - ln["at"] > 0.25]
+    # only flag drift on lines with no deliberate pause before them — a pause
+    # legitimately pushes everything after it and is not a problem to report
+    drift = [t for t, ln in zip(timings, spec["lines"])
+             if t["start"] - ln["at"] > 0.25 and not ln.get("pause")]
     print(f"\n{out}  {total:.2f}s")
     print(f"{tj.name}  {len(timings)} lines")
     if drift:

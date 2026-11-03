@@ -1,0 +1,181 @@
+{
+  "duration": 94.465,
+  "lines": [
+    {
+      "id": "l01",
+      "who": "N",
+      "shot": "jam",
+      "text": "Imagine you're sitting in four lanes of traffic that haven't moved in forty minutes.",
+      "start": 0.3,
+      "end": 6.475
+    },
+    {
+      "id": "l02",
+      "who": "N",
+      "shot": "jam",
+      "text": "Nobody's horn is working.",
+      "start": 6.535,
+      "end": 9.085
+    },
+    {
+      "id": "l03",
+      "who": "N",
+      "shot": "jam",
+      "text": "That's the first thing you notice. Nobody is honking.",
+      "start": 9.145,
+      "end": 13.17
+    },
+    {
+      "id": "l04",
+      "who": "N",
+      "shot": "radio",
+      "text": "Then the radio station stops mid sentence.",
+      "start": 13.72,
+      "end": 17.095
+    },
+    {
+      "id": "l05",
+      "who": "N",
+      "shot": "radio",
+      "text": "Emergency broadcast. One loop.",
+      "start": 17.155,
+      "end": 20.38
+    },
+    {
+      "id": "l06",
+      "who": "N",
+      "shot": "radio",
+      "text": "Stay in your vehicle. Do not walk the carriageway. Recovery in ten days.",
+      "start": 20.44,
+      "end": 26.015
+    },
+    {
+      "id": "l07",
+      "who": "N",
+      "shot": "rule1",
+      "text": "Rule one. Engine off.",
+      "start": 26.465,
+      "end": 28.89
+    },
+    {
+      "id": "l08",
+      "who": "N",
+      "shot": "rule1",
+      "text": "An idling car is audible at two hundred metres.",
+      "start": 28.95,
+      "end": 32.875
+    },
+    {
+      "id": "l09",
+      "who": "N",
+      "shot": "rule2",
+      "text": "Rule two. Hazards off. Light is an address.",
+      "start": 32.935,
+      "end": 36.835
+    },
+    {
+      "id": "l10",
+      "who": "N",
+      "shot": "rule3",
+      "text": "Rule three. If someone outside uses your name, do not answer.",
+      "start": 36.895,
+      "end": 41.845
+    },
+    {
+      "id": "l11",
+      "who": "N",
+      "shot": "good",
+      "text": "Good news. Half a tank, a bottle of water,",
+      "start": 42.545,
+      "end": 46.145
+    },
+    {
+      "id": "l12",
+      "who": "N",
+      "shot": "good",
+      "text": "and a hand crank radio your father left in the boot in two thousand nine.",
+      "start": 46.205,
+      "end": 51.63
+    },
+    {
+      "id": "l13",
+      "who": "N",
+      "shot": "bad",
+      "text": "Bad news. Your driver's window has been stuck two inches open since August.",
+      "start": 51.69,
+      "end": 57.515
+    },
+    {
+      "id": "l14",
+      "who": "N",
+      "shot": "torch",
+      "text": "Eleven fifty two P M. A torch beam starts moving down the line of cars.",
+      "start": 58.065,
+      "end": 64.065
+    },
+    {
+      "id": "l15",
+      "who": "N",
+      "shot": "torch",
+      "text": "Window. By window.",
+      "start": 64.125,
+      "end": 66.35
+    },
+    {
+      "id": "l16",
+      "who": "N",
+      "shot": "torch",
+      "text": "It stops at yours.",
+      "start": 66.41,
+      "end": 68.61
+    },
+    {
+      "id": "l17",
+      "who": "N",
+      "shot": "tap",
+      "text": "Someone taps the glass. Twice.",
+      "start": 69.46,
+      "end": 72.335
+    },
+    {
+      "id": "l18",
+      "who": "N",
+      "shot": "voice",
+      "text": "Hey. It's Marcus, paramedic, I'm with the response unit.",
+      "start": 72.835,
+      "end": 77.335
+    },
+    {
+      "id": "l19",
+      "who": "N",
+      "shot": "voice",
+      "text": "You're bleeding. Let me in and I'll patch you up.",
+      "start": 77.395,
+      "end": 80.87
+    },
+    {
+      "id": "l20",
+      "who": "N",
+      "shot": "radio2",
+      "text": "Emergency broadcast. All response units were withdrawn six hours ago.",
+      "start": 81.87,
+      "end": 87.795
+    },
+    {
+      "id": "l21",
+      "who": "N",
+      "shot": "radio2",
+      "text": "And you're not bleeding.",
+      "start": 87.855,
+      "end": 89.93
+    },
+    {
+      "id": "l22",
+      "who": "N",
+      "shot": "end",
+      "text": "Do you open the door?",
+      "start": 91.03,
+      "end": 93.205
+    }
+  ]
+}

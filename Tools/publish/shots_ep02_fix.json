@@ -1,0 +1,5 @@
+{"episode":"ep02-fix","shots":[
+ {"id":"e09a","seed":"girl","note":"pencil A","prompt":"{GIRL} with black hair holding a pencil over a paper on the floor, serious face, warm lamp light"},
+ {"id":"e09b","seed":"both","note":"pencil B","prompt":"{GIRL} with black hair writing on paper with a pencil, close-up, concentrating, warm lamp light"},
+ {"id":"e09c","seed":"world","note":"pencil C","prompt":"close-up of {GIRL} with black hair looking down at a paper, pencil in hand, serious, lamp light"}
+]}
