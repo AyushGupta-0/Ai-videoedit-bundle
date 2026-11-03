@@ -1,0 +1,16 @@
+{
+  "episode": "ep02-forty-two-rupees",
+  "note": "Day 9. Every shot Anaya alone. Same yellow dress for continuity with EP01.",
+  "shots": [
+    {"id":"e01","seed":"girl","note":"the tin","prompt":"{GIRL} pulling an old metal tin out from under a wooden bed, cosy bedroom, warm light"},
+    {"id":"e02","seed":"girl","note":"coins spill","prompt":"{GIRL} kneeling on the floor beside a pile of small coins spilled from a tin, looking down"},
+    {"id":"e03","seed":"girl","note":"counting","prompt":"close-up of {GIRL} concentrating hard, counting coins in her small hands, warm room"},
+    {"id":"e04","seed":"girl","note":"counting again, worried","prompt":"close-up face of {GIRL} looking worried and uncertain, biting her lip, warm room"},
+    {"id":"e05","seed":"girl","note":"small in a big room","prompt":"wide shot of {GIRL} sitting alone on a big empty wooden floor with coins around her"},
+    {"id":"e06","seed":"girl","note":"writing the plan","prompt":"{GIRL} lying on the floor writing on a paper with a pencil, concentrating, warm light"},
+    {"id":"e07","seed":"girl","note":"thinking","prompt":"close-up of {GIRL} looking up and away thoughtfully, chin resting on her hand, warm room"},
+    {"id":"e08","seed":"girl","note":"the calendar","prompt":"{GIRL} seen from behind looking up at a wall calendar on a wall, cosy room, soft light"},
+    {"id":"e09","seed":"girl","note":"crossing it out","prompt":"close-up of {GIRL} pressing a pencil down on a paper, serious face, warm lamp light"},
+    {"id":"e10","seed":"girl","note":"CLIFFHANGER - resolve","prompt":"close-up face of {GIRL} with a small determined smile, eyes bright, warm lamp light"}
+  ]
+}

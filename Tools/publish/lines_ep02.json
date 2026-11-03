@@ -1,0 +1,20 @@
+{
+  "episode": "ep02-forty-two-rupees",
+  "voices": { "N": { "kokoro": "af_sarah", "speed": 0.95, "semitones": 0.0 } },
+  "lines": [
+    { "id":"l01","at":0.30,"who":"N","shot":"e01","text":"Nine days left. Anaya had a plan." },
+    { "id":"l02","at":3.60,"who":"N","shot":"e01","text":"Under her bed was a tin. She had been filling it since the rains." },
+    { "id":"l03","at":9.20,"who":"N","shot":"e02","text":"She tipped it out onto the floor." },
+    { "id":"l04","at":12.40,"who":"N","shot":"e03","text":"Forty-two rupees." },
+    { "id":"l05","at":15.00,"who":"N","shot":"e04","text":"She counted it again, just to be sure. Forty-two." },
+    { "id":"l06","at":20.00,"who":"N","shot":"e05","text":"A proper welcome needs three things." },
+    { "id":"l07","at":23.40,"who":"N","shot":"e06","text":"Firecrackers, so the whole street knows he is home." },
+    { "id":"l08","at":28.00,"who":"N","shot":"e06","text":"His favourite lunch. And a present." },
+    { "id":"l09","at":32.00,"who":"N","shot":"e07","text":"Forty-two rupees buys one of them." },
+    { "id":"l10","at":35.40,"who":"N","shot":"e08","text":"Only one." },
+    { "id":"l11","at":37.60,"who":"N","shot":"e09","text":"So she picked up her pencil, and crossed out the present." },
+    { "id":"l12","at":43.00,"who":"N","shot":"e10","text":"Then she stopped." },
+    { "id":"l13","at":45.40,"who":"N","shot":"e10","text":"And she un-crossed it." },
+    { "id":"l14","at":48.20,"who":"N","shot":"e10","text":"She would find a way to get all three." }
+  ]
+}

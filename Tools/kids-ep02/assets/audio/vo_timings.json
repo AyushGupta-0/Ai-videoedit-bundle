@@ -1,0 +1,117 @@
+{
+  "duration": 52.26,
+  "lines": [
+    {
+      "id": "l01",
+      "who": "N",
+      "shot": "e01",
+      "text": "Nine days left. Anaya had a plan.",
+      "start": 0.3,
+      "end": 3.85
+    },
+    {
+      "id": "l02",
+      "who": "N",
+      "shot": "e01",
+      "text": "Under her bed was a tin. She had been filling it since the rains.",
+      "start": 3.91,
+      "end": 8.66
+    },
+    {
+      "id": "l03",
+      "who": "N",
+      "shot": "e02",
+      "text": "She tipped it out onto the floor.",
+      "start": 9.2,
+      "end": 11.975
+    },
+    {
+      "id": "l04",
+      "who": "N",
+      "shot": "e03",
+      "text": "Forty-two rupees.",
+      "start": 12.4,
+      "end": 14.7
+    },
+    {
+      "id": "l05",
+      "who": "N",
+      "shot": "e04",
+      "text": "She counted it again, just to be sure. Forty-two.",
+      "start": 15.0,
+      "end": 19.15
+    },
+    {
+      "id": "l06",
+      "who": "N",
+      "shot": "e05",
+      "text": "A proper welcome needs three things.",
+      "start": 20.0,
+      "end": 23.025
+    },
+    {
+      "id": "l07",
+      "who": "N",
+      "shot": "e06",
+      "text": "Firecrackers, so the whole street knows he is home.",
+      "start": 23.4,
+      "end": 27.375
+    },
+    {
+      "id": "l08",
+      "who": "N",
+      "shot": "e06",
+      "text": "His favourite lunch. And a present.",
+      "start": 28.0,
+      "end": 31.075
+    },
+    {
+      "id": "l09",
+      "who": "N",
+      "shot": "e07",
+      "text": "Forty-two rupees buys one of them.",
+      "start": 32.0,
+      "end": 35.05
+    },
+    {
+      "id": "l10",
+      "who": "N",
+      "shot": "e08",
+      "text": "Only one.",
+      "start": 35.4,
+      "end": 37.325
+    },
+    {
+      "id": "l11",
+      "who": "N",
+      "shot": "e09",
+      "text": "So she picked up her pencil, and crossed out the present.",
+      "start": 37.6,
+      "end": 41.6
+    },
+    {
+      "id": "l12",
+      "who": "N",
+      "shot": "e10",
+      "text": "Then she stopped.",
+      "start": 43.0,
+      "end": 45.1
+    },
+    {
+      "id": "l13",
+      "who": "N",
+      "shot": "e10",
+      "text": "And she un-crossed it.",
+      "start": 45.4,
+      "end": 47.775
+    },
+    {
+      "id": "l14",
+      "who": "N",
+      "shot": "e10",
+      "text": "She would find a way to get all three.",
+      "start": 48.2,
+      "end": 51.0
+    }
+  ]
+}
