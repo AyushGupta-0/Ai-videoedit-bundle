@@ -82,3 +82,35 @@ roughly **$300–500** end to end. Compare that against the alternatives before 
 The honest read: the pipeline is expensive while you are *building* it and cheap once it
 exists. The four Ten Days episodes cost far less than the two weeks of research that
 preceded them, and Days 5–10 will cost less again.
+
+
+## On installing skills and plugins
+
+315 plugins are available in the official marketplace. **Do not install them all.** Every
+installed plugin's description loads into context on every session, so it is bought once and
+paid for on every turn forever.
+
+Measured with `claude plugin details`:
+
+| Plugin | Always-on cost |
+|---|---|
+| `frontend-design` | ~80 tok |
+| `runway-api` | ~745 tok (+ an MCP server) |
+
+That averages ~412 tokens each. All 315 would add **~130 K tokens to every turn** — about
+0.98 B extra cache-read tokens over this project's 7,544 turns, or **~$490 spent on nothing**.
+
+Installed deliberately:
+
+| | Why |
+|---|---|
+| `hyperframes`, `hyperframes-cli`, `hyperframes-registry` | the render engine |
+| `media-use`, `real-sfx`, `video-use` | media sourcing, sound design, editing |
+| `frontend-design` | compositions are CSS/HTML; this lifts visual quality directly |
+| `runway-api` | only earns its 745 tokens if the paid text-to-video route gets used — remove it with `claude plugin disable runway-api` otherwise |
+
+Check any plugin's real cost before adding it:
+
+```bash
+claude plugin details <name>
+```
