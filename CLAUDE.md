@@ -147,6 +147,13 @@ timeline registered at `window.__timelines["<id>"]`.
       render an elephant: across 4 seeds it produced a human child body with elephant ears
       and no trunk. It is a human-character checkpoint. Fine for human-only casts.
     - *SD1.5 `Lykon/dreamshaper-8`*: renders a real elephant but photoreal, not Pixar.
+    - *SD1.5 `nitrosocke/mo-di-diffusion`* (trigger "modern disney style"): the best local
+      result — genuinely stylised elephants with correct trunks. But it still cannot render
+      a *specific action*: asked for "trunk raised, trumpeting" it returns an adult with its
+      trunk down; asked for "sad, ears drooping" it returns two cheerful elephants; asked for
+      "mango held in trunk" it puts the mango on the grass. Good for portraits, not for
+      story beats. This is SD1.5's prompt-adherence ceiling, not a prompt-wording problem —
+      three checkpoints and ~12 generations all hit it.
     - Raising CFG to 9-12 or putting the action before the subject makes SD1.5 *worse* —
       the subject dissolves. Subject first, CFG ~7.5.
     - "baby elephant in jungle" reliably pulls mother-and-calf compositions; a negative
