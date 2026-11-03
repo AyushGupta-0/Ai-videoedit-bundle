@@ -5,6 +5,13 @@
 # Voice intelligibility is the priority. Two things protect it:
 #   1. sidechain ducking  — bed and SFX drop whenever the voice is present
 #
+# NOTE on the sidechain KEY: Kokoro's raw VO sits around -25 dB mean, which is
+# well under these thresholds, so the compressor barely engaged — measured at
+# about 1.7 LU of bed reduction where the intent was 6-7. The key is a control
+# signal nobody hears, so it costs nothing to normalise it to -16 LUFS first;
+# that is what makes the threshold mean what it says. The separation you heard
+# before this came from static levels and spectral carving, not from ducking.
+#
 # NOTE on alimiter: its `level` option defaults to TRUE, which auto-levels the
 # output up toward the limit — measured here, a -19.5 dB input came out at
 # -18.5 dB, i.e. the "limiter" made it louder. That is the opposite of a safety
@@ -96,7 +103,9 @@ equalizer=f=250:t=q:w=1.2:g=-2,\
 equalizer=f=3200:t=q:w=1.1:g=3.5,\
 equalizer=f=7500:t=q:w=2.0:g=-2,\
 acompressor=threshold=0.05:ratio=3.4:attack=8:release=180:makeup=2.2[vo];\
-[vo]asplit=3[vo_out][sc1][sc2];\
+[vo]asplit=3[vo_out][sc_raw1][sc_raw2];\
+[sc_raw1]loudnorm=I=-16:LRA=7:TP=-1[sc1];\
+[sc_raw2]loudnorm=I=-16:LRA=7:TP=-1[sc2];\
 [1:a]volume=0.46[bed];\
 [2:a]volume=0.62[sfx];\
 [bed][sc1]sidechaincompress=threshold=0.022:ratio=9:attack=8:release=240:makeup=1[bed_d];\

@@ -24,9 +24,30 @@ UA = ("Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 "
       "(KHTML, like Gecko) Chrome/131.0 Safari/537.36")
 
 
-def get(url):
-    return urllib.request.urlopen(
-        urllib.request.Request(url, headers={"User-Agent": UA}), timeout=40)
+def get(url, tries=4):
+    """Anonymous Openverse allows 20 req/min. Past that it 429s, and a 429 that
+    is not handled comes back as an empty result set rather than an error —
+    i.e. you silently get nothing and think the query was bad."""
+    import time
+    for i in range(tries):
+        try:
+            return urllib.request.urlopen(
+                urllib.request.Request(url, headers={"User-Agent": UA}), timeout=40)
+        except urllib.error.HTTPError as e:
+            if e.code != 429 or i == tries - 1:
+                raise
+            wait = 4 * (i + 1)
+            print(f"    rate limited, waiting {wait}s")
+            time.sleep(wait)
+        except (urllib.error.URLError, TimeoutError, OSError) as e:
+            # The Freesound CDN times out intermittently under a burst. Retrying
+            # is almost always enough; failing the whole run for one slow file
+            # is not.
+            if i == tries - 1:
+                raise
+            wait = 3 * (i + 1)
+            print(f"    {type(e).__name__}, retrying in {wait}s")
+            time.sleep(wait)
 
 
 def search(q, n=12):
@@ -73,9 +94,24 @@ def main():
         if not hits:
             print(f"  {q}: no CC0 match"); continue
         for secs, r in hits[:a.each]:
-            # the -hq.mp3 preview is public; alt_files' WAV needs OAuth (401)
-            url = r["url"]
-            name = f"{'bed' if is_bed else q.replace(' ', '_')}_{r['id'][:8]}.mp3"
+            # The -hq.mp3 preview is public; alt_files' WAV needs OAuth (401).
+            # Freesound serves the same preview as .ogg at 192kbps vorbis vs the
+            # mp3's 174kbps — better quality AND a smaller file, so prefer it and
+            # fall back only if it 404s.
+            url, ext = r["url"], "mp3"
+            if url.endswith("-hq.mp3"):
+                ogg = url[:-len("-hq.mp3")] + "-hq.ogg"
+                # HEAD, not a partial GET: reading one byte and abandoning the
+                # response leaves the socket open and the NEXT query times out.
+                try:
+                    req = urllib.request.Request(ogg, method="HEAD",
+                                                 headers={"User-Agent": UA})
+                    with urllib.request.urlopen(req, timeout=20) as resp:
+                        if resp.status == 200:
+                            url, ext = ogg, "ogg"
+                except Exception:
+                    pass
+            name = f"{'bed' if is_bed else q.replace(' ', '_')}_{r['id'][:8]}.{ext}"
             dst = outdir / name
             dst.write_bytes(get(url).read())
             credits.append({
@@ -85,6 +121,7 @@ def main():
                 "duration_s": round(secs, 1),
             })
             print(f"  {name}  {secs:.1f}s  {r.get('title','')[:40]}")
+            __import__("time").sleep(1.2)     # stay well under 20 req/min
 
     credits_path.write_text(json.dumps(credits, indent=2))
     print(f"\n{len(credits)} entries -> {credits_path}")
