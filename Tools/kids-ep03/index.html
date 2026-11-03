@@ -100,7 +100,7 @@
   ];
   const capEl = document.getElementById("cap");
   LINES.forEach(([text, a, b], i) => {
-    tl.call(() => { capEl.textContent = text; }, null, a);
+    tl.set(capEl, { textContent: text }, a);   // set() renders on seek; call() does not
     tl.fromTo(capEl, { opacity: 0, y: 16 },
               { opacity: 1, y: 0, duration: 0.34, ease: "power2.out" }, a);
     const next = LINES[i + 1] ? LINES[i + 1][1] : DUR;

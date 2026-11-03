@@ -151,16 +151,19 @@ SH.forEach(([id, a, b]) => {{
 /* ---- HUD clock, stepping minute by minute ---- */
 const S0 = {m0}, S1 = {m1}, AMPM = "{ampm}";
 const clockEl = document.getElementById("clock");
+// seek(t, true) suppresses onUpdate as well as .call(), so neither survives a
+// renderer grabbing frames out of order. Only tl.set() actually renders: it is
+// a zero-duration tween, and tweens render at any playhead position.
 for (let m = S0; m <= S1; m++){{
   const at = ((m - S0) / Math.max(1, S1 - S0)) * (DUR - 4.0);
-  tl.call(() => {{ clockEl.textContent =
-    `${{Math.floor(m/60)}}:${{String(m%60).padStart(2,"0")}} ${{AMPM}}`; }}, null, at);
+  tl.set(clockEl, {{ textContent:
+    `${{Math.floor(m / 60)}}:${{String(m % 60).padStart(2, "0")}} ${{AMPM}}` }}, at);
 }}
 
 const LINES = {lines};
 const capEl = document.getElementById("cap");
 LINES.forEach(([html, a, b], i) => {{
-  tl.call(() => {{ capEl.innerHTML = html; }}, null, a);
+  tl.set(capEl, {{ innerHTML: html }}, a);   // render-time, survives seek
   tl.fromTo(capEl, {{ opacity: 0, y: 14 }},
             {{ opacity: html ? 1 : 0, duration: 0.26, ease: "power2.out" }}, a);
   const next = LINES[i + 1] ? LINES[i + 1][1] : DUR;

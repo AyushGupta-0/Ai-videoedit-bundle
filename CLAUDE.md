@@ -184,7 +184,21 @@ timeline registered at `window.__timelines["<id>"]`.
     first pass ran 161 tokens, so the entire style suffix was silently dropped
     and the plates came out styleless. `gen_kids_art.py` now hard-fails via
     `check_len()`. Keep character bibles terse.
-19. **git on this exFAT SSD**: macOS writes `._` AppleDouble files *inside* `.git`, which corrupt
+19. **`tl.call()` AND `onUpdate` are both seek-unsafe. Only `tl.set()` renders.**
+    GSAP's `seek(t, suppressEvents)` defaults `suppressEvents` to **true**, which
+    suppresses *callbacks and onUpdate alike*. A renderer grabbing frames out of
+    order therefore gets whatever state the last forward play left behind.
+    Verified in the browser on `tendays-ep02`: `tl.seek(70, true)` gave an **empty
+    caption**, a clock **frozen at its first value**, and the counter stuck on 12.
+    Our renders only looked right because the renderer happened to play forward.
+    **The fix is `tl.set()`** — a zero-duration tween, and tweens render at any
+    playhead position. Captions: `tl.set(capEl, { innerHTML: html }, a)`.
+    Stepping values like a HUD clock: one `tl.set()` per step, not a tween with
+    `onUpdate`. HyperFrames' own frame-presets say "never tl.call()"; the
+    onUpdate half of this is not written down anywhere and cost an hour.
+    All seven compositions were converted; `make_episode.py` generates the
+    correct form.
+20. **git on this exFAT SSD**: macOS writes `._` AppleDouble files *inside* `.git`, which corrupt
     pack indexes and refs. Before and after any git write, run:
     `find .git -name '._*' -delete`. Repo: `github.com/AyushGupta-0/Ai-videoedit-bundle` (ssh).
 

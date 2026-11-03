@@ -384,10 +384,11 @@ tl.fromTo("#broken", { scale: 1.9, opacity: 0 },
 /* ---- HUD clock: 11:12 PM -> 11:52 PM, stepping, never smooth ---- */
 const START_MIN = 11 * 60 + 20, END_MIN = 11 * 60 + 52;
 const clockEl = document.getElementById("clock");
+// seek(t, true) suppresses onUpdate as well as .call(); only tl.set() renders.
 for (let m = START_MIN; m <= END_MIN; m++){
   const at = ((m - START_MIN) / (END_MIN - START_MIN)) * (DUR - 4.0);
-  const hh = Math.floor(m / 60), mm = m % 60;
-  tl.call(() => { clockEl.textContent = `${hh}:${String(mm).padStart(2,"0")} PM`; }, null, at);
+  tl.set(clockEl, { textContent:
+    `${Math.floor(m / 60)}:${String(m % 60).padStart(2, "0")} PM` }, at);
 }
 
 /* ---- captions: white caps, one amber word, from the real timings ---- */
@@ -412,7 +413,7 @@ const LINES = [
 ];
 const capEl = document.getElementById("cap");
 LINES.forEach(([html, a, b], i) => {
-  tl.call(() => { capEl.innerHTML = html; }, null, a);
+  tl.set(capEl, { innerHTML: html }, a);   // set() renders; call() does not
   tl.fromTo(capEl, { opacity: 0, y: 14 },
             { opacity: html ? 1 : 0, duration: 0.26, ease: "power2.out" }, a);
   const next = LINES[i + 1] ? LINES[i + 1][1] : DUR;

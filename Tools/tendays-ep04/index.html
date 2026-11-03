@@ -264,16 +264,20 @@ tl.fromTo(["#outL","#outR"], { opacity: 1 }, { opacity: 0, duration: 0.08, ease:
 /* ---- HUD clock, stepping minute by minute ---- */
 const S0 = 40, S1 = 77, AMPM = "AM";
 const clockEl = document.getElementById("clock");
+// seek(t, true) suppresses onUpdate as well as .call(), so neither is safe for
+// a renderer grabbing frames out of order. Only tl.set() actually renders —
+// it is a zero-duration tween, and tweens render at any playhead position.
+// One set() per minute is cheap and provably correct.
 for (let m = S0; m <= S1; m++){
   const at = ((m - S0) / Math.max(1, S1 - S0)) * (DUR - 4.0);
-  tl.call(() => { clockEl.textContent =
-    `${Math.floor(m/60)}:${String(m%60).padStart(2,"0")} ${AMPM}`; }, null, at);
+  tl.set(clockEl, { textContent:
+    `${Math.floor(m / 60)}:${String(m % 60).padStart(2, "0")} ${AMPM}` }, at);
 }
 
 const LINES = [["YOU WENT OUT THE <b>BACK</b>.", 0.25, 2.225], ["ON DAY 4 YOU MEET<br>ANOTHER <b>SURVIVOR</b>.", 2.92, 6.195], ["MORE DANGEROUS THAN<br>MEETING THE <u>DEAD</u>.", 6.255, 9.205], ["HEADLIGHTS. <b>400 METRES</b> BACK.<br>FOR SIXTY MILES.", 9.805, 14.28], ["YOU SLOW DOWN.<br><u>THEY SLOW DOWN</u>.", 14.34, 17.065], ["RECOVERY IN <b>SEVEN DAYS</b>.<br>DO NOT CONVOY.", 17.615, 21.39], ["RULE 1. NEVER DRIVE STRAIGHT<br>TO WHERE YOU <b>SLEEP</b>.", 21.79, 25.59], ["RULE 2. NEVER LET A STRANGER<br>SEE YOUR <b>FUEL</b>.", 25.65, 29.45], ["RULE 3. <u>DO NOT STOP<br>ON OPEN ROAD</u>.", 29.51, 33.06], ["<b>GOOD NEWS</b>. 90 MILES OF FUEL.", 33.71, 36.885], ["<u>BAD NEWS</u>. EVERY ROAD SOUTH<br>ENDS AT <b>ONE BRIDGE</b>.", 36.945, 41.195], ["<b>1:17 AM</b>. YOU KILL YOUR LIGHTS<br>AND TURN OFF.", 41.745, 45.795], ["BEHIND YOU, THEY <b>STOP</b>.<br>AND FLASH THEIR HEADLIGHTS.", 46.445, 50.37], ["THREE LONG. THREE SHORT.<br>THREE LONG.", 50.43, 53.38], ["THAT'S NOT A THREAT.<br>THAT'S <u>S.O.S.</u>", 54.13, 57.28], ["AND YOU <u>KEEP DRIVING</u>.", 58.13, 60.18], ["THIRTY SECONDS LATER<br>THEIR LIGHTS GO <u>OUT</u>.", 60.98, 64.38], ["AND THEY DON'T <u>COME BACK ON</u>.", 65.03, 67.48], ["", 68.53, 71.255]];
 const capEl = document.getElementById("cap");
 LINES.forEach(([html, a, b], i) => {
-  tl.call(() => { capEl.innerHTML = html; }, null, a);
+  tl.set(capEl, { innerHTML: html }, a);   // set() renders; call() does not
   tl.fromTo(capEl, { opacity: 0, y: 14 },
             { opacity: html ? 1 : 0, duration: 0.26, ease: "power2.out" }, a);
   const next = LINES[i + 1] ? LINES[i + 1][1] : DUR;
