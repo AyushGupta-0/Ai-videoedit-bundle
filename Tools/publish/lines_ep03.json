@@ -1,0 +1,20 @@
+{
+  "episode": "ep03-the-firecracker-shop",
+  "voices": { "N": { "kokoro": "af_sarah", "speed": 0.95, "semitones": 0.0 } },
+  "lines": [
+    { "id":"l01","at":0.30,"who":"N","shot":"f01","text":"Eight days. Anaya went to the shop at the end of the lane." },
+    { "id":"l02","at":5.40,"who":"N","shot":"f02","text":"She had walked past it a hundred times without going in." },
+    { "id":"l03","at":10.20,"who":"N","shot":"f03","text":"There it was. The big box. The one that goes up like a tree." },
+    { "id":"l04","at":16.00,"who":"N","shot":"f04","text":"Forty rupees, she said. I have forty-two." },
+    { "id":"l05","at":21.00,"who":"N","shot":"f05","text":"She put every coin on the counter." },
+    { "id":"l06","at":24.60,"who":"N","shot":"f06","text":"It's the festival, the shopkeeper said. The price went up." },
+    { "id":"l07","at":30.00,"who":"N","shot":"f06","text":"Sixty." },
+    { "id":"l08","at":32.00,"who":"N","shot":"f07","text":"She counted her coins one more time, as if they might have grown." },
+    { "id":"l09","at":38.00,"who":"N","shot":"f08","text":"They had not." },
+    { "id":"l10","at":40.20,"who":"N","shot":"f08","text":"She picked them up, and she walked home." },
+    { "id":"l11","at":44.40,"who":"N","shot":"f09","text":"Then he called after her." },
+    { "id":"l12","at":47.00,"who":"N","shot":"f09","text":"There's one box left at the old price." },
+    { "id":"l13","at":50.60,"who":"N","shot":"f10","text":"But it's promised to somebody else." },
+    { "id":"l14","at":54.00,"who":"N","shot":"f10","text":"He's coming at six o'clock." }
+  ]
+}

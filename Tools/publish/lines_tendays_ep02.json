@@ -1,0 +1,24 @@
+{
+  "episode": "tendays-ep02-level-four",
+  "voices": { "N": { "kokoro": "am_michael", "speed": 0.97, "semitones": 0.0 } },
+  "lines": [
+    {"id":"l01","at":0.25,"who":"N","shot":"recap","text":"You didn't open the door. You drove.","pause":0.70},
+    {"id":"l02","at":3.40,"who":"N","shot":"park","text":"Day two. You're on the fourth floor of a multi storey car park."},
+    {"id":"l03","at":7.80,"who":"N","shot":"park","text":"Because concrete has no windows.","pause":0.50},
+    {"id":"l04","at":10.60,"who":"N","shot":"ramp","text":"High enough that nothing reaches you from the street. Low enough to drive down fast."},
+    {"id":"l05","at":16.60,"who":"N","shot":"radio","text":"Radio, same loop. Recovery in nine days. Stay off the ground floor.","pause":0.45},
+    {"id":"l06","at":22.40,"who":"N","shot":"rule1","text":"Rule one. Park facing the exit."},
+    {"id":"l07","at":25.40,"who":"N","shot":"rule2","text":"Rule two. Never sleep in the driver's seat. You can't see behind you."},
+    {"id":"l08","at":30.80,"who":"N","shot":"rule3","text":"Rule three. Count the cars on your level before dark.","pause":0.70},
+    {"id":"l09","at":35.40,"who":"N","shot":"good","text":"Good news. You counted. Eleven cars. Yours is the twelfth."},
+    {"id":"l10","at":40.60,"who":"N","shot":"bad","text":"Bad news. The stairwell door doesn't lock. It only closes.","pause":0.60},
+    {"id":"l11","at":45.80,"who":"N","shot":"door","text":"Three forty A M. The stairwell door opens, and someone lets it close softly."},
+    {"id":"l12","at":51.60,"who":"N","shot":"door","text":"Someone who didn't want it to bang.","pause":0.75},
+    {"id":"l13","at":55.00,"who":"N","shot":"steps","text":"Then footsteps. Not shuffling. Walking.","pause":0.55},
+    {"id":"l14","at":58.60,"who":"N","shot":"voice","text":"I know you're up here. I saw your brake lights. Which car are you in?","pause":0.70},
+    {"id":"l15","at":64.40,"who":"N","shot":"dash","text":"You haven't touched the brakes since four o'clock yesterday.","pause":0.90},
+    {"id":"l16","at":68.80,"who":"N","shot":"count","text":"So you count again.","pause":0.85},
+    {"id":"l17","at":71.40,"who":"N","shot":"count","text":"Thirteen.","pause":1.10},
+    {"id":"l18","at":74.20,"who":"N","shot":"end","text":"Do you start the engine?"}
+  ]
+}

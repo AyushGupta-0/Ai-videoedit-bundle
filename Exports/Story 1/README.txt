@@ -16,8 +16,8 @@ ORDER TO POST
   3. Facebook        — only if the crosspost did not fire
 
 EPISODES
-  Day 1  The Traffic Jam     ✅ ready
-  Day 2  Level Four          — scripted
+  Day 1  The Traffic Jam     ✅ ready   2026-11-03
+  Day 2  Level Four          ✅ ready   2026-11-04
   Day 3  The Service Station — scripted
   Day 4  The Car Behind You  — scripted
   Day 5  The Signal Box      — scripted

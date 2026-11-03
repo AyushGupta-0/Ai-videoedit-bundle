@@ -1,0 +1,149 @@
+{
+  "duration": 80.345,
+  "lines": [
+    {
+      "id": "l01",
+      "who": "N",
+      "shot": "recap",
+      "text": "You didn't open the door. You drove.",
+      "start": 0.25,
+      "end": 3.3
+    },
+    {
+      "id": "l02",
+      "who": "N",
+      "shot": "park",
+      "text": "Day two. You're on the fourth floor of a multi storey car park.",
+      "start": 4.0,
+      "end": 8.75
+    },
+    {
+      "id": "l03",
+      "who": "N",
+      "shot": "park",
+      "text": "Because concrete has no windows.",
+      "start": 8.81,
+      "end": 11.685
+    },
+    {
+      "id": "l04",
+      "who": "N",
+      "shot": "ramp",
+      "text": "High enough that nothing reaches you from the street. Low enough to drive down fast.",
+      "start": 12.185,
+      "end": 18.035
+    },
+    {
+      "id": "l05",
+      "who": "N",
+      "shot": "radio",
+      "text": "Radio, same loop. Recovery in nine days. Stay off the ground floor.",
+      "start": 18.095,
+      "end": 23.57
+    },
+    {
+      "id": "l06",
+      "who": "N",
+      "shot": "rule1",
+      "text": "Rule one. Park facing the exit.",
+      "start": 24.02,
+      "end": 27.195
+    },
+    {
+      "id": "l07",
+      "who": "N",
+      "shot": "rule2",
+      "text": "Rule two. Never sleep in the driver's seat. You can't see behind you.",
+      "start": 27.255,
+      "end": 32.455
+    },
+    {
+      "id": "l08",
+      "who": "N",
+      "shot": "rule3",
+      "text": "Rule three. Count the cars on your level before dark.",
+      "start": 32.515,
+      "end": 36.74
+    },
+    {
+      "id": "l09",
+      "who": "N",
+      "shot": "good",
+      "text": "Good news. You counted. Eleven cars. Yours is the twelfth.",
+      "start": 37.44,
+      "end": 42.165
+    },
+    {
+      "id": "l10",
+      "who": "N",
+      "shot": "bad",
+      "text": "Bad news. The stairwell door doesn't lock. It only closes.",
+      "start": 42.225,
+      "end": 47.125
+    },
+    {
+      "id": "l11",
+      "who": "N",
+      "shot": "door",
+      "text": "Three forty A M. The stairwell door opens, and someone lets it close softly.",
+      "start": 47.725,
+      "end": 53.75
+    },
+    {
+      "id": "l12",
+      "who": "N",
+      "shot": "door",
+      "text": "Someone who didn't want it to bang.",
+      "start": 53.81,
+      "end": 56.56
+    },
+    {
+      "id": "l13",
+      "who": "N",
+      "shot": "steps",
+      "text": "Then footsteps. Not shuffling. Walking.",
+      "start": 57.31,
+      "end": 60.585
+    },
+    {
+      "id": "l14",
+      "who": "N",
+      "shot": "voice",
+      "text": "I know you're up here. I saw your brake lights. Which car are you in?",
+      "start": 61.135,
+      "end": 65.785
+    },
+    {
+      "id": "l15",
+      "who": "N",
+      "shot": "dash",
+      "text": "You haven't touched the brakes since four o'clock yesterday.",
+      "start": 66.485,
+      "end": 70.31
+    },
+    {
+      "id": "l16",
+      "who": "N",
+      "shot": "count",
+      "text": "So you count again.",
+      "start": 71.21,
+      "end": 73.235
+    },
+    {
+      "id": "l17",
+      "who": "N",
+      "shot": "count",
+      "text": "Thirteen.",
+      "start": 74.085,
+      "end": 75.76
+    },
+    {
+      "id": "l18",
+      "who": "N",
+      "shot": "end",
+      "text": "Do you start the engine?",
+      "start": 76.86,
+      "end": 79.085
+    }
+  ]
+}

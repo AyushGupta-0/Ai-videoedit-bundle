@@ -1,0 +1,16 @@
+{
+  "episode": "ep03-the-firecracker-shop",
+  "note": "Day 8. Anaya alone in every frame — the shopkeeper exists only in narration and in her face. 'with black hair' in every prompt: a locked seed alone let her go blonde in EP02.",
+  "shots": [
+    {"id":"f01","seed":"girl","note":"walking to the shop","prompt":"{GIRL} with black hair walking down a narrow Indian market lane at dusk, excited, warm shop lights"},
+    {"id":"f02","seed":"girl","note":"the doorway","prompt":"{GIRL} with black hair standing in a bright shop doorway, colourful lights on her face, evening"},
+    {"id":"f03","seed":"girl","note":"the display","prompt":"close-up of {GIRL} with black hair looking up with wide amazed eyes, colourful lights reflected on her face"},
+    {"id":"f04","seed":"girl","note":"pointing","prompt":"{GIRL} with black hair pointing up at a high shelf, hopeful smile, inside a bright little shop"},
+    {"id":"f05","seed":"girl","note":"the coins","prompt":"close-up of small hands holding out a pile of coins, {GIRL} with black hair behind, shop light"},
+    {"id":"f06","seed":"girl","note":"the price","prompt":"close-up face of {GIRL} with black hair, smile fading, eyes falling, disappointed, shop light"},
+    {"id":"f07","seed":"girl","note":"counting again","prompt":"{GIRL} with black hair looking down at coins in her palm, worried, standing in a shop, warm light"},
+    {"id":"f08","seed":"girl","note":"leaving","prompt":"{GIRL} with black hair seen from behind walking away down a dark market lane, small, lonely, lamps"},
+    {"id":"f09","seed":"girl","note":"he calls out","prompt":"{GIRL} with black hair turning her head sharply to look back over her shoulder, surprised, night lane"},
+    {"id":"f10","seed":"girl","note":"CLIFFHANGER","prompt":"close-up face of {GIRL} with black hair, eyes wide with sudden hope, lips parted, warm lamp light"}
+  ]
+}
