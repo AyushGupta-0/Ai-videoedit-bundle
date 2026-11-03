@@ -2,9 +2,12 @@
 """Build a ready-to-upload package for one video.
 
 Creates, under Exports/:
-    Instagram/<date>/<slug>/   video, caption.txt, _checklist.txt
-    YouTube/<date>/<slug>/     video, title.txt, caption.txt, tags.txt, _checklist.txt
-    Facebook/<date>/<slug>/    video, caption.txt, _checklist.txt
+    [<channel>/]Instagram/<date>/<slug>/   video, cover.png, caption.txt, _checklist.txt
+    [<channel>/]YouTube/<date>/<slug>/     + title.txt, tags.txt
+    [<channel>/]Facebook/<date>/<slug>/
+
+--channel keeps separate shows apart: Exports/Kids/Instagram/... vs the
+flat Exports/Instagram/... the What If explainers use.
 
 caption.txt holds ONLY what goes in the caption box — select all, copy, paste.
 Anything that is not pasteable lives in _checklist.txt.
@@ -65,8 +68,19 @@ def cap_facebook(m):
 
 CAPTIONS = {"Instagram": cap_instagram, "YouTube": cap_youtube, "Facebook": cap_facebook}
 
+# YouTube's "Made for kids" flag is a legal declaration under COPPA, not a
+# preference. A children's story channel must answer YES; it costs comments and
+# personalised ads, and answering NO to keep those is the thing that gets
+# channels penalised. Driven by --channel so it cannot be got wrong by hand.
+def audience(ch):
+    return ("  [ ] Audience: YES, made for kids  (required — this is children's content;\n"
+            "      it disables comments and personalised ads, that is expected)"
+            if ch.lower().startswith("kid")
+            else "  [ ] Audience: not made for kids")
+
+
 CHECKS = {
-    "Instagram": lambda m, i: f"""INSTAGRAM REEL
+    "Instagram": lambda m, i, ch="": f"""INSTAGRAM REEL
   [ ] Cover: Edit cover -> Add from gallery -> cover.png (in this folder)
       Fallback if you skip it: pick frame ~{m.get('cover_at','0')}s
   [ ] Audio ON (voice-led — muted autoplay loses it)
@@ -77,17 +91,17 @@ CHECKS = {
   First 125 chars show before "more" — they carry it.
   FILE {i.get('w')}x{i.get('h')} · {i.get('dur')}s · {i.get('mb')}MB
 """,
-    "YouTube": lambda m, i: f"""YOUTUBE SHORT
+    "YouTube": lambda m, i, ch="": f"""YOUTUBE SHORT
   [ ] Cover: upload cover.png as the thumbnail
       If YouTube doesn't offer a custom thumbnail, it auto-picks a frame. Leave it.
   [ ] Title from title.txt ({len(m['yt_title'])}/100 chars)
   [ ] Tags from tags.txt
   [ ] #Shorts present
-  [ ] Audience: not made for kids
+{audience(ch)}
   [ ] Language set — enables the Hindi audio track later
   FILE {i.get('w')}x{i.get('h')} · {i.get('dur')}s · {i.get('mb')}MB
 """,
-    "Facebook": lambda m, i: f"""FACEBOOK REEL
+    "Facebook": lambda m, i, ch="": f"""FACEBOOK REEL
   Easiest: publish on Instagram with "Share to Facebook" ON and skip this folder.
   [ ] Cover: Edit cover -> Upload -> cover.png
   Facebook rewards few hashtags — 3-5 only.
@@ -102,6 +116,8 @@ def main():
     ap.add_argument("meta")
     ap.add_argument("--date", default=date.today().isoformat())
     ap.add_argument("--cover", help="reel_cover_1080x1920.png — copied into all three folders")
+    ap.add_argument("--channel", default="",
+                    help="channel section, e.g. Kids -> Exports/Kids/Instagram/<date>/<slug>")
     a = ap.parse_args()
 
     vid = Path(a.video)
@@ -120,14 +136,14 @@ def main():
         sys.exit(f"no such cover: {cover}")
 
     for p in PLATFORMS:
-        d = EXPORTS / p / a.date / slug
+        d = (EXPORTS / a.channel / p / a.date / slug) if a.channel else (EXPORTS / p / a.date / slug)
         d.mkdir(parents=True, exist_ok=True)
         if (d / vid.name).resolve() != vid.resolve():
             shutil.copy2(vid, d / vid.name)
         if cover:
             shutil.copy2(cover, d / "cover.png")
         (d / "caption.txt").write_text(CAPTIONS[p](meta), encoding="utf-8")
-        (d / "_checklist.txt").write_text(CHECKS[p](meta, info), encoding="utf-8")
+        (d / "_checklist.txt").write_text(CHECKS[p](meta, info, a.channel), encoding="utf-8")
         if p == "YouTube":
             (d / "title.txt").write_text(meta["yt_title"] + "\n", encoding="utf-8")
             (d / "tags.txt").write_text(
@@ -135,7 +151,8 @@ def main():
 
     print(f"packaged '{slug}'  ({info.get('dur')}s, {info.get('mb')}MB)")
     for p in PLATFORMS:
-        print("  ", (EXPORTS / p / a.date / slug).relative_to(ROOT))
+        base = (EXPORTS / a.channel / p) if a.channel else (EXPORTS / p)
+        print("  ", (base / a.date / slug).relative_to(ROOT))
 
 
 if __name__ == "__main__":

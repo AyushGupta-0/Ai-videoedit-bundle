@@ -56,11 +56,10 @@ def targets_for(slug):
     sitting in this slug's Exports folder — i.e. the copy that is now live on the
     platforms, so the local one is redundant.
     """
-    exports = []
-    for platform in ("Instagram", "YouTube", "Facebook"):
-        d = EXPORTS / platform
-        if d.exists():
-            exports += [p for p in d.rglob(slug) if p.is_dir()]
+    # rglob from Exports itself so channel sections (Exports/Kids/Instagram/...)
+    # are found as well as the flat layout the explainers use
+    exports = [p for p in EXPORTS.rglob(slug)
+               if p.is_dir() and p.parent.parent.name in ("Instagram", "YouTube", "Facebook")]
     if not exports:
         sys.exit(f"no Exports folder named '{slug}' — check the slug with --list")
 

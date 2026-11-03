@@ -4,6 +4,7 @@ YOUTUBE SHORT
   [ ] Title from title.txt (53/100 chars)
   [ ] Tags from tags.txt
   [ ] #Shorts present
-  [ ] Audience: not made for kids
+  [ ] Audience: YES, made for kids  (required — this is children's content;
+      it disables comments and personalised ads, that is expected)
   [ ] Language set — enables the Hindi audio track later
   FILE 1080x1920 · 52.6s · 39.9MB
