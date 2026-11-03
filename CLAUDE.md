@@ -111,8 +111,13 @@ timeline registered at `window.__timelines["<id>"]`.
 5. **`facebook/mms-tts-hin` is broken** — stutters ("up-up-up-up"). Do not use.
 6. **`ai4bharat/IndicF5` is a gated repo** — needs the owner's HF login. It is also voice-cloning,
    so it needs a reference clip.
-7. **ffmpeg scene detection finds nothing** on cross-dissolves over moving backgrounds. The
-   dashboard falls back to `silencedetect` on the voice track. Keep that fallback.
+7. **Neither scene nor silence detection works on our own renders.** Scene detection finds
+   *zero* cuts even at threshold 0.015 — every transition is a slow cross-dissolve over a
+   drifting Ken Burns plate, so no two adjacent frames differ sharply. `silencedetect` then
+   fails too on any cut with a music bed, because the audio never reaches the floor (0 hits
+   at both -32dB and -22dB on the Hindi mix). The dashboard now reads `SHOTS[]` straight out
+   of the matching `Tools/*/index.html`, matched by `data-duration` — exact and instant.
+   Pixel/audio guessing is only for footage we did not render ourselves.
 8. **macOS `._` AppleDouble files** on this exFAT SSD break every `readdir`/glob. Always filter
    `!name.startsWith(".")`. This bit three separate times.
 9. **zsh eats `:c`** — `$D:color=` becomes garbage. Use `${D}:color=`.

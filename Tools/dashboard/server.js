@@ -131,6 +131,43 @@ const textFor = (words, a, b) =>
 // spike and scene detection finds nothing. Real pauses in the voice track are the
 // shot boundaries there. Whisper's token spans are contiguous (no measurable gaps),
 // so read the pauses straight off the audio with silencedetect.
+// Scene detection finds nothing on these videos — every transition is a slow
+// cross-dissolve over a drifting Ken Burns plate, so no two adjacent frames
+// differ sharply (0 cuts even at threshold 0.015). Silence detection fails too
+// on any cut with a music bed, because the audio never drops to the floor.
+//
+// But we rendered these ourselves, so the truth is sitting in the composition:
+// SHOTS[] lists every shot's in-time exactly. Match a video to its composition
+// by duration and read the cuts straight off it. Guessing from pixels is only
+// for footage we did not make.
+async function cutsFromComposition(duration) {
+  const toolsDir = path.join(ROOT, "Tools");
+  let entries = [];
+  try { entries = await fs.readdir(toolsDir); } catch { return null; }
+
+  for (const name of entries) {
+    if (name.startsWith(".")) continue;                  // exFAT AppleDouble twins
+    const idx = path.join(toolsDir, name, "index.html");
+    if (!fssync.existsSync(idx)) continue;
+
+    const html = await fs.readFile(idx, "utf-8");
+    const dm = html.match(/data-duration="([\d.]+)"/);
+    if (!dm || Math.abs(parseFloat(dm[1]) - duration) > 0.25) continue;
+
+    const block = html.match(/const SHOTS\s*=\s*\[([\s\S]*?)\];/);
+    if (!block) continue;
+    const ins = [...block[1].matchAll(/\bin:\s*([\d.]+)/g)].map((m) => parseFloat(m[1]));
+    if (ins.length < 2) continue;
+
+    const bounds = [...new Set(ins.map((t) => Math.round(t * 100) / 100))].sort((a, b) => a - b);
+    if (bounds[0] > 0.01) bounds.unshift(0);
+    bounds.push(duration);
+    console.log(`[cuts] ${name}/index.html -> ${bounds.length - 1} shots`);
+    return bounds;
+  }
+  return null;
+}
+
 async function cutsFromSilence(videoPath, duration, minShot = 2.0) {
   let err = "";
   try {
@@ -165,10 +202,39 @@ function mergeBounds(a, b, duration, minShot = 1.4) {
   return out;
 }
 
+// The analysis (scene cuts, whisper) is cached in DATA_DIR but the JPEGs live in
+// CACHE_DIR, and the two can get out of step — clearing CACHE_DIR to reclaim disk
+// leaves a project whose 60-odd thumbnails all 404 and render as black boxes.
+// Re-running the whole analysis to recover is a minute of whisper for want of a
+// few JPEGs, so instead repaint only the frames that are actually missing.
+async function healThumbs(videoPath, project) {
+  const jobs = [];
+  for (const b of project.beats || []) {
+    if (!b.thumb) continue;
+    const f = path.join(CACHE_DIR, path.basename(b.thumb));
+    if (!fssync.existsSync(f)) jobs.push([(b.start + b.end) / 2, f, 300]);
+  }
+  for (const s of project.strip || []) {
+    if (!s.src) continue;
+    const f = path.join(CACHE_DIR, path.basename(s.src));
+    if (!fssync.existsSync(f)) jobs.push([s.t, f, 150]);
+  }
+  if (!jobs.length) return;
+  console.log(`[heal] regenerating ${jobs.length} missing thumbnail(s)`);
+  // one ffmpeg per frame is slow serially; 4 at a time keeps it under a second
+  for (let i = 0; i < jobs.length; i += 4) {
+    await Promise.all(jobs.slice(i, i + 4).map(([t, f, w]) => thumb(videoPath, t, f, w)));
+  }
+}
+
 async function buildProject(video, { force = false } = {}) {
   const videoPath = path.join(video.dir, video.filename);
   const dataPath = path.join(DATA_DIR, `${video.id}.json`);
-  if (!force && fssync.existsSync(dataPath)) return JSON.parse(await fs.readFile(dataPath, "utf-8"));
+  if (!force && fssync.existsSync(dataPath)) {
+    const cached = JSON.parse(await fs.readFile(dataPath, "utf-8"));
+    await healThumbs(videoPath, cached);
+    return cached;
+  }
 
   const meta = await probe(videoPath);
   const sceneCuts = await detectSceneCuts(videoPath, meta.duration);
@@ -176,8 +242,14 @@ async function buildProject(video, { force = false } = {}) {
 
   let cuts = sceneCuts;
   if (sceneCuts.length < 4 && meta.duration > 12) {
-    const speech = await cutsFromSilence(videoPath, meta.duration);
-    if (speech) cuts = mergeBounds(sceneCuts, speech, meta.duration);
+    // exact, if we rendered this ourselves
+    const authored = await cutsFromComposition(meta.duration);
+    if (authored) {
+      cuts = authored;
+    } else {
+      const speech = await cutsFromSilence(videoPath, meta.duration);
+      if (speech) cuts = mergeBounds(sceneCuts, speech, meta.duration);
+    }
   }
 
   const beats = [];

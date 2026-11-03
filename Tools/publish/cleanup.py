@@ -20,8 +20,10 @@ EXPORTS = ROOT / "Exports"
 RAW = next((ROOT / n for n in ("Raw footage ", "Raw footage") if (ROOT / n).exists()), None)
 
 # Regenerable in minutes — safe to delete once the video is live.
+# NOTE: Tools/dashboard/cache is deliberately NOT here. Deleting it leaves every
+# dashboard filmstrip rendering as black boxes. server.js now heals missing
+# thumbnails on its own, but there is no reason to make it do that work.
 SHARED_CACHES = [
-    ROOT / "Tools" / "dashboard" / "cache",          # thumbnails + transcripts
     ROOT / "References" / "_source_temp",            # downloaded reference reels
     ROOT / ".hf-cache",                              # HuggingFace model cache
 ]
