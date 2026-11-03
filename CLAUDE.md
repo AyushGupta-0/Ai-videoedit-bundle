@@ -138,11 +138,25 @@ timeline registered at `window.__timelines["<id>"]`.
     refuses to start above 2GB swap and kills the run if swap grows 2.5GB.
     **macOS only releases compressed memory on reboot** — after a wedge, reboot
     before retrying. Spotlight also indexes this SSD; turning that off helps.
-16. **CLIP truncates prompts at 77 tokens and the warning is easy to miss.** A
+16. **Local image models on this machine: what was actually tried.** Do not repeat these.
+    - *SDXL* (`dreamshaper-xl`): best quality, but ~7GB of weights does not fit in 16GB.
+      Resident it froze the Mac; with `enable_model_cpu_offload` it still thrashed at
+      23k swapins/sec and the watchdog killed it. Needs a 32GB machine.
+    - *SD1.5 `stablediffusionapi/disney-pixar-cartoon`*: fits easily (~2GB, ~60s/image) and
+      nails the glossy Pixar look **for humans** — the Mira plate was excellent. It cannot
+      render an elephant: across 4 seeds it produced a human child body with elephant ears
+      and no trunk. It is a human-character checkpoint. Fine for human-only casts.
+    - *SD1.5 `Lykon/dreamshaper-8`*: renders a real elephant but photoreal, not Pixar.
+    - Raising CFG to 9-12 or putting the action before the subject makes SD1.5 *worse* —
+      the subject dissolves. Subject first, CFG ~7.5.
+    - "baby elephant in jungle" reliably pulls mother-and-calf compositions; a negative
+      prompt does not suppress it.
+    Conclusion: animal characters at this quality bar need a paid API or a 32GB machine.
+17. **CLIP truncates prompts at 77 tokens and the warning is easy to miss.** A
     first pass ran 161 tokens, so the entire style suffix was silently dropped
     and the plates came out styleless. `gen_kids_art.py` now hard-fails via
     `check_len()`. Keep character bibles terse.
-17. **git on this exFAT SSD**: macOS writes `._` AppleDouble files *inside* `.git`, which corrupt
+18. **git on this exFAT SSD**: macOS writes `._` AppleDouble files *inside* `.git`, which corrupt
     pack indexes and refs. Before and after any git write, run:
     `find .git -name '._*' -delete`. Repo: `github.com/AyushGupta-0/Ai-videoedit-bundle` (ssh).
 

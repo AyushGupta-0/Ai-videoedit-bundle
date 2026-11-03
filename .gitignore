@@ -70,3 +70,12 @@ Tools/lightspeed-hi/assets/sfx/
 
 # ---- brand identity assets ARE tracked ----
 !Brand Kit/identity/*.png
+
+# HF model caches — these live on the SSD inside the repo folder but are
+# multi-GB downloads, never source. .hf-cache-home is the relocated
+# ~/.cache/huggingface symlink target.
+.hf-cache/
+.hf-cache-home/
+# voice recordings and other audio masters stay local
+*.m4a
+*.aiff

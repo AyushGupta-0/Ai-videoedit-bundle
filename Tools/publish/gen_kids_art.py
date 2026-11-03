@@ -54,14 +54,22 @@ def check_len(pipe, prompts):
 SEEDS = {"chintu": 770041, "mira": 881502, "both": 990213, "world": 220817}
 
 
-def pipeline(model, lora):
+def pipeline(model, lora, arch):
     import torch
-    from diffusers import StableDiffusionXLPipeline, EulerAncestralDiscreteScheduler
+    from diffusers import (StableDiffusionPipeline, StableDiffusionXLPipeline,
+                           EulerAncestralDiscreteScheduler)
 
     dev = "mps" if torch.backends.mps.is_available() else "cpu"
-    pipe = StableDiffusionXLPipeline.from_pretrained(
-        model, torch_dtype=torch.float16 if dev == "mps" else torch.float32,
-        variant="fp16", use_safetensors=True)
+    dtype = torch.float16 if dev == "mps" else torch.float32
+    # SDXL is ~7GB of weights and does not fit in this machine's 16GB even with
+    # offload — it thrashed swap at 23k swapins/sec. SD1.5 is ~2GB and fits with
+    # room to spare. Keep the SDXL branch for a bigger machine.
+    if arch == "sdxl":
+        pipe = StableDiffusionXLPipeline.from_pretrained(
+            model, torch_dtype=dtype, variant="fp16", use_safetensors=True)
+    else:
+        pipe = StableDiffusionPipeline.from_pretrained(
+            model, torch_dtype=dtype, safety_checker=None, requires_safety_checker=False)
     pipe.scheduler = EulerAncestralDiscreteScheduler.from_config(pipe.scheduler.config)
     pipe.set_progress_bar_config(disable=True)
     # This machine has 16GB of unified memory and SDXL fp16 does not fit in it
@@ -90,12 +98,26 @@ def guard_memory(w, h):
     import subprocess
     free = int(subprocess.run(["sysctl", "-n", "hw.memsize"],
                               capture_output=True, text=True).stdout) / 2**30
-    px = (w * h) / (768 * 1152)
-    need = 5.0 * px                      # with model CPU offload + sliced/tiled VAE
+    px = (w * h) / (512 * 768)
+    need = 3.0 * px                      # SD1.5 fp16 with offload + sliced/tiled VAE
     if need > free - 2.0:
         sys.exit(f"{w}x{h} needs about {need:.1f}GB and this machine has {free:.0f}GB. "
                  f"Use a smaller --width/--height.")
     print(f"{free:.0f}GB RAM · {w}x{h} needs about {need:.1f}GB · ok")
+
+
+PLATE_W, PLATE_H = 1080, 1920
+
+
+def to_plate(img):
+    """SD1.5 renders at 512x768 (2:3). The composition needs 1080x1920 (9:16),
+    and Ken Burns pushes into the plate, so upscale to *cover* and centre-crop
+    rather than padding — a padded plate shows bars the moment the camera moves."""
+    from PIL import Image
+    s = max(PLATE_W / img.width, PLATE_H / img.height)
+    img = img.resize((round(img.width * s), round(img.height * s)), Image.LANCZOS)
+    l, t = (img.width - PLATE_W) // 2, (img.height - PLATE_H) // 2
+    return img.crop((l, t, l + PLATE_W, t + PLATE_H))
 
 
 def expand(shot):
@@ -108,12 +130,13 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--shots", required=True)
     ap.add_argument("--out", required=True)
-    ap.add_argument("--model", default="Lykon/dreamshaper-xl-1-0")
+    ap.add_argument("--model", default="stablediffusionapi/disney-pixar-cartoon")
+    ap.add_argument("--arch", choices=["sd15", "sdxl"], default="sd15")
     ap.add_argument("--lora", default=None)
     ap.add_argument("--steps", type=int, default=30)
     ap.add_argument("--cfg", type=float, default=6.5)
-    ap.add_argument("--width", type=int, default=768)     # 768x1152 fits 16GB; 832x1216 does not
-    ap.add_argument("--height", type=int, default=1152)
+    ap.add_argument("--width", type=int, default=512)     # SD1.5 native; taller warps anatomy
+    ap.add_argument("--height", type=int, default=768)
     ap.add_argument("--only", nargs="*", help="regenerate just these shot ids")
     ap.add_argument("--bump", type=int, default=0, help="offset seeds to re-roll")
     a = ap.parse_args()
@@ -129,7 +152,7 @@ def main():
 
     import torch
     guard_memory(a.width, a.height)
-    pipe, dev = pipeline(a.model, a.lora)
+    pipe, dev = pipeline(a.model, a.lora, a.arch)
     check_len(pipe, [(x["id"], expand(x)) for x in shots])
     print(f"{a.model} on {dev} · {a.width}x{a.height} · {a.steps} steps\n")
 
@@ -140,7 +163,7 @@ def main():
                    num_inference_steps=a.steps, guidance_scale=a.cfg,
                    width=a.width, height=a.height, generator=g).images[0]
         p = outdir / f"{s['id']}.png"
-        img.save(p)                      # save per shot: a crash costs one plate, not all
+        to_plate(img).save(p)            # save per shot: a crash costs one plate, not all
         print(f"  {s['id']}  seed {seed}  {s['note']}", flush=True)
         del img
         if dev == "mps":
